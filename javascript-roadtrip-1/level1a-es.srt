@@ -1,0 +1,648 @@
+﻿1
+00:00:00,000 --> 00:00:03,120
+Hola a todos, y bienvenidos a
+"JavaScript Road Trip" (Viaje a la carretera de JavaScript).
+
+2
+00:00:03,120 --> 00:00:04,820
+Si algunas vez has navegado
+en internet antes -
+
+3
+00:00:04,820 --> 00:00:05,860
+y a quien no lo ha hecho -
+
+4
+00:00:05,860 --> 00:00:08,480
+lo mas probable es que hayas corrido
+miles, si no millones, de
+
+5
+00:00:08,480 --> 00:00:10,660
+lineas de código JavaScript.
+
+6
+00:00:10,660 --> 00:00:13,270
+Ahora bien, JavaScript esta
+principalmente diseñado para
+
+7
+00:00:13,270 --> 00:00:16,400
+paginas web interactivas, en este
+tutorial, nos enfocaremos
+
+8
+00:00:16,400 --> 00:00:18,980
+principalmente en los cimientos
+fundamentales del
+
+9
+00:00:18,980 --> 00:00:22,240
+lenguaje JavaScript en sí, asi que
+mas adelante, tu seras capaz de
+
+10
+00:00:22,240 --> 00:00:24,820
+comprometerte con frameworks mas
+avanzados como jQuery.
+
+11
+00:00:24,820 --> 00:00:26,730
+Ahora en este primer curso del
+Road Trip (Viaje a la Carretera), vamos a estar
+
+12
+00:00:26,730 --> 00:00:28,790
+mirando a los cimientos
+fundamentales del
+
+13
+00:00:28,790 --> 00:00:31,880
+lenguaje JavaScript, incluyendo
+como manipular valores con
+
+14
+00:00:31,880 --> 00:00:35,180
+operadores, asi como
+crear y almacenar esos valores
+
+15
+00:00:35,180 --> 00:00:39,360
+dentro de variables, y después como
+encontrar, y crear, y ejecutar
+
+16
+00:00:39,360 --> 00:00:42,250
+archivos fuente JavaScript
+con código HTML.
+
+17
+00:00:42,250 --> 00:00:43,910
+Y con eso, todos a bordo!
+
+18
+00:00:43,910 --> 00:00:45,490
+Es hora de empezar tu
+viaje en el
+
+19
+00:00:45,490 --> 00:00:46,790
+JavaScript road trip (Viaje a la carretera de JavaScript).
+
+20
+00:00:46,790 --> 00:00:47,090
+[CANTANDO]
+
+21
+00:00:47,090 --> 00:00:50,740
+Desde los laberintos del loop a
+los valles de la variable, veremos
+
+22
+00:00:50,740 --> 00:00:52,140
+los acantilados de los valores primero.
+
+23
+00:00:52,140 --> 00:00:53,690
+JavaScript esta justo
+junto a tu calle.
+
+24
+00:00:53,690 --> 00:00:57,010
+Acantilados hechos, caida de archivos,
+arrays, archipelagos.
+
+25
+00:00:57,010 --> 00:00:59,190
+Declaraciones en un desierto,
+donde descubrirás
+
+26
+00:00:59,190 --> 00:01:00,190
+cuan lejos irás.
+
+27
+00:01:00,190 --> 00:01:01,010
+Aprende el programa.
+
+28
+00:01:01,010 --> 00:01:01,680
+Da un paseo.
+
+29
+00:01:01,680 --> 00:01:02,550
+Compra un boleto.
+
+30
+00:01:02,550 --> 00:01:03,640
+Entra.
+
+31
+00:01:03,640 --> 00:01:05,424
+Todos a bordo, estás
+en la estación para
+
+32
+00:01:05,424 --> 00:01:06,580
+incrementar tu educación.
+
+33
+00:01:06,580 --> 00:01:09,350
+Buen Viaje y nada desnudo! Siempre
+y cuando no escatimes funciones
+
+34
+00:01:09,350 --> 00:01:14,210
+en este, JavaScript ...
+Road Trip.
+
+35
+00:01:20,730 --> 00:01:21,380
+Hey, viajeros.
+
+36
+00:01:21,380 --> 00:01:22,680
+Bienvenidos al Nivel 1 -
+
+37
+00:01:22,680 --> 00:01:24,260
+Los acantilados del Valor.
+
+38
+00:01:24,260 --> 00:01:26,180
+Esten listos para aprender
+sobre numeros,
+
+39
+00:01:26,180 --> 00:01:27,550
+operadores, y cadenas.
+
+40
+00:01:30,710 --> 00:01:33,030
+hay dos símbolos con los que nos
+gustaría que estemos familiarizados
+
+41
+00:01:33,030 --> 00:01:34,910
+mientras vamos moviendonos a través
+de este curso.
+
+42
+00:01:34,910 --> 00:01:38,100
+El primero es el símbolo "mayor
+que", que representa al
+
+43
+00:01:38,100 --> 00:01:39,300
+prompt (consola) de JavaScript.
+
+44
+00:01:39,300 --> 00:01:42,650
+Aquí, colocaremos el código
+que de hecho se ingresará
+
+45
+00:01:42,650 --> 00:01:44,080
+en la consola.
+
+46
+00:01:44,080 --> 00:01:46,230
+La flecha que le sigue a eso
+es la que
+
+47
+00:01:46,230 --> 00:01:48,430
+retorna del código.
+
+48
+00:01:48,430 --> 00:01:49,610
+El lenguaje Javascript
+
+49
+00:01:49,610 --> 00:01:51,880
+automáticamente reconoce números.
+
+50
+00:01:51,880 --> 00:01:55,540
+Asi que puedes ver que si nosotros
+ingresamos 24 en la consola,
+
+51
+00:01:55,540 --> 00:01:58,270
+la consola nos retornará
+24.
+
+52
+00:01:58,270 --> 00:02:00,510
+Lo mismo va para los
+valores decimales.
+
+53
+00:02:00,510 --> 00:02:06,610
+Si ingresamos 3.14, estariamos
+viendo de vuelta un 3.14.
+
+54
+00:02:06,610 --> 00:02:08,919
+Probemos hacer alguna
+matemática en JavaScript.
+
+55
+00:02:08,919 --> 00:02:11,995
+Hay operadores comunes que
+la consola aceptará.
+
+56
+00:02:11,995 --> 00:02:14,066
+El primero es adición.
+
+57
+00:02:14,066 --> 00:02:19,920
+El segundo es substracción
+El tercero es multiplicación.
+
+58
+00:02:19,920 --> 00:02:21,680
+Próximo, tenemos división.
+
+59
+00:02:21,680 --> 00:02:24,200
+Y después, tenemos un operador
+especial que vemos bastante en
+
+60
+00:02:24,200 --> 00:02:26,510
+programación de computadoras
+llamado el módulo.
+
+61
+00:02:26,510 --> 00:02:31,050
+El módulo retornará el
+resto después de la division.
+
+62
+00:02:31,050 --> 00:02:35,440
+Asi que puedes ver que si
+dividimos 43 por 10, aunque
+
+63
+00:02:35,440 --> 00:02:38,320
+vaya cuatro veces, el
+resto de esa
+
+64
+00:02:38,320 --> 00:02:42,090
+operación es 3.
+
+65
+00:02:42,090 --> 00:02:44,310
+Junto con las operaciones básicas,
+JavaScript
+
+66
+00:02:44,310 --> 00:02:47,880
+reconoce el orden estándar de
+de las operaciones en las matemáticas.
+
+67
+00:02:47,880 --> 00:02:50,440
+Podias recordar esto por los
+acrónimos familiares -
+
+68
+00:02:50,440 --> 00:02:54,400
+Parentesis, Exponentes,
+Multiplicación, División,
+
+69
+00:02:54,400 --> 00:02:57,720
+Adición, y Substracción,
+o PEMDAS.
+
+70
+00:02:57,720 --> 00:03:00,450
+Podemos ver aquí que si introducimos
+una expresión dentro de la
+
+71
+00:03:00,450 --> 00:03:04,470
+consola JavaScript, la primera
+cosa que se evaluará
+
+72
+00:03:04,470 --> 00:03:07,380
+es el paréntesis que
+contiene 5 más 7.
+
+73
+00:03:07,380 --> 00:03:08,820
+Se va convertir a 12.
+
+74
+00:03:08,820 --> 00:03:14,270
+Y luego ese 12 será
+multiplicado por 3 para obtener 36.
+
+75
+00:03:14,270 --> 00:03:16,640
+Aquí esta otra expresión
+larga.
+
+76
+00:03:16,640 --> 00:03:18,990
+Podemos ver que si tocamos el
+parentesis primero.
+
+77
+00:03:18,990 --> 00:03:22,440
+El 3 multiplicado por 4 sería 12, y
+el resto de la expresión
+
+78
+00:03:22,440 --> 00:03:23,920
+viene abajo.
+
+79
+00:03:23,920 --> 00:03:27,090
+Seguido por eso, estariamos
+abordando el 12 dividido por 2,
+
+80
+00:03:27,090 --> 00:03:28,730
+que se convierte en 6.
+
+81
+00:03:28,730 --> 00:03:31,470
+Y, luego haríamos directamente
+adición y sustracción, de izquierda
+
+82
+00:03:31,470 --> 00:03:34,450
+a derecha, para producir un 9.
+
+83
+00:03:34,450 --> 00:03:36,850
+En esta tercera expresión, vemos
+algunos números negativos.
+
+84
+00:03:36,850 --> 00:03:39,020
+JavaScript reconoce
+esos también.
+
+85
+00:03:39,020 --> 00:03:41,810
+Y la primera cosa que
+abordaríamos aquí es el 5 negativo
+
+86
+00:03:41,810 --> 00:03:44,050
+multiplicado por 6 dentro del
+paréntesis.
+
+87
+00:03:44,050 --> 00:03:46,770
+Eso nos dará un
+30 negativo, y el resto de la
+
+88
+00:03:46,770 --> 00:03:48,180
+expresión bajará.
+
+89
+00:03:48,180 --> 00:03:52,340
+Y después evaluaremos el
+7 multiplicado por el 2 negativo
+
+90
+00:03:52,340 --> 00:03:56,240
+que será un 14 negativo, y
+luego el 30 negativo menos
+
+91
+00:03:56,240 --> 00:04:00,420
+el 14 negativo producirá
+un 16 negativo.
+
+92
+00:04:00,420 --> 00:04:03,820
+En esta última expresión, podemos
+ver una operacion con módulo.
+
+93
+00:04:03,820 --> 00:04:06,980
+Puedes pensar en el módulo estando
+incluido en la M
+
+94
+00:04:06,980 --> 00:04:09,790
+de PEMDAS, junto con
+multiplicación, porque
+
+95
+00:04:09,790 --> 00:04:12,870
+existe en el mismo nivel
+jerárquico.
+
+96
+00:04:12,870 --> 00:04:15,710
+Aqui en esta operación, lo que
+haríamos primero es el
+
+97
+00:04:15,710 --> 00:04:17,320
+paréntesis interno:
+
+98
+00:04:17,320 --> 00:04:18,700
+ese 3 más 1.
+
+99
+00:04:18,700 --> 00:04:20,140
+Eso se volverá un 4.
+
+100
+00:04:20,140 --> 00:04:24,920
+Y luego, nos quedaríamos con el
+8 módulo 4 dentro de ese último
+
+101
+00:04:24,920 --> 00:04:26,020
+paréntesis.
+
+102
+00:04:26,020 --> 00:04:30,950
+El resto de la operacion de 8
+dividido por 4 es 0.
+
+103
+00:04:30,950 --> 00:04:33,670
+Y luego sumariamos 4 más
+0, y tendríamos 4.
+
+104
+00:04:36,950 --> 00:04:39,370
+Existen algunos únicos
+comparadores en el lenguaje JavaScript
+
+105
+00:04:39,370 --> 00:04:42,370
+que nos permiten
+comparar valores.
+
+106
+00:04:42,370 --> 00:04:44,910
+Cuando usas un comparador, te
+devolverá algo llamado
+
+107
+00:04:44,910 --> 00:04:48,860
+un valor Booleano, que podría
+ser verdadero o falso.
+
+108
+00:04:48,860 --> 00:04:51,500
+Aquí, puedes ver el comparador
+"mayor que", con el que
+
+109
+00:04:51,500 --> 00:04:53,250
+tú probablemente estarás familiarizado.
+
+110
+00:04:53,250 --> 00:04:56,430
+La pregunta es, ¿es
+6 mayor que 4?
+
+111
+00:04:56,430 --> 00:04:59,590
+y JavaScript retorna verdadero.
+
+112
+00:04:59,590 --> 00:05:01,930
+Junto con "mayor que",
+tenemos "menor que".
+
+113
+00:05:01,930 --> 00:05:05,270
+Y aquí, la pregunta es,
+es 9 menor que 5?
+
+114
+00:05:05,270 --> 00:05:07,450
+Y eso es falso.
+
+115
+00:05:07,450 --> 00:05:10,850
+Para comparar la igualdad de números
+en JavaScript, tenemos que usar
+
+116
+00:05:10,850 --> 00:05:12,580
+una sintaxis especial.
+
+117
+00:05:12,580 --> 00:05:14,460
+Nosotros no usamos un solo
+signo de igualdad.
+
+118
+00:05:14,460 --> 00:05:17,120
+En vez de eso aquí, usamos
+un doble signo de igualdad para
+
+119
+00:05:17,120 --> 00:05:18,670
+retornar un valor Booleano.
+
+120
+00:05:18,670 --> 00:05:22,750
+Esta pregunta es, es
+3 igual a 4, que
+
+121
+00:05:22,750 --> 00:05:24,830
+por supuesto, es falso.
+
+122
+00:05:24,830 --> 00:05:27,530
+JavaScript tiene una sintaxis especial
+para preguntar si 2
+
+123
+00:05:27,530 --> 00:05:29,190
+valores no son iguales.
+
+124
+00:05:29,190 --> 00:05:32,830
+Usamos un signo de exclamación en
+en frente de un signo de igualdad para preguntar
+
+125
+00:05:32,830 --> 00:05:34,840
+la desigualdad del cuestionamiento.
+
+126
+00:05:34,840 --> 00:05:38,300
+Y esta pregunta en particular
+dice, es 12 desigual a 4?
+
+127
+00:05:38,300 --> 00:05:40,850
+Que nos da un valor de
+"verdad", porque estos dos
+
+128
+00:05:40,850 --> 00:05:42,700
+números no son iguales.
+
+129
+00:05:42,700 --> 00:05:44,030
+Nosotros también, por supuesto,
+tenemos una sintaxis de "mayor
+
+130
+00:05:44,030 --> 00:05:46,960
+que o igual a".
+
+131
+00:05:46,960 --> 00:05:50,360
+Esta pregunta se refiere a que si 8
+es "mayor que o igual a"
+
+132
+00:05:50,360 --> 00:05:51,530
+2 negativo.
+
+133
+00:05:51,530 --> 00:05:53,670
+Nótese que el "mayor que"
+viene en frente
+
+134
+00:05:53,670 --> 00:05:55,390
+del signo "igual a".
+
+135
+00:05:55,390 --> 00:05:58,270
+Esta pregunta devuelve un valor de
+"verdadero", porque 8 es mayor que
+
+136
+00:05:58,270 --> 00:06:00,300
+o igual a 2 negativo.
+
+137
+00:06:00,300 --> 00:06:03,580
+Junto con "mayor" o "igual",
+tenemos "menor que o igual".
+
+138
+00:06:03,580 --> 00:06:06,810
+Esta pregunta se refiere a ¿Es 10
+"menor o igual que" 10?
+
+139
+00:06:06,810 --> 00:06:09,370
+Y como es igual,
+obtenemos un valor verdadero.
