@@ -292,8 +292,7 @@ that the string is split
 62
 00:03:10,940 --> 00:03:13,820
 up across multiple lines because
-of the 
-.
+of the \ n
 
 63
 00:03:17,090 --> 00:03:19,470
@@ -488,4 +487,3 @@ formatting.
 00:05:11,550 --> 00:05:12,990
 I don't know why you're saying that word twice
 [Laughing in background]
-
