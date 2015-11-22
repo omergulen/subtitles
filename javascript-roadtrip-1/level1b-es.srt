@@ -400,7 +400,7 @@ Así que, ellos no son iguales.
 
 85
 00:04:17,740 --> 00:04:21,120
-Tmbién podemos acceder a la longitud
+También podemos acceder a la longitud
 de las cadenas usando la propiedad
 
 86
