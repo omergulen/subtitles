@@ -96,525 +96,525 @@ Aquí viene el Nivel Dos,
 00:00:45,000 --> 00:00:46,660
 "Valle de las variables"
 
-22
+23
 00:00:47,270 --> 00:00:51,580
 JavaScript usa variables para
 almacenar y manejar datos.
 
-23
+24
 00:00:51,580 --> 00:00:55,260
 Aquí puedes ver una sintaxis de
 asignación básica para una
 
-24
+25
 00:00:55,260 --> 00:00:58,020
 variable llamada trainWhistles.
 
-25
+26
 00:00:58,020 --> 00:01:00,810
 Esa "var" es la palabra clave
 de la variable.
 
-26
+27
 00:01:00,810 --> 00:01:04,250
 Es lo que dice al navegador que
 haga un espacio aparte
 
-27
+28
 00:01:04,250 --> 00:01:05,970
 para la variable en sí.
 
-28
+29
 00:01:05,970 --> 00:01:08,780
 La siguiente cosa que ves es
 el nombre de trainWhistles.
 
-29
+30
 00:01:08,780 --> 00:01:10,980
 Ese es el nombre
 de la variable.
 
-30
+31
 00:01:10,980 --> 00:01:13,600
 El signo de igualdad es el
 operador de asignación.
 
-31
+32
 00:01:13,600 --> 00:01:16,240
 Nótese que es un solo
 signo de igualdad.
 
-32
+33
 00:01:16,240 --> 00:01:18,340
 Y finalmente, el valor 3.
 
-33
+34
 00:01:18,340 --> 00:01:21,490
 Ese es el valor que va a ser
 almacenado dentro de nuestra
 
-34
+35
 00:01:21,490 --> 00:01:22,740
 variable trainWhistles.
 
-35
+36
 00:01:25,690 --> 00:01:28,430
 Ahora cuando llamamos a la variable
 trainWhistles, nosotros
 
-36
+37
 00:01:28,430 --> 00:01:30,915
 automáticamente obtenemos un valor
 de tres de retorno.
 
-37
+38
 00:01:34,850 --> 00:01:37,950
 Ahora, hay algunas reglas y
 regulaciones que seguimos en
 
-38
+39
 00:01:37,950 --> 00:01:40,670
 JavaScript para nombrar
 variables.
 
-39
+40
 00:01:40,670 --> 00:01:43,760
 La primera es que no podemos
 tener ningún espacio en el
 
-40
+41
 00:01:43,760 --> 00:01:45,390
 nombre de la variable.
 
-41
+42
 00:01:45,390 --> 00:01:47,850
 El compilador te retornará un
 error si tratas de poner
 
-42
+43
 00:01:47,850 --> 00:01:50,730
 espacios dentro del nombre de la variable.
 
-43
+44
 00:01:50,730 --> 00:01:53,600
 Lo siguiente es que no podemos
 tener ningún dígito
 
-44
+45
 00:01:53,600 --> 00:01:55,580
 enfrente del nombre de nuestra variable.
 
-45
+46
 00:01:55,580 --> 00:01:56,360
 No nos gusta eso.
 
-46
+47
 00:01:56,360 --> 00:01:58,850
 Al compilador no
 le gusta eso.
 
-47
+48
 00:01:58,850 --> 00:02:00,840
 Podemos usar guiones bajos,
 aunque suelen ser
 
-48
+49
 00:02:00,840 --> 00:02:01,700
 irritantes.
 
-49
+50
 00:02:01,700 --> 00:02:06,020
 Podemos usar signos de dólar ($),
 creo que... no.
 
-50
+51
 00:02:06,020 --> 00:02:09,090
 Incluso podríamos usar el signo de dólar
 y guiones bajos juntos.
 
-51
+52
 00:02:09,090 --> 00:02:12,950
 Entonces, esto es ligeramente estúpido, pero
 es técnicamente legal.
 
-52
+53
 00:02:12,950 --> 00:02:15,190
 Aquí tenemos un nombre
 de variable genial.
 
-53
+54
 00:02:15,190 --> 00:02:18,610
 Nótese que al principio es una
 letra en minúscula y cada
 
-54
+55
 00:02:18,610 --> 00:02:21,400
 palabra subsecuente es
 capitalizada.
 
-55
+56
 00:02:21,400 --> 00:02:24,890
 Tal vez hayas escuchado esto referenciado
 como Camel Case.
 
-56
+57
 00:02:24,890 --> 00:02:27,130
 Y luego este nombre de la variable
 final usa un
 
-57
+58
 00:02:27,130 --> 00:02:29,370
 dígito en el final.
 
-58
+59
 00:02:29,370 --> 00:02:30,620
 Fatality.
 
-59
+60
 00:02:33,660 --> 00:02:36,500
 Qué pasaría si quisieramos cambiar
 el contenido de una variable?
 
-60
+61
 00:02:36,500 --> 00:02:37,100
 Adivina qué?
 
-61
+62
 00:02:37,100 --> 00:02:38,770
 Es tu día de suerte.
 
-62
+63
 00:02:38,770 --> 00:02:42,910
 Actualmente nuestra variable
 trainWhistles está puesta en 3.
 
-63
+64
 00:02:42,910 --> 00:02:46,370
 Pero si queremos cambiar nuestra
 cantidad de trainWhistles, solo
 
-64
+65
 00:02:46,370 --> 00:02:49,520
 reutilizamos el operador
 de asignación y lo asignamos
 
-65
+66
 00:02:49,520 --> 00:02:51,630
 igual a un nuevo valor.
 
-66
+67
 00:02:51,630 --> 00:02:55,560
 Nótese que nosotros no usamos la
 palabra clave var porque la
 
-67
+68
 00:02:55,560 --> 00:02:59,180
 consola ya sabe que la
 variable trainWhistles está
 
-68
+69
 00:02:59,180 --> 00:03:01,350
 dentro de la memoria.
 
-69
+70
 00:03:01,350 --> 00:03:04,350
 Ahora nuestro valor
 trainWhistles es 9.
 
-70
+71
 00:03:04,350 --> 00:03:08,130
 Podemos usar también el
 valor trainWhistles mismo para
 
-71
+72
 00:03:08,130 --> 00:03:11,360
 modificar los contenidos de la
 variable trainWhistles.
 
-72
+73
 00:03:11,360 --> 00:03:14,420
 Aquí puedes ver que estamos
 diciendo: Toma el valor
 
-73
+74
 00:03:14,420 --> 00:03:18,670
 de trainWhistles, añadele 3, y
 guárdalo dentro de la
 
-74
+75
 00:03:18,670 --> 00:03:21,040
 variable trainWhistles.
 
-75
+76
 00:03:21,040 --> 00:03:24,850
 Ahora, porque el valor inicial del valor de
 trainWhistles era 9, obtenemos
 
-76
+77
 00:03:24,850 --> 00:03:27,630
 9 más 3 guardado en trainWhistles,
 que
 
-77
+78
 00:03:27,630 --> 00:03:28,880
 resulta en un 12.
 
-78
+79
 00:03:32,100 --> 00:03:35,640
 Otra forma de decir esa misma
 expresión es con el
 
-79
+80
 00:03:35,640 --> 00:03:38,500
 operador de "más igualdad".
 
-80
+81
 00:03:38,500 --> 00:03:40,910
 Eso le indica a la consola
 que tome la variable
 
-81
+82
 00:03:40,910 --> 00:03:44,190
 trainWhistles, y le añada 3, y
 lo guarde dentro de la
 
-82
+83
 00:03:44,190 --> 00:03:46,700
 variable trainWhistles.
 
-83
+84
 00:03:46,700 --> 00:03:48,510
 Ahora tenemos en total 15
 silbatos de tren.
 
-84
+85
 00:03:52,370 --> 00:03:55,100
 Todas las operaciones pueden
 ser usadas con asignación
 
-85
+86
 00:03:55,100 --> 00:03:55,910
 de variables.
 
-86
+87
 00:03:55,910 --> 00:03:58,560
 Aquí podemos ver que la
 variable trainWhistles está
 
-87
+88
 00:03:58,560 --> 00:04:02,000
 siendo multiplicada por 2 antes
 de ser guardada dentro de la
 
-88
+89
 00:04:02,000 --> 00:04:03,860
 variable trainWhistles.
 
-89
+90
 00:04:03,860 --> 00:04:06,430
 Ahora tenemos 30 silbatos de tren (Train whistles)
 
-90
+91
 00:04:06,430 --> 00:04:10,540
 Y de nuevo, el operador "multiplicador-igual"
 es el mismo que
 
-91
+92
 00:04:10,540 --> 00:04:12,040
 la expresión previa.
 
-92
+93
 00:04:12,040 --> 00:04:14,700
 Y obtenemos 60 silbatos de tren.
 
-93
+94
 00:04:14,700 --> 00:04:16,829
 Oh, 60 silbatos -
 
-94
+95
 00:04:16,829 --> 00:04:18,079
 Eso es mucho.
 
-95
+96
 00:04:21,220 --> 00:04:24,780
 Nombres de variables también pueden actuar como
 substitutos para los datos que
 
-96
+97
 00:04:24,780 --> 00:04:26,330
 ellos señalan.
 
-97
+98
 00:04:26,330 --> 00:04:29,430
 Eso significa que yo puedo usar
 variables dentro de
 
-98
+99
 00:04:29,430 --> 00:04:32,720
 concatenaciones con cadenas para
 referirme a los datos que
 
-99
+100
 00:04:32,720 --> 00:04:34,640
 de hecho están dentro de la variable.
 
-100
+101
 00:04:34,640 --> 00:04:38,000
 Aquí puedes ver una concatenación
 de "All of our
 
-101
+102
 00:04:38,000 --> 00:04:41,410
 trains have" con la variable
 trainWhistles, y luego la
 
-102
+103
 00:04:41,410 --> 00:04:43,010
 la cadena "whistles".
 
-103
+104
 00:04:43,010 --> 00:04:44,880
 Qué pasa en la salida?
 
-104
+105
 00:04:44,880 --> 00:04:47,460
 "Todos nuestros trenes
 tienen 3 silbatos!"
 
-105
+106
 00:04:47,460 --> 00:04:50,970
 El nombre de la variable desaparece y
 en vez de eso, el dato que la
 
-106
+107
 00:04:50,970 --> 00:04:54,450
 variable contiene es colocada
 dentro de la cadena.
 
-107
+108
 00:04:54,450 --> 00:04:56,240
 Adicionalmente, podemos colocar
 variables dentro de
 
-108
+109
 00:04:56,240 --> 00:04:59,610
 expresiones que son
 concatenadas con cadenas.
 
-109
+110
 00:04:59,610 --> 00:05:01,850
 En esta cadena, cuando
 trainWhistles es multiplicada por
 
-110
+111
 00:05:01,850 --> 00:05:03,450
 3, obtenemos 9.
 
-111
+112
 00:05:03,450 --> 00:05:05,540
 Y en la cadena final
 vemos, "But the
 
-112
+113
 00:05:05,540 --> 00:05:09,260
 Pollock 9000 has 9!"
 
-113
+114
 00:05:09,260 --> 00:05:11,560
 Pero espera, este código
 apesta un poquito.
 
-114
+115
 00:05:11,560 --> 00:05:14,780
 Porque el Pollock 9000 necesita
 su propia variable de silbatos (whistles).
 
-115
+116
 00:05:14,780 --> 00:05:16,620
 Hagamos eso.
 
-116
+117
 00:05:16,620 --> 00:05:18,770
 Todo lo que tenemos que hacer es declarar
 una nueva variable.
 
-117
+118
 00:05:18,770 --> 00:05:19,640
 La llamaremos el pollock9000 -
 
-118
+119
 00:05:20,640 --> 00:05:23,460
 Y luego asignar esa
 expresión que estábamos usando
 
-119
+120
 00:05:23,460 --> 00:05:25,620
 en la cadena a esta
 nueva variable.
 
-120
+121
 00:05:25,620 --> 00:05:28,230
 Y ahora podemos ver que
 el pollock9000
 
-121
+122
 00:05:28,230 --> 00:05:29,690
 tiene 9 silbatos de tren.
 
-122
+123
 00:05:33,440 --> 00:05:36,420
 Ahora que el pollock9000 tiene
 su propia variable, podemos usar
 
-123
+124
 00:05:36,420 --> 00:05:37,850
 eso dentro de la cadena.
 
-124
+125
 00:05:42,500 --> 00:05:44,860
 Hay una forma simple de
 incrementar o decrementar el
 
-125
+126
 00:05:44,860 --> 00:05:47,720
 valor de una variable en 1
 en cualquier dirección.
 
-126
+127
 00:05:47,720 --> 00:05:50,890
 Esto se llama Incrementando
 y Decrementando.
 
-127
+128
 00:05:50,890 --> 00:05:54,130
 Aquí en el lado izquierdo, puedes
 ver que tenemos trainWhistles
 
-128
+129
 00:05:54,130 --> 00:05:57,430
 "más más", que es una simple
 sintáxis para aumentar el
 
-129
+130
 00:05:57,430 --> 00:05:59,660
 valor de una variable en 1.
 
-130
+131
 00:05:59,660 --> 00:06:02,030
 Ahora puedes ver que
 el valor trainWhistles es 4.
 
-131
+132
 00:06:02,030 --> 00:06:05,180
 Si quisiéramos decrementar la
 variable en 1, habríamos
 
-132
+133
 00:06:05,180 --> 00:06:08,390
 usado una sintaxis "menos menos", que
 hubiera producido un
 
-133
+134
 00:06:08,390 --> 00:06:10,860
 valor de 2 dentro
 de la variable trainWhistles.
