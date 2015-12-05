@@ -1,0 +1,627 @@
+﻿1
+00:00:03,950 --> 00:00:06,210
+Genial, ahora sabemos dónde
+están nuestros archivos.
+
+2
+00:00:06,210 --> 00:00:07,360
+Y sabemos cómo hacerlos.
+
+3
+00:00:07,360 --> 00:00:09,770
+Así que veamos si podemos poner
+algún código JavaScript en nuestro
+
+4
+00:00:09,770 --> 00:00:13,360
+archivo trains.js y tener
+algo que lo ejecute.
+
+5
+00:00:13,360 --> 00:00:15,990
+Pongamos unas cuantas expresiones
+de tipo consola dentro de nuestro
+
+6
+00:00:15,990 --> 00:00:19,980
+archivo trains.js solo para ver si
+obtenemos una buena respuesta de
+
+7
+00:00:19,980 --> 00:00:21,910
+nuestro compilador.
+
+8
+00:00:21,910 --> 00:00:23,280
+Oh oh, error -
+
+9
+00:00:23,280 --> 00:00:24,090
+qué pasa?
+
+10
+00:00:24,090 --> 00:00:28,350
+Bueno, al compilador no le agrada
+como hemos ingresado nuestra
+
+11
+00:00:28,350 --> 00:00:30,120
+orden en el archivo.
+
+12
+00:00:30,120 --> 00:00:33,230
+Necesitamos algo un poco
+diferente para que entienda
+
+13
+00:00:33,230 --> 00:00:36,540
+nuestra representación del archivo.
+
+14
+00:00:36,540 --> 00:00:39,120
+Tenemos que tener una forma de
+diferenciar entre
+
+15
+00:00:39,120 --> 00:00:41,100
+las órdenes mismas.
+
+16
+00:00:41,100 --> 00:00:43,140
+Aquí está la entrada de nuestra
+consola, verdad?
+
+17
+00:00:43,140 --> 00:00:45,460
+Si estuviéramos declarando una variable
+para trainsOperational
+
+18
+00:00:45,460 --> 00:00:47,870
+solo la declararíamos  y
+diríamos que equivale a 8.
+
+19
+00:00:47,870 --> 00:00:50,760
+Y estará lista y
+todo será genial.
+
+20
+00:00:50,760 --> 00:00:54,170
+Pero si ponemos múltiples órdenes
+de consola para ejecutar dentro
+
+21
+00:00:54,170 --> 00:00:57,900
+de un archivo, el compilador lo ve
+como esto--
+
+22
+00:00:57,900 --> 00:01:00,700
+que es solo una basura
+sin sentido tras otra.
+
+23
+00:01:00,700 --> 00:01:03,860
+Y no tiene idea dónde comienza
+tu orden, dónde
+
+24
+00:01:03,860 --> 00:01:05,300
+termina, o qué hacer.
+
+25
+00:01:05,300 --> 00:01:08,600
+Así que necesitamos una forma de decirle
+al compilador, terminamos de hacer
+
+26
+00:01:08,600 --> 00:01:11,060
+esta orden en particular.
+
+27
+00:01:11,060 --> 00:01:12,500
+Ingresa el punto y coma.
+
+28
+00:01:12,500 --> 00:01:14,540
+Punto y coma es cool.
+
+29
+00:01:14,540 --> 00:01:16,110
+Nos gusta.
+
+30
+00:01:16,110 --> 00:01:19,130
+Aquí tenemos lo que sería una entrada
+normal de consola para
+
+31
+00:01:19,130 --> 00:01:20,700
+nuestra variable trainsOperational.
+
+32
+00:01:20,700 --> 00:01:22,820
+Y la única cosa que necesitaríamos
+hacer para decirle al
+
+33
+00:01:22,820 --> 00:01:26,650
+compilador en un archivo que
+terminamos de hacer esa orden es
+
+34
+00:01:26,650 --> 00:01:29,590
+meter un punto y coma
+al final de ese estado.
+
+35
+00:01:29,590 --> 00:01:32,780
+Dice: "Hey, terminamos con
+esta expresión en particular.
+
+36
+00:01:32,780 --> 00:01:36,590
+Ve y haz eso antes de incluso
+mirar al siguiente."
+
+37
+00:01:36,590 --> 00:01:39,670
+Ahora, si tuvieramos un archivo
+wootForSemicolons y ponemos todas
+
+38
+00:01:39,670 --> 00:01:41,990
+nuestras ordenes en ella, cada
+uno de ellos separado  por un
+
+39
+00:01:41,990 --> 00:01:46,080
+punto y coma, tendríamos
+un fantástico vacío.
+
+40
+00:01:46,080 --> 00:01:46,540
+Qué?!
+
+41
+00:01:46,540 --> 00:01:47,340
+Qué está pasando?
+
+42
+00:01:47,340 --> 00:01:49,640
+Por qué no obtuvimos nada?
+
+43
+00:01:49,640 --> 00:01:52,220
+Acabamos de poner todas esas cosas
+ahí con nuestro punto y coma.
+
+44
+00:01:52,220 --> 00:01:54,640
+Ejecutó bien
+los estados.
+
+45
+00:01:54,640 --> 00:01:56,090
+Pero obtuvimos nada.
+
+46
+00:01:56,090 --> 00:01:59,330
+Y eso es porque todo
+lo que pasó con esas
+
+47
+00:01:59,330 --> 00:02:03,090
+ordenes, pasaron dentro del
+compilador y el compilador
+
+48
+00:02:03,090 --> 00:02:05,920
+nunca imprimió nada
+para nuestro usuario.
+
+49
+00:02:05,920 --> 00:02:09,590
+Necesitamos una forma de obtener los resultados
+de nuestras computaciones en
+
+50
+00:02:09,590 --> 00:02:13,630
+el compilador para el usuario.
+
+51
+00:02:13,630 --> 00:02:16,590
+Así que, para poder imprimir de un archivo
+a la consola, usaremos
+
+52
+00:02:16,590 --> 00:02:20,110
+este método genial llamado El
+método console.log
+
+53
+00:02:20,110 --> 00:02:23,070
+Va a sacar el resultado de
+las operaciones de tu código
+
+54
+00:02:23,070 --> 00:02:25,830
+desde tu archivo a la consola.
+
+55
+00:02:25,830 --> 00:02:28,410
+Digamos que en nuestro sistema de tren
+teníamos 12 trenes en total,
+
+56
+00:02:28,410 --> 00:02:33,560
+como sabemos, pero también tenemos
+8 trenes operacionales hoy.
+
+57
+00:02:33,560 --> 00:02:35,550
+Si quisiéramos crear un mensaje
+para el usuario en la
+
+58
+00:02:35,550 --> 00:02:39,160
+consola que les diga cuántos
+trenes funcionales tenemos
+
+59
+00:02:39,160 --> 00:02:42,750
+hoy, podríamos usar el
+método console.log y colocar
+
+60
+00:02:42,750 --> 00:02:46,700
+una expresión que construya una
+cadena dentro de sus parámetros.
+
+61
+00:02:46,700 --> 00:02:50,630
+Esto logueará, o imprimirá
+los contenidos de la cadena
+
+62
+00:02:50,630 --> 00:02:52,320
+a la consola del navegador.
+
+63
+00:02:52,320 --> 00:02:55,530
+Y nota que ahí ya no hay
+comillas alrededor
+
+64
+00:02:55,530 --> 00:02:57,130
+de esa cadena.
+
+65
+00:02:57,130 --> 00:02:59,220
+Ahora podemos poner cualquier expresión
+que queramos dentro
+
+66
+00:02:59,220 --> 00:03:00,700
+del método console.log.
+
+67
+00:03:00,700 --> 00:03:03,720
+Podríamos incluso preguntar si el
+trainsOperational es igual
+
+68
+00:03:03,720 --> 00:03:05,000
+a totalTrains.
+
+69
+00:03:05,000 --> 00:03:08,005
+Y como no lo es, console.log
+dirá, Falso.
+
+70
+00:03:12,230 --> 00:03:16,360
+Ahora tenemos una forma de
+obtener nuestros mensajes impresos
+
+71
+00:03:16,360 --> 00:03:19,400
+a la pantalla para que el usuario pueda
+verlos, y ellos no
+
+72
+00:03:19,400 --> 00:03:22,270
+quedarán solo dentro del
+compilador en sí.
+
+73
+00:03:22,270 --> 00:03:26,130
+Podemos usar console.log dentro de
+nuestro archivo trains.js para imprimir
+
+74
+00:03:26,130 --> 00:03:27,630
+cada tren funcional.
+
+75
+00:03:27,630 --> 00:03:30,440
+Así que hagamos eso.
+
+76
+00:03:30,440 --> 00:03:33,550
+Aquí está cada uno de los últimos
+trenes funcionales.
+
+77
+00:03:33,550 --> 00:03:36,950
+Wow, y veamos
+qué obtendremos.
+
+78
+00:03:36,950 --> 00:03:39,820
+Cada uno imprime
+en orden.
+
+79
+00:03:39,820 --> 00:03:43,310
+Y vemos exactamente cuántos
+trenes están funcionando y cuáles
+
+80
+00:03:43,310 --> 00:03:44,590
+están funcionando.
+
+81
+00:03:47,510 --> 00:03:50,570
+Aquí tenemos nuestro
+archivo index.html
+
+82
+00:03:50,570 --> 00:03:54,630
+Y sabemos que eso hace referencia
+a nuestro archivo de origen
+
+83
+00:03:54,630 --> 00:03:55,670
+JavaScript trains.js
+
+84
+00:03:55,670 --> 00:03:59,800
+Y si abrimos nuestro archivo
+index.html podemos ver nuestro encabezado
+
+85
+00:03:59,800 --> 00:04:02,670
+genérico JavaScript Express
+que pusimos dentro
+
+86
+00:04:02,670 --> 00:04:04,420
+de nuestro archivo HTML antes.
+
+87
+00:04:04,420 --> 00:04:07,730
+Pero no vemos ninguna impresión
+de nuestros trenes funcionales.
+
+88
+00:04:07,730 --> 00:04:08,710
+Por qué es eso?
+
+89
+00:04:08,710 --> 00:04:10,640
+Pusimos nuestros puntos y comas
+dentro, verdad?
+
+90
+00:04:10,640 --> 00:04:14,280
+Bueno, recuerda que nuestro
+método console.log imprime sus
+
+91
+00:04:14,280 --> 00:04:16,750
+mensajes solo a la consola.
+
+92
+00:04:16,750 --> 00:04:19,600
+Así que, todo lo que haremos aquí para ver
+nuestros resultados es ir al
+
+93
+00:04:19,600 --> 00:04:22,440
+menú y abrir nuestra consola
+JavaScript, que ya
+
+94
+00:04:22,440 --> 00:04:24,260
+sabemos cómo hacer.
+
+95
+00:04:24,260 --> 00:04:27,010
+Y ahí a la izquierda puedes
+ver nuestras impresiones
+
+96
+00:04:27,010 --> 00:04:30,886
+de los trenes funcionales exactamente
+como queremos que sean.
+
+97
+00:04:30,886 --> 00:04:33,620
+Puedes preguntarte qué son
+estas anotaciones aquí
+
+98
+00:04:33,620 --> 00:04:35,880
+a la derecha de nuestro log.
+
+99
+00:04:35,880 --> 00:04:37,460
+Y esa sería una
+excelente pregunta.
+
+100
+00:04:37,460 --> 00:04:41,680
+Estos son indicadores que muestran
+qué archivos causaron la línea
+
+101
+00:04:41,680 --> 00:04:46,540
+actual de salida a la izquierda
+junto con la línea exacta
+
+102
+00:04:46,540 --> 00:04:49,370
+dentro del archivo que
+causó la salida.
+
+103
+00:04:49,370 --> 00:04:51,860
+Esto es muy útil cuando
+tienes muchos códigos en un archivo
+
+104
+00:04:51,860 --> 00:04:54,470
+fuente, o incluso múltiples archivos
+fuente, y necesitas
+
+105
+00:04:54,470 --> 00:04:59,490
+apuntar cómo o por qué ciertas
+impresiones aparecieron.
+
+106
+00:04:59,490 --> 00:05:02,890
+Ahora hemos combinado punto y comas
+y el método console.log
+
+107
+00:05:02,890 --> 00:05:06,400
+para producir cada mensaje
+para cada tren.
+
+108
+00:05:06,400 --> 00:05:09,800
+Y puedes ver que la consola
+obedece convenientemente y
+
+109
+00:05:09,800 --> 00:05:11,940
+produce cada mensaje
+que queríamos.
+
+110
+00:05:15,230 --> 00:05:17,650
+Entonces, veamos nuestro estado
+actual del sistema de trenes.
+
+111
+00:05:17,650 --> 00:05:21,140
+Tenemos un archivo
+index.html que cargará
+
+112
+00:05:21,140 --> 00:05:22,600
+todo el código HTML.
+
+113
+00:05:22,600 --> 00:05:24,660
+Y una vez que esté cargado,
+irá y buscará
+
+114
+00:05:24,660 --> 00:05:26,620
+el archivo trains.js.
+
+115
+00:05:26,620 --> 00:05:30,470
+Y dentro de ese archivo trains.js
+ejecutará una buena cantidad
+
+116
+00:05:30,470 --> 00:05:33,370
+de nuestro código JavaScript
+para obtener nuestros mensajes de trenes
+
+117
+00:05:33,370 --> 00:05:36,460
+impresos al usuario.
+
+118
+00:05:36,460 --> 00:05:37,410
+Adivina que?
+
+119
+00:05:37,410 --> 00:05:39,220
+Este código como que apesta también.
+
+120
+00:05:39,220 --> 00:05:40,600
+Whomp, whomp.
+
+121
+00:05:40,600 --> 00:05:41,610
+Por qué?
+
+122
+00:05:41,610 --> 00:05:44,740
+Porque, qué pasaría si
+habían 124 trenes?
+
+123
+00:05:44,740 --> 00:05:47,550
+Querrías tipear cada uno
+de esos
+
+124
+00:05:47,550 --> 00:05:50,650
+mensajes log del console.log en
+tu archivo trains.js?
+
+125
+00:05:50,650 --> 00:05:52,400
+Creo que no.
+
+126
+00:05:52,400 --> 00:05:56,840
+Y necesitamos una forma de resolver
+este asunto de código repetitivo.
+
+127
+00:05:56,840 --> 00:05:59,380
+Y eso estará en
+la siguiente sección.
+
+128
+00:05:59,380 --> 00:06:00,630
+Te veremos pronto.
+
+129
+00:06:02,683 --> 00:06:03,017
+[BEEP BEEP]
+
+130
+00:06:07,080 --> 00:06:09,214
+TM de pbbt -
+
+131
+00:06:09,214 --> 00:06:09,670
+[BEEP BEEP]
+
+132
+00:06:09,670 --> 00:06:13,710
+Esto puede ser usado muchas
+veces, cada vez.
+
+133
+00:06:13,710 --> 00:06:15,030
+Muchas veces?
+
+134
+00:06:15,030 --> 00:06:15,380
+[BEEP BEEP]
+
+135
+00:06:15,380 --> 00:06:16,730
+Así que cómo mostramos, mostramos, mostramos--
