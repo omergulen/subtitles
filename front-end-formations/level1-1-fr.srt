@@ -90,81 +90,81 @@ utilisé comme une définition pour
 
 20
 00:01:05,770 --> 00:01:08,090
-the latest standard of CSS.
+la dernière norme de CSS.
 
 21
 00:01:08,090 --> 00:01:11,010
-And there are several new
-features in CSS3, and we'll
+Et il ya plusieurs nouvelles
+fonctionnalités de CSS3, et nous allons
 
 22
 00:01:11,010 --> 00:01:14,560
-cover several of those here,
-such as border radius, box
+couvrir plusieurs de ceux qui sont ici,
+comme border-radius, box
 
 23
 00:01:14,560 --> 00:01:18,020
-shadow and text shadow,
-transitions and transforms,
+shadow et text-shadow,
+transitions et transformations,
 
 24
 00:01:18,020 --> 00:01:22,620
-gradients, multiple backgrounds,
-and font face.
+les dégradés, les backgrounds multiples,
+et font face.
 
 25
 00:01:22,620 --> 00:01:26,080
-Now text shadow and font face
-will actually predate CSS3,
+Texte shadow et font face
+seront effectivement antérieurs à CSS3,
 
 26
 00:01:26,080 --> 00:01:29,100
-but they're still important
-components to modern CSS.
+mais ils sont toujours des éléments importants
+au CSS actuel.
 
 27
 00:01:29,100 --> 00:01:31,970
-So we're going to cover
-them in this course.
+Nous allons donc les couvrir
+dans ce cours.
 
 28
 00:01:31,970 --> 00:01:34,570
-So now that we've given a brief
-overview CSS3, let's
+Maintenant que nous avons donné un un bref
+aperçu de CSS3,
 
 29
 00:01:34,570 --> 00:01:36,250
-move on to talk about
-some of the updated
+parlons maintenant de 
+quelques-uns des éléments HTML mises à jour
 
 30
 00:01:36,250 --> 00:01:39,060
-HTML elements in HTML5.
+in HTML5.
 
 31
 00:01:39,060 --> 00:01:42,310
-And those elements include,
-the doctype, the meta
+Et ces éléments sont,
+le doctype, la déclaration meta
 
 32
 00:01:42,310 --> 00:01:46,230
-declaration, the script
-tag, and the link tag.
+la balise de script,
+et la balise de lien.
 
 33
 00:01:46,230 --> 00:01:48,480
-So let's start by talking
-about the doctype.
+Commençons donc par parler
+du doctype.
 
 34
 00:01:48,480 --> 00:01:52,120
-Now in HTML 4.01, there
-were a few doctypes.
+en HTML 4.01, il y avait 
+quelques doctypes.
 
 35
 00:01:52,120 --> 00:01:56,770
-We had the strict doctype, the
-transitional doctype, and
+Nous avons eu le doctype strict, le
+transitional doctype, et
 
 36
 00:01:56,770 --> 00:01:58,280
