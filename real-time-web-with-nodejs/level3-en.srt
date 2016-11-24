@@ -57,7 +57,7 @@ Time Web with Node.
 
 13
 00:00:34,800 --> 00:00:35,700
-I'm Carl Souza.
+I'm Carlos Souza.
 
 14
 00:00:35,700 --> 00:00:38,910
@@ -76,7 +76,7 @@ access and accessing
 
 17
 00:00:43,590 --> 00:00:47,340
-files in the disk, one thing
+files on the disk, one thing
 that we have to keep an eye out
 
 18
@@ -155,7 +155,7 @@ that we've covered here,
 33
 00:01:29,160 --> 00:01:36,320
 is for Node version 0.10,
-also known as Streams2 API.
+also known as streams2 API.
 
 34
 00:01:36,320 --> 00:01:38,370
@@ -198,7 +198,7 @@ the 200 status code,
 
 42
 00:01:59,460 --> 00:02:02,490
-and writes dog is
+and writes Dog is
 running to the stream.
 
 43
@@ -413,7 +413,7 @@ call the toString function.
 
 87
 00:04:04,170 --> 00:04:07,710
-Response.write does that
+response.write does that
 behind the scenes for us.
 
 88
@@ -443,11 +443,11 @@ two operations together.
 
 93
 00:04:22,530 --> 00:04:24,600
-This method is called Pipe.
+This method is called pipe.
 
 94
 00:04:24,600 --> 00:04:27,360
-Pipe handles all of the
+pipe handles all of the
 events listening and chunk
 
 95
@@ -467,7 +467,7 @@ uncurl from the terminal
 98
 00:04:38,040 --> 00:04:40,770
 and send in the
-string, hello, we
+string, 'hello', we
 
 99
 00:04:40,770 --> 00:04:43,680
@@ -481,7 +481,7 @@ to the Unix syntax,
 
 101
 00:04:45,810 --> 00:04:49,200
-then you might remember Pipe
+then you might remember pipe
 from the command line, which
 
 102
@@ -496,7 +496,7 @@ to the input of the next one.
 104
 00:04:54,510 --> 00:04:57,330
 Whenever you can,
-prefer using Pipe
+prefer using pipe
 
 105
 00:04:57,330 --> 00:04:59,220
@@ -664,7 +664,7 @@ Gulp build system.
 
 139
 00:06:45,960 --> 00:06:50,040
-Gulp exposes the Pipe
+gulp exposes the pipe
 function as its public API
 
 140
@@ -680,7 +680,7 @@ few lines of code.
 142
 00:06:55,520 --> 00:06:57,510
 I suggest you check
-out Gulp's website
+out gulp's website
 
 143
 00:06:57,510 --> 00:07:01,800
@@ -689,7 +689,7 @@ using streams in the wild.
 
 144
 00:07:01,800 --> 00:07:05,430
-We can Pipe any read stream
+We can pipe any read stream
 into any write stream.
 
 145
@@ -700,7 +700,7 @@ the two examples
 146
 00:07:07,440 --> 00:07:11,140
 so we can read from the
-request and Pipe it to a file.
+request and pipe it to a file.
 
 147
 00:07:11,140 --> 00:07:13,760
@@ -748,7 +748,7 @@ this from our client,
 156
 00:07:32,880 --> 00:07:37,500
 we call curl with a dash dash
-upload file option passing
+upload-file option passing
 
 157
 00:07:37,500 --> 00:07:39,750
@@ -921,11 +921,11 @@ as the file is being uploaded.
 192
 00:09:21,450 --> 00:09:25,920
 To implement this, all we need
-is the HTTP module and the file
+is the HTTP module and the File
 
 193
 00:09:25,920 --> 00:09:27,810
-system module,
+System module,
 which you've already
 
 194
