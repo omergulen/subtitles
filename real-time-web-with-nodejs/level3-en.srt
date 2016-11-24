@@ -1,988 +1,1064 @@
-﻿1
-00:00:00,820 --> 00:00:01,910
-(SINGING) Your online
+1
+00:00:00,000 --> 00:00:01,240
+
 
 2
-00:00:01,910 --> 00:00:03,775
-application's starting to fail.
+00:00:01,240 --> 00:00:03,720
+[SINGING] Your online
+application's starting to fail,
 
 3
-00:00:03,775 --> 00:00:07,330
-It's crawling on the network
-just as fast as a snail.
+00:00:03,720 --> 00:00:07,540
+and it's crawling on the
+network just as fast as a snail.
 
 4
-00:00:07,330 --> 00:00:10,970
-We need evented programming
-starting from the top that'll
+00:00:07,540 --> 00:00:10,690
+We need advanced programming
+starting from the top.
 
 5
-00:00:10,970 --> 00:00:13,260
-write some code so the
-world doesn't stop.
+00:00:10,690 --> 00:00:12,985
+Better write some code so
+the world doesn't stop.
 
 6
-00:00:16,055 --> 00:00:19,750
-With the non-blocking model,
-we will be just fine.
+00:00:12,985 --> 00:00:15,922
+
 
 7
-00:00:19,750 --> 00:00:22,370
-Built some Google Chrome's
-V8 runtime.
+00:00:15,922 --> 00:00:19,250
+With the non-blocking
+model, we will be just fine.
 
 8
-00:00:22,370 --> 00:00:25,970
-And all you need to do is write
-some JavaScript code and
+00:00:19,250 --> 00:00:22,490
+Build some Google
+Chromes, right on time.
 
 9
-00:00:25,970 --> 00:00:27,676
-use the Real Time
-Web with Node.
+00:00:22,490 --> 00:00:25,780
+And if all you need to do is
+write some JavaScript code,
 
 10
-00:00:33,100 --> 00:00:35,660
-(SPEAKING) You're watching Real
-Time Web with Node.js,
+00:00:25,780 --> 00:00:28,210
+and use the real-time
+web with Node.
 
 11
-00:00:35,660 --> 00:00:37,540
-and this is Level Three where
-we're going to be talking
+00:00:28,210 --> 00:00:32,549
+
 
 12
-00:00:37,540 --> 00:00:39,630
-about streams.
+00:00:32,549 --> 00:00:34,800
+You're watching Real
+Time Web with Node.
 
 13
-00:00:39,630 --> 00:00:42,030
-So in Node, we're building a lot
-of network applications.
+00:00:34,800 --> 00:00:35,700
+I'm Carl Souza.
 
 14
-00:00:42,030 --> 00:00:44,130
-And we're sending data
-back and forth.
+00:00:35,700 --> 00:00:38,910
+And in this level, we're going
+to be talking about streams.
 
 15
-00:00:44,130 --> 00:00:46,740
-Some of that data might be big,
-and we want to be able to
+00:00:38,910 --> 00:00:40,410
+When we're writing
+applications that
 
 16
-00:00:46,740 --> 00:00:48,780
-start processing that data
-the moment that it
+00:00:40,410 --> 00:00:43,590
+depend a lot on network
+access and accessing
 
 17
-00:00:48,780 --> 00:00:51,690
-arrives, piece by piece.
+00:00:43,590 --> 00:00:47,340
+files in the disk, one thing
+that we have to keep an eye out
 
 18
-00:00:51,690 --> 00:00:55,100
-And we do that using streams.
+00:00:47,340 --> 00:00:51,030
+for is how the data is being
+transferred back and forth.
 
 19
-00:00:55,100 --> 00:00:57,880
-Streams can be readable,
-writeable, or both.
+00:00:51,030 --> 00:00:55,560
+Lucky for us, this is where
+Node.js really shines.
 
 20
-00:00:57,880 --> 00:01:00,660
-And you may not have known it,
-but you've already been
+00:00:55,560 --> 00:00:58,320
+For ultimate efficiency,
+and especially when
 
 21
-00:01:00,660 --> 00:01:01,820
-working with streams.
+00:00:58,320 --> 00:01:00,480
+we're dealing with
+large sized data that's
 
 22
-00:01:01,820 --> 00:01:03,580
-If you look back at our example
-we've been going
+00:01:00,480 --> 00:01:02,490
+being sent across
+the wire, we need
 
 23
-00:01:03,580 --> 00:01:06,840
-through, that request is a
-readable stream, and the
+00:01:02,490 --> 00:01:05,760
+to be able to access
+that data piece by piece,
 
 24
-00:01:06,840 --> 00:01:09,740
-response is a writeable
-stream.
+00:01:05,760 --> 00:01:07,710
+or chunk by chunk.
 
 25
-00:01:09,740 --> 00:01:12,000
-Now let's get the rest of
-this code back in here.
+00:01:07,710 --> 00:01:10,530
+When that happens, we can
+start manipulating that data
 
 26
-00:01:12,000 --> 00:01:14,060
-And if you looked under the
-covers, if you looked on our
+00:01:10,530 --> 00:01:12,660
+as soon as it arrives
+in the server,
 
 27
-00:01:14,060 --> 00:01:16,780
-client's side as to what it's
-receiving when it receives
+00:01:12,660 --> 00:01:16,590
+and keep it from being held
+into memory all at once.
 
 28
-00:01:16,780 --> 00:01:20,330
-this data, you would see that
-it receives first "Dog is
+00:01:16,590 --> 00:01:20,730
+Streams are like channels, where
+data can simply flow through.
 
 29
-00:01:20,330 --> 00:01:23,540
-running," and then five seconds
-later, it gets another
+00:01:20,730 --> 00:01:22,330
+They can be of different types.
 
 30
-00:01:23,540 --> 00:01:27,940
-packet, which contains
-"Dog is done."
+00:01:22,330 --> 00:01:23,830
+We're going to be
+looking at the two
 
 31
-00:01:27,940 --> 00:01:29,630
-Up until now, we've
-only been sending
+00:01:23,830 --> 00:01:27,050
+most common, readable
+and writable streams.
 
 32
-00:01:29,630 --> 00:01:31,130
-data back to the response.
+00:01:27,050 --> 00:01:29,160
+And the streams API
+that we've covered here,
 
 33
-00:01:31,130 --> 00:01:34,980
-But how do we read from the
-request if we send some data
+00:01:29,160 --> 00:01:36,320
+is for Node version 0.10,
+also known as Streams2 API.
 
 34
-00:01:34,980 --> 00:01:35,720
-into the server?
+00:01:36,320 --> 00:01:38,370
+Some of the code that
+we've seen in the course
 
 35
-00:01:35,720 --> 00:01:38,690
-Well, that request is a
-readable stream, which
+00:01:38,370 --> 00:01:41,280
+has already involved
+working with streams.
 
 36
-00:01:38,690 --> 00:01:40,730
-inherits from event emitter.
+00:01:41,280 --> 00:01:44,840
+The request object for
+example, is a readable stream.
 
 37
-00:01:40,730 --> 00:01:44,640
-It emits a couple different
-events, two of which are the
+00:01:44,840 --> 00:01:48,030
+And the response object
+is a writable stream.
 
 38
-00:01:44,640 --> 00:01:48,780
-data event and the end event
-when it's done transmitting
+00:01:48,030 --> 00:01:51,360
+We read data from the
+request and we write data
 
 39
-00:01:48,780 --> 00:01:50,020
-data to the server.
+00:01:51,360 --> 00:01:53,130
+to the response.
 
 40
-00:01:50,020 --> 00:01:51,900
-Let's write some code together,
-where we print what
+00:01:53,130 --> 00:01:56,310
+When we run this code, an issue
+or request from the browser,
 
 41
-00:01:51,900 --> 00:01:53,770
-we receive from the request.
+00:01:56,310 --> 00:01:59,460
+our server responds with
+the 200 status code,
 
 42
-00:01:53,770 --> 00:01:55,550
-So here we create the server.
+00:01:59,460 --> 00:02:02,490
+and writes dog is
+running to the stream.
 
 43
-00:01:55,550 --> 00:01:58,860
-We write the status code,
-and then we listen
+00:02:02,490 --> 00:02:06,000
+The browser automatically
+receives that response.
 
 44
-00:01:58,860 --> 00:02:00,680
-for the data event.
+00:02:06,000 --> 00:02:09,990
+Then, we fire a set
+timeout for five seconds.
 
 45
-00:02:00,680 --> 00:02:03,270
-Whenever a chunk of data
-comes in, we'll
+00:02:09,990 --> 00:02:12,420
+But the stream is
+still kept open.
 
 46
-00:02:03,270 --> 00:02:04,720
-log it to the console.
+00:02:12,420 --> 00:02:14,490
+The channel between the
+server and the client
 
 47
-00:02:04,720 --> 00:02:07,930
-We have to call toString,
-because chunk is a buffer.
+00:02:14,490 --> 00:02:16,380
+is still good to receive data.
 
 48
-00:02:07,930 --> 00:02:10,570
-We could be dealing with
-binary data here.
+00:02:16,380 --> 00:02:18,870
+So five seconds
+later, we write again
 
 49
-00:02:10,570 --> 00:02:13,400
-Then when there's no more data
-to read on the request, it's
+00:02:18,870 --> 00:02:22,630
+to this stream, this
+time, dog is done.
 
 50
-00:02:13,400 --> 00:02:16,350
-going to emit the end event.
+00:02:22,630 --> 00:02:24,170
+And finally, we close it.
 
 51
-00:02:16,350 --> 00:02:19,870
-And we can use that to
-end the response.
+00:02:24,170 --> 00:02:27,720
+
 
 52
-00:02:19,870 --> 00:02:22,330
-With this code, we're printing
-out whatever data we get from
+00:02:27,720 --> 00:02:29,940
+We've seen how to
+write to the response,
 
 53
-00:02:22,330 --> 00:02:23,310
-the request.
-
-54
-00:02:23,310 --> 00:02:26,690
-But how might we create an echo
-server and echo back to
-
-55
-00:02:26,690 --> 00:02:30,170
-the response what we're getting
+00:02:29,940 --> 00:02:33,360
+but how might we read
 from the request?
 
+54
+00:02:33,360 --> 00:02:36,240
+As we've mentioned
+before, the request object
+
+55
+00:02:36,240 --> 00:02:38,070
+is a readable stream.
+
 56
-00:02:30,170 --> 00:02:33,140
-Well, all we have to do is add
-one line of code here and
+00:02:38,070 --> 00:02:41,010
+And it also inherits
+from EventEmitter.
 
 57
-00:02:33,140 --> 00:02:36,710
-simply say response,
-write, chunk.
+00:02:41,010 --> 00:02:44,250
+This is a great combination,
+because the request object
 
 58
-00:02:36,710 --> 00:02:40,190
-When all we need to do is read
-data from a readable stream
+00:02:44,250 --> 00:02:48,540
+can then communicate with other
+objects through firing events.
 
 59
-00:02:40,190 --> 00:02:43,250
-and write it to a writeable
-stream, there's a shortcut in
+00:02:48,540 --> 00:02:51,000
+The events fired
+are readable, which
 
 60
-00:02:43,250 --> 00:02:45,350
-Node that makes this easier.
+00:02:51,000 --> 00:02:54,510
+is fired when data is
+ready to be consumed,
 
 61
-00:02:45,350 --> 00:02:46,895
-We can simply call
-request.pipe(response).
+00:02:54,510 --> 00:02:57,360
+and end which is
+fired the client
 
 62
-00:02:49,560 --> 00:02:52,890
-So basically, read stream
-pipe, write stream.
+00:02:57,360 --> 00:02:59,550
+is done sending all the data.
 
 63
-00:02:52,890 --> 00:02:56,000
-So if we replace our code with
-pipe and run our server, we
+00:02:59,550 --> 00:03:02,070
+Now, let's write some code
+where we print to the console
 
 64
-00:02:56,000 --> 00:02:58,970
-can then issue a request with
-some data and that's going to
+00:03:02,070 --> 00:03:04,680
+the data that we received
+from the request.
 
 65
-00:02:58,970 --> 00:03:01,250
-get echoed back out to us.
+00:03:04,680 --> 00:03:06,510
+So inside of our
+request handler,
 
 66
-00:03:01,250 --> 00:03:03,520
-Now if you're familiar with
-the Unix command line, you
+00:03:06,510 --> 00:03:09,660
+we start by responding
+with a 200 status code,
 
 67
-00:03:03,520 --> 00:03:04,580
-might have heard of pipe.
+00:03:09,660 --> 00:03:12,960
+then we'll listen to the
+readable event on the request
 
 68
-00:03:04,580 --> 00:03:08,880
-For example, maybe you cat a
-file and pipe that to the grep
+00:03:12,960 --> 00:03:14,070
+object.
 
 69
-00:03:08,880 --> 00:03:11,670
-command to find a
-specific word.
+00:03:14,070 --> 00:03:17,280
+Inside of that, we
+declare a chunk variable.
 
 70
-00:03:11,670 --> 00:03:14,720
-This is the same sort of
-technique, where you're piping
+00:03:17,280 --> 00:03:19,650
+Inside of the while loop,
+we're going to read out
 
 71
-00:03:14,720 --> 00:03:18,790
-a read stream to
-a write stream.
+00:03:19,650 --> 00:03:22,000
+a chunk from the request.
 
 72
-00:03:18,790 --> 00:03:20,790
-Let's go over another example
-of streaming.
+00:03:22,000 --> 00:03:25,450
+And if it's not new, we'll
+print it to the console.
 
 73
-00:03:20,790 --> 00:03:24,180
-This time let's read a file from
-our hard drive and write
+00:03:25,450 --> 00:03:27,210
+We have to call the
+toString function,
 
 74
-00:03:24,180 --> 00:03:25,660
-a file back.
+00:03:27,210 --> 00:03:29,790
+because the chunks we
+get, they are buffers.
 
 75
-00:03:25,660 --> 00:03:28,950
-So in this case, we require
-the file system module.
+00:03:29,790 --> 00:03:32,870
+So we might be dealing
+with binary data here.
 
 76
-00:03:28,950 --> 00:03:31,920
-We call the create read stream
-function, passing in the file
+00:03:32,870 --> 00:03:35,470
+Finally, we'll listen
+to the end event.
 
 77
-00:03:31,920 --> 00:03:32,980
-we want to read.
+00:03:35,470 --> 00:03:38,760
+And when that event is fired,
+we just finish the response.
 
 78
-00:03:32,980 --> 00:03:35,550
-That returns us a read
-stream obviously.
+00:03:38,760 --> 00:03:41,550
+With this code, we're printing
+to the console the data
 
 79
-00:03:35,550 --> 00:03:38,300
-And then we're going to create
-a new write stream for the
+00:03:41,550 --> 00:03:43,860
+that we get from the client.
 
 80
-00:03:38,300 --> 00:03:40,690
-file we want to write
-to, which returns a
+00:03:43,860 --> 00:03:46,770
+How might we change this
+so that we echo back
 
 81
-00:03:40,690 --> 00:03:42,350
-write stream obviously.
+00:03:46,770 --> 00:03:50,430
+to the client, the data
+that we get on the request?
 
 82
-00:03:42,350 --> 00:03:45,480
-All we have to do to read from
-one and write to the other is
+00:03:50,430 --> 00:03:52,774
+All we have to do
+is change one line.
 
 83
-00:03:45,480 --> 00:03:49,440
-simply do file.pipe(newfile).
+00:03:52,774 --> 00:03:56,410
+
 
 84
-00:03:49,440 --> 00:03:52,590
-That's all there is to it.
+00:03:56,410 --> 00:03:58,950
+In this case, instead
+of console.log,
 
 85
-00:03:52,590 --> 00:03:55,660
-Now let's combine both of these
-examples, where we're
+00:03:58,950 --> 00:04:01,300
+we call response.write, here.
 
 86
-00:03:55,660 --> 00:03:58,060
-going to connect to the server,
-we're going to send
+00:04:01,300 --> 00:04:04,170
+Notice that we don't have to
+call the toString function.
 
 87
-00:03:58,060 --> 00:04:01,340
-the server a file, and we want
-to write that to disk.
+00:04:04,170 --> 00:04:07,710
+Response.write does that
+behind the scenes for us.
 
 88
-00:04:01,340 --> 00:04:02,930
-What would that look like?
+00:04:07,710 --> 00:04:11,220
+When all we need to do is
+write to a writable stream
 
 89
-00:04:02,930 --> 00:04:05,280
-Let's include the HTTP module.
+00:04:11,220 --> 00:04:13,950
+as soon as we read from
+a readable stream, which
 
 90
-00:04:05,280 --> 00:04:06,730
-We're going to create
-our server.
+00:04:13,950 --> 00:04:15,970
+is exactly what
+we're doing here,
 
 91
-00:04:06,730 --> 00:04:08,690
-We already have our new file.
+00:04:15,970 --> 00:04:18,360
+Node actually offers
+a helper method
 
 92
-00:04:08,690 --> 00:04:12,320
-We're simply going take
-the request and pipe
+00:04:18,360 --> 00:04:22,530
+that we can use to pipe these
+two operations together.
 
 93
-00:04:12,320 --> 00:04:14,850
-that to the new file.
+00:04:22,530 --> 00:04:24,600
+This method is called Pipe.
 
 94
-00:04:14,850 --> 00:04:17,810
-We also need to listen for the
-end event on the request, so
+00:04:24,600 --> 00:04:27,360
+Pipe handles all of the
+events listening and chunk
 
 95
-00:04:17,810 --> 00:04:19,440
-we know when to end
-the response.
+00:04:27,360 --> 00:04:29,370
+reading behind the scenes.
 
 96
-00:04:19,440 --> 00:04:22,180
-And when we end the response,
-we can also send in a string
+00:04:29,370 --> 00:04:35,130
+So we can replace all of
+this code with this one line.
 
 97
-00:04:22,180 --> 00:04:24,950
-that we want to send it
-back to the client.
+00:04:35,130 --> 00:04:38,040
+Now, when you were
+uncurl from the terminal
 
 98
-00:04:24,950 --> 00:04:28,440
-Now if we run the server and we
-use curl to initiate a file
+00:04:38,040 --> 00:04:40,770
+and send in the
+string, hello, we
 
 99
-00:04:28,440 --> 00:04:32,140
-upload, it'll upload the file
-and print out "uploaded!" from
+00:04:40,770 --> 00:04:43,680
+can see that string
+being sent back.
 
 100
-00:04:32,140 --> 00:04:35,240
-the client side.
+00:04:43,680 --> 00:04:45,810
+In case you're used
+to the Unix syntax,
 
 101
-00:04:35,240 --> 00:04:37,640
-Now let's take a moment to
-reflect upon what's really
+00:04:45,810 --> 00:04:49,200
+then you might remember Pipe
+from the command line, which
 
 102
-00:04:37,640 --> 00:04:40,500
-going on here, because it
-is kind of amazing.
+00:04:49,200 --> 00:04:52,230
+streams the output
+of one operation
 
 103
-00:04:40,500 --> 00:04:43,420
-We're sending or we're streaming
-pieces of the file
+00:04:52,230 --> 00:04:54,510
+to the input of the next one.
 
 104
-00:04:43,420 --> 00:04:45,730
-from the client to the server.
+00:04:54,510 --> 00:04:57,330
+Whenever you can,
+prefer using Pipe
 
 105
-00:04:45,730 --> 00:04:47,070
-And then the server
-is streaming
+00:04:57,330 --> 00:04:59,220
+over listening to
+the readable event
 
 106
-00:04:47,070 --> 00:04:48,900
-that to the hard drive.
+00:04:59,220 --> 00:05:01,440
+and manually reading the chunks.
 
 107
-00:04:48,900 --> 00:04:51,520
-At no point in time does
-the server ever
+00:05:01,440 --> 00:05:03,870
+This can help protect
+your application
 
 108
-00:04:51,520 --> 00:04:52,560
-have the whole file.
+00:05:03,870 --> 00:05:07,320
+from future breaking changes
+to the stream's API, which
 
 109
-00:04:52,560 --> 00:04:54,270
-It's all streaming.
+00:05:07,320 --> 00:05:10,980
+is still not stable.
 
 110
-00:04:54,270 --> 00:04:56,890
-And what that means, because
-we're using Node, is that it's
+00:05:10,980 --> 00:05:14,790
+Remember that Node itself
+hasn't reached 1.0 yet.
 
 111
-00:04:56,890 --> 00:04:58,680
-also non-blocking.
+00:05:14,790 --> 00:05:18,330
+So it's always good to check
+whether a specific API that we
 
 112
-00:04:58,680 --> 00:05:01,030
-So if we take a look back at the
-time line, if we send in
+00:05:18,330 --> 00:05:20,590
+want to use is stable or not.
 
 113
-00:05:01,030 --> 00:05:04,050
-two files at the same time into
-the server, they're going
+00:05:20,590 --> 00:05:23,070
+And we can do that
+looking at the docs.
 
 114
-00:05:04,050 --> 00:05:07,450
-to be uploading and streaming
-in parallel.
+00:05:23,070 --> 00:05:26,640
+Each core module has a
+stability score next to it.
 
 115
-00:05:07,450 --> 00:05:10,040
-However, because we're streaming
-like this, piece by
+00:05:26,640 --> 00:05:30,120
+We can see that the file system
+module is considered stable
 
 116
-00:05:10,040 --> 00:05:13,440
-piece, it could introduce
-another problem, which looks
+00:05:30,120 --> 00:05:32,100
+with a score of three.
 
 117
-00:05:13,440 --> 00:05:17,030
-something like this, where we're
-reading files from the
+00:05:32,100 --> 00:05:36,330
+This means that no major changes
+are expected anytime soon.
 
 118
-00:05:17,030 --> 00:05:21,970
-client faster than we can write
-them to disk and pieces
+00:05:36,330 --> 00:05:38,820
+On the other hand,
+the streams module
 
 119
-00:05:21,970 --> 00:05:25,140
-of a file might get built up
-in memory and fill up our
+00:05:38,820 --> 00:05:42,580
+is still unstable
+with a score of 2.
 
 120
-00:05:25,140 --> 00:05:27,220
-memory, which is bad.
+00:05:42,580 --> 00:05:46,720
+This means that changes to
+the API are still possible.
 
 121
-00:05:27,220 --> 00:05:30,390
-Pipe takes care of this
-for us actually.
+00:05:46,720 --> 00:05:49,490
+So next time a new
+version of Node comes out,
 
 122
-00:05:30,390 --> 00:05:33,540
-It will properly pause the
-read stream, so the write
+00:05:49,490 --> 00:05:52,710
+it's important to check
+for any changes on streams
 
 123
-00:05:33,540 --> 00:05:34,500
-stream can catch up.
+00:05:52,710 --> 00:05:56,550
+or any other unstable API
+your Node application might
 
 124
-00:05:34,500 --> 00:05:37,360
-However, it's important that you
-know what's going on under
+00:05:56,550 --> 00:05:59,110
+be using.
 
 125
-00:05:37,360 --> 00:05:38,380
-the covers.
+00:05:59,110 --> 00:06:02,040
+Let's go over another
+example of using streams.
 
 126
-00:05:38,380 --> 00:05:41,810
-In order to do that, I've
-got a metaphor for you.
+00:06:02,040 --> 00:06:04,080
+This time, we're going
+to read the contents
 
 127
-00:05:41,810 --> 00:05:43,500
-This is our milk jug.
+00:06:04,080 --> 00:06:08,830
+from a file in the file system
+and stream it to another file.
 
 128
-00:05:43,500 --> 00:05:45,430
-We poked a whole in the bottom
-of our milk jug, and we're
+00:06:08,830 --> 00:06:11,640
+So first, we require
+the file system module,
 
 129
-00:05:45,430 --> 00:05:47,280
-going to start pouring
-milk into it.
+00:06:11,640 --> 00:06:15,090
+then we create a read stream
+from the original file,
 
 130
-00:05:47,280 --> 00:05:48,490
-We start pouring milk into it.
+00:06:15,090 --> 00:06:19,680
+readme.md, and store that
+to the file variable.
 
 131
-00:05:48,490 --> 00:05:50,540
-As you can see, it drains out
-the bottom, and it starts
+00:06:19,680 --> 00:06:23,760
+Then, we create a write stream
+to the destination file,
 
 132
-00:05:50,540 --> 00:05:52,220
-filling up, and filling
-up, and filling
+00:06:23,760 --> 00:06:28,680
+readme_copy.md, and store
+that on the new file variable.
 
 133
-00:05:52,220 --> 00:05:53,650
-up, and filling up.
+00:06:28,680 --> 00:06:31,920
+All we have to do
+is call file.pipe
 
 134
-00:05:53,650 --> 00:05:55,940
-So here, the milk that
-we're pouring in
+00:06:31,920 --> 00:06:34,230
+passing in the new file.
 
 135
-00:05:55,940 --> 00:05:57,890
-that's our read stream.
+00:06:34,230 --> 00:06:37,530
+Stream is so powerful,
+and yet, so simple
 
 136
-00:05:57,890 --> 00:05:59,370
-And the milk that's
-getting poured out
+00:06:37,530 --> 00:06:39,750
+to use with a pipe
+function, that there's
 
 137
-00:05:59,370 --> 00:06:00,710
-is our write stream.
+00:06:39,750 --> 00:06:42,940
+third party libraries
+that heavily depend on it.
 
 138
-00:06:00,710 --> 00:06:03,560
-And we're reading more
-than we were writing.
+00:06:42,940 --> 00:06:45,960
+One example is the
+Gulp build system.
 
 139
-00:06:03,560 --> 00:06:09,490
-So we need a way here to sort of
-pause that milk stream when
+00:06:45,960 --> 00:06:50,040
+Gulp exposes the Pipe
+function as its public API
 
 140
-00:06:09,490 --> 00:06:10,790
-our jug is too full.
+00:06:50,040 --> 00:06:52,140
+so you can do all
+sorts of manipulation
 
 141
-00:06:10,790 --> 00:06:15,730
-And then, once the milk jug is
-drained, we need a way to then
+00:06:52,140 --> 00:06:55,520
+on assets with very
+few lines of code.
 
 142
-00:06:15,730 --> 00:06:19,580
-resume the milk stream.
+00:06:55,520 --> 00:06:57,510
+I suggest you check
+out Gulp's website
 
 143
-00:06:19,580 --> 00:06:22,470
-Now let's figure out
-how we can do this
+00:06:57,510 --> 00:07:01,800
+to look at some examples of
+using streams in the wild.
 
 144
-00:06:22,470 --> 00:06:24,750
-with some Node code.
+00:07:01,800 --> 00:07:05,430
+We can Pipe any read stream
+into any write stream.
 
 145
-00:06:24,750 --> 00:06:27,700
-How might we pause when the
-write stream is full.
+00:07:05,430 --> 00:07:07,440
+So let's combine
+the two examples
 
 146
-00:06:27,700 --> 00:06:31,270
-Well, if we're reading the data
-chunk by chunk, when we
+00:07:07,440 --> 00:07:11,140
+so we can read from the
+request and Pipe it to a file.
 
 147
-00:06:31,270 --> 00:06:34,880
-call write on the writeStream,
-write is going to
+00:07:11,140 --> 00:07:13,760
+So we'll keep our
+write stream as is.
 
 148
-00:06:34,880 --> 00:06:40,070
-return false if our kernel
-buffer is full.
+00:07:13,760 --> 00:07:15,790
+But instead of
+reading from a file,
 
 149
-00:06:40,070 --> 00:06:45,380
-We can then check that, and if
-the buffer is not good, let's
+00:07:15,790 --> 00:07:17,690
+we're going to read
+from their requests,
 
 150
-00:06:45,380 --> 00:06:48,240
-go ahead and pause
-the read stream.
+00:07:17,690 --> 00:07:19,920
+calling request.pipe,
+and pipe being
 
 151
-00:06:48,240 --> 00:06:50,390
-Then we need to know when we can
-resume, when we're ready
+00:07:19,920 --> 00:07:22,500
+the content to the new file.
 
 152
-00:06:50,390 --> 00:06:51,670
-to write again.
+00:07:22,500 --> 00:07:25,520
+Lastly, we'll listen
+to the end event
 
 153
-00:06:51,670 --> 00:06:54,845
-We do that by listening
-for the drain event.
+00:07:25,520 --> 00:07:28,170
+and close the
+response, responding
 
 154
-00:06:54,845 --> 00:06:58,610
-And the drain event means we're
-ready to write again, so
+00:07:28,170 --> 00:07:30,540
+with an uploaded stream.
 
 155
-00:06:58,610 --> 00:07:00,860
-we can resume the read stream.
+00:07:30,540 --> 00:07:32,880
+Now, when we run
+this from our client,
 
 156
-00:07:00,860 --> 00:07:03,320
-And as we mentioned, all of
-this sort of logic is
+00:07:32,880 --> 00:07:37,500
+we call curl with a dash dash
+upload file option passing
 
 157
-00:07:03,320 --> 00:07:05,610
-encapsulated in that
-pipe command.
+00:07:37,500 --> 00:07:39,750
+in a file as an argument.
 
 158
-00:07:05,610 --> 00:07:07,120
-So if you're using pipe,
-you don't have to
+00:07:39,750 --> 00:07:41,407
+And then we can see
+the response back.
 
 159
-00:07:07,120 --> 00:07:10,490
-worry about back pressure.
+00:07:41,407 --> 00:07:44,110
+
 
 160
-00:07:10,490 --> 00:07:14,100
-One of the reasons Ryan Dahl
-created Node was to deal with
+00:07:44,110 --> 00:07:46,590
+So let's take a moment to
+visualize what's going on here,
 
 161
-00:07:14,100 --> 00:07:15,640
-file uploads.
+00:07:46,590 --> 00:07:50,190
+because it's pretty amazing
+that Node supports this.
 
 162
-00:07:15,640 --> 00:07:18,326
-If you're familiar with file
-uploads and web applications,
+00:07:50,190 --> 00:07:52,830
+So we're streaming
+pieces of the file
 
 163
-00:07:18,326 --> 00:07:21,980
-you know all of the drama that
-goes along with doing it well.
+00:07:52,830 --> 00:07:55,620
+from the client to the server.
 
 164
-00:07:21,980 --> 00:07:24,190
-Sometimes, file uploads
-can lock your server.
+00:07:55,620 --> 00:07:59,370
+And the server is streaming
+those pieces to disk
 
 165
-00:07:24,190 --> 00:07:25,390
-They can lock the world.
+00:07:59,370 --> 00:08:01,880
+as they are being
+read from the request.
 
 166
-00:07:25,390 --> 00:07:28,630
-And it's hard to get file
-progress as you upload.
+00:08:01,880 --> 00:08:03,570
+At no point in
+time is the server
 
 167
-00:07:28,630 --> 00:07:31,180
-But Node actually makes
-it easy to do.
+00:08:03,570 --> 00:08:06,740
+holding the entire
+file in memory at once.
 
 168
-00:07:31,180 --> 00:07:33,640
-So let's go ahead and try to
-implement our own file
+00:08:06,740 --> 00:08:09,060
+It's all just
+flowing continuously.
 
 169
-00:07:33,640 --> 00:07:35,980
-uploader with some progress.
+00:08:09,060 --> 00:08:12,960
+And due to Node's nature,
+it's all nonblocking.
 
 170
-00:07:35,980 --> 00:07:38,080
-Once we complete the file upload
-code, we're going to
+00:08:12,960 --> 00:08:17,000
+So if we try to upload two files
+at the same time to the server,
 
 171
-00:07:38,080 --> 00:07:41,720
-want to be able to issue a
-request and send in a file
+00:08:17,000 --> 00:08:19,758
+we can see that our node server
+can handle them simultaneously.
 
 172
-00:07:41,720 --> 00:07:45,270
-either from curl or from the
-browser and get back some
+00:08:19,758 --> 00:08:23,820
+
 
 173
-00:07:45,270 --> 00:07:47,390
-progress as it gets uploaded.
+00:08:23,820 --> 00:08:27,090
+One of the reasons that
+Ryan Dahl created Node.js
 
 174
-00:07:47,390 --> 00:07:49,200
-We're going to need two
-different modules to write
+00:08:27,090 --> 00:08:29,700
+was to deal with file uploads.
 
 175
-00:07:49,200 --> 00:07:52,530
-this, the HTTP server module
-and the file system module.
+00:08:29,700 --> 00:08:31,400
+If you've done enough
+web development,
 
 176
-00:07:52,530 --> 00:07:54,740
-We might want to go ahead and
-jump into the documentation
+00:08:31,400 --> 00:08:33,720
+then you're probably
+familiar with the whole drama
 
 177
-00:07:54,740 --> 00:07:57,740
-and take a look at these
-two modules.
+00:08:33,720 --> 00:08:37,440
+that goes around implementing
+file uploads correctly.
 
 178
-00:07:57,740 --> 00:07:59,700
-One thing, you might notice when
-you're going through the
+00:08:37,440 --> 00:08:39,559
+What a lot of web
+apps will try to do
 
 179
-00:07:59,700 --> 00:08:03,870
-Node documentation, because
-Node hasn't hit 1.0 yet,
+00:08:39,559 --> 00:08:42,870
+is to load the entire file
+into memory before writing it
 
 180
-00:08:03,870 --> 00:08:08,120
-different pieces of the code,
-different modules have
+00:08:42,870 --> 00:08:46,380
+to disk, which can cause all
+sorts of issues on the server
 
 181
-00:08:08,120 --> 00:08:11,340
-different stability levels, so
-you can see how often they
+00:08:46,380 --> 00:08:49,920
+side and affect all the other
+users of the same web app.
 
 182
-00:08:11,340 --> 00:08:12,065
-might change.
+00:08:49,920 --> 00:08:53,010
+And it's also tricky to be
+able to provide the file
 
 183
-00:08:12,065 --> 00:08:14,050
-You might want to keep
-an eye on that when
+00:08:53,010 --> 00:08:57,030
+progress to the clients as
+the file is being uploaded.
 
 184
-00:08:14,050 --> 00:08:15,930
-you're coding Node.
+00:08:57,030 --> 00:09:01,060
+In Node.js, we can actually
+do this quite simple.
 
 185
-00:08:15,930 --> 00:08:18,480
-To create this, we're going to
-start from our file upload
+00:09:01,060 --> 00:09:03,600
+So let's look at how we
+can implement our own file
 
 186
-00:08:18,480 --> 00:08:20,140
-code, which we already
-created.
+00:09:03,600 --> 00:09:06,260
+upload with progress.
 
 187
-00:08:20,140 --> 00:08:21,630
-First, we're going to
-add some variables.
+00:09:06,260 --> 00:09:09,090
+So this is what our
+uploader will look like.
 
 188
-00:08:21,630 --> 00:08:25,070
-We need to store the content
-length, the size of the file
+00:09:09,090 --> 00:09:12,800
+We need to be able to issue
+a request passing in a file,
 
 189
-00:08:25,070 --> 00:08:27,170
-inside fileBytes.
+00:09:12,800 --> 00:09:14,940
+either from the command
+line using curl,
 
 190
-00:08:27,170 --> 00:08:29,660
-We're also going to declare a
-variable to keep track of how
+00:09:14,940 --> 00:09:16,880
+or from the browser.
 
 191
-00:08:29,660 --> 00:08:31,820
-many bytes we've uploaded
-so far.
+00:09:16,880 --> 00:09:21,450
+And then, receive the progress
+as the file is being uploaded.
 
 192
-00:08:31,820 --> 00:08:34,280
-Then we're going to listen to
-that data event, which gets
+00:09:21,450 --> 00:09:25,920
+To implement this, all we need
+is the HTTP module and the file
 
 193
-00:08:34,280 --> 00:08:38,260
-called every time we receive a
-new chunk from the request.
+00:09:25,920 --> 00:09:27,810
+system module,
+which you've already
 
 194
-00:08:38,260 --> 00:08:40,390
-We're going to increase the
-number of uploaded bytes.
+00:09:27,810 --> 00:09:31,920
+been using from our
+previous examples.
 
 195
-00:08:40,390 --> 00:08:42,710
-We're going to get the length
-of the chunk and add that to
+00:09:31,920 --> 00:09:35,850
+So we'll start with our upload
+code, which we already created.
 
 196
-00:08:42,710 --> 00:08:44,700
-the uploaded bytes.
+00:09:35,850 --> 00:09:39,120
+Then, we need to know what the
+entire size of the file is.
 
 197
-00:08:44,700 --> 00:08:47,180
-We're going to calculate the
-total progress by dividing
+00:09:39,120 --> 00:09:41,400
+And we'll do that by
+reading the content length
 
 198
-00:08:47,180 --> 00:08:51,280
-uploaded bytes divided by total
-file bytes times 100.
+00:09:41,400 --> 00:09:43,310
+header from the request.
 
 199
-00:08:51,280 --> 00:08:52,470
-And we're simply going
-to write the
+00:09:43,310 --> 00:09:46,030
+We're going to store it
+on the filebytes variable.
 
 200
-00:08:52,470 --> 00:08:55,630
-progress back to the response.
+00:09:46,030 --> 00:09:48,000
+We'll create the
+upload bytes variable
 
 201
-00:08:55,630 --> 00:08:56,680
-That's all there is to it.
+00:09:48,000 --> 00:09:50,700
+to keep track of how
+many bytes were uploaded,
 
 202
-00:08:56,680 --> 00:09:00,440
-So let's jump into our terminal
-and run the code.
+00:09:50,700 --> 00:09:53,320
+and we'll initialize it to zero.
 
 203
-00:09:00,440 --> 00:09:04,160
-So here we're running
-the Node server.
+00:09:53,320 --> 00:09:55,530
+Then, listening to
+the readable event,
 
 204
-00:09:04,160 --> 00:09:07,530
-Then if we go to upload the
-file, we can see that it gives
+00:09:55,530 --> 00:10:00,150
+we'll loop through and read each
+of the chunks from the request.
 
 205
-00:09:07,530 --> 00:09:08,780
-us back progress.
+00:10:00,150 --> 00:10:02,970
+Inside of the while loop, we'll
+increment the uploaded bytes
 
 206
-00:09:15,812 --> 00:09:17,030
-And we're complete.
+00:10:02,970 --> 00:10:06,150
+variable with the
+length of each chunk.
 
 207
-00:09:17,030 --> 00:09:18,280
-Very cool.
+00:10:06,150 --> 00:10:10,800
+Then, we calculate progress by
+dividing uploaded bytes by file
 
 208
-00:09:18,280 --> 00:09:22,470
-Well, that about sums it up for
-this level on streaming.
+00:10:10,800 --> 00:10:13,410
+bytes, and multiply it by 100.
 
 209
-00:09:22,470 --> 00:09:24,690
-It's time for you to get
-into the challenges.
+00:10:13,410 --> 00:10:15,360
+Then, we send the progress
+back to the client
 
 210
-00:09:24,690 --> 00:09:26,840
-And Eric Allam will see
-you in level four.
+00:10:15,360 --> 00:10:17,790
+using the
+response.write function.
+
+211
+00:10:17,790 --> 00:10:22,070
+We use parseInt to round
+the progress to an integer.
+
+212
+00:10:22,070 --> 00:10:24,150
+Down at the bottom,
+Pipe is still
+
+213
+00:10:24,150 --> 00:10:26,690
+taking care of the
+actual upload for us.
+
+214
+00:10:26,690 --> 00:10:29,700
+And the only reason why are
+we using the readable event
+
+215
+00:10:29,700 --> 00:10:35,010
+is so that we can keep track
+of the current progress.
+
+216
+00:10:35,010 --> 00:10:39,050
+Now, when we run our
+code and upload our file,
+
+217
+00:10:39,050 --> 00:10:41,547
+we can see the progress.
+
+218
+00:10:41,547 --> 00:10:42,047
+Nice.
+
+219
+00:10:42,047 --> 00:10:44,910
+
+
+220
+00:10:44,910 --> 00:10:46,350
+So that's it for this level.
+
+221
+00:10:46,350 --> 00:10:48,430
+Have fun with the challenges.
+
+222
+00:10:48,430 --> 00:10:50,390
