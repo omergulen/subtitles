@@ -1,0 +1,113 @@
+﻿1
+00:00:10,320 --> 00:00:12,310
+Welcome to Projects,
+where you truly
+
+2
+00:00:12,310 --> 00:00:15,760
+get to put into practice what
+you've learned at Code School
+
+3
+00:00:15,760 --> 00:00:19,420
+by writing code on your
+local computer. Then having
+
+4
+00:00:19,420 --> 00:00:21,810
+Code School check your work.
+
+5
+00:00:21,810 --> 00:00:25,000
+To get started, we'll show
+you how to fork and clone
+
+6
+00:00:25,000 --> 00:00:27,110
+a repository on GitHub.
+
+7
+00:00:27,110 --> 00:00:30,960
+And if you've never used Git
+or GitHub before — don't worry.
+
+8
+00:00:30,960 --> 00:00:35,080
+We'll walk you through what you
+need to know to get started.
+
+9
+00:00:35,080 --> 00:00:36,940
+Once you have the
+code on your computer,
+
+10
+00:00:36,940 --> 00:00:39,370
+we'll have some tasks
+for you to complete
+
+11
+00:00:39,370 --> 00:00:41,360
+in your editor of choice.
+
+12
+00:00:41,360 --> 00:00:43,950
+Then, when you've successfully
+completed the tasks
+
+13
+00:00:43,950 --> 00:00:46,110
+and pushed your
+changes to GitHub,
+
+14
+00:00:46,110 --> 00:00:48,090
+we'll check your code for you.
+
+15
+00:00:48,090 --> 00:00:49,930
+After completing a
+project, you'll not only
+
+16
+00:00:49,930 --> 00:00:52,540
+know how to work
+with that technology.
+
+17
+00:00:52,540 --> 00:00:55,490
+You also have a
+working local project
+
+18
+00:00:55,490 --> 00:00:58,340
+to continue learning
+with and expand upon.
+
+19
+00:00:58,340 --> 00:01:02,320
+And as an added bonus, you can
+even earn badges on Code School
+
+20
+00:01:02,320 --> 00:01:03,880
+by completing projects.
+
+21
+00:01:03,880 --> 00:01:06,630
+Head over to the "Hello,
+Code School" Project
+
+22
+00:01:06,630 --> 00:01:08,440
+to give Projects a try.
+
+23
+00:01:08,440 --> 00:01:11,530
+Or pick out a project
+on a technology you want
+
+24
+00:01:11,530 --> 00:01:14,420
+to learn, and jump right in.
+
