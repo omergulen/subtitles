@@ -1,0 +1,343 @@
+﻿1
+00:00:03,090 --> 00:00:06,750
+Welcome back to Level 1,
+Section 2, Wily Wrapping,
+
+2
+00:00:06,750 --> 00:00:09,723
+where we learn that items can
+wrap, and lines can rotate.
+
+3
+00:00:13,690 --> 00:00:16,570
+Again, we're going to use some
+UI examples to try and learn
+
+4
+00:00:16,570 --> 00:00:18,050
+these new properties.
+
+5
+00:00:18,050 --> 00:00:21,010
+So we're going to display flex
+items across multiple lines.
+
+6
+00:00:21,010 --> 00:00:23,467
+We're going to change the
+direction of flex lines.
+
+7
+00:00:23,467 --> 00:00:25,425
+And we're going to
+distribute space vertically.
+
+8
+00:00:29,700 --> 00:00:31,406
+We're going to start
+off with a problem.
+
+9
+00:00:31,406 --> 00:00:33,030
+We learned in the
+first section that we
+
+10
+00:00:33,030 --> 00:00:35,490
+could group elements
+together to make sure
+
+11
+00:00:35,490 --> 00:00:38,610
+that they weren't sharing all
+of the space on a flex line.
+
+12
+00:00:38,610 --> 00:00:40,620
+However, there may be
+times where we want
+
+13
+00:00:40,620 --> 00:00:43,410
+the items to stack regardless.
+
+14
+00:00:43,410 --> 00:00:45,810
+Here's an example where
+it might be better
+
+15
+00:00:45,810 --> 00:00:50,860
+to have the text display
+underneath the image.
+
+16
+00:00:50,860 --> 00:00:52,770
+There's a property
+called flex-wrap
+
+17
+00:00:52,770 --> 00:00:54,720
+which defaults to nowrap,
+which is what we've
+
+18
+00:00:54,720 --> 00:00:56,610
+seen so far, where
+elements are sharing
+
+19
+00:00:56,610 --> 00:00:59,250
+the space on a single line.
+
+20
+00:00:59,250 --> 00:01:01,530
+If we change that
+value to wrap, items
+
+21
+00:01:01,530 --> 00:01:06,164
+that can't fit on the same line
+will wrap down to a new line.
+
+22
+00:01:06,164 --> 00:01:07,830
+Here, we can see that
+because there's not
+
+23
+00:01:07,830 --> 00:01:11,820
+enough space for all of the
+text to fit next to the image,
+
+24
+00:01:11,820 --> 00:01:14,070
+it's going to drop
+down below it.
+
+25
+00:01:14,070 --> 00:01:17,100
+Here, you can see that our
+flex items are now displayed
+
+26
+00:01:17,100 --> 00:01:21,480
+across two flex lines.
+
+27
+00:01:21,480 --> 00:01:23,120
+An interesting
+addition to Flexbox
+
+28
+00:01:23,120 --> 00:01:26,610
+is the ability to have
+items display in reverse.
+
+29
+00:01:26,610 --> 00:01:29,780
+Here, if we set our
+value to wrap-reverse,
+
+30
+00:01:29,780 --> 00:01:33,120
+our items that won't fit
+will wrap into a second line,
+
+31
+00:01:33,120 --> 00:01:35,640
+but display in
+the reverse order.
+
+32
+00:01:35,640 --> 00:01:38,310
+So now our div with
+our text is actually
+
+33
+00:01:38,310 --> 00:01:41,807
+stacked above our image.
+
+34
+00:01:41,807 --> 00:01:43,890
+There may not always be a
+practical use for these,
+
+35
+00:01:43,890 --> 00:01:45,424
+but they're there
+if you need them.
+
+36
+00:01:48,330 --> 00:01:50,250
+Now we're going to look
+at another problem.
+
+37
+00:01:50,250 --> 00:01:53,460
+We understood that we can
+set our items to wrap,
+
+38
+00:01:53,460 --> 00:01:55,410
+so when there's not
+enough space, items
+
+39
+00:01:55,410 --> 00:01:59,070
+will wrap down into a new line.
+
+40
+00:01:59,070 --> 00:02:02,670
+However, if there is enough
+space, our items won't wrap,
+
+41
+00:02:02,670 --> 00:02:06,720
+and they'll share the
+space on the flex line.
+
+42
+00:02:06,720 --> 00:02:08,130
+There are times
+where you'll want
+
+43
+00:02:08,130 --> 00:02:10,259
+all items to wrap regardless.
+
+44
+00:02:10,259 --> 00:02:12,210
+Here, the goal of
+this layout is to have
+
+45
+00:02:12,210 --> 00:02:17,490
+all of the items stacked on
+top of each other vertically.
+
+46
+00:02:17,490 --> 00:02:20,690
+The solution for this is
+the flex-direction property.
+
+47
+00:02:20,690 --> 00:02:25,800
+Its default value is row, and
+it accepts row, row-reverse,
+
+48
+00:02:25,800 --> 00:02:28,680
+column, and column-reverse.
+
+49
+00:02:28,680 --> 00:02:31,380
+We've seen row in action
+so far, but now you
+
+50
+00:02:31,380 --> 00:02:35,400
+can see if we change the value
+to column, all of our items
+
+51
+00:02:35,400 --> 00:02:38,390
+stack vertically.
+
+52
+00:02:38,390 --> 00:02:41,580
+What we've just
+done is told Flexbox
+
+53
+00:02:41,580 --> 00:02:46,020
+to align all of our items on a
+vertical flex line in a column
+
+54
+00:02:46,020 --> 00:02:48,540
+layout.
+
+55
+00:02:48,540 --> 00:02:50,040
+To look a little
+further into this,
+
+56
+00:02:50,040 --> 00:02:53,940
+it's possible to control page
+layout with flex-direction.
+
+57
+00:02:53,940 --> 00:02:56,800
+By making our body
+our flex container,
+
+58
+00:02:56,800 --> 00:02:58,710
+our header, main,
+and footer would
+
+59
+00:02:58,710 --> 00:03:02,010
+try to share all of the
+space on a flex line.
+
+60
+00:03:02,010 --> 00:03:04,170
+By changing the
+value to column,
+
+61
+00:03:04,170 --> 00:03:06,792
+those three elements are going
+to stack on top of each other.
+
+62
+00:03:10,980 --> 00:03:13,490
+The default behavior
+of a flex container
+
+63
+00:03:13,490 --> 00:03:15,680
+in the column
+direction is to adjust
+
+64
+00:03:15,680 --> 00:03:18,710
+to the height of the content.
+
+65
+00:03:18,710 --> 00:03:21,290
+If we wanted to create
+a full-screen experience
+
+66
+00:03:21,290 --> 00:03:25,190
+for our layout, we would
+use some non-Flexbox CSS
+
+67
+00:03:25,190 --> 00:03:29,960
+and apply a height of 100% to
+our HTML, body, and main tags.
+
+68
+00:03:29,960 --> 00:03:31,580
+Now our flex
+container will adjust
+
+69
+00:03:31,580 --> 00:03:32,843
+the full height of the space.
+
+70
+00:03:37,370 --> 00:03:40,010
+Now it's your turn to
+practice wrapping flex items
+
+71
+00:03:40,010 --> 00:03:44,050
+and changing the direction of
+flex lines in the challenges.
+

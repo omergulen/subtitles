@@ -1,0 +1,499 @@
+1
+00:00:00,000 --> 00:00:00,430
+[MUSIC PLAYING]
+
+2
+00:00:00,430 --> 00:00:02,263
+[SINGING] These creaky
+doors and dusty halls
+
+3
+00:00:02,263 --> 00:00:04,240
+may hide villains
+lurking in the walls.
+
+4
+00:00:04,240 --> 00:00:05,176
+In the walls!
+
+5
+00:00:05,176 --> 00:00:08,430
+But don't fear old CSS
+wearing sheets as coats,
+
+6
+00:00:08,430 --> 00:00:11,800
+for it's time to stop
+making layouts with floats.
+
+7
+00:00:11,800 --> 00:00:14,195
+Gather Flexbox clues
+and before you know,
+
+8
+00:00:14,195 --> 00:00:17,962
+you'll use it to make
+things shrink and grow.
+
+9
+00:00:17,962 --> 00:00:20,640
+These new ways might
+knock off your socks
+
+10
+00:00:20,640 --> 00:00:23,590
+'cause we're Cracking
+the Case With Flexbox.
+
+11
+00:00:23,590 --> 00:00:28,700
+Yes, we're Cracking
+the Case With Flexbox!
+
+12
+00:00:28,700 --> 00:00:30,860
+You're watching Cracking
+the Case With Flexbox.
+
+13
+00:00:30,860 --> 00:00:34,106
+I'm Dan Denney, and this is
+Level 1, Foreshadowing Flexbox,
+
+14
+00:00:34,106 --> 00:00:36,230
+where we're going to be
+talking about a new display
+
+15
+00:00:36,230 --> 00:00:37,581
+type for common patterns.
+
+16
+00:00:40,170 --> 00:00:45,000
+Technically, Flexbox is the
+CSS Flexible Box Layout Module
+
+17
+00:00:45,000 --> 00:00:46,190
+Level 1.
+
+18
+00:00:46,190 --> 00:00:50,040
+However, in reality, it's a
+collection of CSS properties
+
+19
+00:00:50,040 --> 00:00:53,810
+that are used to align
+content and distribute space.
+
+20
+00:00:53,810 --> 00:00:57,130
+We're going to learn about
+two new display values and 11
+
+21
+00:00:57,130 --> 00:00:58,880
+new properties in this course.
+
+22
+00:00:58,880 --> 00:01:01,540
+And you can look up all of
+this information in the Flexbox
+
+23
+00:01:01,540 --> 00:01:02,440
+spec.
+
+24
+00:01:02,440 --> 00:01:05,550
+And since Flexbox has been
+around for a few years,
+
+25
+00:01:05,550 --> 00:01:08,150
+implementation is
+continuing to grow.
+
+26
+00:01:08,150 --> 00:01:11,285
+You can see the latest
+browser support on can I use.
+
+27
+00:01:13,931 --> 00:01:15,430
+To learn these new
+properties, we're
+
+28
+00:01:15,430 --> 00:01:18,330
+going to take a look at them
+through various UI patterns
+
+29
+00:01:18,330 --> 00:01:20,260
+that Flexbox makes easier.
+
+30
+00:01:20,260 --> 00:01:22,460
+We're going to look at
+equal heights, vertically
+
+31
+00:01:22,460 --> 00:01:26,636
+centered content, media objects,
+sticky footers, and column
+
+32
+00:01:26,636 --> 00:01:27,135
+layouts.
+
+33
+00:01:31,560 --> 00:01:33,390
+Flexbox is a new display type.
+
+34
+00:01:33,390 --> 00:01:36,540
+Previously, we've used
+block, inline, table,
+
+35
+00:01:36,540 --> 00:01:38,250
+and positioning layout.
+
+36
+00:01:38,250 --> 00:01:40,470
+If you're unfamiliar
+with any of those,
+
+37
+00:01:40,470 --> 00:01:42,950
+you may want to check out
+Front-end Foundations and/or
+
+38
+00:01:42,950 --> 00:01:46,280
+Front-end Formations
+before continuing on.
+
+39
+00:01:46,280 --> 00:01:48,665
+In this course, we're
+to focus on flex layout
+
+40
+00:01:48,665 --> 00:01:50,540
+and the various things
+ it brings along--
+
+41
+00:01:50,540 --> 00:01:53,553
+like flex containers, flex
+items, and flex lines.
+
+42
+00:01:57,702 --> 00:01:59,410
+First off, we want to
+look at the default
+
+43
+00:01:59,410 --> 00:02:01,160
+behavior of elements.
+
+44
+00:02:01,160 --> 00:02:03,010
+Here, we have an
+article containing
+
+45
+00:02:03,010 --> 00:02:04,990
+an image and a paragraph.
+
+46
+00:02:04,990 --> 00:02:08,830
+By default, the article in the
+paragraph are display: block
+
+47
+00:02:08,830 --> 00:02:11,160
+and the images display: inline.
+
+48
+00:02:11,160 --> 00:02:13,880
+This gets us our grouping
+as it is right now.
+
+49
+00:02:13,880 --> 00:02:16,260
+Our paragraph is going
+to be below the image,
+
+50
+00:02:16,260 --> 00:02:19,380
+and the two items are going
+to be within their container--
+
+51
+00:02:19,380 --> 00:02:21,240
+the article.
+
+52
+00:02:21,240 --> 00:02:24,940
+We can change the default
+behavior of elements using CSS.
+
+53
+00:02:24,940 --> 00:02:26,740
+Here, if we change
+the display property
+
+54
+00:02:26,740 --> 00:02:30,790
+to have a value of inline,
+our article changes.
+
+55
+00:02:30,790 --> 00:02:33,700
+It's no longer wrapping the
+image and the paragraph--
+
+56
+00:02:33,700 --> 00:02:35,740
+it's now a collapsed element.
+
+57
+00:02:35,740 --> 00:02:38,260
+And that's because there
+isn't a direct relationship
+
+58
+00:02:38,260 --> 00:02:41,760
+between a parent container
+and child elements
+
+59
+00:02:41,760 --> 00:02:44,390
+in typical layout.
+
+60
+00:02:44,390 --> 00:02:48,560
+Flexbox handles this differently,
+in that flex containers control
+
+61
+00:02:48,560 --> 00:02:50,580
+the layout of child items.
+
+62
+00:02:50,580 --> 00:02:53,500
+So here, if we change the
+value of our display property
+
+63
+00:02:53,500 --> 00:02:57,710
+to flex, we not only change
+how the flex container works
+
+64
+00:02:57,710 --> 00:03:00,680
+but how the items
+within it align.
+
+65
+00:03:00,680 --> 00:03:05,660
+Now, our image and our text
+are aligned horizontally.
+
+66
+00:03:05,660 --> 00:03:08,960
+This is a really important thing
+to understand for Flexbox
+
+67
+00:03:08,960 --> 00:03:12,770
+because the bulk of alignment
+for items in Flexbox
+
+68
+00:03:12,770 --> 00:03:16,370
+are handled by changing values
+of the properties of the parent
+
+69
+00:03:16,370 --> 00:03:18,344
+element.
+
+70
+00:03:18,344 --> 00:03:20,260
+Let's look at some of
+the defaults of our flex
+
+71
+00:03:20,260 --> 00:03:20,970
+properties.
+
+72
+00:03:20,970 --> 00:03:24,200
+If you set the value of the
+display property to flex,
+
+73
+00:03:24,200 --> 00:03:26,720
+it creates a
+block-level container.
+
+74
+00:03:26,720 --> 00:03:28,740
+So our container here
+is going to take up
+
+75
+00:03:28,740 --> 00:03:30,156
+all of the available space.
+
+76
+00:03:33,230 --> 00:03:36,900
+There's also the option to
+create an inline-flex element.
+
+77
+00:03:36,900 --> 00:03:38,930
+Here, you can see that
+the container adjusts
+
+78
+00:03:38,930 --> 00:03:40,055
+to the size of the content.
+
+79
+00:03:44,610 --> 00:03:47,390
+Another key item to
+understand for Flexbox
+
+80
+00:03:47,390 --> 00:03:52,700
+is that flex items are
+aligned along flex lines.
+
+81
+00:03:52,700 --> 00:03:56,320
+Flex items are any direct
+children of a flex container.
+
+82
+00:03:56,320 --> 00:04:01,150
+That means that they can
+be text or HTML elements.
+
+83
+00:04:01,150 --> 00:04:04,020
+Here, we can see that our
+flex container is adjusting
+
+84
+00:04:04,020 --> 00:04:06,690
+the default behavior
+of a group of text,
+
+85
+00:04:06,690 --> 00:04:09,550
+as well as an image,
+aligning them horizontally
+
+86
+00:04:09,550 --> 00:04:11,062
+along the flex line.
+
+87
+00:04:13,840 --> 00:04:17,480
+But what if we added another
+element in our flex line?
+
+88
+00:04:17,480 --> 00:04:20,720
+Here, we add an h3, and
+now all three items
+
+89
+00:04:20,720 --> 00:04:23,010
+are sharing the space
+along that line.
+
+90
+00:04:23,010 --> 00:04:27,320
+Flexbox uses its own algorithm
+to determine how much space
+
+91
+00:04:27,320 --> 00:04:29,980
+each item is going to get.
+
+92
+00:04:29,980 --> 00:04:32,610
+There will be times where
+you won't want Flexbox
+
+93
+00:04:32,610 --> 00:04:34,340
+to distribute the
+space amongst all
+
+94
+00:04:34,340 --> 00:04:35,590
+of the items in the container.
+
+95
+00:04:38,720 --> 00:04:41,770
+While Flexbox does change
+the default behavior
+
+96
+00:04:41,770 --> 00:04:44,520
+of direct child
+elements, it doesn't
+
+97
+00:04:44,520 --> 00:04:47,040
+change the behavior of
+grandchild elements--
+
+98
+00:04:47,040 --> 00:04:49,700
+so children of children.
+
+99
+00:04:49,700 --> 00:04:52,460
+Here, we can see, if we
+group elements together,
+
+100
+00:04:52,460 --> 00:04:55,320
+we can reduce the
+number of flex items.
+
+101
+00:04:55,320 --> 00:04:58,510
+We're putting our h3 and
+our paragraph in a div,
+
+102
+00:04:58,510 --> 00:05:02,190
+so now the div and the image
+are the two items in this flex
+
+103
+00:05:02,190 --> 00:05:05,626
+container, and they share all
+of the space in the flex line.
+
+104
+00:05:08,960 --> 00:05:11,280
+Now it's your turn to
+write your first Flexbox
+
+105
+00:05:11,280 --> 00:05:13,470
+CSS in the challenges.
+

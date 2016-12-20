@@ -1,0 +1,138 @@
+﻿1
+00:00:02,820 --> 00:00:03,610
+Welcome back.
+
+2
+00:00:03,610 --> 00:00:06,623
+This is Level 2, Section
+2, Order in the Flexbox,
+
+3
+00:00:06,623 --> 00:00:08,039
+where we're talking
+about changing
+
+4
+00:00:08,039 --> 00:00:09,748
+the order of items with CSS.
+
+5
+00:00:13,200 --> 00:00:14,790
+There are times in
+layout where you
+
+6
+00:00:14,790 --> 00:00:17,580
+want items to display
+in a different order
+
+7
+00:00:17,580 --> 00:00:19,230
+than their source order.
+
+8
+00:00:19,230 --> 00:00:21,930
+This can be done with
+standard layout techniques,
+
+9
+00:00:21,930 --> 00:00:23,760
+but it's a little
+hacky-- you might
+
+10
+00:00:23,760 --> 00:00:26,910
+use negative margins
+or absolute positioning
+
+11
+00:00:26,910 --> 00:00:29,520
+to achieve something
+like you see here.
+
+12
+00:00:29,520 --> 00:00:31,455
+However, Flexbox
+makes it super simple.
+
+13
+00:00:35,530 --> 00:00:38,830
+The order property is used to
+determine the order of flex
+
+14
+00:00:38,830 --> 00:00:41,080
+items along the main axis.
+
+15
+00:00:41,080 --> 00:00:45,760
+It defaults to 0, and it accepts
+positive and negative numbers.
+
+16
+00:00:45,760 --> 00:00:49,750
+Here, by default, each
+flex item in our container
+
+17
+00:00:49,750 --> 00:00:53,642
+has an order of 0, so they
+display in their source order.
+
+18
+00:00:57,170 --> 00:01:00,320
+Here, we're taking an element
+with the class of nav-clues
+
+19
+00:01:00,320 --> 00:01:04,640
+and assigning a negative 1
+value to its order property.
+
+20
+00:01:04,640 --> 00:01:07,250
+That makes it display
+before all of the items
+
+21
+00:01:07,250 --> 00:01:08,735
+with their default order, 0.
+
+22
+00:01:12,110 --> 00:01:14,610
+In column direction,
+this works the same way,
+
+23
+00:01:14,610 --> 00:01:19,330
+except that the order is going
+to adjust things vertically.
+
+24
+00:01:19,330 --> 00:01:22,490
+Here, if we take the paragraph
+with a class of slogan,
+
+25
+00:01:22,490 --> 00:01:24,920
+change the order
+to a positive 1,
+
+26
+00:01:24,920 --> 00:01:28,340
+that's going to make it
+display after all of the items
+
+27
+00:01:28,340 --> 00:01:29,588
+with the order of 0.
+
+28
+00:01:32,770 --> 00:01:35,370
+Now you can use Flexbox to
+change the order of elements
+
+29
+00:01:35,370 --> 00:01:37,130
+in the challenges.
+

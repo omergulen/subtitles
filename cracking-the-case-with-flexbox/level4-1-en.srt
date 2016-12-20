@@ -1,0 +1,442 @@
+﻿1
+00:00:00,000 --> 00:00:01,842
+[SINGING] These creaky
+doors and dusty halls
+
+2
+00:00:01,842 --> 00:00:03,700
+may hide villains
+lurking in the walls.
+
+3
+00:00:03,700 --> 00:00:05,180
+In the walls!
+
+4
+00:00:05,180 --> 00:00:08,530
+But don't fear old CSS
+wearing sheets as coats,
+
+5
+00:00:08,530 --> 00:00:11,544
+for it's time to stop
+making layouts with floats.
+
+6
+00:00:11,544 --> 00:00:14,680
+Gather Flexbox clues
+and before you know,
+
+7
+00:00:14,680 --> 00:00:18,060
+you'll use it to make
+things shrink and grow.
+
+8
+00:00:18,060 --> 00:00:20,714
+These new ways might
+knock off your socks,
+
+9
+00:00:20,714 --> 00:00:24,130
+'cause we're Cracking
+the Case With Flexbox.
+
+10
+00:00:24,130 --> 00:00:26,630
+Yes, we're Cracking
+the Case With Flexbox!
+
+11
+00:00:29,460 --> 00:00:30,270
+Welcome back.
+
+12
+00:00:30,270 --> 00:00:33,370
+This is Level 4, Section
+1, Suspect Sizes,
+
+13
+00:00:33,370 --> 00:00:36,150
+where we're going to be
+talking about new properties
+
+14
+00:00:36,150 --> 00:00:37,785
+for space-based size.
+
+15
+00:00:40,910 --> 00:00:42,880
+Up until this point,
+our flex items
+
+16
+00:00:42,880 --> 00:00:44,157
+have been their default size.
+
+17
+00:00:44,157 --> 00:00:45,740
+But there are times
+where you're going
+
+18
+00:00:45,740 --> 00:00:47,930
+to want to control the size.
+
+19
+00:00:47,930 --> 00:00:50,300
+In this example,
+our form, we may
+
+20
+00:00:50,300 --> 00:00:53,770
+want that to grow and use up
+all of the available space
+
+21
+00:00:53,770 --> 00:00:55,680
+as the screen size grows.
+
+22
+00:00:55,680 --> 00:00:58,590
+Also, to achieve a two-column
+layout with spacing,
+
+23
+00:00:58,590 --> 00:01:00,885
+we're going to want to
+set some defined widths.
+
+24
+00:01:05,530 --> 00:01:07,020
+In our first example,
+we're dealing
+
+25
+00:01:07,020 --> 00:01:08,820
+with mostly default behavior.
+
+26
+00:01:08,820 --> 00:01:10,520
+I just wanted to
+share one point.
+
+27
+00:01:10,520 --> 00:01:12,530
+That, in order to
+have all the items fit
+
+28
+00:01:12,530 --> 00:01:16,160
+on that very small screen, I
+had to override Chrome's default
+
+29
+00:01:16,160 --> 00:01:18,955
+behavior and set the min
+width of the input to 0.
+
+30
+00:01:21,520 --> 00:01:24,650
+Aside from that, we can
+see that our items are only
+
+31
+00:01:24,650 --> 00:01:26,406
+filling up their content space.
+
+32
+00:01:29,660 --> 00:01:32,310
+The flex-grow property
+is used to specify
+
+33
+00:01:32,310 --> 00:01:37,120
+the ratio of the space an item
+should fill in the main axis.
+
+34
+00:01:37,120 --> 00:01:39,860
+It accepts numbers,
+and its default is 0.
+
+35
+00:01:39,860 --> 00:01:42,510
+0 meaning don't grow.
+
+36
+00:01:42,510 --> 00:01:46,770
+Here, if we set flex-grow
+to 0 on all of our inputs,
+
+37
+00:01:46,770 --> 00:01:49,130
+we get our default
+behavior, in that they
+
+38
+00:01:49,130 --> 00:01:50,866
+are their default content size.
+
+39
+00:01:55,460 --> 00:01:57,120
+We can change this
+default behavior
+
+40
+00:01:57,120 --> 00:01:59,330
+by setting flex-grow to 1.
+
+41
+00:01:59,330 --> 00:02:02,230
+Here, if we put it
+on just our input,
+
+42
+00:02:02,230 --> 00:02:04,170
+the input is going
+to grow to take up
+
+43
+00:02:04,170 --> 00:02:07,980
+all of the available space.
+
+44
+00:02:07,980 --> 00:02:10,130
+In this case, the
+available space
+
+45
+00:02:10,130 --> 00:02:12,340
+is all of the space
+of the container,
+
+46
+00:02:12,340 --> 00:02:15,893
+minus the space necessary
+for the other flex items.
+
+47
+00:02:19,070 --> 00:02:22,660
+We can also set flex-grow
+on multiple properties.
+
+48
+00:02:22,660 --> 00:02:25,480
+If we set flex-grow to
+1 on all three elements,
+
+49
+00:02:25,480 --> 00:02:28,850
+each one is going to try to
+fill up all the available space
+
+50
+00:02:28,850 --> 00:02:29,880
+that it can.
+
+51
+00:02:29,880 --> 00:02:31,660
+In this case, it
+means that all three
+
+52
+00:02:31,660 --> 00:02:34,190
+are going to be sharing
+the space on the flex line.
+
+53
+00:02:36,810 --> 00:02:40,580
+Now we'll look at how
+things get a little tricky.
+
+54
+00:02:40,580 --> 00:02:43,160
+Since grow is a
+ratio-based property,
+
+55
+00:02:43,160 --> 00:02:46,390
+we can use numbers to
+set the ratio of space
+
+56
+00:02:46,390 --> 00:02:48,520
+that items are supposed to take.
+
+57
+00:02:48,520 --> 00:02:50,620
+Here, we have three divs.
+
+58
+00:02:50,620 --> 00:02:54,070
+We're setting a flex-grow
+of 1 on two of them,
+
+59
+00:02:54,070 --> 00:02:56,640
+and a flex-grow
+of 2 on the third.
+
+60
+00:02:56,640 --> 00:03:00,890
+That gives us four units of
+space for the divs to divide.
+
+61
+00:03:00,890 --> 00:03:04,270
+In a perfect world, in a
+1,000-pixel container,
+
+62
+00:03:04,270 --> 00:03:08,280
+our element set to 2 is
+going to take up 500 pixels,
+
+63
+00:03:08,280 --> 00:03:10,430
+and each of the
+elements set to 1
+
+64
+00:03:10,430 --> 00:03:12,453
+are going to take up 250 pixels.
+
+65
+00:03:23,440 --> 00:03:25,600
+As we change content,
+things continue
+
+66
+00:03:25,600 --> 00:03:27,830
+to change more drastically.
+
+67
+00:03:27,830 --> 00:03:31,300
+By just changing the number
+of characters in each div,
+
+68
+00:03:31,300 --> 00:03:35,330
+now our one-unit ratio elements
+are no longer the same size.
+
+69
+00:03:35,330 --> 00:03:39,930
+They're 279 pixels
+and 288 pixels.
+
+70
+00:03:39,930 --> 00:03:41,670
+This is something to
+know going forward
+
+71
+00:03:41,670 --> 00:03:43,450
+if you're trying
+to create layouts
+
+72
+00:03:43,450 --> 00:03:46,930
+using ratio-based flex-grow.
+
+73
+00:03:46,930 --> 00:03:49,151
+If you want defined
+widths for items,
+
+74
+00:03:49,151 --> 00:03:51,150
+you're going to want a
+different solution, which
+
+75
+00:03:51,150 --> 00:03:52,010
+we'll get to later.
+
+76
+00:03:55,120 --> 00:03:57,450
+In this example, we'll look
+at a different problem,
+
+77
+00:03:57,450 --> 00:04:01,330
+in that we don't want an item
+to get smaller than it is.
+
+78
+00:04:01,330 --> 00:04:03,600
+As the screen size
+changes here, you
+
+79
+00:04:03,600 --> 00:04:06,660
+can see that our image is
+getting continuously smaller,
+
+80
+00:04:06,660 --> 00:04:09,130
+almost to the point of not
+being able to see it anymore.
+
+81
+00:04:13,800 --> 00:04:16,750
+The flex-shrink property
+is used to specify
+
+82
+00:04:16,750 --> 00:04:19,420
+the shrink factor of an item.
+
+83
+00:04:19,420 --> 00:04:21,300
+It accepts numbers,
+and its default
+
+84
+00:04:21,300 --> 00:04:25,430
+is 1, which means do shrink.
+
+85
+00:04:25,430 --> 00:04:27,700
+So here, if we change
+our value to 0,
+
+86
+00:04:27,700 --> 00:04:31,620
+the item containing the
+image won't change size,
+
+87
+00:04:31,620 --> 00:04:34,480
+even if it ends up bigger
+than the other item sharing
+
+88
+00:04:34,480 --> 00:04:34,980
+the space.
+
+89
+00:04:38,120 --> 00:04:40,400
+Here's our flex-shrink
+0 in action.
+
+90
+00:04:40,400 --> 00:04:44,190
+As the screen size gets smaller,
+the image stays the same size,
+
+91
+00:04:44,190 --> 00:04:47,786
+and the other flex item adjusts
+to fill the remaining space.
+
+92
+00:04:52,440 --> 00:04:55,800
+Now it's your turn to have
+items grow and shrink using
+
+93
+00:04:55,800 --> 00:04:58,190
+Flexbox in the challenges.
+

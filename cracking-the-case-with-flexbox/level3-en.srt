@@ -1,0 +1,235 @@
+﻿1
+00:00:00,000 --> 00:00:02,060
+[SINGING] These creaky
+doors and dusty halls
+
+2
+00:00:02,060 --> 00:00:04,250
+may hide villains
+lurking in the walls.
+
+3
+00:00:04,250 --> 00:00:05,170
+In the walls!
+
+4
+00:00:05,170 --> 00:00:08,140
+But don't fear old CSS
+wearing sheets as coats,
+
+5
+00:00:08,140 --> 00:00:11,870
+for it's time to stop making
+layouts with floats.
+
+6
+00:00:11,870 --> 00:00:14,834
+Gather Flexbox clues
+and before you know,
+
+7
+00:00:14,834 --> 00:00:17,832
+you'll use it to make
+things shrink and grow.
+
+8
+00:00:17,832 --> 00:00:20,925
+These new ways might
+knock off your socks
+
+9
+00:00:20,925 --> 00:00:24,346
+'cause we're Cracking
+the Case With Flexbox.
+
+10
+00:00:24,346 --> 00:00:29,200
+Yes, we're Cracking
+the Case With Flexbox!
+
+11
+00:00:29,200 --> 00:00:29,900
+Welcome back.
+
+12
+00:00:29,900 --> 00:00:32,477
+This is Level 3,
+Aligning Alibis,
+
+13
+00:00:32,477 --> 00:00:34,810
+where we're going to be talking
+about distributing space
+
+14
+00:00:34,810 --> 00:00:36,001
+on the cross axis.
+
+15
+00:00:38,285 --> 00:00:40,660
+Here, we're going to be looking
+at how to distribute space
+
+16
+00:00:40,660 --> 00:00:44,450
+for our nav items and for all
+of the items in our full-screen
+
+17
+00:00:44,450 --> 00:00:44,950
+layout.
+
+18
+00:00:48,230 --> 00:00:51,940
+Flex items are also
+aligned on a cross axis,
+
+19
+00:00:51,940 --> 00:00:56,710
+and the cross axis is
+perpendicular to the main axis.
+
+20
+00:00:56,710 --> 00:01:02,320
+So in a column direction,
+the cross axis is horizontal.
+
+21
+00:01:02,320 --> 00:01:05,965
+In a row direction, the
+cross axis is vertical.
+
+22
+00:01:11,600 --> 00:01:15,510
+While justify-content is
+used to distribute space
+
+23
+00:01:15,510 --> 00:01:20,370
+on the main axis, align-items
+is used to distribute space
+
+24
+00:01:20,370 --> 00:01:22,300
+on the cross axis.
+
+25
+00:01:22,300 --> 00:01:26,910
+Its default is stretch and it
+accepts stretch, flex-start,
+
+26
+00:01:26,910 --> 00:01:31,170
+flex-end, center, and baseline.
+
+27
+00:01:31,170 --> 00:01:33,270
+In this example, where
+we have the value set
+
+28
+00:01:33,270 --> 00:01:34,920
+to stretch for
+align-items, you
+
+29
+00:01:34,920 --> 00:01:37,470
+can now see why our nav
+links have been taking up
+
+30
+00:01:37,470 --> 00:01:40,260
+the full available height.
+
+31
+00:01:40,260 --> 00:01:42,660
+They stretch to fill
+all of the available space
+
+32
+00:01:42,660 --> 00:01:46,020
+on the cross axis, from the
+flex-start to the flex-end.
+
+33
+00:01:51,510 --> 00:01:54,050
+To distribute the space
+along these lines,
+
+34
+00:01:54,050 --> 00:01:56,480
+if we set the value
+to flex-start,
+
+35
+00:01:56,480 --> 00:02:01,430
+our items will align to
+the flex-start or the top.
+
+36
+00:02:01,430 --> 00:02:04,213
+Setting it to end will
+align items to the bottom.
+
+37
+00:02:07,940 --> 00:02:10,400
+There's also a
+baseline value, which
+
+38
+00:02:10,400 --> 00:02:15,530
+works better for large and
+small text or a small image.
+
+39
+00:02:15,530 --> 00:02:17,855
+Our solution that we
+were using is the value
+
+40
+00:02:17,855 --> 00:02:22,340
+of center, which aligns the
+vertical center of the items
+
+41
+00:02:22,340 --> 00:02:24,500
+with the vertical center
+of the cross axis.
+
+42
+00:02:29,090 --> 00:02:32,600
+Again, this works in the
+same way for column layouts,
+
+43
+00:02:32,600 --> 00:02:35,330
+except for the difference
+that the cross axis is now
+
+44
+00:02:35,330 --> 00:02:37,070
+running horizontally.
+
+45
+00:02:37,070 --> 00:02:41,060
+Here, if we set the value
+of center to align-items,
+
+46
+00:02:41,060 --> 00:02:43,310
+all of our items are
+centered horizontally
+
+47
+00:02:43,310 --> 00:02:44,617
+in our full-screen layout.
+
+48
+00:02:47,570 --> 00:02:51,230
+Now it's your turn to use
+align-items to distribute space
+
+49
+00:02:51,230 --> 00:02:53,010
+in the challenges.
+

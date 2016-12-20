@@ -1,0 +1,269 @@
+﻿1
+00:00:02,930 --> 00:00:03,700
+Welcome back.
+
+2
+00:00:03,700 --> 00:00:06,797
+This is Level 5, Section
+2, Scary Shorthand.
+
+3
+00:00:06,797 --> 00:00:08,630
+And we're going to be
+talking about grouping
+
+4
+00:00:08,630 --> 00:00:10,955
+multiple properties
+into a single property.
+
+5
+00:00:15,100 --> 00:00:18,330
+The flex shorthand property
+is used to set values for
+
+6
+00:00:18,330 --> 00:00:21,840
+flex-grow, flex-shrink,
+and flex-basis.
+
+7
+00:00:21,840 --> 00:00:26,060
+It defaults to 0 1 auto based
+on the defaults of the grow,
+
+8
+00:00:26,060 --> 00:00:29,250
+shrink, and basis properties.
+
+9
+00:00:29,250 --> 00:00:32,360
+Before we go any further with
+these, the one thing I will say
+
+10
+00:00:32,360 --> 00:00:35,250
+is if you have to
+support older IE,
+
+11
+00:00:35,250 --> 00:00:37,420
+you may want to avoid shorthand.
+
+12
+00:00:37,420 --> 00:00:39,730
+It's where you'll see
+the most inconsistencies
+
+13
+00:00:39,730 --> 00:00:42,260
+among the browsers.
+
+14
+00:00:42,260 --> 00:00:43,910
+In using shorthand,
+you're not always
+
+15
+00:00:43,910 --> 00:00:46,390
+going to want to set
+all three values.
+
+16
+00:00:46,390 --> 00:00:49,430
+If you see flex with a
+single numerical value,
+
+17
+00:00:49,430 --> 00:00:51,950
+that's declaring the
+flex-grow property
+
+18
+00:00:51,950 --> 00:00:55,690
+and leaving the defaults for
+flex-shrink and flex-basis.
+
+19
+00:00:55,690 --> 00:00:58,670
+If you see flex with
+two numerical values,
+
+20
+00:00:58,670 --> 00:01:02,180
+that's setting the flex-grow
+and flex-shrink properties
+
+21
+00:01:02,180 --> 00:01:06,820
+and leaving flex-basis
+to its default.
+
+22
+00:01:06,820 --> 00:01:09,180
+If you see flex with a
+single numerical value
+
+23
+00:01:09,180 --> 00:01:12,610
+and a measurement-- like
+pixels or percentages--
+
+24
+00:01:12,610 --> 00:01:16,050
+that is assigning the
+flex-grow and the flex-basis
+
+25
+00:01:16,050 --> 00:01:18,830
+and leaving shrink
+to its default.
+
+26
+00:01:18,830 --> 00:01:22,120
+And finally, if you
+see a flex with none,
+
+27
+00:01:22,120 --> 00:01:24,770
+that's going to set
+the flex-shrink to 0
+
+28
+00:01:24,770 --> 00:01:28,040
+and leave the others as default,
+thereby treating the item
+
+29
+00:01:28,040 --> 00:01:29,856
+like it's not a
+flex item at all.
+
+30
+00:01:33,670 --> 00:01:35,570
+The flex-flow
+shorthand property is
+
+31
+00:01:35,570 --> 00:01:39,560
+used to set values for
+flex-direction and flex-wrap.
+
+32
+00:01:39,560 --> 00:01:44,060
+The default is row nowrap
+based on the direction and wrap
+
+33
+00:01:44,060 --> 00:01:46,560
+properties.
+
+34
+00:01:46,560 --> 00:01:48,310
+Much like the flex
+shorthand, you
+
+35
+00:01:48,310 --> 00:01:50,420
+will see these
+with single values.
+
+36
+00:01:50,420 --> 00:01:53,500
+And if you see flex-flow
+with just column,
+
+37
+00:01:53,500 --> 00:01:58,940
+that's setting the direction
+and leaving wrap to its default.
+
+38
+00:01:58,940 --> 00:02:00,810
+If you see it with
+just a value of wrap,
+
+39
+00:02:00,810 --> 00:02:04,670
+that setting the flex-wrap value
+and leaving the flex-direction
+
+40
+00:02:04,670 --> 00:02:07,890
+to its default.
+
+41
+00:02:07,890 --> 00:02:10,021
+Congratulations on reaching
+the end of the course.
+
+42
+00:02:10,021 --> 00:02:12,020
+To wrap things up, you're
+going to use shorthand
+
+43
+00:02:12,020 --> 00:02:15,400
+in the challenges, and then I'll
+see you in the wrap-up video.
+
+44
+00:02:15,400 --> 00:02:15,900
+[BEEP]
+
+45
+00:02:15,900 --> 00:02:16,730
+Be happy for them.
+
+46
+00:02:16,730 --> 00:02:17,229
+Oh, gotcha.
+
+47
+00:02:17,229 --> 00:02:18,502
+[LAUGHTER]
+
+48
+00:02:19,001 --> 00:02:20,736
+Just go do it.
+
+49
+00:02:20,736 --> 00:02:21,236
+[BEEP]
+
+50
+00:02:22,340 --> 00:02:23,400
+Everything's new.
+
+51
+00:02:23,400 --> 00:02:24,590
+That's why we're here.
+
+52
+00:02:24,590 --> 00:02:25,470
+[LAUGHTER]
+
+53
+00:02:26,350 --> 00:02:29,650
+On the cross actious-- actious.
+
+54
+00:02:29,650 --> 00:02:32,300
+Actious Jackson.
+
+55
+00:02:32,300 --> 00:02:34,995
+Welcome back-- nope.
+
+56
+00:02:34,995 --> 00:02:35,957
+[LAUGHTER]
+
+57
+00:02:36,890 --> 00:02:38,240
+But in order to--
+
+58
+00:02:38,240 --> 00:02:40,090
+[LAUGHTER]
+

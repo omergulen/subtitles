@@ -1,0 +1,251 @@
+﻿1
+00:00:00,258 --> 00:00:02,091
+[SINGING] These creaky
+doors and dusty halls
+
+2
+00:00:02,091 --> 00:00:04,039
+may hide villains
+lurking in the walls.
+
+3
+00:00:04,039 --> 00:00:05,013
+In the walls!
+
+4
+00:00:05,013 --> 00:00:08,430
+But don't fear old CSS
+wearing sheets as coats,
+
+5
+00:00:08,430 --> 00:00:11,710
+for it's time to stop
+making layouts with floats.
+
+6
+00:00:11,710 --> 00:00:15,196
+Gather Flexbox clues
+and before you know,
+
+7
+00:00:15,196 --> 00:00:18,160
+you'll use it to make
+things shrink and grow.
+
+8
+00:00:18,160 --> 00:00:21,130
+These new ways might
+knock off your socks
+
+9
+00:00:21,130 --> 00:00:23,630
+'cause we're Cracking
+the Case With Flexbox.
+
+10
+00:00:23,630 --> 00:00:28,810
+Yes, we're Cracking
+the Case With Flexbox!
+
+11
+00:00:28,810 --> 00:00:29,570
+Welcome back.
+
+12
+00:00:29,570 --> 00:00:33,000
+This is Level 5, Section
+1, Property Plotting.
+
+13
+00:00:33,000 --> 00:00:36,165
+And we'll be talking about
+aligning content in edge cases.
+
+14
+00:00:39,300 --> 00:00:41,400
+In looking at the UIs
+that we've built so far,
+
+15
+00:00:41,400 --> 00:00:43,620
+there's a couple
+opportunities to make things
+
+16
+00:00:43,620 --> 00:00:45,770
+look a little bit better.
+
+17
+00:00:45,770 --> 00:00:47,900
+Could we have the heights
+match between the input
+
+18
+00:00:47,900 --> 00:00:50,800
+and the button, and could
+we get all of the content
+
+19
+00:00:50,800 --> 00:00:52,510
+to center in our
+full-screen layout?
+
+20
+00:00:57,010 --> 00:01:01,200
+The align-self property is used
+to align individual flex items
+
+21
+00:01:01,200 --> 00:01:05,239
+by overriding their
+parent's align-items value.
+
+22
+00:01:05,239 --> 00:01:07,510
+Its default value
+is also stretch,
+
+23
+00:01:07,510 --> 00:01:11,150
+and it accepts the same
+values as align items.
+
+24
+00:01:11,150 --> 00:01:14,590
+In this example, we're
+adding align-self of stretch
+
+25
+00:01:14,590 --> 00:01:18,327
+to the input to have it take
+up the same vertical height
+
+26
+00:01:18,327 --> 00:01:19,035
+as the container.
+
+27
+00:01:22,720 --> 00:01:26,650
+In this example, the three items
+are set to align-item stretch
+
+28
+00:01:26,650 --> 00:01:29,960
+by default, and we're
+using align-self center
+
+29
+00:01:29,960 --> 00:01:33,280
+to have the main element adjust
+to the size of the content
+
+30
+00:01:33,280 --> 00:01:36,360
+and center horizontally.
+
+31
+00:01:36,360 --> 00:01:39,960
+There's an alternative way to
+handle layout with Flexbox.
+
+32
+00:01:39,960 --> 00:01:44,140
+Here, if we set our body
+to our flex container
+
+33
+00:01:44,140 --> 00:01:47,230
+and have each item
+wrap, we can use
+
+34
+00:01:47,230 --> 00:01:50,410
+flex-basis to force wrapping
+by putting the header
+
+35
+00:01:50,410 --> 00:01:51,607
+and footer at 100%.
+
+36
+00:01:54,290 --> 00:01:56,710
+Each item is going to
+default to stretch.
+
+37
+00:01:56,710 --> 00:01:58,510
+It's going to fill
+up all of the space
+
+38
+00:01:58,510 --> 00:01:59,920
+on the vertical--
+the cross-axis.
+
+39
+00:02:03,380 --> 00:02:05,690
+If we try to use our
+align-items property
+
+40
+00:02:05,690 --> 00:02:09,729
+and set it to space-between,
+we don't get any change.
+
+41
+00:02:09,729 --> 00:02:13,835
+That's because align-items
+doesn't control wrapped items.
+
+42
+00:02:17,500 --> 00:02:19,710
+The align-content
+property is used
+
+43
+00:02:19,710 --> 00:02:22,380
+to align wrapped flex items.
+
+44
+00:02:22,380 --> 00:02:24,220
+Its default value
+is also stretch,
+
+45
+00:02:24,220 --> 00:02:27,470
+and it accepts the same
+values as align-items.
+
+46
+00:02:27,470 --> 00:02:31,060
+If we set space-between
+to align-content,
+
+47
+00:02:31,060 --> 00:02:33,820
+that is going to align
+those wrapped items
+
+48
+00:02:33,820 --> 00:02:36,108
+and give us space between
+our header, our main,
+
+49
+00:02:36,108 --> 00:02:36,733
+and our footer.
+
+50
+00:02:40,377 --> 00:02:41,960
+Now it's your turn
+to handle some edge
+
+51
+00:02:41,960 --> 00:02:44,890
+cases with align-self
+and align-content
+
+52
+00:02:44,890 --> 00:02:46,590
+in the challenges.
+

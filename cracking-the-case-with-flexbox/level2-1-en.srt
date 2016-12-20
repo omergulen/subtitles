@@ -1,0 +1,322 @@
+﻿1
+00:00:00,000 --> 00:00:00,430
+[MUSIC PLAYING]
+
+2
+00:00:00,430 --> 00:00:02,263
+[SINGING] These creaky
+doors and dusty halls
+
+3
+00:00:02,263 --> 00:00:04,240
+may hide villains
+lurking in the walls.
+
+4
+00:00:04,240 --> 00:00:05,180
+In the walls!
+
+5
+00:00:05,180 --> 00:00:08,430
+But don't fear old CSS
+wearing sheets as coats,
+
+6
+00:00:08,430 --> 00:00:11,671
+for it's time to stop making
+layouts with floats.
+
+7
+00:00:11,671 --> 00:00:15,150
+Gather Flexbox clues
+and before you know,
+
+8
+00:00:15,150 --> 00:00:17,739
+you'll use it to make
+things shrink and grow.
+
+9
+00:00:17,739 --> 00:00:21,140
+These new ways might
+knock off your socks
+
+10
+00:00:21,140 --> 00:00:24,640
+'cause we're Cracking
+the Case With Flexbox.
+
+11
+00:00:24,640 --> 00:00:28,960
+Yes, we're Cracking
+the Case With Flexbox!
+
+12
+00:00:28,960 --> 00:00:29,860
+Welcome back.
+
+13
+00:00:29,860 --> 00:00:33,300
+This is Level 2, Section
+1, Justice in Justifying,
+
+14
+00:00:33,300 --> 00:00:35,810
+where we're going to be talking
+about distributing space
+
+15
+00:00:35,810 --> 00:00:36,905
+along flex lines.
+
+16
+00:00:39,855 --> 00:00:41,230
+In the previous
+level, we learned
+
+17
+00:00:41,230 --> 00:00:44,450
+how to align items
+horizontally and vertically.
+
+18
+00:00:44,450 --> 00:00:47,810
+Now we're going to learn how to
+distribute space along the flex
+
+19
+00:00:47,810 --> 00:00:49,790
+lines horizontally
+and vertically.
+
+20
+00:00:52,840 --> 00:00:56,390
+Flex items are
+distributed along axes,
+
+21
+00:00:56,390 --> 00:00:59,540
+and the first is the main
+axis, which is determined
+
+22
+00:00:59,540 --> 00:01:02,980
+by the flex-direction.
+
+23
+00:01:02,980 --> 00:01:07,360
+Here, with a flex-direction of
+row, the start of our main axis
+
+24
+00:01:07,360 --> 00:01:11,690
+is at the left of the container,
+the end of our main axis
+
+25
+00:01:11,690 --> 00:01:13,349
+is at the right
+of the container,
+
+26
+00:01:13,349 --> 00:01:14,890
+and it's important
+to know that there
+
+27
+00:01:14,890 --> 00:01:16,510
+is a center point as well.
+
+28
+00:01:23,030 --> 00:01:26,800
+The justify-content property
+is used to distribute space
+
+29
+00:01:26,800 --> 00:01:28,200
+on the main axis.
+
+30
+00:01:28,200 --> 00:01:32,910
+Its default is flex-start and
+it accepts flex-start, flex-end,
+
+31
+00:01:32,910 --> 00:01:37,170
+center, space-between,
+and space-around.
+
+32
+00:01:37,170 --> 00:01:39,990
+What we've seen up to this
+point is the default behavior,
+
+33
+00:01:39,990 --> 00:01:42,190
+so our items are
+aligned to the left--
+
+34
+00:01:42,190 --> 00:01:45,020
+the flex-start of our container.
+
+35
+00:01:45,020 --> 00:01:48,930
+If we change the value of
+justify-content to flex-end,
+
+36
+00:01:48,930 --> 00:01:51,792
+our items will align to
+the end-- or the right--
+
+37
+00:01:51,792 --> 00:01:52,500
+of our container.
+
+38
+00:01:57,160 --> 00:02:00,020
+There are also values
+for distributing space
+
+39
+00:02:00,020 --> 00:02:01,900
+in between the items.
+
+40
+00:02:01,900 --> 00:02:05,200
+The space-between value
+will align an item
+
+41
+00:02:05,200 --> 00:02:08,919
+to the flex-start
+and the flex-end
+
+42
+00:02:08,919 --> 00:02:11,860
+and distribute any space
+in between amongst all
+
+43
+00:02:11,860 --> 00:02:13,770
+of the items.
+
+44
+00:02:13,770 --> 00:02:17,650
+The space-around value will
+take all of the available space
+
+45
+00:02:17,650 --> 00:02:20,870
+on a flex line and
+apply it to each side
+
+46
+00:02:20,870 --> 00:02:22,892
+of each individual flex item.
+
+47
+00:02:26,130 --> 00:02:28,330
+Going back to our
+example from earlier,
+
+48
+00:02:28,330 --> 00:02:31,070
+we're using the
+center value, which
+
+49
+00:02:31,070 --> 00:02:33,510
+takes the center of the
+content and aligns it
+
+50
+00:02:33,510 --> 00:02:35,110
+with the center of
+the flex container.
+
+51
+00:02:41,070 --> 00:02:43,140
+The one thing that
+Flexbox doesn't have
+
+52
+00:02:43,140 --> 00:02:46,140
+is the ability to say,
+"I want this much space
+
+53
+00:02:46,140 --> 00:02:47,750
+in between items."
+
+54
+00:02:47,750 --> 00:02:51,952
+For that, we're going to
+use some non-Flexbox CSS.
+
+55
+00:02:51,952 --> 00:02:55,720
+You can use margin and
+padding on flex items.
+
+56
+00:02:55,720 --> 00:02:58,550
+Here, we're assigning
+a margin of 20 pixels
+
+57
+00:02:58,550 --> 00:03:01,910
+to the right and left of each
+item with a class of nav-link.
+
+58
+00:03:06,900 --> 00:03:10,590
+Justifying content in a
+column works in the same way,
+
+59
+00:03:10,590 --> 00:03:14,770
+except that the main axis
+is now running vertically.
+
+60
+00:03:14,770 --> 00:03:18,590
+So the flex-start is at
+the top of the container,
+
+61
+00:03:18,590 --> 00:03:21,760
+the flex-end is at the
+bottom of the container,
+
+62
+00:03:21,760 --> 00:03:25,050
+and it contains a
+center point as well.
+
+63
+00:03:25,050 --> 00:03:28,310
+Here, if we set
+justify-content to center,
+
+64
+00:03:28,310 --> 00:03:30,790
+all of the items
+in our container
+
+65
+00:03:30,790 --> 00:03:32,510
+are aligned in the
+vertical center.
+
+66
+00:03:35,660 --> 00:03:37,780
+Now it's your turn to
+jump into the challenges
+
+67
+00:03:37,780 --> 00:03:40,840
+and distribute space
+with justify-content.
+
