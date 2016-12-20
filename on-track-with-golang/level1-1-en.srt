@@ -1,0 +1,863 @@
+﻿1
+00:00:00,000 --> 00:00:03,640
+SINGING] Put on your headlamp,
+and get ready to dig,
+
+2
+00:00:03,640 --> 00:00:07,250
+as we tunnel into Golang,
+pushing past twigs.
+
+3
+00:00:07,250 --> 00:00:10,372
+We'll work our way underground,
+programming systems
+
+4
+00:00:10,372 --> 00:00:11,316
+safe and sound.
+
+5
+00:00:11,316 --> 00:00:12,990
+Go's efficient, simple, and fast.
+
+6
+00:00:12,990 --> 00:00:14,808
+Parallel work makes
+coding a blast.
+
+7
+00:00:14,808 --> 00:00:17,622
+Now let's burrow down
+and start to play.
+
+8
+00:00:17,622 --> 00:00:21,552
+It's time to get
+On Track With Golang.
+
+9
+00:00:25,450 --> 00:00:27,490
+You're watching On
+Track With Golang.
+
+10
+00:00:27,490 --> 00:00:30,490
+I'm Carlos Souza, and in the
+first section of this course,
+
+11
+00:00:30,490 --> 00:00:33,360
+we'll take the initial steps
+into the world of the Go
+
+12
+00:00:33,360 --> 00:00:35,750
+programming language
+and learn just enough
+
+13
+00:00:35,750 --> 00:00:37,820
+to write our first program.
+
+14
+00:00:37,820 --> 00:00:41,170
+But before we jump into code,
+let's learn some of the reasons
+
+15
+00:00:41,170 --> 00:00:44,740
+behind Go and what
+it's good for.
+
+16
+00:00:44,740 --> 00:00:48,440
+Go is an open-source programming
+language created by Google
+
+17
+00:00:48,440 --> 00:00:52,350
+that makes it easy to build
+simple and efficient programs.
+
+18
+00:00:52,350 --> 00:00:55,250
+Here are some of its
+main characteristics.
+
+19
+00:00:55,250 --> 00:00:58,120
+First, Go is a
+compiled language,
+
+20
+00:00:58,120 --> 00:01:01,640
+meaning we must run our source
+code through a compiler, which
+
+21
+00:01:01,640 --> 00:01:05,110
+reads that source code and
+generates a single binary,
+
+22
+00:01:05,110 --> 00:01:09,070
+or executable file, which we
+can use to run our program.
+
+23
+00:01:09,070 --> 00:01:10,600
+Throughout this
+course, we'll talk
+
+24
+00:01:10,600 --> 00:01:13,790
+about data types like integers,
+strings, and booleans,
+
+25
+00:01:13,790 --> 00:01:16,470
+and we'll learn that the
+Go compiler validates
+
+26
+00:01:16,470 --> 00:01:20,900
+operations involving these
+types before we run our program.
+
+27
+00:01:20,900 --> 00:01:23,860
+This leaves less room
+for unexpected surprises
+
+28
+00:01:23,860 --> 00:01:26,030
+when we do run our
+program, and places
+
+29
+00:01:26,030 --> 00:01:29,700
+Go in the category of
+statically typed languages.
+
+30
+00:01:29,700 --> 00:01:32,150
+Programs written in
+Go are fast and can
+
+31
+00:01:32,150 --> 00:01:35,360
+scale really well, thanks to
+a concurrency model that's
+
+32
+00:01:35,360 --> 00:01:38,240
+built into the language
+and quite easy to use.
+
+33
+00:01:38,240 --> 00:01:41,370
+We'll take a closer look at
+concurrency in the last level.
+
+34
+00:01:41,370 --> 00:01:44,150
+Go programs are
+also easy to deploy
+
+35
+00:01:44,150 --> 00:01:47,650
+because the compiler generates
+a single executable file.
+
+36
+00:01:47,650 --> 00:01:50,340
+Sometimes, deploying a
+Go program to production
+
+37
+00:01:50,340 --> 00:01:54,420
+can be as simple as copying the
+executable over to the server.
+
+38
+00:01:54,420 --> 00:01:56,960
+And last but not
+least, it's a language
+
+39
+00:01:56,960 --> 00:01:58,950
+that's just fun to write.
+
+40
+00:01:58,950 --> 00:02:02,880
+Now, the natural next question
+is what types of programs
+
+41
+00:02:02,880 --> 00:02:04,570
+should we use Go for?
+
+42
+00:02:04,570 --> 00:02:07,100
+And the answer is
+systems programming.
+
+43
+00:02:10,120 --> 00:02:12,820
+Systems programming is
+a type of programming
+
+44
+00:02:12,820 --> 00:02:17,310
+aimed at servicing other systems
+as opposed to servicing users
+
+45
+00:02:17,310 --> 00:02:18,100
+directly.
+
+46
+00:02:18,100 --> 00:02:20,640
+These lower-level programs
+more often than not
+
+47
+00:02:20,640 --> 00:02:23,840
+will not expose a
+graphical user interface,
+
+48
+00:02:23,840 --> 00:02:26,140
+like links and
+forms and buttons,
+
+49
+00:02:26,140 --> 00:02:28,890
+but instead they'll run
+straight from the terminal
+
+50
+00:02:28,890 --> 00:02:30,400
+or the command line.
+
+51
+00:02:30,400 --> 00:02:32,310
+For those with experience
+in building web
+
+52
+00:02:32,310 --> 00:02:34,490
+or mobile applications,
+I know this
+
+53
+00:02:34,490 --> 00:02:36,530
+sounds a little
+different than usual,
+
+54
+00:02:36,530 --> 00:02:38,880
+but here's a quick
+comparison-- programs that
+
+55
+00:02:38,880 --> 00:02:41,290
+provide services
+directly to humans
+
+56
+00:02:41,290 --> 00:02:43,360
+are called application programs.
+
+57
+00:02:43,360 --> 00:02:46,140
+These allow regular
+end users, most times
+
+58
+00:02:46,140 --> 00:02:48,010
+without any
+technical background,
+
+59
+00:02:48,010 --> 00:02:49,960
+to perform common tasks.
+
+60
+00:02:49,960 --> 00:02:51,830
+Examples of these
+types of programs
+
+61
+00:02:51,830 --> 00:02:55,770
+include e-commerce, to-do
+list apps, text editors,
+
+62
+00:02:55,770 --> 00:02:57,110
+and music players.
+
+63
+00:02:57,110 --> 00:03:00,160
+Programs that provide
+services to other programs
+
+64
+00:03:00,160 --> 00:03:02,450
+are called system programs.
+
+65
+00:03:02,450 --> 00:03:07,600
+Examples include APIs, game
+engines, network applications,
+
+66
+00:03:07,600 --> 00:03:10,850
+and command-line applications,
+just to name a few.
+
+67
+00:03:10,850 --> 00:03:13,010
+These are usually
+resource constrained
+
+68
+00:03:13,010 --> 00:03:15,160
+and must perform really fast.
+
+69
+00:03:15,160 --> 00:03:18,380
+And that's where
+Go really shines.
+
+70
+00:03:18,380 --> 00:03:21,230
+In this course, we'll look at
+the most common features used
+
+71
+00:03:21,230 --> 00:03:23,340
+when writing programs in Go.
+
+72
+00:03:23,340 --> 00:03:26,620
+These include how to
+build and run programs,
+
+73
+00:03:26,620 --> 00:03:30,030
+importing and creating
+packages, basic constructs
+
+74
+00:03:30,030 --> 00:03:32,900
+like functions, variables,
+loops, conditionals,
+
+75
+00:03:32,900 --> 00:03:34,700
+how to work with
+different data types,
+
+76
+00:03:34,700 --> 00:03:37,270
+and finally, how to
+write concurrent code
+
+77
+00:03:37,270 --> 00:03:39,050
+using goroutines.
+
+78
+00:03:39,050 --> 00:03:42,730
+Now, let's start
+writing some code.
+
+79
+00:03:42,730 --> 00:03:46,080
+Our first Go program will
+be a simple Hello World.
+
+80
+00:03:46,080 --> 00:03:48,870
+We'll write our code to
+a single source code
+
+81
+00:03:48,870 --> 00:03:53,120
+file, then compile that
+file using the Go compiler,
+
+82
+00:03:53,120 --> 00:03:57,010
+which generates a single
+binary, or executable file.
+
+83
+00:03:57,010 --> 00:03:59,730
+Running the program, we'll
+print a message to the console--
+
+84
+00:03:59,730 --> 00:04:00,350
+"Hello.
+
+85
+00:04:00,350 --> 00:04:01,700
+I am Gopher."
+
+86
+00:04:01,700 --> 00:04:05,840
+Now let's see how
+we can write this.
+
+87
+00:04:05,840 --> 00:04:09,700
+We'll create a new project for
+our program and call it hello.
+
+88
+00:04:09,700 --> 00:04:13,080
+Here on the left is a
+typical Go workspace.
+
+89
+00:04:13,080 --> 00:04:16,640
+The source folder is the
+root for all our Go projects,
+
+90
+00:04:16,640 --> 00:04:19,630
+and we'll create a new folder
+for each separate project,
+
+91
+00:04:19,630 --> 00:04:21,440
+like we're doing
+here with hello.
+
+92
+00:04:21,440 --> 00:04:24,300
+Under the new folder, we
+can find a Go source code
+
+93
+00:04:24,300 --> 00:04:26,640
+file with the .go extension.
+
+94
+00:04:26,640 --> 00:04:29,820
+Since this Hello World program
+will have a single file,
+
+95
+00:04:29,820 --> 00:04:31,870
+we'll call it main.go.
+
+96
+00:04:31,870 --> 00:04:35,030
+And this is a naming
+convention, not a rule.
+
+97
+00:04:35,030 --> 00:04:38,510
+Inside our main.go file, the
+very first thing we write
+
+98
+00:04:38,510 --> 00:04:41,840
+is the package
+definition, package main.
+
+99
+00:04:41,840 --> 00:04:44,050
+Then, we define
+the main function
+
+100
+00:04:44,050 --> 00:04:45,700
+using the func keyword.
+
+101
+00:04:45,700 --> 00:04:48,570
+This function is the entry
+point for our Go program.
+
+102
+00:04:48,570 --> 00:04:55,530
+All Go programs must have a main
+package and a main function.
+
+103
+00:04:55,530 --> 00:04:57,400
+In order to write
+to the console,
+
+104
+00:04:57,400 --> 00:05:00,720
+we'll need to import a package
+from the Go standard library,
+
+105
+00:05:00,720 --> 00:05:04,290
+called fmt, which
+stands for format.
+
+106
+00:05:04,290 --> 00:05:07,610
+Package imports go after
+the package definition.
+
+107
+00:05:07,610 --> 00:05:10,040
+Then, from inside
+the main function,
+
+108
+00:05:10,040 --> 00:05:13,650
+we'll call the print line
+function from the fmt package,
+
+109
+00:05:13,650 --> 00:05:15,650
+giving it the string, "Hello.
+
+110
+00:05:15,650 --> 00:05:16,850
+I am Gopher."
+
+111
+00:05:16,850 --> 00:05:20,430
+Notice semicolons are
+not necessary in Go,
+
+112
+00:05:20,430 --> 00:05:22,930
+and this is all the code
+that we need for now.
+
+113
+00:05:22,930 --> 00:05:27,010
+Now let's see how we
+can run this program.
+
+114
+00:05:27,010 --> 00:05:29,210
+Remember we talked about
+the compiler, which
+
+115
+00:05:29,210 --> 00:05:32,440
+read source code and
+produces an executable file?
+
+116
+00:05:32,440 --> 00:05:35,110
+Well, this process of
+reading source code,
+
+117
+00:05:35,110 --> 00:05:38,230
+resolving package
+dependencies, and generating
+
+118
+00:05:38,230 --> 00:05:42,390
+a single, executable file
+is called a build process.
+
+119
+00:05:42,390 --> 00:05:44,610
+In order to build
+our Go project,
+
+120
+00:05:44,610 --> 00:05:48,100
+we use the build
+command, shipped with Go.
+
+121
+00:05:48,100 --> 00:05:51,840
+We run go build from the
+project root folder, hello.
+
+122
+00:05:51,840 --> 00:05:54,760
+The compiler will produce
+an executable file
+
+123
+00:05:54,760 --> 00:05:59,590
+named after the project,
+hello, but with no extension.
+
+124
+00:05:59,590 --> 00:06:02,320
+Using this file, we
+can run the program
+
+125
+00:06:02,320 --> 00:06:05,010
+and see the message printed
+to the screen, "Hello.
+
+126
+00:06:05,010 --> 00:06:08,750
+I am Gopher."
+
+127
+00:06:08,750 --> 00:06:11,250
+Those with a background
+in interpreted languages
+
+128
+00:06:11,250 --> 00:06:14,360
+like Ruby, Python,
+or PHP might be
+
+129
+00:06:14,360 --> 00:06:16,090
+wondering if
+there's a way to run
+
+130
+00:06:16,090 --> 00:06:20,020
+Go programs without this
+intermediate compilation step.
+
+131
+00:06:20,020 --> 00:06:22,070
+And the answer is yes.
+
+132
+00:06:22,070 --> 00:06:26,060
+We can use go run, another
+command that's shipped with Go
+
+133
+00:06:26,060 --> 00:06:29,830
+and give it the main
+file name, main.go.
+
+134
+00:06:29,830 --> 00:06:33,850
+With a single command, our
+program will be built and run,
+
+135
+00:06:33,850 --> 00:06:36,680
+and we can see the same message
+printed to the console--
+
+136
+00:06:36,680 --> 00:06:37,180
+"Hello.
+
+137
+00:06:37,180 --> 00:06:38,350
+I am Gopher."
+
+138
+00:06:38,350 --> 00:06:41,920
+While we'll rarely see go
+run being used in production,
+
+139
+00:06:41,920 --> 00:06:44,575
+this command is quite
+handy for development,
+
+140
+00:06:44,575 --> 00:06:46,950
+and it's what we'll use for
+the remainder of this course.
+
+141
+00:06:50,210 --> 00:06:52,080
+Another command
+that's shipped with Go
+
+142
+00:06:52,080 --> 00:06:55,230
+and can greatly increase
+productivity and development
+
+143
+00:06:55,230 --> 00:06:57,420
+is called go fmt.
+
+144
+00:06:57,420 --> 00:07:00,740
+We can use this command
+to format Go source code.
+
+145
+00:07:00,740 --> 00:07:02,390
+Let's take a look
+at this example.
+
+146
+00:07:02,390 --> 00:07:04,850
+Here on the left, we have
+the same Hello World code
+
+147
+00:07:04,850 --> 00:07:07,260
+we wrote before,
+except now, it's
+
+148
+00:07:07,260 --> 00:07:09,090
+formatted a little different.
+
+149
+00:07:09,090 --> 00:07:12,050
+There's weird line breaks,
+random white spaces,
+
+150
+00:07:12,050 --> 00:07:15,080
+and it's pretty
+inconsistent overall.
+
+151
+00:07:15,080 --> 00:07:18,750
+While this is still valid
+syntax and will run just fine,
+
+152
+00:07:18,750 --> 00:07:21,890
+it's very hard for
+humans to understand.
+
+153
+00:07:21,890 --> 00:07:25,270
+To fix this, we can
+run go fmt and give it
+
+154
+00:07:25,270 --> 00:07:27,670
+the filename, main.go.
+
+155
+00:07:27,670 --> 00:07:32,350
+We'll also use the -w flag
+to tell the go fmt command
+
+156
+00:07:32,350 --> 00:07:36,170
+to write the results back to
+the original source file instead
+
+157
+00:07:36,170 --> 00:07:39,480
+of its default behavior of
+printing out to the console.
+
+158
+00:07:39,480 --> 00:07:41,970
+Once we do that, we can
+see the code is now
+
+159
+00:07:41,970 --> 00:07:43,320
+a lot easier to understand.
+
+160
+00:07:47,800 --> 00:07:51,350
+There are many benefits to
+following go fmt's formatting
+
+161
+00:07:51,350 --> 00:07:55,400
+rules instead of coming up with
+our own individual standards.
+
+162
+00:07:55,400 --> 00:07:59,140
+First and foremost, we get to
+avoid most debates around code
+
+163
+00:07:59,140 --> 00:08:00,160
+styles.
+
+164
+00:08:00,160 --> 00:08:03,500
+We know developers have
+preferences of their own,
+
+165
+00:08:03,500 --> 00:08:07,370
+but with a tool like go fmt
+doing most of the work for us,
+
+166
+00:08:07,370 --> 00:08:10,740
+it's not that hard to adopt
+a new style that everybody
+
+167
+00:08:10,740 --> 00:08:12,350
+can agree on.
+
+168
+00:08:12,350 --> 00:08:15,680
+Also, by not having to
+worry about minor concerns,
+
+169
+00:08:15,680 --> 00:08:19,940
+it becomes easier to write,
+read, and maintain programs.
+
+170
+00:08:19,940 --> 00:08:23,650
+To make it even easier to
+incorporate go fmt into our Go
+
+171
+00:08:23,650 --> 00:08:27,340
+toolbelt, many plugins are
+available for text editors
+
+172
+00:08:27,340 --> 00:08:30,370
+that will take care of
+running that command for us.
+
+173
+00:08:30,370 --> 00:08:32,429
+For example, we
+can have it set up
+
+174
+00:08:32,429 --> 00:08:35,710
+where go fmt is run
+on every file save.
+
+175
+00:08:35,710 --> 00:08:39,270
+Or, we could create a
+pre-commit hook in git
+
+176
+00:08:39,270 --> 00:08:45,340
+that uses go fmt to check
+formatting before each commit.
+
+177
+00:08:45,340 --> 00:08:47,280
+That's it for this
+first section.
+
+178
+00:08:47,280 --> 00:08:50,260
+Have fun writing your first
+Go program in the challenges,
+
+179
+00:08:50,260 --> 00:08:52,520
+and I'll see you back here.
+

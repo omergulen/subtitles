@@ -1,0 +1,557 @@
+﻿1
+00:00:00,000 --> 00:00:03,380
+[SINGING] Put on your headlamp
+and get ready to dig
+
+2
+00:00:03,380 --> 00:00:07,240
+as we tunnel into Golang,
+pushing past twigs.
+
+3
+00:00:07,240 --> 00:00:08,960
+We'll work our
+way underground,
+
+4
+00:00:08,960 --> 00:00:11,040
+programming systems
+safe and sound. 
+
+5
+00:00:11,040 --> 00:00:12,897
+Go's efficient,
+simple, and fast.
+
+6
+00:00:12,897 --> 00:00:14,500
+Parallel work makes
+coding a blast.
+
+7
+00:00:14,500 --> 00:00:18,500
+Now let's burrow down
+and start to play.
+
+8
+00:00:18,500 --> 00:00:22,000
+It's time to get
+On Track With Golang.
+
+9
+00:00:26,000 --> 00:00:28,050
+You are watching On
+Track With Golang.
+
+10
+00:00:28,050 --> 00:00:30,200
+I'm Carlos Souza and
+in this section,
+
+11
+00:00:30,200 --> 00:00:33,580
+we'll learn about interfaces.
+
+12
+00:00:33,580 --> 00:00:37,360
+The program we'll write now will
+loop through a list of gophers
+
+13
+00:00:37,360 --> 00:00:40,800
+and call the jump method
+on each one of them.
+
+14
+00:00:40,800 --> 00:00:43,000
+To write this, we'll
+use a combination
+
+15
+00:00:43,000 --> 00:00:45,410
+of things we've learned
+in the course so far
+
+16
+00:00:45,410 --> 00:00:49,180
+and the code might start
+looking a little bit complex,
+
+17
+00:00:49,180 --> 00:00:51,050
+so we'll take it step by step.
+
+18
+00:00:51,050 --> 00:00:53,610
+First, we'll create
+a getList method
+
+19
+00:00:53,610 --> 00:00:57,360
+that returns a slice
+with pointers to gophers.
+
+20
+00:00:57,360 --> 00:01:00,570
+This is what the brackets
+and the star symbol mean.
+
+21
+00:01:00,570 --> 00:01:02,900
+When calling this
+function from main,
+
+22
+00:01:02,900 --> 00:01:06,100
+we'll assign the return
+value to a new variable
+
+23
+00:01:06,100 --> 00:01:08,600
+called gopherList.
+
+24
+00:01:08,600 --> 00:01:12,260
+Then, we'll create a
+for loop and use range
+
+25
+00:01:12,260 --> 00:01:15,220
+to read each element
+from gopherList.
+
+26
+00:01:15,220 --> 00:01:17,320
+Using the underline
+character, we
+
+27
+00:01:17,320 --> 00:01:20,120
+ignore the index
+for each iteration
+
+28
+00:01:20,120 --> 00:01:23,120
+and grab each gopher directly.
+
+29
+00:01:23,120 --> 00:01:25,400
+Then, from inside
+the for loop, we
+
+30
+00:01:25,400 --> 00:01:27,590
+call the jump method
+on each gopher
+
+31
+00:01:27,590 --> 00:01:29,730
+and print the result
+to the console.
+
+32
+00:01:29,730 --> 00:01:33,120
+Static typing is what allows
+the Go compiler to ensure
+
+33
+00:01:33,120 --> 00:01:35,900
+that every element
+returned by getList
+
+34
+00:01:35,900 --> 00:01:38,860
+responds to the jump
+method so we can safely
+
+35
+00:01:38,860 --> 00:01:43,120
+call this method for each
+gopher returned from range.
+
+36
+00:01:43,120 --> 00:01:46,110
+Now let's see how we can
+implement the getList function.
+
+37
+00:01:49,210 --> 00:01:52,990
+From inside getList, we'll
+create two gophers, Phil
+
+38
+00:01:52,990 --> 00:01:54,230
+and Noodles.
+
+39
+00:01:54,230 --> 00:01:57,050
+We'll grab their pointers
+with the ampersand symbol,
+
+40
+00:01:57,050 --> 00:02:00,600
+and then create a new slice
+with those pointers using
+
+41
+00:02:00,600 --> 00:02:03,210
+the same bracket and star
+symbol combination we
+
+42
+00:02:03,210 --> 00:02:05,080
+have in the function signature.
+
+43
+00:02:05,080 --> 00:02:07,850
+Lastly, we'll return the slice.
+
+44
+00:02:07,850 --> 00:02:11,520
+If we run the code now, we
+can see it prints the message,
+
+45
+00:02:11,520 --> 00:02:17,540
+"Phil can jump HIGH" and
+"Noodles can still jump."
+
+46
+00:02:17,540 --> 00:02:20,730
+Turns out other
+types can also jump.
+
+47
+00:02:20,730 --> 00:02:23,410
+There are other struct
+types like horse
+
+48
+00:02:23,410 --> 00:02:26,230
+with different properties,
+name and weight,
+
+49
+00:02:26,230 --> 00:02:29,300
+but the same method
+signature, a jump
+
+50
+00:02:29,300 --> 00:02:31,910
+method that returns a string.
+
+51
+00:02:31,910 --> 00:02:36,110
+The implementation of jump for
+a horse checks for the weight
+
+52
+00:02:36,110 --> 00:02:41,520
+and prints a message if it's
+greater than 2,500 kilos
+
+53
+00:02:41,520 --> 00:02:43,160
+and another message if it's not.
+
+54
+00:02:46,680 --> 00:02:48,640
+Now let's go back to
+our getList function
+
+55
+00:02:48,640 --> 00:02:50,810
+and create a horse struct.
+
+56
+00:02:50,810 --> 00:02:54,550
+We'll give it the name
+Barbaro and weight, 2,000.
+
+57
+00:02:54,550 --> 00:02:58,310
+Now if we try to add the new
+horse to our existing slice,
+
+58
+00:02:58,310 --> 00:03:00,000
+we'll run into an error.
+
+59
+00:03:00,000 --> 00:03:04,110
+We cannot combine both a gopher
+and a horse under the same
+
+60
+00:03:04,110 --> 00:03:06,890
+slice of type star gopher.
+
+61
+00:03:06,890 --> 00:03:10,260
+In fact, a horse
+is not a gopher.
+
+62
+00:03:10,260 --> 00:03:16,420
+But they do share similar
+behavior, so there is a way.
+
+63
+00:03:16,420 --> 00:03:19,090
+We'll do this by
+creating an interface.
+
+64
+00:03:19,090 --> 00:03:22,650
+Interfaces provide a
+way to specify behavior.
+
+65
+00:03:22,650 --> 00:03:27,330
+If something can do this,
+then it can be used here.
+
+66
+00:03:27,330 --> 00:03:30,020
+We'll create a new
+interface called jumper
+
+67
+00:03:30,020 --> 00:03:33,040
+using the type keyword--
+the same type keyword
+
+68
+00:03:33,040 --> 00:03:35,010
+we used to create a struct.
+
+69
+00:03:35,010 --> 00:03:38,700
+Then, give it the name
+of the interface, jumper,
+
+70
+00:03:38,700 --> 00:03:42,740
+and the primitive type it
+inherits from, interface.
+
+71
+00:03:42,740 --> 00:03:46,340
+Inside the interface, we
+declare a method signature
+
+72
+00:03:46,340 --> 00:03:49,150
+that is expected to be
+present in all types that
+
+73
+00:03:49,150 --> 00:03:51,530
+implement this interface.
+
+74
+00:03:51,530 --> 00:03:54,480
+Then we go back to the
+getList function and change
+
+75
+00:03:54,480 --> 00:03:57,840
+the return value to be a
+collection of jumper types,
+
+76
+00:03:57,840 --> 00:03:59,710
+not gopher anymore.
+
+77
+00:03:59,710 --> 00:04:01,750
+Notice the star
+symbol is not needed
+
+78
+00:04:01,750 --> 00:04:05,056
+in the function signature
+when returning interfaces.
+
+79
+00:04:05,056 --> 00:04:06,930
+And we change the type
+of slice created
+
+80
+00:04:06,930 --> 00:04:09,620
+in the function
+body to type jumper.
+
+81
+00:04:09,620 --> 00:04:12,160
+All types belonging
+to this slice
+
+82
+00:04:12,160 --> 00:04:14,980
+must comply with the
+jumper interface.
+
+83
+00:04:14,980 --> 00:04:17,930
+In other words, they must
+implement a jump method.
+
+84
+00:04:21,140 --> 00:04:24,990
+In Go, types implement
+interfaces implicitly
+
+85
+00:04:24,990 --> 00:04:27,210
+simply by implementing
+the methods that
+
+86
+00:04:27,210 --> 00:04:29,080
+were declared on the interface.
+
+87
+00:04:29,080 --> 00:04:31,730
+Both gopher and horse
+have a jump method
+
+88
+00:04:31,730 --> 00:04:35,990
+with the exact same signature,
+so we can add both types
+
+89
+00:04:35,990 --> 00:04:38,080
+under the slice of type jumper.
+
+90
+00:04:41,250 --> 00:04:42,940
+Now back to our
+main function, we'll
+
+91
+00:04:42,940 --> 00:04:45,990
+rename our variables to better
+reflect the type changes
+
+92
+00:04:45,990 --> 00:04:47,400
+that we've just made.
+
+93
+00:04:47,400 --> 00:04:49,540
+We'll assign the
+return from getList
+
+94
+00:04:49,540 --> 00:04:52,670
+to a variable called
+jumperList and the return
+
+95
+00:04:52,670 --> 00:04:56,200
+from range to a
+variable called jumper.
+
+96
+00:04:56,200 --> 00:04:58,540
+The compiler does not
+care about naming,
+
+97
+00:04:58,540 --> 00:05:02,360
+so we could name these something
+else like list and element.
+
+98
+00:05:02,360 --> 00:05:05,490
+But we always want to make
+sure that the code we write
+
+99
+00:05:05,490 --> 00:05:08,270
+is easily readable
+by other humans,
+
+100
+00:05:08,270 --> 00:05:11,230
+so it's always good to
+favor meaningful names.
+
+101
+00:05:11,230 --> 00:05:12,830
+If we run this
+code again, we can
+
+102
+00:05:12,830 --> 00:05:16,290
+see it still prints the
+same messages as before.
+
+103
+00:05:16,290 --> 00:05:19,036
+And now, a message
+from horse as well.
+
+104
+00:05:19,036 --> 00:05:22,130
+I will jump.
+
+105
+00:05:22,130 --> 00:05:25,420
+[HORSE NEIGHS]
+
+106
+00:05:26,210 --> 00:05:28,940
+There is a reason, however,
+that we use the name
+
+107
+00:05:28,940 --> 00:05:31,190
+jumper for our interface.
+
+108
+00:05:31,190 --> 00:05:34,960
+A convention in Go for
+naming one method interfaces
+
+109
+00:05:34,960 --> 00:05:40,200
+is to start with the method name
+and then add an "er" suffix.
+
+110
+00:05:40,200 --> 00:05:44,250
+Because we had a jump method,
+we named our interface jumper.
+
+111
+00:05:44,250 --> 00:05:46,340
+Some examples from the
+Go standard library
+
+112
+00:05:46,340 --> 00:05:49,810
+that use this convention
+include the reader interface
+
+113
+00:05:49,810 --> 00:05:52,550
+with the read method
+and the writer interface
+
+114
+00:05:52,550 --> 00:05:53,570
+with the write method.
+
+115
+00:05:58,710 --> 00:06:00,000
+That's it for this section.
+
+116
+00:06:00,000 --> 00:06:03,730
+Now it's your turn to write some
+interfaces in the challenges.
+

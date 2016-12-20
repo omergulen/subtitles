@@ -1,0 +1,639 @@
+﻿1
+00:00:00,000 --> 00:00:02,230
+[SINGING] Put on
+your headlamp and get
+
+2
+00:00:02,230 --> 00:00:07,220
+ready to dig as we tunnel into
+Golang, pushing past twigs.
+
+3
+00:00:07,220 --> 00:00:10,080
+We'll work our way underground,
+programming systems
+
+4
+00:00:10,080 --> 00:00:11,010
+safe and sound.
+
+5
+00:00:11,010 --> 00:00:12,810
+Go's efficient,
+simple, and fast.
+
+6
+00:00:12,810 --> 00:00:14,410
+Parallel work makes
+coding a blast.
+
+7
+00:00:14,410 --> 00:00:18,386
+Now let's burrow down
+and start to play.
+
+8
+00:00:18,386 --> 00:00:21,865
+It's time to get On
+Track With Golang.
+
+9
+00:00:25,850 --> 00:00:27,850
+You're watching On
+Track With Golang.
+
+10
+00:00:27,850 --> 00:00:28,930
+I'm Carlos Souza.
+
+11
+00:00:28,930 --> 00:00:30,670
+And in this section,
+we'll learn how
+
+12
+00:00:30,670 --> 00:00:35,570
+to create variables and
+work with data types.
+
+13
+00:00:35,570 --> 00:00:38,750
+Let's go back to where we
+finished in the last section.
+
+14
+00:00:38,750 --> 00:00:41,650
+Notice here that we
+referencing the os.Args already
+
+15
+00:00:41,650 --> 00:00:45,420
+twice from two different
+places-- first,
+
+16
+00:00:45,420 --> 00:00:47,440
+when we read the
+number of arguments,
+
+17
+00:00:47,440 --> 00:00:51,670
+and then again, when we want
+to read the element at index 1.
+
+18
+00:00:51,670 --> 00:00:55,720
+This is unnecessary repetition
+and the start of a code smell.
+
+19
+00:00:55,720 --> 00:00:59,200
+Let's see how we can fix this.
+
+20
+00:00:59,200 --> 00:01:02,500
+We'll create a
+variable called args
+
+21
+00:01:02,500 --> 00:01:07,900
+and assign it the value from
+os.Args using :=.
+
+22
+00:01:07,900 --> 00:01:12,490
+This operator tells Go to create
+a new variable called args
+
+23
+00:01:12,490 --> 00:01:16,270
+and automatically find out the
+data type for this variable
+
+24
+00:01:16,270 --> 00:01:19,360
+from the value that's
+being assigned to it.
+
+25
+00:01:19,360 --> 00:01:22,570
+Once we do that, we can
+use the new variable args
+
+26
+00:01:22,570 --> 00:01:24,910
+as the argument for
+the len function
+
+27
+00:01:24,910 --> 00:01:27,070
+and for the print line function.
+
+28
+00:01:27,070 --> 00:01:30,250
+Letting the compiler
+figure out or infer
+
+29
+00:01:30,250 --> 00:01:35,230
+the data type for a given value
+is also called type inference.
+
+30
+00:01:35,230 --> 00:01:39,940
+Type inference is a quicker way
+to assign to variables instead
+
+31
+00:01:39,940 --> 00:01:42,490
+of manually declaring
+them before assigning
+
+32
+00:01:42,490 --> 00:01:47,680
+a value, also supported in
+Go, as we'll see shortly.
+
+33
+00:01:47,680 --> 00:01:51,490
+We've mentioned static typing
+as being a characteristic of Go.
+
+34
+00:01:51,490 --> 00:01:53,620
+Now let's talk a little
+bit more about that
+
+35
+00:01:53,620 --> 00:01:57,070
+and see how that
+relates to data types.
+
+36
+00:01:57,070 --> 00:01:59,140
+One way data types
+can help us write
+
+37
+00:01:59,140 --> 00:02:02,710
+better programs is by
+determining how much space
+
+38
+00:02:02,710 --> 00:02:04,870
+is needed to store a value.
+
+39
+00:02:04,870 --> 00:02:07,550
+To illustrate this, let's
+look at this example.
+
+40
+00:02:07,550 --> 00:02:10,509
+Our gopher friends need to
+store an acorn they just
+
+41
+00:02:10,509 --> 00:02:12,340
+found in the forest.
+
+42
+00:02:12,340 --> 00:02:16,480
+To store this acorn,
+they choose a basket.
+
+43
+00:02:16,480 --> 00:02:19,570
+They pick one with just
+enough storage space
+
+44
+00:02:19,570 --> 00:02:22,720
+and place the
+acorn inside there.
+
+45
+00:02:22,720 --> 00:02:25,450
+The basket they pick can
+perfectly accommodate
+
+46
+00:02:25,450 --> 00:02:27,550
+the acorn, so that's all good.
+
+47
+00:02:27,550 --> 00:02:30,640
+The acorn here is a
+value, like the number 1,
+
+48
+00:02:30,640 --> 00:02:32,320
+or the string "hello."
+
+49
+00:02:32,320 --> 00:02:36,790
+The basket is a data type
+like an integer or a string.
+
+50
+00:02:36,790 --> 00:02:39,880
+And placing an acorn
+inside a basket
+
+51
+00:02:39,880 --> 00:02:43,090
+is like assigning a value
+to a specific data type.
+
+52
+00:02:46,040 --> 00:02:49,590
+However, there are different
+types of baskets out there
+
+53
+00:02:49,590 --> 00:02:52,270
+and many different
+types of acorn.
+
+54
+00:02:52,270 --> 00:02:54,580
+For the next one they
+find, the gophers
+
+55
+00:02:54,580 --> 00:02:58,360
+could make the poor decision of
+choosing a basket with way
+
+56
+00:02:58,360 --> 00:03:01,840
+more storage space than
+what's needed for that acorn.
+
+57
+00:03:01,840 --> 00:03:03,430
+While it would
+fit in the basket,
+
+58
+00:03:03,430 --> 00:03:06,430
+they'd end up with a
+lot of unused space.
+
+59
+00:03:06,430 --> 00:03:09,730
+In programming, this means
+allocating more memory
+
+60
+00:03:09,730 --> 00:03:11,770
+than what's necessary.
+
+61
+00:03:11,770 --> 00:03:14,350
+Or, they could make
+another mistake,
+
+62
+00:03:14,350 --> 00:03:17,420
+picking a box that's
+too small for the acorn.
+
+63
+00:03:17,420 --> 00:03:20,800
+In programming, this means
+not allocating enough memory
+
+64
+00:03:20,800 --> 00:03:21,807
+to store a value.
+
+65
+00:03:24,940 --> 00:03:27,220
+So for every value,
+there's always
+
+66
+00:03:27,220 --> 00:03:29,320
+a proper data type
+that determines
+
+67
+00:03:29,320 --> 00:03:32,950
+how that value should be
+stored and the operations
+
+68
+00:03:32,950 --> 00:03:36,250
+that can be performed on
+values of that data type.
+
+69
+00:03:36,250 --> 00:03:39,565
+For large acorns,
+there's big baskets.
+
+70
+00:03:39,565 --> 00:03:42,383
+And for small acorns,
+there are smaller baskets.
+
+71
+00:03:45,580 --> 00:03:49,000
+There are two different ways
+to declare variables in Go,
+
+72
+00:03:49,000 --> 00:03:53,020
+using type inference or
+manual type declaration.
+
+73
+00:03:53,020 --> 00:03:55,540
+Type inference is the
+one we've just seen,
+
+74
+00:03:55,540 --> 00:03:58,270
+where the data type for
+some value on the right
+
+75
+00:03:58,270 --> 00:04:00,880
+is inferred during the
+assignment operation
+
+76
+00:04:00,880 --> 00:04:03,820
+to the newly created
+variable on the left.
+
+77
+00:04:03,820 --> 00:04:07,180
+This is where we use the
+special := operator,
+
+78
+00:04:07,180 --> 00:04:09,130
+and it's the most
+common and preferred way
+
+79
+00:04:09,130 --> 00:04:11,080
+to declare variables in Go.
+
+80
+00:04:11,080 --> 00:04:14,000
+As an example, we can assign
+the string "Hello, Gopher"
+
+81
+00:04:14,000 --> 00:04:17,890
+to the message variable without
+having to explicitly tell
+
+82
+00:04:17,890 --> 00:04:19,149
+its data type.
+
+83
+00:04:19,149 --> 00:04:22,210
+The Go compiler figures
+that out for us.
+
+84
+00:04:22,210 --> 00:04:24,070
+The other way to
+declare variables
+
+85
+00:04:24,070 --> 00:04:27,730
+is via manual type declaration,
+where the variable data
+
+86
+00:04:27,730 --> 00:04:31,210
+type is declared prior
+to the assignment.
+
+87
+00:04:31,210 --> 00:04:33,160
+When declaring
+variables this way,
+
+88
+00:04:33,160 --> 00:04:37,670
+we use the var keyword
+followed by the variable name,
+
+89
+00:04:37,670 --> 00:04:40,180
+and finally, its data type.
+
+90
+00:04:40,180 --> 00:04:42,820
+Then, we can assign
+values to it using
+
+91
+00:04:42,820 --> 00:04:45,100
+the regular = operator.
+
+92
+00:04:45,100 --> 00:04:49,360
+As an example, we declared the
+message variable of type string
+
+93
+00:04:49,360 --> 00:04:53,230
+and then assign it the value
+"Hello, Gopher" on the line
+
+94
+00:04:53,230 --> 00:04:54,220
+below.
+
+95
+00:04:54,220 --> 00:04:57,250
+Although being more verbose,
+we'll see some examples
+
+96
+00:04:57,250 --> 00:04:59,200
+where using manual
+type declaration
+
+97
+00:04:59,200 --> 00:05:02,106
+can be useful and
+sometimes even necessary.
+
+98
+00:05:04,720 --> 00:05:08,080
+The ability to specify which
+data types are expected
+
+99
+00:05:08,080 --> 00:05:11,230
+to be assigned to variables
+combined with the fact
+
+100
+00:05:11,230 --> 00:05:14,380
+that Go programs go
+through a build process
+
+101
+00:05:14,380 --> 00:05:17,200
+gives us static
+typing, which is when
+
+102
+00:05:17,200 --> 00:05:19,540
+the compiler checks
+for type errors
+
+103
+00:05:19,540 --> 00:05:22,000
+before the program is run.
+
+104
+00:05:22,000 --> 00:05:25,810
+In this code snippet, if we
+declare a variable age of type
+
+105
+00:05:25,810 --> 00:05:30,060
+string, and then try
+to assign the value 42,
+
+106
+00:05:30,060 --> 00:05:33,160
+we'll see a compiler error
+during the build process,
+
+107
+00:05:33,160 --> 00:05:36,520
+accusing a type
+mismatch, like this one--
+
+108
+00:05:36,520 --> 00:05:39,310
+cannot use 42 as type string.
+
+109
+00:05:39,310 --> 00:05:41,980
+When we change string
+to int, then no errors
+
+110
+00:05:41,980 --> 00:05:45,310
+are raised because 42
+is, in fact, an integer.
+
+111
+00:05:48,190 --> 00:05:50,380
+Going back to our
+previous code, instead of
+
+112
+00:05:50,380 --> 00:05:53,580
+using type inference, we
+could have manually declared
+
+113
+00:05:53,580 --> 00:05:57,820
+the type for os.Args, which
+is a collection of strings,
+
+114
+00:05:57,820 --> 00:05:59,820
+indicated with his
+bracket prefix,
+
+115
+00:05:59,820 --> 00:06:01,840
+and our code would
+work the same.
+
+116
+00:06:01,840 --> 00:06:05,620
+Most times, type inference
+and manual type declaration
+
+117
+00:06:05,620 --> 00:06:09,700
+can be used interchangeably,
+but as we can see,
+
+118
+00:06:09,700 --> 00:06:13,420
+type inference is less
+code to write, to read,
+
+119
+00:06:13,420 --> 00:06:17,030
+and much simpler to work with.
+
+120
+00:06:17,030 --> 00:06:19,600
+We'll look at some of these
+data types more in depth later
+
+121
+00:06:19,600 --> 00:06:21,850
+in the course, but
+here's a list of some
+
+122
+00:06:21,850 --> 00:06:24,970
+of the built-in types we've seen
+so far in this course, which
+
+123
+00:06:24,970 --> 00:06:29,320
+can be found in most Go
+programs-- int for integers,
+
+124
+00:06:29,320 --> 00:06:33,370
+used for numbers like
+42, string for strings,
+
+125
+00:06:33,370 --> 00:06:38,070
+like "hello," bool for
+booleans, either true or false,
+
+126
+00:06:38,070 --> 00:06:39,760
+and the collection
+type we just saw--
+
+127
+00:06:39,760 --> 00:06:43,810
+in this example, a collection
+of type strings represented
+
+128
+00:06:43,810 --> 00:06:47,440
+by the square brackets followed
+by the string type, which
+
+129
+00:06:47,440 --> 00:06:49,660
+can store multiple
+string values,
+
+130
+00:06:49,660 --> 00:06:53,870
+like "acorn" and "basket."
+
+131
+00:06:53,870 --> 00:06:55,580
+And that's it for this section.
+
+132
+00:06:55,580 --> 00:06:57,600
+Have fun in the challenges.
+

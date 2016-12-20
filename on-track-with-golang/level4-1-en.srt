@@ -1,0 +1,610 @@
+﻿1
+00:00:00,000 --> 00:00:03,640
+[SINGING] Put on your headlamp
+and get ready to dig.
+
+2
+00:00:03,640 --> 00:00:07,250
+As we tunnel into Golang,
+pushing past twigs.
+
+3
+00:00:07,250 --> 00:00:09,900
+We'll work our way underground,
+programming systems
+
+4
+00:00:09,900 --> 00:00:10,844
+safe and sound.
+
+5
+00:00:10,844 --> 00:00:12,740
+Go's efficient, simple, and fast.
+
+6
+00:00:12,740 --> 00:00:14,819
+Parallel work makes
+coding a blast.
+
+7
+00:00:14,819 --> 00:00:18,312
+Now let's burrow down
+and start to play.
+
+8
+00:00:18,312 --> 00:00:21,805
+It's time to get
+On Track With Golang.
+
+9
+00:00:24,800 --> 00:00:26,880
+You are watching On
+Track With Golang.
+
+10
+00:00:26,880 --> 00:00:29,010
+I'm Carlos Souza,
+and in this section,
+
+11
+00:00:29,010 --> 00:00:33,630
+we'll learn how to add
+structure to data using structs.
+
+12
+00:00:33,630 --> 00:00:36,570
+Not many people know this, but
+our gopher friends' ability
+
+13
+00:00:36,570 --> 00:00:39,530
+to jump is based on their age.
+
+14
+00:00:39,530 --> 00:00:41,640
+Let's use the following
+example to describe
+
+15
+00:00:41,640 --> 00:00:43,750
+the logic for gopher jumps.
+
+16
+00:00:43,750 --> 00:00:49,070
+We'll start with two variables--
+gopher1Name and gopher1Age.
+
+17
+00:00:49,070 --> 00:00:51,660
+We'll assign them Phil and 30.
+
+18
+00:00:51,660 --> 00:00:54,280
+Notice we're using the
+type inference operator,
+
+19
+00:00:54,280 --> 00:00:58,100
+so we don't have to worry about
+explicitly declaring the type.
+
+20
+00:00:58,100 --> 00:01:01,600
+If gopher1Age is
+less than 65, we'll
+
+21
+00:01:01,600 --> 00:01:03,900
+call the highJump function.
+
+22
+00:01:03,900 --> 00:01:06,130
+This function takes
+a string and prints
+
+23
+00:01:06,130 --> 00:01:08,950
+to the console the name
+of the gopher followed by
+
+24
+00:01:08,950 --> 00:01:11,220
+"can jump HIGH."
+
+25
+00:01:11,220 --> 00:01:19,630
+If we run this code, we can see
+it prints "Phil can jump HIGH."
+
+26
+00:01:19,630 --> 00:01:23,200
+Despite the odds, even the
+more experienced gophers
+
+27
+00:01:23,200 --> 00:01:25,330
+can keep up with the youngsters.
+
+28
+00:01:25,330 --> 00:01:27,450
+Here's a second set
+of instructions.
+
+29
+00:01:27,450 --> 00:01:33,430
+We create two more variables,
+gopher2Name and gopher2Age.
+
+30
+00:01:33,430 --> 00:01:36,690
+Noodles is 90 years
+old, which causes
+
+31
+00:01:36,690 --> 00:01:41,650
+the conditional to return false
+since 90 is not less than 65,
+
+32
+00:01:41,650 --> 00:01:45,750
+so the else block will run
+and lowJump will be called.
+
+33
+00:01:45,750 --> 00:01:48,940
+The message "Noodles can
+still jump" is printed.
+
+34
+00:01:55,260 --> 00:01:57,600
+The code we've written
+so far works fine,
+
+35
+00:01:57,600 --> 00:02:00,580
+but if we put it all
+together under the same file,
+
+36
+00:02:00,580 --> 00:02:04,170
+we'll notice it's going to
+look a little bit confusing.
+
+37
+00:02:04,170 --> 00:02:07,370
+For each new gopher that
+we add, two variables
+
+38
+00:02:07,370 --> 00:02:11,100
+need to be created and
+another if statement.
+
+39
+00:02:11,100 --> 00:02:14,760
+On top of that, logic rules
+for highJump and lowJump
+
+40
+00:02:14,760 --> 00:02:17,620
+are exposed because they're
+part of the same file.
+
+41
+00:02:17,620 --> 00:02:21,850
+All of this indicates that our
+code is leaking logic details.
+
+42
+00:02:21,850 --> 00:02:25,210
+Let's see if we can fix that.
+
+43
+00:02:25,210 --> 00:02:27,490
+Even in procedural
+languages like Go,
+
+44
+00:02:27,490 --> 00:02:30,860
+there are ways that we can
+hide unnecessary implementation
+
+45
+00:02:30,860 --> 00:02:32,810
+details from the caller.
+
+46
+00:02:32,810 --> 00:02:34,220
+Check out this snippet.
+
+47
+00:02:34,220 --> 00:02:37,200
+You might not know
+exactly what it's doing yet,
+
+48
+00:02:37,200 --> 00:02:39,750
+but I bet you think this
+looks cleaner and easier
+
+49
+00:02:39,750 --> 00:02:41,570
+to understand than
+the previous code.
+
+50
+00:02:41,570 --> 00:02:44,680
+So before, we were
+over here on the left
+
+51
+00:02:44,680 --> 00:02:47,980
+where our code was leaking
+implementation details.
+
+52
+00:02:47,980 --> 00:02:50,090
+And what we want
+to do is get here
+
+53
+00:02:50,090 --> 00:02:54,320
+on the right, where the code
+is properly encapsulated.
+
+54
+00:02:54,320 --> 00:02:55,574
+Let's see how we can do that.
+
+55
+00:02:58,180 --> 00:03:01,010
+We're going to do
+this using a struct.
+
+56
+00:03:01,010 --> 00:03:04,180
+A struct allows us to
+group named properties
+
+57
+00:03:04,180 --> 00:03:07,620
+under a single
+abstraction, a single name.
+
+58
+00:03:07,620 --> 00:03:11,140
+To declare a struct,
+we use the type keyword,
+
+59
+00:03:11,140 --> 00:03:14,770
+indicating a new type is
+to be declared, and give it
+
+60
+00:03:14,770 --> 00:03:19,300
+the name of the new struct
+type we're declaring, gopher.
+
+61
+00:03:19,300 --> 00:03:21,580
+That's the name of the struct.
+
+62
+00:03:21,580 --> 00:03:26,880
+Then we specify the underlying
+type primitive, a struct.
+
+63
+00:03:26,880 --> 00:03:30,070
+Inside curly braces, we
+define our properties
+
+64
+00:03:30,070 --> 00:03:31,910
+with the respective types.
+
+65
+00:03:31,910 --> 00:03:34,780
+We'll create a property
+name of type string
+
+66
+00:03:34,780 --> 00:03:37,370
+and then a property
+age of type integer.
+
+67
+00:03:40,680 --> 00:03:44,710
+To use our newly created struct,
+we need to allocate memory.
+
+68
+00:03:44,710 --> 00:03:47,860
+The simplest way to allocate
+memory and assign values
+
+69
+00:03:47,860 --> 00:03:51,830
+to a struct is using something
+called a struct literal,
+
+70
+00:03:51,830 --> 00:03:53,830
+similar to a slice literal.
+
+71
+00:03:53,830 --> 00:03:56,490
+To do that, we use
+the name of the struct
+
+72
+00:03:56,490 --> 00:04:00,420
+and pass it the initial
+values between curly braces.
+
+73
+00:04:00,420 --> 00:04:05,290
+Here, we create gopher1 with
+the name property set to Phil
+
+74
+00:04:05,290 --> 00:04:08,350
+and the age property set to 30.
+
+75
+00:04:08,350 --> 00:04:12,850
+Then gopher2 with the name
+property set to Noodles
+
+76
+00:04:12,850 --> 00:04:15,270
+and the age property set to 90.
+
+77
+00:04:15,270 --> 00:04:17,720
+Remember-- the
+struct creation code
+
+78
+00:04:17,720 --> 00:04:22,100
+goes inside the main function,
+but the struct declaration code
+
+79
+00:04:22,100 --> 00:04:24,260
+must be placed outside main.
+
+80
+00:04:27,660 --> 00:04:31,280
+A struct contains behavior
+in the form of methods.
+
+81
+00:04:31,280 --> 00:04:33,670
+And the way that we
+define methods on a struct
+
+82
+00:04:33,670 --> 00:04:36,700
+is similar to how we
+define regular functions.
+
+83
+00:04:36,700 --> 00:04:39,040
+We start with the
+func keyword, but then
+
+84
+00:04:39,040 --> 00:04:41,840
+instead of the function
+name, we follow it
+
+85
+00:04:41,840 --> 00:04:45,080
+with the receiver of the
+function in parentheses.
+
+86
+00:04:45,080 --> 00:04:49,380
+The receiver is the type we'll
+use to call this function from.
+
+87
+00:04:49,380 --> 00:04:52,860
+In this example, the
+receiver is the type gopher.
+
+88
+00:04:52,860 --> 00:04:55,290
+Then, after the
+receiver, we have
+
+89
+00:04:55,290 --> 00:04:57,700
+the name of the function, jump.
+
+90
+00:04:57,700 --> 00:05:01,162
+And lastly, the data type
+for the return value,
+
+91
+00:05:01,162 --> 00:05:02,120
+which will be a string.
+
+92
+00:05:05,370 --> 00:05:08,090
+From inside this method,
+we can access properties
+
+93
+00:05:08,090 --> 00:05:10,720
+from gopher via the
+explicit receiver
+
+94
+00:05:10,720 --> 00:05:13,740
+that we declare on the
+function signature, which
+
+95
+00:05:13,740 --> 00:05:17,220
+is the gopher struct that we'll
+be calling this method from.
+
+96
+00:05:17,220 --> 00:05:21,540
+We can read the age property
+with g.age and the name
+
+97
+00:05:21,540 --> 00:05:23,770
+property with g.name.
+
+98
+00:05:23,770 --> 00:05:25,840
+This is the same
+logic we had before,
+
+99
+00:05:25,840 --> 00:05:27,770
+but now part of this method.
+
+100
+00:05:27,770 --> 00:05:30,930
+If age is less than
+65, we'll return
+
+101
+00:05:30,930 --> 00:05:35,120
+the name of the gopher followed
+by the string "can jump HIGH."
+
+102
+00:05:35,120 --> 00:05:38,410
+Otherwise, it returns the
+name of the gopher followed
+
+103
+00:05:38,410 --> 00:05:43,780
+by the string, "can still jump."
+
+104
+00:05:43,780 --> 00:05:45,640
+We can now go back
+to the main function
+
+105
+00:05:45,640 --> 00:05:49,320
+and simply call the jump method
+on each one of our gophers.
+
+106
+00:05:49,320 --> 00:05:52,350
+And our code will still
+behave the same as before,
+
+107
+00:05:52,350 --> 00:05:54,108
+but it looks a lot cleaner.
+
+108
+00:05:56,800 --> 00:06:00,110
+This is the first step into
+hiding implementation details
+
+109
+00:06:00,110 --> 00:06:02,410
+from the caller
+of this function.
+
+110
+00:06:02,410 --> 00:06:04,070
+One thing that can
+help us remember
+
+111
+00:06:04,070 --> 00:06:09,040
+this type of refactoring is call
+the "tell, don't ask" principle.
+
+112
+00:06:09,040 --> 00:06:13,030
+This principle states that
+rather than asking for data
+
+113
+00:06:13,030 --> 00:06:16,220
+and acting on it,
+instead, we should simply
+
+114
+00:06:16,220 --> 00:06:18,640
+tell the program what to do.
+
+115
+00:06:18,640 --> 00:06:20,120
+Let's look at this example.
+
+116
+00:06:20,120 --> 00:06:23,680
+Here on the left, we ask
+for gopherAge and check
+
+117
+00:06:23,680 --> 00:06:26,080
+if it's less than 65.
+
+118
+00:06:26,080 --> 00:06:29,840
+It's up to us, the caller,
+to determine whether or not
+
+119
+00:06:29,840 --> 00:06:34,700
+to call the highJump function
+or the lowJump function.
+
+120
+00:06:34,700 --> 00:06:36,760
+This is the asking version.
+
+121
+00:06:36,760 --> 00:06:41,500
+Now the same logic expressed in
+a telling way looks like this.
+
+122
+00:06:41,500 --> 00:06:45,980
+We have the definition of what
+a gopher is and how it jumps,
+
+123
+00:06:45,980 --> 00:06:48,500
+but then when we want
+to perform a jump,
+
+124
+00:06:48,500 --> 00:06:51,090
+we simply call the jump method.
+
+125
+00:06:51,090 --> 00:06:53,750
+All the logic of how
+the jump should behave
+
+126
+00:06:53,750 --> 00:06:56,296
+is encapsulated
+inside this method.
+
+127
+00:06:59,770 --> 00:07:00,930
+That's it for this section.
+
+128
+00:07:00,930 --> 00:07:04,610
+Now it's your turn to practice
+structs in the challenges.
+

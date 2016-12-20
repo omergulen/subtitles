@@ -1,0 +1,400 @@
+﻿1
+00:00:02,050 --> 00:00:02,840
+Welcome back.
+
+2
+00:00:02,840 --> 00:00:05,650
+In this section, we'll
+learn about slice literals
+
+3
+00:00:05,650 --> 00:00:09,210
+and looping with range.
+
+4
+00:00:09,210 --> 00:00:11,280
+When we know beforehand
+which elements
+
+5
+00:00:11,280 --> 00:00:14,340
+will be part of a slice, then
+calling the append function
+
+6
+00:00:14,340 --> 00:00:18,030
+multiple times like this will
+start looking too verbose.
+
+7
+00:00:18,030 --> 00:00:21,210
+As you can see here, for each
+new language you want to add,
+
+8
+00:00:21,210 --> 00:00:23,548
+you'd have to write
+an entire new line.
+
+9
+00:00:27,040 --> 00:00:30,160
+But here's a better way
+using a slice literal.
+
+10
+00:00:30,160 --> 00:00:33,760
+In a slice literal, we can nest
+elements between curly braces
+
+11
+00:00:33,760 --> 00:00:35,110
+like this.
+
+12
+00:00:35,110 --> 00:00:37,220
+The element count is
+inferred from the number
+
+13
+00:00:37,220 --> 00:00:40,150
+of initial elements, so we
+can use the type inference
+
+14
+00:00:40,150 --> 00:00:41,130
+operator.
+
+15
+00:00:41,130 --> 00:00:42,840
+We print that to the
+console, and then we
+
+16
+00:00:42,840 --> 00:00:45,804
+can see the three elements--
+Go, Ruby, and JavaScript.
+
+17
+00:00:48,470 --> 00:00:51,230
+One simple way that we
+can read from slices
+
+18
+00:00:51,230 --> 00:00:54,110
+is by accessing the
+elements by their index,
+
+19
+00:00:54,110 --> 00:00:56,180
+just like we do with arrays.
+
+20
+00:00:56,180 --> 00:00:59,890
+Here, if we read from
+index 0, 1, and 2,
+
+21
+00:00:59,890 --> 00:01:02,100
+we'll see Go, Ruby,
+and JavaScript.
+
+22
+00:01:05,670 --> 00:01:07,820
+Reading the elements
+by index works,
+
+23
+00:01:07,820 --> 00:01:10,930
+but it doesn't scale
+well as our slice grows
+
+24
+00:01:10,930 --> 00:01:14,260
+or when we don't know the
+exact number of elements
+
+25
+00:01:14,260 --> 00:01:16,250
+until the program is run.
+
+26
+00:01:16,250 --> 00:01:17,950
+Take this code for example.
+
+27
+00:01:17,950 --> 00:01:20,770
+Now, instead of creating a
+slice in the main function,
+
+28
+00:01:20,770 --> 00:01:24,370
+we're running a function that
+returns a slice of strings.
+
+29
+00:01:24,370 --> 00:01:28,320
+What we don't know is the
+total number of elements,
+
+30
+00:01:28,320 --> 00:01:32,010
+so we can't access elements
+by index knowing for a fact
+
+31
+00:01:32,010 --> 00:01:33,860
+that an element will be there.
+
+32
+00:01:33,860 --> 00:01:35,904
+We can't tell if
+the index is valid.
+
+33
+00:01:38,630 --> 00:01:41,460
+The most common way
+to read slices in Go
+
+34
+00:01:41,460 --> 00:01:44,920
+is using a combination of
+the for loop and range.
+
+35
+00:01:44,920 --> 00:01:47,220
+Now we've learned
+about the for loop,
+
+36
+00:01:47,220 --> 00:01:50,010
+but this is the first time
+that we're looking at range.
+
+37
+00:01:50,010 --> 00:01:53,730
+The range clause provides a
+way to iterate over slices.
+
+38
+00:01:53,730 --> 00:01:54,980
+Here's what it looks like.
+
+39
+00:01:54,980 --> 00:01:57,420
+We're at our for loop
+with this assignment.
+
+40
+00:01:57,420 --> 00:02:01,300
+i receives the range
+of langs and the loop
+
+41
+00:02:01,300 --> 00:02:05,390
+will run once for each
+value that's part of langs.
+
+42
+00:02:05,390 --> 00:02:07,600
+We don't have to know
+how many elements there
+
+43
+00:02:07,600 --> 00:02:09,889
+are because range will
+take care of assigning
+
+44
+00:02:09,889 --> 00:02:16,850
+the index for each one to the i
+variable before the block runs.
+
+45
+00:02:16,850 --> 00:02:19,190
+Now inside our for
+loop, we can use
+
+46
+00:02:19,190 --> 00:02:21,970
+the index that's been
+assigned to the i variable
+
+47
+00:02:21,970 --> 00:02:25,280
+to read the elements
+from the original slice.
+
+48
+00:02:25,280 --> 00:02:27,580
+By navigating slices
+with range, we
+
+49
+00:02:27,580 --> 00:02:30,970
+can be sure that indices
+used to read from that slice
+
+50
+00:02:30,970 --> 00:02:32,960
+will always be valid.
+
+51
+00:02:32,960 --> 00:02:35,350
+So we print each
+element to the console
+
+52
+00:02:35,350 --> 00:02:38,050
+and we can see Go,
+Ruby, and JavaScript.
+
+53
+00:02:41,710 --> 00:02:46,010
+Calling range on a slice
+actually returns two elements.
+
+54
+00:02:46,010 --> 00:02:48,170
+The first one is
+the index, which
+
+55
+00:02:48,170 --> 00:02:50,410
+we have been assigning to i.
+
+56
+00:02:50,410 --> 00:02:53,010
+But if we declare
+another variable,
+
+57
+00:02:53,010 --> 00:02:56,320
+we'll call it element,
+separated by a comma,
+
+58
+00:02:56,320 --> 00:02:59,650
+we can also read the
+value for that index.
+
+59
+00:02:59,650 --> 00:03:01,870
+This allows us to
+read both the index
+
+60
+00:03:01,870 --> 00:03:05,750
+and the value stored on
+that index at the same time.
+
+61
+00:03:05,750 --> 00:03:08,230
+However, notice how
+in this example,
+
+62
+00:03:08,230 --> 00:03:11,080
+we're reading the
+element and the index i,
+
+63
+00:03:11,080 --> 00:03:14,370
+but we're not doing anything
+with the i variable.
+
+64
+00:03:14,370 --> 00:03:16,720
+This will produce an error.
+
+65
+00:03:16,720 --> 00:03:18,730
+The Go compiler
+will not allow us
+
+66
+00:03:18,730 --> 00:03:21,780
+to assign a value to a
+variable unless we're actually
+
+67
+00:03:21,780 --> 00:03:24,590
+using that variable, which
+in this case, we're not.
+
+68
+00:03:27,730 --> 00:03:31,290
+But in order to read the element
+directly from the langs slice,
+
+69
+00:03:31,290 --> 00:03:34,420
+we must assign the
+index to something.
+
+70
+00:03:34,420 --> 00:03:36,640
+Now instead of a
+regular variable,
+
+71
+00:03:36,640 --> 00:03:39,720
+we'll use the
+underline character.
+
+72
+00:03:39,720 --> 00:03:43,450
+The underline character tells
+Go that this value will not
+
+73
+00:03:43,450 --> 00:03:45,810
+be used from anywhere
+else in the code,
+
+74
+00:03:45,810 --> 00:03:48,080
+so the compiler
+will just ignore it.
+
+75
+00:03:48,080 --> 00:03:51,800
+When we run this code now, it
+prints the languages just fine.
+
+76
+00:03:51,800 --> 00:03:54,290
+Just a heads up--
+don't forget this--
+
+77
+00:03:54,290 --> 00:03:59,290
+when given a single identifier,
+range assigns the index and not
+
+78
+00:03:59,290 --> 00:04:00,840
+the element.
+
+79
+00:04:00,840 --> 00:04:05,550
+This snippet prints 0,
+1, and 2-- the indices--
+
+80
+00:04:05,550 --> 00:04:06,566
+and not the languages.
+
+81
+00:04:09,830 --> 00:04:11,440
+That's it for this level.
+
+82
+00:04:11,440 --> 00:04:13,560
+Now it's your turn to
+practice in the challenges,
+
+83
+00:04:13,560 --> 00:04:16,600
+and I'll see you back
+here in the next level.
+

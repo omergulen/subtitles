@@ -1,0 +1,433 @@
+1
+00:00:00,000 --> 00:00:03,640
+[SINGING] Put on your headlamp, 
+and get ready to dig.
+
+2
+00:00:03,640 --> 00:00:07,240
+As we tunnel into Golang,
+pushing past twigs.
+
+3
+00:00:07,240 --> 00:00:09,000
+We'll work our way
+underground,
+
+4
+00:00:09,000 --> 00:00:11,080
+programming systems
+safe and sound.
+
+5
+00:00:11,080 --> 00:00:13,000
+Go's efficient,
+simple, and fast.
+
+6
+00:00:13,000 --> 00:00:14,816
+Parallel work makes
+coding a blast!
+
+7
+00:00:14,816 --> 00:00:18,092
+Now let's burrow down
+and start to play.
+
+8
+00:00:18,092 --> 00:00:20,990
+It's time to get On
+Track With Golang.
+
+9
+00:00:25,210 --> 00:00:27,110
+You're watching On
+Track With Golang.
+
+10
+00:00:27,110 --> 00:00:29,220
+I'm Carlos Souza,
+and in this section,
+
+11
+00:00:29,220 --> 00:00:32,990
+we'll learn about the for loop.
+
+12
+00:00:32,990 --> 00:00:35,860
+Unlike other languages
+that offer multiple options
+
+13
+00:00:35,860 --> 00:00:39,500
+for building loops, the for
+loop is the only looping
+
+14
+00:00:39,500 --> 00:00:42,800
+construct available, and
+the only one we'll ever need
+
+15
+00:00:42,800 --> 00:00:44,910
+when writing programs in Go.
+
+16
+00:00:44,910 --> 00:00:47,420
+As we'll see, it
+is very flexible
+
+17
+00:00:47,420 --> 00:00:52,510
+and allows us to build
+loops in many different ways.
+
+18
+00:00:52,510 --> 00:00:56,040
+Here's the canonical or the
+complete form of the for loop.
+
+19
+00:00:56,040 --> 00:00:57,850
+The first thing
+we might notice is
+
+20
+00:00:57,850 --> 00:01:00,060
+that just like the
+if statement, there
+
+21
+00:01:00,060 --> 00:01:02,850
+are no parentheses in for loops.
+
+22
+00:01:02,850 --> 00:01:06,350
+We use the for keyword, followed
+by three components that
+
+23
+00:01:06,350 --> 00:01:09,270
+control the loop--
+the init statement,
+
+24
+00:01:09,270 --> 00:01:12,570
+executed before the
+first iteration;
+
+25
+00:01:12,570 --> 00:01:14,880
+the condition
+expression, evaluated
+
+26
+00:01:14,880 --> 00:01:19,570
+before every iteration; and
+the post statement, executed
+
+27
+00:01:19,570 --> 00:01:21,910
+at the end of every iteration.
+
+28
+00:01:21,910 --> 00:01:26,130
+Let's see what this
+looks like in practice.
+
+29
+00:01:26,130 --> 00:01:28,140
+Let's write a
+simple program using
+
+30
+00:01:28,140 --> 00:01:31,090
+a for loop that
+iterates five times
+
+31
+00:01:31,090 --> 00:01:34,390
+and prints numbers from 0 to 4.
+
+32
+00:01:34,390 --> 00:01:36,560
+We can use the
+:= assignment
+
+33
+00:01:36,560 --> 00:01:39,500
+on the init statement to
+create a new variable.
+
+34
+00:01:39,500 --> 00:01:43,500
+We'll call it i, and
+initialize it to 0.
+
+35
+00:01:43,500 --> 00:01:48,010
+The condition expression will
+check that i is less than 5.
+
+36
+00:01:48,010 --> 00:01:51,620
+If it is, it will run
+the loop and at the end
+
+37
+00:01:51,620 --> 00:01:56,880
+execute the post statement,
+which increments i by 1.
+
+38
+00:01:56,880 --> 00:01:59,570
+This is what the ++ sign does.
+
+39
+00:01:59,570 --> 00:02:03,390
+Inside the loop, we'll print
+the current value for i.
+
+40
+00:02:03,390 --> 00:02:05,980
+When we run this program,
+we can see numbers 0
+
+41
+00:02:05,980 --> 00:02:07,585
+through 4 printed
+to the console.
+
+42
+00:02:11,039 --> 00:02:13,870
+The for loop components
+are actually optional.
+
+43
+00:02:13,870 --> 00:02:17,500
+We can create loops that use
+variables declared previously
+
+44
+00:02:17,500 --> 00:02:21,740
+in our code and have a single
+condition expression like this.
+
+45
+00:02:21,740 --> 00:02:25,840
+Here, we create both
+i and isLessThanFive,
+
+46
+00:02:25,840 --> 00:02:29,520
+and assign them 0 and
+true, respectively.
+
+47
+00:02:29,520 --> 00:02:33,150
+Then, we'll create a for
+loop with only a condition,
+
+48
+00:02:33,150 --> 00:02:36,660
+and we'll leave out the
+init and post components.
+
+49
+00:02:36,660 --> 00:02:38,340
+For the condition
+expression, we'll
+
+50
+00:02:38,340 --> 00:02:41,260
+simply use the
+isLessThanFive variable.
+
+51
+00:02:41,260 --> 00:02:43,570
+As long as this
+variable is true,
+
+52
+00:02:43,570 --> 00:02:45,670
+this loop will continue to run.
+
+53
+00:02:45,670 --> 00:02:47,850
+Then, from inside
+the loop, we'll
+
+54
+00:02:47,850 --> 00:02:50,490
+print the i variable
+just like before.
+
+55
+00:02:50,490 --> 00:02:54,260
+And at the end, we'll
+increment i using the ++ sign.
+
+56
+00:03:03,030 --> 00:03:05,090
+In order to break
+from this loop,
+
+57
+00:03:05,090 --> 00:03:07,610
+since it does not
+have a post statement,
+
+58
+00:03:07,610 --> 00:03:11,220
+we'll need to change the
+value for the variable used
+
+59
+00:03:11,220 --> 00:03:12,960
+in the condition expression.
+
+60
+00:03:12,960 --> 00:03:15,950
+We'll write an if statement
+that checks whether i
+
+61
+00:03:15,950 --> 00:03:18,400
+is greater than or equal to 5.
+
+62
+00:03:18,400 --> 00:03:21,990
+And if it is, it changes
+the isLessThanFive variable
+
+63
+00:03:21,990 --> 00:03:26,220
+to false, which stops the
+loop before the next run.
+
+64
+00:03:26,220 --> 00:03:29,140
+If we run our code now it
+will not only print numbers
+
+65
+00:03:29,140 --> 00:03:32,300
+from 0 to 4, but also 5.
+
+66
+00:03:32,300 --> 00:03:35,610
+This is because our if statement
+simply changes the flag,
+
+67
+00:03:35,610 --> 00:03:37,440
+but the condition
+expression will not
+
+68
+00:03:37,440 --> 00:03:39,807
+be evaluated until the next run.
+
+69
+00:03:42,670 --> 00:03:45,570
+It's also common to write
+for loops with no components
+
+70
+00:03:45,570 --> 00:03:46,760
+at all.
+
+71
+00:03:46,760 --> 00:03:50,030
+In this example, we're still
+creating and initializing
+
+72
+00:03:50,030 --> 00:03:54,540
+the variable i to 0, but that's
+the only variable we'll use.
+
+73
+00:03:54,540 --> 00:03:58,450
+To break out of this loop, we'll
+use the break keyword, which
+
+74
+00:03:58,450 --> 00:04:00,430
+stops the loop immediately.
+
+75
+00:04:00,430 --> 00:04:04,590
+When we run this program, we can
+see it prints numbers 0 to 4.
+
+76
+00:04:04,590 --> 00:04:06,110
+It does not get to 5.
+
+77
+00:04:16,930 --> 00:04:20,260
+Lastly, here's something we'll
+find in a lot of networking
+
+78
+00:04:20,260 --> 00:04:23,230
+programs, an infinite loop.
+
+79
+00:04:23,230 --> 00:04:25,710
+Infinite loops are
+useful for setting up
+
+80
+00:04:25,710 --> 00:04:29,720
+network listeners that wait
+for connections from clients.
+
+81
+00:04:29,720 --> 00:04:31,750
+Say we have
+someListeningFunction,
+
+82
+00:04:31,750 --> 00:04:34,670
+an example function
+that runs and waits
+
+83
+00:04:34,670 --> 00:04:36,750
+for connections
+across the network.
+
+84
+00:04:36,750 --> 00:04:40,640
+We run this program and it
+never finishes executing.
+
+85
+00:04:40,640 --> 00:04:43,210
+The infinite for loop
+holds the process
+
+86
+00:04:43,210 --> 00:04:46,160
+and runs indefinitely,
+either until something
+
+87
+00:04:46,160 --> 00:04:48,570
+internal to someListeningFunction
+
+88
+00:04:48,570 --> 00:04:52,931
+breaks out of the loop, or until
+we manually kill this process.
+
+89
+00:04:55,880 --> 00:04:57,210
+That's it for this section.
+
+90
+00:04:57,210 --> 00:05:01,120
+Now it's your turn to exercise
+loops in the challenges.
+

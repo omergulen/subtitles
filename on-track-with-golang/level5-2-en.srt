@@ -1,0 +1,335 @@
+﻿1
+00:00:02,070 --> 00:00:02,950
+Welcome back.
+
+2
+00:00:02,950 --> 00:00:05,400
+In this section, we'll learn
+how to make our code easier
+
+3
+00:00:05,400 --> 00:00:09,650
+to work with by
+creating packages.
+
+4
+00:00:09,650 --> 00:00:12,630
+Going back to where we stopped
+in the last section with our code,
+
+5
+00:00:12,630 --> 00:00:14,430
+we'll notice that
+as we keep adding
+
+6
+00:00:14,430 --> 00:00:17,350
+more code to the
+main file, this file
+
+7
+00:00:17,350 --> 00:00:19,960
+will grow long and complicated.
+
+8
+00:00:19,960 --> 00:00:22,960
+Even though it's all split
+into structs and methods,
+
+9
+00:00:22,960 --> 00:00:27,360
+it's somewhat unorganized and
+still too much code to look at.
+
+10
+00:00:27,360 --> 00:00:29,400
+All that really
+matters in this file
+
+11
+00:00:29,400 --> 00:00:32,020
+is the code inside
+the main function.
+
+12
+00:00:32,020 --> 00:00:35,020
+So let's see what we can do
+with all this other code.
+
+13
+00:00:37,720 --> 00:00:40,920
+One way to refactor files
+that are growing too long
+
+14
+00:00:40,920 --> 00:00:43,980
+is to create project
+packages and move
+
+15
+00:00:43,980 --> 00:00:47,380
+some of that extra code
+over to these packages.
+
+16
+00:00:47,380 --> 00:00:51,480
+A new package is a folder within
+the project that holds logic
+
+17
+00:00:51,480 --> 00:00:54,410
+for a specific part of the
+program that doesn't belong
+
+18
+00:00:54,410 --> 00:00:56,950
+inside the main function.
+
+19
+00:00:56,950 --> 00:00:58,830
+Here's our current
+project structure.
+
+20
+00:00:58,830 --> 00:01:01,140
+Inside the root
+folder, hello, we
+
+21
+00:01:01,140 --> 00:01:05,840
+have the entry point for our
+program in the file main.go.
+
+22
+00:01:05,840 --> 00:01:09,390
+We'll create a new package
+called model, represented
+
+23
+00:01:09,390 --> 00:01:11,510
+by a folder with the same name.
+
+24
+00:01:11,510 --> 00:01:15,560
+Inside this folder, we'll
+create a new main.go file,
+
+25
+00:01:15,560 --> 00:01:18,050
+a naming convention
+in Go for packages
+
+26
+00:01:18,050 --> 00:01:21,600
+that only have one file.
+
+27
+00:01:21,600 --> 00:01:23,850
+The first thing we do
+inside this new file
+
+28
+00:01:23,850 --> 00:01:27,280
+is to define our new package
+with the package model
+
+29
+00:01:27,280 --> 00:01:28,470
+statement.
+
+30
+00:01:28,470 --> 00:01:31,130
+Then, we can start
+moving some code over
+
+31
+00:01:31,130 --> 00:01:34,250
+from the old main.go
+file in the hello folder
+
+32
+00:01:34,250 --> 00:01:36,190
+to this new package file.
+
+33
+00:01:36,190 --> 00:01:39,410
+In order to be accessed
+from outside packages,
+
+34
+00:01:39,410 --> 00:01:42,830
+identifiers must be
+explicitly exported
+
+35
+00:01:42,830 --> 00:01:45,770
+by adopting an uppercase
+naming convention
+
+36
+00:01:45,770 --> 00:01:47,750
+for the first letter.
+
+37
+00:01:47,750 --> 00:01:50,390
+So we change the name
+for the GetList function
+
+38
+00:01:50,390 --> 00:01:54,710
+by making the first
+letter uppercase.
+
+39
+00:01:54,710 --> 00:01:57,230
+Back to the main source
+code file in the program,
+
+40
+00:01:57,230 --> 00:02:01,480
+we can import our new package
+by using the import statement
+
+41
+00:02:01,480 --> 00:02:05,795
+followed by the project name,
+hello, slash the new package
+
+42
+00:02:05,795 --> 00:02:07,190
+name, model.
+
+43
+00:02:07,190 --> 00:02:09,070
+From inside the
+main function, we
+
+44
+00:02:09,070 --> 00:02:13,220
+can call the GetList function,
+now part of the model package
+
+45
+00:02:13,220 --> 00:02:17,370
+namespace, and assign the
+result to jumperList, just
+
+46
+00:02:17,370 --> 00:02:17,990
+like before.
+
+47
+00:02:21,180 --> 00:02:24,180
+However, if we try calling the
+jump method like we were doing
+
+48
+00:02:24,180 --> 00:02:26,970
+before, we'll see
+an error like this--
+
+49
+00:02:26,970 --> 00:02:30,810
+cannot refer to unexported
+field or method jump.
+
+50
+00:02:30,810 --> 00:02:33,190
+This means the jump method
+that we're trying to call
+
+51
+00:02:33,190 --> 00:02:36,520
+was not properly exported
+from the model package.
+
+52
+00:02:36,520 --> 00:02:38,770
+References to
+unexported identifiers
+
+53
+00:02:38,770 --> 00:02:42,230
+will cause the Go compiler to
+raise errors like this one.
+
+54
+00:02:42,230 --> 00:02:45,660
+Let's see how we can fix this.
+
+55
+00:02:45,660 --> 00:02:48,480
+Interface methods and their
+corresponding implementations
+
+56
+00:02:48,480 --> 00:02:50,870
+must also be
+capitalized in order
+
+57
+00:02:50,870 --> 00:02:53,450
+to be accessed from
+other packages.
+
+58
+00:02:53,450 --> 00:02:55,610
+Going back to our
+model package, we'll
+
+59
+00:02:55,610 --> 00:02:58,400
+change the jump method
+names to uppercase,
+
+60
+00:02:58,400 --> 00:03:02,740
+both on the method signatures
+and on the interface.
+
+61
+00:03:02,740 --> 00:03:05,360
+Only the method names
+need to be exported,
+
+62
+00:03:05,360 --> 00:03:07,419
+not the structs or the interface.
+
+63
+00:03:11,550 --> 00:03:13,470
+Now if we try to
+run your code again,
+
+64
+00:03:13,470 --> 00:03:16,780
+we can see it works fine,
+and prints the jump message
+
+65
+00:03:16,780 --> 00:03:19,260
+for each of our jumpers.
+
+66
+00:03:19,260 --> 00:03:21,360
+And notice how the
+source code in this file
+
+67
+00:03:21,360 --> 00:03:23,434
+is now a lot easier to read.
+
+68
+00:03:26,340 --> 00:03:27,470
+That's it for this section.
+
+69
+00:03:27,470 --> 00:03:30,090
+Now it's your turn to create
+packages in the challenges,
+
+70
+00:03:30,090 --> 00:03:33,330
+and I'll see you back
+here for the last section.
+

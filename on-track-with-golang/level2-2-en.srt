@@ -1,0 +1,359 @@
+﻿1
+00:00:02,040 --> 00:00:03,100
+Welcome back.
+
+2
+00:00:03,100 --> 00:00:07,900
+In this section, we'll learn
+how to write functions.
+
+3
+00:00:07,900 --> 00:00:10,280
+Let's write a new
+program that outputs
+
+4
+00:00:10,280 --> 00:00:12,770
+a different greeting
+message depending
+
+5
+00:00:12,770 --> 00:00:15,306
+on the hour of the day
+that we run this program.
+
+6
+00:00:15,306 --> 00:00:16,930
+When we run the
+program in the morning,
+
+7
+00:00:16,930 --> 00:00:20,470
+before noon, the program
+prints "Good Morning."
+
+8
+00:00:20,470 --> 00:00:23,490
+In the afternoon,
+and before 6 p.m.,
+
+9
+00:00:23,490 --> 00:00:25,760
+it prints "Good Afternoon."
+
+10
+00:00:25,760 --> 00:00:29,190
+And after 6 p.m., it
+prints "Good Evening."
+
+11
+00:00:29,190 --> 00:00:33,270
+Let's see how we
+can implement this.
+
+12
+00:00:33,270 --> 00:00:34,780
+The first thing
+that we need to do
+
+13
+00:00:34,780 --> 00:00:38,670
+is figure out how we can grab
+the current hour of the day.
+
+14
+00:00:38,670 --> 00:00:41,140
+To do this, we'll
+import a new package
+
+15
+00:00:41,140 --> 00:00:43,670
+from the standard
+library called time.
+
+16
+00:00:43,670 --> 00:00:46,710
+From this package, we'll
+call the Now function
+
+17
+00:00:46,710 --> 00:00:49,580
+and chain it with another
+function call to the Hour
+
+18
+00:00:49,580 --> 00:00:50,590
+function.
+
+19
+00:00:50,590 --> 00:00:52,430
+We'll assign the
+final return value
+
+20
+00:00:52,430 --> 00:00:55,935
+to a variable called hourOfDay
+using type inference.
+
+21
+00:00:59,150 --> 00:01:02,280
+Next, we'll invoke a
+function called getGreeting.
+
+22
+00:01:02,280 --> 00:01:05,920
+Now we haven't created this
+function yet, but when we do,
+
+23
+00:01:05,920 --> 00:01:09,590
+it will take hourOfDay
+as its single argument
+
+24
+00:01:09,590 --> 00:01:12,890
+and we'll assign the return
+value to a new variable called
+
+25
+00:01:12,890 --> 00:01:13,616
+greeting.
+
+26
+00:01:13,616 --> 00:01:16,780
+We'll create our new function
+with the func keyword followed
+
+27
+00:01:16,780 --> 00:01:19,280
+by its name, getGreeting.
+
+28
+00:01:19,280 --> 00:01:21,030
+We know we want to
+return a string,
+
+29
+00:01:21,030 --> 00:01:24,830
+so we'll define the string
+data type as its return value.
+
+30
+00:01:24,830 --> 00:01:27,490
+We also know it takes
+a single argument.
+
+31
+00:01:27,490 --> 00:01:28,750
+We'll call it hour.
+
+32
+00:01:28,750 --> 00:01:33,030
+But how do we find out which
+data type this value is?
+
+33
+00:01:33,030 --> 00:01:36,890
+Type inference was nice enough
+to let us avoid declaring type
+
+34
+00:01:36,890 --> 00:01:39,180
+when we created
+hourOfDay up there,
+
+35
+00:01:39,180 --> 00:01:42,680
+but now we must find out
+the data type in order
+
+36
+00:01:42,680 --> 00:01:44,440
+to complete this function.
+
+37
+00:01:44,440 --> 00:01:47,560
+How do we do that?
+
+38
+00:01:47,560 --> 00:01:50,000
+One way to find out
+the data type returned
+
+39
+00:01:50,000 --> 00:01:52,390
+by a function from the
+Go standard library
+
+40
+00:01:52,390 --> 00:01:55,090
+is by referring to the
+official documentation.
+
+41
+00:01:55,090 --> 00:01:57,440
+If we go to the page
+for the time package,
+
+42
+00:01:57,440 --> 00:02:00,140
+we can find the signature
+of the hour function
+
+43
+00:02:00,140 --> 00:02:03,565
+and see that it returns
+a value of type int.
+
+44
+00:02:03,565 --> 00:02:05,190
+And that's the type
+that we need to set
+
+45
+00:02:05,190 --> 00:02:07,740
+for the argument from
+our getGreeting function.
+
+46
+00:02:07,740 --> 00:02:09,070
+Not hard, right?
+
+47
+00:02:09,070 --> 00:02:11,350
+Our function is now complete.
+
+48
+00:02:11,350 --> 00:02:14,690
+And this is what every
+function in Go will look like.
+
+49
+00:02:14,690 --> 00:02:17,200
+It will start with the
+func keyword, followed
+
+50
+00:02:17,200 --> 00:02:20,370
+by the name of the
+function, then the data type
+
+51
+00:02:20,370 --> 00:02:23,825
+and the arguments it expects,
+and finally, the data
+
+52
+00:02:23,825 --> 00:02:24,700
+type that it returns.
+
+53
+00:02:29,010 --> 00:02:31,850
+Now we can move on to
+implementing this function.
+
+54
+00:02:31,850 --> 00:02:33,960
+We'll return a different
+greeting message
+
+55
+00:02:33,960 --> 00:02:37,580
+based on the hour of the day
+represented by the integer
+
+56
+00:02:37,580 --> 00:02:39,610
+value passed as argument.
+
+57
+00:02:39,610 --> 00:02:41,850
+We'll create an if
+condition, checking
+
+58
+00:02:41,850 --> 00:02:44,340
+if hour is less than 12.
+
+59
+00:02:44,340 --> 00:02:47,620
+Then, we'll return the
+string "Good Morning."
+
+60
+00:02:47,620 --> 00:02:50,640
+We'll nest a new if
+in the else clause
+
+61
+00:02:50,640 --> 00:02:53,710
+and check if hour
+is less than 18.
+
+62
+00:02:53,710 --> 00:02:56,620
+If so, we'll return
+"Good Afternoon."
+
+63
+00:02:56,620 --> 00:02:59,700
+Finally, if none of the
+if clauses return true,
+
+64
+00:02:59,700 --> 00:03:02,130
+we'll return the
+string "Good Evening."
+
+65
+00:03:02,130 --> 00:03:03,943
+And we are done
+with this function.
+
+66
+00:03:07,400 --> 00:03:09,390
+Now we go back to
+the main function
+
+67
+00:03:09,390 --> 00:03:11,080
+and call the print
+line function,
+
+68
+00:03:11,080 --> 00:03:13,510
+passing the greeting
+message as argument.
+
+69
+00:03:13,510 --> 00:03:15,050
+That's all we need.
+
+70
+00:03:15,050 --> 00:03:18,620
+If we run our program now, we'll
+see a different output message
+
+71
+00:03:18,620 --> 00:03:20,600
+depending on the hour
+of the day that we
+
+72
+00:03:20,600 --> 00:03:22,426
+run this program, as expected.
+
+73
+00:03:26,080 --> 00:03:27,330
+That's it for this section.
+
+74
+00:03:27,330 --> 00:03:29,380
+Now it's your turn to
+exercise what we just
+
+75
+00:03:29,380 --> 00:03:32,310
+learned about functions
+in the challenges.
+

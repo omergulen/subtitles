@@ -1,0 +1,286 @@
+﻿1
+00:00:02,060 --> 00:00:02,960
+Welcome back.
+
+2
+00:00:02,960 --> 00:00:07,910
+In this section, we'll
+look at arrays and slices.
+
+3
+00:00:07,910 --> 00:00:10,290
+One way we can
+create arrays in Go
+
+4
+00:00:10,290 --> 00:00:12,720
+is with manual type declaration.
+
+5
+00:00:12,720 --> 00:00:15,470
+Let's write a new program
+that stores the name of three
+
+6
+00:00:15,470 --> 00:00:17,520
+programming languages
+in an array,
+
+7
+00:00:17,520 --> 00:00:19,840
+and then prints them
+back to the console.
+
+8
+00:00:19,840 --> 00:00:23,190
+When creating arrays in Go
+via manual type declaration,
+
+9
+00:00:23,190 --> 00:00:26,070
+we must set a specific size.
+
+10
+00:00:26,070 --> 00:00:29,840
+To create our new array, we
+use the var keyword, then
+
+11
+00:00:29,840 --> 00:00:34,460
+the name of the variable,
+langs, and then the array type,
+
+12
+00:00:34,460 --> 00:00:39,320
+brackets, with the max number
+of elements, in this case 3.
+
+13
+00:00:39,320 --> 00:00:44,370
+Lastly, the type of data that
+this array will hold-- string.
+
+14
+00:00:44,370 --> 00:00:48,489
+This array will hold no
+more than 3 string elements.
+
+15
+00:00:48,489 --> 00:00:50,030
+And if we run this
+program right now,
+
+16
+00:00:50,030 --> 00:00:51,960
+we can see it
+prints to the screen
+
+17
+00:00:51,960 --> 00:00:57,390
+the zero value for our
+array, an empty array.
+
+18
+00:00:57,390 --> 00:00:59,930
+We can add elements to
+an array by assigning
+
+19
+00:00:59,930 --> 00:01:02,530
+to each specific index.
+
+20
+00:01:02,530 --> 00:01:05,530
+Remember-- index
+count starts at zero,
+
+21
+00:01:05,530 --> 00:01:08,020
+so the first element
+Go is assigned
+
+22
+00:01:08,020 --> 00:01:14,330
+index 0, then Ruby to index 1,
+and JavaScript to index 2.
+
+23
+00:01:14,330 --> 00:01:15,780
+When we run this
+program, we can see
+
+24
+00:01:15,780 --> 00:01:18,370
+the array along
+with all its elements
+
+25
+00:01:18,370 --> 00:01:21,980
+is printed to the console.
+
+26
+00:01:21,980 --> 00:01:25,750
+Adding more elements to an array
+than what was initially stated
+
+27
+00:01:25,750 --> 00:01:27,640
+will crash our program.
+
+28
+00:01:27,640 --> 00:01:29,770
+It will raise an
+out-of-bounds error.
+
+29
+00:01:29,770 --> 00:01:32,580
+If we try assigning
+an element to index 3,
+
+30
+00:01:32,580 --> 00:01:35,320
+the compiler generates
+the following error--
+
+31
+00:01:35,320 --> 00:01:37,840
+invalid array index 3.
+
+32
+00:01:37,840 --> 00:01:40,940
+The compiler is basically
+saying, "You said 3.
+
+33
+00:01:40,940 --> 00:01:44,580
+Now you want to add 4."
+
+34
+00:01:44,580 --> 00:01:47,770
+Using arrays and setting
+a max number of elements
+
+35
+00:01:47,770 --> 00:01:50,590
+can help the compiler
+prevent some errors,
+
+36
+00:01:50,590 --> 00:01:53,550
+but it also removes
+some flexibility.
+
+37
+00:01:53,550 --> 00:02:00,120
+Let's look at another type that
+enhances arrays called slices.
+
+38
+00:02:00,120 --> 00:02:02,930
+The slice type is
+built on top of array
+
+39
+00:02:02,930 --> 00:02:06,070
+to provide more power
+and convenience.
+
+40
+00:02:06,070 --> 00:02:08,490
+Most array
+programming in Go is
+
+41
+00:02:08,490 --> 00:02:10,910
+done with slices rather
+than simple arrays
+
+42
+00:02:10,910 --> 00:02:13,010
+because slices are more flexible.
+
+43
+00:02:13,010 --> 00:02:16,280
+Declaring a slice works
+similar to declaring an array,
+
+44
+00:02:16,280 --> 00:02:20,060
+except we leave out the
+max number of elements.
+
+45
+00:02:20,060 --> 00:02:23,690
+This creates a slice
+with a zero value of nil.
+
+46
+00:02:23,690 --> 00:02:25,370
+Is this bad?
+
+47
+00:02:25,370 --> 00:02:27,090
+No, not at all.
+
+48
+00:02:27,090 --> 00:02:32,950
+A nil slice behaves the
+same as an empty slice.
+
+49
+00:02:32,950 --> 00:02:36,340
+It can be appended to using
+the append function, which
+
+50
+00:02:36,340 --> 00:02:40,620
+takes two arguments-- a
+slice and a variable number
+
+51
+00:02:40,620 --> 00:02:44,240
+of arguments, could be one or
+many, but in this example,
+
+52
+00:02:44,240 --> 00:02:45,690
+we'll use just one.
+
+53
+00:02:45,690 --> 00:02:48,520
+We call the append
+function multiple times,
+
+54
+00:02:48,520 --> 00:02:51,230
+passing first the
+slice we want to append
+
+55
+00:02:51,230 --> 00:02:56,090
+to, and then the element that
+we want to append to that slice.
+
+56
+00:02:56,090 --> 00:02:59,230
+If we run this
+code, we can see Go,
+
+57
+00:02:59,230 --> 00:03:03,592
+Ruby, JavaScript, and LOLcode
+printed to the console.
+
+58
+00:03:06,690 --> 00:03:07,860
+That's it for this section.
+
+59
+00:03:07,860 --> 00:03:10,260
+Now it's your turn to play
+with arrays and slices
+
+60
+00:03:10,260 --> 00:03:12,030
+in the challenges.
+

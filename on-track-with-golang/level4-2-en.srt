@@ -1,0 +1,686 @@
+﻿1
+00:00:02,070 --> 00:00:02,739
+Welcome back.
+
+2
+00:00:02,739 --> 00:00:04,530
+In this section, we'll
+learn the difference
+
+3
+00:00:04,530 --> 00:00:10,540
+between values and references,
+and how to work with pointers.
+
+4
+00:00:10,540 --> 00:00:13,260
+Let's add a new feature
+to our existing program,
+
+5
+00:00:13,260 --> 00:00:16,050
+the validation of
+a gopher's age.
+
+6
+00:00:16,050 --> 00:00:18,870
+To implement this feature,
+we'll add a new property
+
+7
+00:00:18,870 --> 00:00:22,470
+to our gopher structure,
+called isAdult.
+
+8
+00:00:22,470 --> 00:00:25,680
+This property will determine
+whether a gopher is an adult,
+
+9
+00:00:25,680 --> 00:00:27,630
+and will be of type Boolean.
+
+10
+00:00:27,630 --> 00:00:31,380
+In other words, it will only
+hold the values true or false.
+
+11
+00:00:31,380 --> 00:00:34,770
+Then, we'll create a new
+function that takes a gopher
+
+12
+00:00:34,770 --> 00:00:36,660
+struct as its argument.
+
+13
+00:00:36,660 --> 00:00:40,170
+This function will check
+if a gopher is of age,
+
+14
+00:00:40,170 --> 00:00:44,370
+and then set a value on the
+isAdult property from the struct
+
+15
+00:00:44,370 --> 00:00:46,140
+passed as an argument.
+
+16
+00:00:46,140 --> 00:00:51,540
+If gopher is of age, then
+we'll set isAdult to true.
+
+17
+00:00:51,540 --> 00:00:53,980
+Otherwise, we'll
+set it to false.
+
+18
+00:00:53,980 --> 00:00:56,160
+This pattern of passing an
+argument to a function,
+
+19
+00:00:56,160 --> 00:00:59,490
+and writing to that argument
+from inside the function,
+
+20
+00:00:59,490 --> 00:01:02,880
+can be found in parts of
+Go's standard library,
+
+21
+00:01:02,880 --> 00:01:05,381
+like the scan method from
+the database package.
+
+22
+00:01:08,520 --> 00:01:11,220
+The zero value for the
+boolean type is false.
+
+23
+00:01:11,220 --> 00:01:12,150
+Remember?
+
+24
+00:01:12,150 --> 00:01:15,300
+This will be the initial
+value for isAdult,
+
+25
+00:01:15,300 --> 00:01:17,870
+when you create a new
+gopher without assigning
+
+26
+00:01:17,870 --> 00:01:19,110
+to this property.
+
+27
+00:01:19,110 --> 00:01:22,360
+When we run this code, we
+can see isAdult is false.
+
+28
+00:01:25,300 --> 00:01:27,690
+Now let's implement our
+validation function.
+
+29
+00:01:27,690 --> 00:01:30,210
+We'll call it validateAge.
+
+30
+00:01:30,210 --> 00:01:33,570
+This new function takes one
+argument and writes to the
+
+31
+00:01:33,570 --> 00:01:36,600
+isAdult property
+of this argument.
+
+32
+00:01:36,600 --> 00:01:39,390
+The function does
+not return anything.
+
+33
+00:01:39,390 --> 00:01:41,960
+In this code, we can
+see we're passing a type
+
+34
+00:01:41,960 --> 00:01:45,910
+gopher as an argument to
+the validateAge function.
+
+35
+00:01:45,910 --> 00:01:49,220
+So this function should
+accept either a type gopher,
+
+36
+00:01:49,220 --> 00:01:51,630
+or something that's
+compatible with it.
+
+37
+00:01:51,630 --> 00:01:54,950
+Let's see what happens if
+the argument type is gopher.
+
+38
+00:01:57,510 --> 00:02:02,400
+When we call validateAge, then
+a copy of the original struct
+
+39
+00:02:02,400 --> 00:02:06,660
+will be created and received as
+the argument to the function.
+
+40
+00:02:06,660 --> 00:02:09,210
+When we assign to the
+isAdult property,
+
+41
+00:02:09,210 --> 00:02:12,120
+we assign to the copy
+of the gopher, and not
+
+42
+00:02:12,120 --> 00:02:13,560
+the original gopher.
+
+43
+00:02:13,560 --> 00:02:18,030
+And this line assigns
+true to g.isAdult.
+
+44
+00:02:18,030 --> 00:02:20,330
+When we print the
+gopher to the console,
+
+45
+00:02:20,330 --> 00:02:24,190
+we'll see that isAdult
+property is still false.
+
+46
+00:02:24,190 --> 00:02:26,550
+This is because the
+validateAge function
+
+47
+00:02:26,550 --> 00:02:30,760
+wrote to a copy of the gopher
+that was passed as an argument,
+
+48
+00:02:30,760 --> 00:02:34,350
+not to the original gopher.
+
+49
+00:02:34,350 --> 00:02:36,750
+To understand the reason
+for this behavior,
+
+50
+00:02:36,750 --> 00:02:39,720
+we have to understand the
+difference between values
+
+51
+00:02:39,720 --> 00:02:41,070
+and references.
+
+52
+00:02:41,070 --> 00:02:44,370
+Now this is not an easy
+concept in programming.
+
+53
+00:02:44,370 --> 00:02:47,820
+So to help illustrate this,
+we'll use music playlists
+
+54
+00:02:47,820 --> 00:02:49,410
+as an analogy.
+
+55
+00:02:49,410 --> 00:02:51,990
+Say we have two
+albums, one called
+
+56
+00:02:51,990 --> 00:02:53,880
+Are You Gonna Go My Way?
+
+57
+00:02:53,880 --> 00:02:57,480
+and one called Milo
+Goes to College.
+
+58
+00:02:57,480 --> 00:03:01,950
+The first album has
+songs A, B, and C.
+
+59
+00:03:01,950 --> 00:03:05,760
+And the second album,
+songs D, E, and F.
+
+60
+00:03:05,760 --> 00:03:08,340
+Then say we decide to create
+a playlist so we can listen
+
+61
+00:03:08,340 --> 00:03:10,530
+to it while we do some coding.
+
+62
+00:03:10,530 --> 00:03:13,770
+We'll call this playlist
+Music for Programming,
+
+63
+00:03:13,770 --> 00:03:17,100
+and we'll pick three songs
+off these two albums here
+
+64
+00:03:17,100 --> 00:03:20,250
+on the left that we can
+assign to the playlist
+
+65
+00:03:20,250 --> 00:03:21,390
+here on the right.
+
+66
+00:03:21,390 --> 00:03:23,460
+Let's see how we can
+create this playlist using
+
+67
+00:03:23,460 --> 00:03:26,619
+two approaches, one with
+values and the other one
+
+68
+00:03:26,619 --> 00:03:27,285
+with references.
+
+69
+00:03:29,910 --> 00:03:33,180
+With values, we'd create
+copies from each one
+
+70
+00:03:33,180 --> 00:03:36,270
+of the original songs, and
+then assign those copies
+
+71
+00:03:36,270 --> 00:03:37,650
+to the new playlist.
+
+72
+00:03:37,650 --> 00:03:40,350
+The playlist would contain
+individual and independent
+
+73
+00:03:40,350 --> 00:03:44,310
+copies of the original songs.
+
+74
+00:03:44,310 --> 00:03:46,110
+Now the second,
+and more efficient
+
+75
+00:03:46,110 --> 00:03:49,380
+way to create this playlist
+is by storing references
+
+76
+00:03:49,380 --> 00:03:51,000
+to the original songs.
+
+77
+00:03:51,000 --> 00:03:53,100
+The playlist would
+work the same,
+
+78
+00:03:53,100 --> 00:03:57,060
+but instead of creating
+multiple copies of each song,
+
+79
+00:03:57,060 --> 00:04:00,810
+it would have slots pointing
+back to the original songs.
+
+80
+00:04:00,810 --> 00:04:03,490
+This would allow for
+the same end result,
+
+81
+00:04:03,490 --> 00:04:07,020
+but with a much more efficient
+usage of storage space.
+
+82
+00:04:07,020 --> 00:04:08,760
+Now let's look at
+another example
+
+83
+00:04:08,760 --> 00:04:12,010
+of values and references in Go.
+
+84
+00:04:12,010 --> 00:04:16,649
+We'll start with an example of
+passing around data as value.
+
+85
+00:04:16,649 --> 00:04:21,060
+Here, we assign the string
+Go to the variable language.
+
+86
+00:04:21,060 --> 00:04:23,790
+Behind the scenes, a
+primitive string value
+
+87
+00:04:23,790 --> 00:04:26,670
+is assigned to the new
+variable, language,
+
+88
+00:04:26,670 --> 00:04:29,910
+and this variable is
+stored in a memory address.
+
+89
+00:04:29,910 --> 00:04:31,170
+Say, this one.
+
+90
+00:04:31,170 --> 00:04:33,990
+Now, if we assign the
+value from language
+
+91
+00:04:33,990 --> 00:04:37,150
+to a new variable,
+favoriteLanguage,
+
+92
+00:04:37,150 --> 00:04:39,150
+then a new memory
+address is created
+
+93
+00:04:39,150 --> 00:04:41,520
+for this new variable
+which receives
+
+94
+00:04:41,520 --> 00:04:43,740
+a copy of the original data.
+
+95
+00:04:43,740 --> 00:04:46,590
+At the end of the day, we'll
+be using two different memory
+
+96
+00:04:46,590 --> 00:04:49,650
+addresses to store two
+versions of the data that
+
+97
+00:04:49,650 --> 00:04:52,260
+look exactly the same.
+
+98
+00:04:52,260 --> 00:04:54,041
+This is using memory
+unnecessarily.
+
+99
+00:04:57,270 --> 00:05:01,620
+Now if we pass around data by
+reference, here's what happens.
+
+100
+00:05:01,620 --> 00:05:04,620
+We start by assigning
+Go to language, just
+
+101
+00:05:04,620 --> 00:05:05,910
+like we did before.
+
+102
+00:05:05,910 --> 00:05:09,330
+And again, a primitive is
+assigned to a new variable,
+
+103
+00:05:09,330 --> 00:05:11,850
+and a new memory
+address is created.
+
+104
+00:05:11,850 --> 00:05:15,550
+Now when assigning this
+variable to a new variable,
+
+105
+00:05:15,550 --> 00:05:18,270
+we'll use the ampersand symbol.
+
+106
+00:05:18,270 --> 00:05:20,970
+What this will do is
+return a reference
+
+107
+00:05:20,970 --> 00:05:25,740
+to the existing memory address,
+taking us to the original data.
+
+108
+00:05:25,740 --> 00:05:29,220
+In this example, a single
+memory address is being used.
+
+109
+00:05:29,220 --> 00:05:32,220
+This means not creating
+copies of the data
+
+110
+00:05:32,220 --> 00:05:33,942
+and using memory
+more efficiently.
+
+111
+00:05:37,290 --> 00:05:40,140
+Now that we've gone over the
+differences between values
+
+112
+00:05:40,140 --> 00:05:44,490
+and references, let's go back to
+the code that started all this.
+
+113
+00:05:44,490 --> 00:05:46,710
+If you remember,
+what we wanted to do
+
+114
+00:05:46,710 --> 00:05:50,310
+was figure out how to pass the
+original gopher as an argument
+
+115
+00:05:50,310 --> 00:05:54,360
+to the validateAge function, so
+that changes made to the gopher
+
+116
+00:05:54,360 --> 00:05:57,300
+from inside this function
+were reflected back
+
+117
+00:05:57,300 --> 00:05:58,770
+to the original data.
+
+118
+00:05:58,770 --> 00:06:02,040
+In order to assign a
+reference to a new variable,
+
+119
+00:06:02,040 --> 00:06:04,770
+we've learned we can use
+the ampersand operator
+
+120
+00:06:04,770 --> 00:06:06,240
+to return a pointer.
+
+121
+00:06:06,240 --> 00:06:09,240
+Let's use that operator
+when creating a gopher.
+
+122
+00:06:09,240 --> 00:06:12,990
+This way, when we pass it as
+a reference to validateAge,
+
+123
+00:06:12,990 --> 00:06:15,860
+we'll be passing a reference
+to the original data
+
+124
+00:06:15,860 --> 00:06:19,770
+and not creating a copy.
+
+125
+00:06:19,770 --> 00:06:22,020
+Next, we need to
+find out which data
+
+126
+00:06:22,020 --> 00:06:25,500
+type to use on the validateAge
+function signature.
+
+127
+00:06:25,500 --> 00:06:27,840
+We can't simply
+use a gopher type.
+
+128
+00:06:27,840 --> 00:06:30,180
+If we do, check
+out what happens.
+
+129
+00:06:30,180 --> 00:06:32,880
+When we run our program,
+we'll see an error message,
+
+130
+00:06:32,880 --> 00:06:38,220
+like this one, "cannot use
+Phil type *gopher as type
+
+131
+00:06:38,220 --> 00:06:39,255
+gopher."
+
+132
+00:06:39,255 --> 00:06:42,570
+We're using the wrong type.
+
+133
+00:06:42,570 --> 00:06:46,350
+To fix this, we must use
+the *gopher data type
+
+134
+00:06:46,350 --> 00:06:50,580
+as the parameter, indicating
+a pointer to the struct.
+
+135
+00:06:50,580 --> 00:06:53,820
+When we do that, we can
+properly read values,
+
+136
+00:06:53,820 --> 00:06:57,090
+and assign to properties
+on the original gopher.
+
+137
+00:06:57,090 --> 00:06:59,520
+Now when we run our
+code, we can see
+
+138
+00:06:59,520 --> 00:07:02,730
+that the original value
+from the struct is changed,
+
+139
+00:07:02,730 --> 00:07:06,000
+and it prints true for
+the isAdult property.
+
+140
+00:07:06,000 --> 00:07:09,660
+You'll also notice the ampersand
+on the output in the console,
+
+141
+00:07:09,660 --> 00:07:12,813
+indicating this is a pointer
+to an underlying struct.
+
+142
+00:07:17,970 --> 00:07:21,430
+So we've learned some pretty
+advanced stuff in this section.
+
+143
+00:07:21,430 --> 00:07:24,980
+Now it's your turn to practice
+them in the challenges.
+
