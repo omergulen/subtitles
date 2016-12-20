@@ -1,0 +1,1114 @@
+﻿1
+00:00:03,090 --> 00:00:03,590
+Hi.
+
+2
+00:00:03,590 --> 00:00:04,310
+I'm Dan Denney.
+
+3
+00:00:04,310 --> 00:00:07,280
+And I worked on creating the
+content for Unmasking HTML
+
+4
+00:00:07,280 --> 00:00:08,029
+emails.
+
+5
+00:00:08,029 --> 00:00:11,085
+And I also build all of the
+emails here at Code School.
+
+6
+00:00:11,085 --> 00:00:12,710
+Before you started
+the course, I wanted
+
+7
+00:00:12,710 --> 00:00:15,530
+to let you know about some
+big changes to Gmail that
+
+8
+00:00:15,530 --> 00:00:17,880
+change the accuracy
+of the course,
+
+9
+00:00:17,880 --> 00:00:21,650
+but don't yet affect how
+we're creating emails.
+
+10
+00:00:21,650 --> 00:00:23,690
+Spoiler alert —
+in Level 1, you're
+
+11
+00:00:23,690 --> 00:00:26,240
+going to learn that Gmail
+is the reason that we
+
+12
+00:00:26,240 --> 00:00:28,340
+have to use inline CSS.
+
+13
+00:00:28,340 --> 00:00:30,380
+And that's because
+up until now, they
+
+14
+00:00:30,380 --> 00:00:32,600
+were removing both
+linked style sheets
+
+15
+00:00:32,600 --> 00:00:35,510
+and any CSS in a style element.
+
+16
+00:00:35,510 --> 00:00:37,430
+They've now made
+some changes that
+
+17
+00:00:37,430 --> 00:00:39,770
+don't remove CSS and
+the style element
+
+18
+00:00:39,770 --> 00:00:42,880
+for most of their users.
+
+19
+00:00:42,880 --> 00:00:45,920
+At this time non-US
+Gmail accounts,
+
+20
+00:00:45,920 --> 00:00:49,450
+any Google Apps that are
+the G Suite, the Google
+
+21
+00:00:49,450 --> 00:00:53,950
+App for Gmail on iOS, and
+any third-party account
+
+22
+00:00:53,950 --> 00:00:58,480
+in any Gmail app will still
+have the style element removed.
+
+23
+00:00:58,480 --> 00:01:01,330
+And of these, there is
+no indication at all
+
+24
+00:01:01,330 --> 00:01:04,810
+that third-party Gmail apps
+will be updated at all.
+
+25
+00:01:04,810 --> 00:01:06,490
+Since the goal of
+this course is to have
+
+26
+00:01:06,490 --> 00:01:10,030
+you create emails that work
+for the most clients possible,
+
+27
+00:01:10,030 --> 00:01:11,530
+we're not planning
+on updating it
+
+28
+00:01:11,530 --> 00:01:15,160
+to have you remove inline styles
+until we're sure that it works
+
+29
+00:01:15,160 --> 00:01:18,320
+well in these popular clients.
+
+30
+00:01:18,320 --> 00:01:20,480
+I've added a link to the
+Resources section that
+
+31
+00:01:20,480 --> 00:01:23,390
+will explain how it would
+affect the email that you
+
+32
+00:01:23,390 --> 00:01:26,900
+create in the course and
+then emails in general.
+
+33
+00:01:26,900 --> 00:01:31,670
+So for now, I hope you
+enjoy Unmasking HTML Emails.
+
+34
+00:01:31,670 --> 00:01:33,980
+[SINGING] Designing emails
+can be really tough.
+
+35
+00:01:33,980 --> 00:01:36,280
+Client preprocessors
+can be pretty rough.
+
+36
+00:01:36,280 --> 00:01:38,680
+Coding email for
+all their devices
+
+37
+00:01:38,680 --> 00:01:41,620
+Cut the design into
+the slices
+
+38
+00:01:41,620 --> 00:01:44,940
+ Plug it up in tables of inline style,
+or DB your queries into one
+
+39
+00:01:44,940 --> 00:01:47,970
+file to win your train
+and learn the details,
+
+40
+00:01:47,970 --> 00:01:49,130
+Unmasking HTML Emails
+
+41
+00:01:56,060 --> 00:01:56,850
+Hello, everyone.
+
+42
+00:01:56,850 --> 00:01:58,890
+Welcome to Unmasking
+HTML emails.
+
+43
+00:01:58,890 --> 00:02:00,590
+I'm your instructor Dan Denney.
+
+44
+00:02:00,590 --> 00:02:02,240
+And I'll be in
+your corner as you
+
+45
+00:02:02,240 --> 00:02:07,480
+learn how to write HTML and CSS
+specifically for email clients.
+
+46
+00:02:07,480 --> 00:02:08,979
+The best way to
+learn is by doing.
+
+47
+00:02:08,979 --> 00:02:12,130
+So in this course, we're going
+to take a pre-designed email
+
+48
+00:02:12,130 --> 00:02:14,380
+set up for a large screen
+version and a small screen
+
+49
+00:02:14,380 --> 00:02:17,650
+version and write the HTML
+and CSS necessary for that
+
+50
+00:02:17,650 --> 00:02:21,279
+to display in email clients.
+
+51
+00:02:21,279 --> 00:02:22,820
+In this particular
+level, we're going
+
+52
+00:02:22,820 --> 00:02:25,760
+to focus on creating the
+header for the large screen
+
+53
+00:02:25,760 --> 00:02:28,300
+version of the email.
+
+54
+00:02:28,300 --> 00:02:30,800
+The skills that you're going
+to need to complete this course
+
+55
+00:02:30,800 --> 00:02:35,300
+are a working knowledge of HTML
+and CSS, CSS media queries,
+
+56
+00:02:35,300 --> 00:02:37,670
+and we're going to have to
+use some external resources
+
+57
+00:02:37,670 --> 00:02:42,530
+in order to complete the code
+necessary to create this email.
+
+58
+00:02:42,530 --> 00:02:46,380
+At its core, an HTML
+email is an HTML file.
+
+59
+00:02:46,380 --> 00:02:48,050
+If any of this code
+looks unfamiliar,
+
+60
+00:02:48,050 --> 00:02:50,900
+we may want to have you first
+get started by taking Front-end
+
+61
+00:02:50,900 --> 00:02:53,750
+Foundations to
+learn HTML and CSS
+
+62
+00:02:53,750 --> 00:02:59,230
+or Journey into Mobile to
+learn CSS media queries.
+
+63
+00:02:59,230 --> 00:03:01,800
+The code that we write is
+viewed in email clients.
+
+64
+00:03:01,800 --> 00:03:03,600
+These can be web-based
+clients in which you
+
+65
+00:03:03,600 --> 00:03:07,290
+would visit an URL,
+like gmail.com to access
+
+66
+00:03:07,290 --> 00:03:10,620
+your email in Gmail or
+yahoo.com in order to access
+
+67
+00:03:10,620 --> 00:03:12,840
+your email in Yahoo mail.
+
+68
+00:03:12,840 --> 00:03:15,060
+The other type of client
+are native applications.
+
+69
+00:03:15,060 --> 00:03:18,450
+One popular version of this
+for Microsoft operating systems
+
+70
+00:03:18,450 --> 00:03:20,430
+is Microsoft Outlook.
+
+71
+00:03:20,430 --> 00:03:23,490
+And one popular
+version for iOS clients
+
+72
+00:03:23,490 --> 00:03:26,160
+is the Mailbox application.
+
+73
+00:03:26,160 --> 00:03:30,340
+Each of these would be used to
+access mail for many accounts.
+
+74
+00:03:30,340 --> 00:03:32,010
+In modern front-end
+development, we're
+
+75
+00:03:32,010 --> 00:03:34,530
+used to writing code that
+is viewed in browsers.
+
+76
+00:03:34,530 --> 00:03:36,660
+Those browsers use
+rendering engines
+
+77
+00:03:36,660 --> 00:03:41,410
+in order to interpret the
+HTML and CSS that we write.
+
+78
+00:03:41,410 --> 00:03:43,510
+Email clients have
+this same process,
+
+79
+00:03:43,510 --> 00:03:46,630
+but they have an
+additional step too.
+
+80
+00:03:46,630 --> 00:03:49,840
+They use a preprocessor that
+will actually change your HTML.
+
+81
+00:03:53,080 --> 00:03:54,910
+Let's take a look
+at how preprocessors
+
+82
+00:03:54,910 --> 00:03:56,710
+affect the code that we write.
+
+83
+00:03:56,710 --> 00:04:00,220
+Their original intention was
+to protect the operating system
+
+84
+00:04:00,220 --> 00:04:02,980
+from code that could
+be execute in application
+
+85
+00:04:02,980 --> 00:04:06,400
+and have harmful effects on
+the operating system itself.
+
+86
+00:04:06,400 --> 00:04:08,890
+Since then, they've added
+additional responsibilities
+
+87
+00:04:08,890 --> 00:04:11,950
+in that they remove
+or change our HTML
+
+88
+00:04:11,950 --> 00:04:16,630
+and CSS, override our
+styles with their own CSS,
+
+89
+00:04:16,630 --> 00:04:18,399
+change the entire
+document structure
+
+90
+00:04:18,399 --> 00:04:22,551
+for web-based clients, and
+remove any and all JavaScript.
+
+91
+00:04:22,551 --> 00:04:24,550
+So you're not going to
+be writing any JavaScript
+
+92
+00:04:24,550 --> 00:04:28,690
+for an HTML email anytime soon.
+
+93
+00:04:28,690 --> 00:04:31,360
+Gmail has the most aggressive
+preprocessor of all.
+
+94
+00:04:31,360 --> 00:04:33,130
+And this is unfortunate
+because it's
+
+95
+00:04:33,130 --> 00:04:36,040
+one of the most popular
+email clients out there.
+
+96
+00:04:36,040 --> 00:04:37,660
+The combination
+of its popularity
+
+97
+00:04:37,660 --> 00:04:40,630
+and its pre-processing
+affect how we
+
+98
+00:04:40,630 --> 00:04:43,120
+have to write our HTML and CSS.
+
+99
+00:04:43,120 --> 00:04:44,530
+Let's take a look
+at specifically
+
+100
+00:04:44,530 --> 00:04:46,570
+what Gmail's preprocessor does.
+
+101
+00:04:46,570 --> 00:04:48,700
+First off, it removes
+any link tags.
+
+102
+00:04:48,700 --> 00:04:51,520
+This means that any external
+style sheets in which we
+
+103
+00:04:51,520 --> 00:04:53,710
+have code would be removed.
+
+104
+00:04:53,710 --> 00:04:58,450
+It also overwrites our styles
+with its own version of CSS.
+
+105
+00:04:58,450 --> 00:05:01,390
+And then it changes the
+entire document structure.
+
+106
+00:05:01,390 --> 00:05:04,680
+Finally, and this is the
+most harmful to our code,
+
+107
+00:05:04,680 --> 00:05:06,220
+it removes style tags.
+
+108
+00:05:06,220 --> 00:05:09,640
+This means that we can't write
+CSS in an external style sheet.
+
+109
+00:05:09,640 --> 00:05:13,540
+We also can't lump together
+CSS properties in a style tag
+
+110
+00:05:13,540 --> 00:05:15,130
+to apply to our HTML elements.
+
+111
+00:05:17,830 --> 00:05:19,960
+So now let's go back
+to our base HTML
+
+112
+00:05:19,960 --> 00:05:22,290
+and start adding some content.
+
+113
+00:05:22,290 --> 00:05:26,970
+First off, we're going to
+add the image for the stars.
+
+114
+00:05:26,970 --> 00:05:28,560
+One thing to note
+is that we're using
+
+115
+00:05:28,560 --> 00:05:31,100
+an absolute URL for the image.
+
+116
+00:05:31,100 --> 00:05:34,470
+Anytime that we're adding
+an image to an HTML email,
+
+117
+00:05:34,470 --> 00:05:36,990
+we need to use an absolute URL.
+
+118
+00:05:36,990 --> 00:05:40,380
+This image needs to be stored
+on the server and accessible.
+
+119
+00:05:40,380 --> 00:05:43,110
+And we will reference it
+using an absolute path.
+
+120
+00:05:43,110 --> 00:05:46,620
+This is one big difference
+between email HTML and website
+
+121
+00:05:46,620 --> 00:05:47,404
+HTML.
+
+122
+00:05:47,404 --> 00:05:48,820
+All of the images
+that we're going
+
+123
+00:05:48,820 --> 00:05:51,540
+to use in our example email
+will have an absolute URL.
+
+124
+00:05:51,540 --> 00:05:54,250
+This is a lot of
+code to look at.
+
+125
+00:05:54,250 --> 00:05:57,630
+So we're going to abbreviate
+these URLs using a dot dot dot,
+
+126
+00:05:57,630 --> 00:06:00,700
+like this.
+
+127
+00:06:00,700 --> 00:06:02,830
+Continuing on with
+our initial markup,
+
+128
+00:06:02,830 --> 00:06:06,250
+we're going to add an H1 and
+a paragraph tag to our email.
+
+129
+00:06:08,850 --> 00:06:10,350
+Throughout this
+course, we are going
+
+130
+00:06:10,350 --> 00:06:11,970
+to be writing a lot of code.
+
+131
+00:06:11,970 --> 00:06:14,790
+And it's all going to
+be in one single file.
+
+132
+00:06:14,790 --> 00:06:16,500
+In order to keep
+focus on the part
+
+133
+00:06:16,500 --> 00:06:18,000
+that we're working
+on at the moment,
+
+134
+00:06:18,000 --> 00:06:20,370
+we're going to collapse the
+code surrounding the areas
+
+135
+00:06:20,370 --> 00:06:21,810
+that we're working on.
+
+136
+00:06:21,810 --> 00:06:24,340
+You can see here, that
+we've collapsed the opening
+
+137
+00:06:24,340 --> 00:06:30,600
+HTML and the closing HTML so
+that we can focus on the body.
+
+138
+00:06:30,600 --> 00:06:33,300
+If we take our code
+and view it in Chrome,
+
+139
+00:06:33,300 --> 00:06:35,140
+we get expected results.
+
+140
+00:06:35,140 --> 00:06:37,050
+This is unstyled HTML.
+
+141
+00:06:37,050 --> 00:06:38,760
+So we're going to
+default to Times New
+
+142
+00:06:38,760 --> 00:06:40,410
+Roman for the font family.
+
+143
+00:06:40,410 --> 00:06:44,100
+And then we'll have some
+browser specific spacing added.
+
+144
+00:06:44,100 --> 00:06:46,590
+However, if we
+view this in Gmail,
+
+145
+00:06:46,590 --> 00:06:48,690
+we see some slight differences.
+
+146
+00:06:48,690 --> 00:06:50,550
+Gmail is applying
+a different font
+
+147
+00:06:50,550 --> 00:06:53,430
+family and different spacing.
+
+148
+00:06:53,430 --> 00:06:56,070
+This is because Gmail's
+preprocessor has actually
+
+149
+00:06:56,070 --> 00:06:58,320
+changed the code
+that we've written.
+
+150
+00:07:01,520 --> 00:07:03,380
+Let's use the browser
+developer tools
+
+151
+00:07:03,380 --> 00:07:06,470
+to compare how our code is
+different from the Chrome
+
+152
+00:07:06,470 --> 00:07:10,640
+version and the Gmail version.
+
+153
+00:07:10,640 --> 00:07:12,680
+First off, looking at
+the Chrome version,
+
+154
+00:07:12,680 --> 00:07:15,320
+we can see that our
+code is as expected.
+
+155
+00:07:15,320 --> 00:07:17,300
+The only difference is
+that Chrome is adding
+
+156
+00:07:17,300 --> 00:07:18,730
+some of its own default styles.
+
+157
+00:07:22,370 --> 00:07:25,370
+Continuing on into Gmail,
+we see that our code
+
+158
+00:07:25,370 --> 00:07:28,710
+is in a very different
+place than it was before.
+
+159
+00:07:28,710 --> 00:07:31,850
+If you look way down
+the line of divs,
+
+160
+00:07:31,850 --> 00:07:35,480
+we'll find our code
+towards the bottom.
+
+161
+00:07:35,480 --> 00:07:37,910
+So what is actually going
+on with our code here?
+
+162
+00:07:37,910 --> 00:07:40,460
+If we look at that code
+that was towards the bottom,
+
+163
+00:07:40,460 --> 00:07:43,550
+we can see that it resembles
+the code that we wrote.
+
+164
+00:07:43,550 --> 00:07:46,160
+Our inline styles are there,
+but they're now applied
+
+165
+00:07:46,160 --> 00:07:48,780
+to a div tag instead of a body.
+
+166
+00:07:48,780 --> 00:07:50,300
+Our image is there,
+but it's being
+
+167
+00:07:50,300 --> 00:07:53,060
+served from a different
+location because Gmail wants
+
+168
+00:07:53,060 --> 00:07:55,100
+to use its own caching service.
+
+169
+00:07:55,100 --> 00:07:57,710
+Our h1 and paragraph
+tags are left alone.
+
+170
+00:07:57,710 --> 00:08:03,970
+But Gmail is applying CSS to
+them via its own style sheet.
+
+171
+00:08:03,970 --> 00:08:07,120
+In fact, if we look at the
+body tag of the Gmail web
+
+172
+00:08:07,120 --> 00:08:09,790
+application, we
+see a lot of code
+
+173
+00:08:09,790 --> 00:08:11,825
+that is no way related to ours.
+
+174
+00:08:14,340 --> 00:08:16,720
+Knowing what preprocessors
+are capable of,
+
+175
+00:08:16,720 --> 00:08:19,830
+we need to write our styles in
+a way that they won't be removed
+
+176
+00:08:19,830 --> 00:08:22,260
+and that they can counter
+any styles created
+
+177
+00:08:22,260 --> 00:08:24,660
+by the preprocessors themselves.
+
+178
+00:08:24,660 --> 00:08:27,690
+In order to do this, we're
+going to write our styles inline
+
+179
+00:08:27,690 --> 00:08:28,620
+to create our email.
+
+180
+00:08:31,740 --> 00:08:33,630
+To write inline
+styles, the first thing
+
+181
+00:08:33,630 --> 00:08:36,059
+that we're going to do
+is add a style attribute
+
+182
+00:08:36,059 --> 00:08:37,590
+to our image tag.
+
+183
+00:08:37,590 --> 00:08:41,520
+We'll then add CSS properties
+to give it the look that we want
+
+184
+00:08:41,520 --> 00:08:43,950
+and finally add
+a width attribute
+
+185
+00:08:43,950 --> 00:08:46,320
+to set it to 600 pixels.
+
+186
+00:08:46,320 --> 00:08:51,310
+Here, you can see that our
+star graphic is taking shape.
+
+187
+00:08:51,310 --> 00:08:54,280
+Next, we'll follow that
+same process for our h1 tag.
+
+188
+00:08:54,280 --> 00:08:57,280
+We'll add our style attribute
+and add properties to it.
+
+189
+00:08:57,280 --> 00:08:59,260
+But the one interesting
+thing to note
+
+190
+00:08:59,260 --> 00:09:02,990
+is that because we can't
+reference an area of CSS,
+
+191
+00:09:02,990 --> 00:09:06,430
+we have to include any reset
+styles on every element
+
+192
+00:09:06,430 --> 00:09:08,020
+that we want to reset.
+
+193
+00:09:08,020 --> 00:09:09,910
+We're going to put
+margin 0 on this
+
+194
+00:09:09,910 --> 00:09:12,550
+to counter any browser
+behavior that would
+
+195
+00:09:12,550 --> 00:09:16,540
+add spacing to our h1 tag.
+
+196
+00:09:16,540 --> 00:09:18,630
+Our paragraph tag
+is a combination
+
+197
+00:09:18,630 --> 00:09:20,300
+of both of our prior tags.
+
+198
+00:09:20,300 --> 00:09:24,510
+And that first we need to
+apply container styles,
+
+199
+00:09:24,510 --> 00:09:29,190
+then font styles, and
+also our reset styles.
+
+200
+00:09:33,920 --> 00:09:38,490
+If we view the results of our
+inline CSS, we find a problem.
+
+201
+00:09:38,490 --> 00:09:41,220
+We want all three of these
+elements to be aligned
+
+202
+00:09:41,220 --> 00:09:42,285
+and to have equal widths.
+
+203
+00:09:44,850 --> 00:09:47,790
+We can fix this by
+adding a div around all
+
+204
+00:09:47,790 --> 00:09:52,650
+of our current content, applying
+margin zero auto to center it
+
+205
+00:09:52,650 --> 00:09:55,230
+and applying a max
+width of 600 pixels
+
+206
+00:09:55,230 --> 00:09:57,300
+so that it never gets
+bigger than that.
+
+207
+00:09:57,300 --> 00:09:59,970
+As you can see now, the
+content is contained
+
+208
+00:09:59,970 --> 00:10:03,570
+and the container is centered.
+
+209
+00:10:03,570 --> 00:10:05,400
+To clean this up
+a little more, we
+
+210
+00:10:05,400 --> 00:10:08,550
+can apply text align
+center to our div
+
+211
+00:10:08,550 --> 00:10:10,380
+and allow that to
+cascade down to all
+
+212
+00:10:10,380 --> 00:10:14,370
+of the text inside of it.
+
+213
+00:10:14,370 --> 00:10:17,430
+To complete our header, we
+need to add a background.
+
+214
+00:10:17,430 --> 00:10:19,350
+We want this background
+to run the full width
+
+215
+00:10:19,350 --> 00:10:20,850
+of the available space.
+
+216
+00:10:20,850 --> 00:10:22,530
+In order to do that,
+we're going to wrap
+
+217
+00:10:22,530 --> 00:10:25,770
+a div around our current
+content container
+
+218
+00:10:25,770 --> 00:10:31,310
+and apply a background color and
+background image to that div.
+
+219
+00:10:31,310 --> 00:10:34,640
+So far we've seen what happens
+if we take our code and view it
+
+220
+00:10:34,640 --> 00:10:37,340
+after it has been through
+Gmail's preprocessor
+
+221
+00:10:37,340 --> 00:10:39,900
+and Chrome's rendering engine.
+
+222
+00:10:39,900 --> 00:10:42,840
+Here's an example of
+viewing our email after it's
+
+223
+00:10:42,840 --> 00:10:46,080
+been processed by Gmail's
+preprocessor and Firefox's
+
+224
+00:10:46,080 --> 00:10:47,190
+rendering engine.
+
+225
+00:10:47,190 --> 00:10:48,950
+As we can see,
+everything looks great.
+
+226
+00:10:51,490 --> 00:10:53,650
+Now it's your turn to
+start building an HTML
+
+227
+00:10:53,650 --> 00:10:56,340
+email in the challenges.
+
+228
+00:10:56,340 --> 00:10:56,840
+[BEEP]
+
+229
+00:10:56,840 --> 00:10:57,600
+That be —
+
+230
+00:10:57,600 --> 00:10:59,100
+[LAUGHS]
+
+231
+00:10:59,100 --> 00:10:59,700
+[BEEP]
+
+232
+00:10:59,700 --> 00:11:01,500
+[SIGHS]
+
+233
+00:11:01,500 --> 00:11:02,700
+[BEEP]
+
+234
+00:11:02,700 --> 00:11:04,200
+[LAUGHTER]
+
+235
+00:11:04,200 --> 00:11:05,750
+[BEEP]
+
