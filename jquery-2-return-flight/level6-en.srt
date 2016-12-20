@@ -1,0 +1,1066 @@
+﻿1
+00:00:02,050 --> 00:00:03,990
+You're watching jQuery,
+the return flight.
+
+2
+00:00:03,990 --> 00:00:06,640
+And in this level, we're going
+to be going over promises.
+
+3
+00:00:06,640 --> 00:00:09,880
+Now, this is pretty advanced
+jQuery stuff.
+
+4
+00:00:09,880 --> 00:00:14,150
+So don't be too afraid if you
+don't quite get it the first
+
+5
+00:00:14,150 --> 00:00:16,360
+time, but hang in there.
+
+6
+00:00:16,360 --> 00:00:19,430
+This is some really
+powerful code.
+
+7
+00:00:19,430 --> 00:00:22,360
+In this first example, we have
+one of our favorite cities,
+
+8
+00:00:22,360 --> 00:00:25,430
+the name of the city, and a
+button that allows us to get
+
+9
+00:00:25,430 --> 00:00:26,540
+the weather.
+
+10
+00:00:26,540 --> 00:00:28,436
+And, of course, when we click
+this button it goes out and
+
+11
+00:00:28,436 --> 00:00:31,510
+does an AJAX request, and
+displays the weather right
+
+12
+00:00:31,510 --> 00:00:32,740
+there on the page.
+
+13
+00:00:32,740 --> 00:00:37,150
+So, how do we write the jQuery
+to make this work?
+
+14
+00:00:37,150 --> 00:00:40,710
+Here you see the HTML for the
+page, where we have our image,
+
+15
+00:00:40,710 --> 00:00:43,170
+our location, and the
+Show Weather button.
+
+16
+00:00:43,170 --> 00:00:46,280
+Then our jQuery is going to
+listen for click on that
+
+17
+00:00:46,280 --> 00:00:49,770
+button, get our current location
+by getting the text
+
+18
+00:00:49,770 --> 00:00:52,700
+inside of the paragraph
+for our location.
+
+19
+00:00:52,700 --> 00:00:56,200
+We'll set a location in our AJAX
+request by specifying the
+
+20
+00:00:56,200 --> 00:01:00,010
+data option, like you see
+here, with the key of q.
+
+21
+00:01:00,010 --> 00:01:03,580
+And our location, that we just
+grabbed out of the HTML.
+
+22
+00:01:03,580 --> 00:01:07,690
+Then in our success call back
+the JSON result that we get back
+
+23
+00:01:07,690 --> 00:01:11,230
+will look something like this,
+with the weather code and the
+
+24
+00:01:11,230 --> 00:01:12,250
+weather description.
+
+25
+00:01:12,250 --> 00:01:15,410
+And we'll just grab the weather
+paragraph and insert
+
+26
+00:01:15,410 --> 00:01:17,660
+that text right into the DOM.
+
+27
+00:01:20,640 --> 00:01:24,160
+What if we wanted to extract
+this Ajax call and use it on
+
+28
+00:01:24,160 --> 00:01:26,020
+multiple pages on the website?
+
+29
+00:01:26,020 --> 00:01:32,020
+Well, one way we could do this
+is by using promises.
+
+30
+00:01:32,020 --> 00:01:34,700
+We're going to encapsulate our
+first promise inside of a
+
+31
+00:01:34,700 --> 00:01:37,940
+JavaScript object
+called Weather.
+
+32
+00:01:37,940 --> 00:01:40,760
+Inside of there we're going to
+have a key called today, which
+
+33
+00:01:40,760 --> 00:01:42,760
+will have a function.
+
+34
+00:01:42,760 --> 00:01:45,210
+Inside that function we're going
+to pass in one argument
+
+35
+00:01:45,210 --> 00:01:47,840
+called location, which will be
+the location from which we
+
+36
+00:01:47,840 --> 00:01:50,660
+want to get the current
+weather.
+
+37
+00:01:50,660 --> 00:01:53,430
+Then inside there, we're going
+to have a variable called
+
+38
+00:01:53,430 --> 00:01:57,570
+promise, which will be set to
+what gets returned from the
+
+39
+00:01:57,570 --> 00:01:59,290
+AJAX request that we do.
+
+40
+00:01:59,290 --> 00:02:02,580
+You see all AJAX requests
+return an
+
+41
+00:02:02,580 --> 00:02:05,220
+object of type promise.
+
+42
+00:02:05,220 --> 00:02:08,199
+And that object, that promise,
+we're going to be able to call
+
+43
+00:02:08,199 --> 00:02:11,700
+some methods on promises later
+on, that will give us some
+
+44
+00:02:11,700 --> 00:02:13,350
+interesting behavior.
+
+45
+00:02:13,350 --> 00:02:15,400
+At the end of the today
+function, we're simply going
+
+46
+00:02:15,400 --> 00:02:16,810
+to return the promise.
+
+47
+00:02:19,640 --> 00:02:21,560
+Now, let's move the promise over
+onto the right hand side
+
+48
+00:02:21,560 --> 00:02:25,860
+of the page, and refactor
+our old code to use it.
+
+49
+00:02:25,860 --> 00:02:28,240
+First thing we want
+to do is create a
+
+50
+00:02:28,240 --> 00:02:30,590
+today promise variable.
+
+51
+00:02:30,590 --> 00:02:33,540
+This will contain the promise
+that gets returned, when we
+
+52
+00:02:33,540 --> 00:02:37,030
+call the today method with
+our current location.
+
+53
+00:02:37,030 --> 00:02:40,400
+You might have noticed that our
+AJAX call is missing the
+
+54
+00:02:40,400 --> 00:02:43,680
+success call back that
+it had originally.
+
+55
+00:02:43,680 --> 00:02:47,590
+That's because we wanted to find
+what happens on success
+
+56
+00:02:47,590 --> 00:02:50,830
+in our main bit of code,
+that we're writing now.
+
+57
+00:02:50,830 --> 00:02:53,760
+Remember this small bit of code,
+where we get the weather
+
+58
+00:02:53,760 --> 00:02:56,220
+paragraph and we populate
+it with the weather.
+
+59
+00:02:56,220 --> 00:02:58,760
+We want to define what happens
+when the AJAX return
+
+60
+00:02:58,760 --> 00:03:01,240
+successful over here.
+
+61
+00:03:01,240 --> 00:03:02,940
+This will allow us to
+reuse our Weather
+
+62
+00:03:02,940 --> 00:03:04,510
+object in other places.
+
+63
+00:03:04,510 --> 00:03:06,780
+So how do we do this?
+
+64
+00:03:06,780 --> 00:03:10,460
+Well, we need to call something
+on the promise.
+
+65
+00:03:10,460 --> 00:03:15,050
+Luckily, promises have this
+function called done.
+
+66
+00:03:15,050 --> 00:03:18,920
+It's kind of like the AJAX
+success call back, when Ajax
+
+67
+00:03:18,920 --> 00:03:20,500
+comes back successful.
+
+68
+00:03:20,500 --> 00:03:24,170
+By default it's going to call
+the done method on that
+
+69
+00:03:24,170 --> 00:03:26,770
+promise, if it's defined.
+
+70
+00:03:26,770 --> 00:03:29,110
+So let's go ahead
+and define it.
+
+71
+00:03:29,110 --> 00:03:32,690
+Here you can see we call the
+done method, and we tell it
+
+72
+00:03:32,690 --> 00:03:35,060
+what to do when the
+promise is done.
+
+73
+00:03:35,060 --> 00:03:38,030
+This method gets called when
+the AJAX request returns
+
+74
+00:03:38,030 --> 00:03:39,280
+successful.
+
+75
+00:03:41,400 --> 00:03:42,965
+Let's make sure this
+code still works.
+
+76
+00:03:42,965 --> 00:03:47,250
+If we jump into our browser and
+we get the weather, sure
+
+77
+00:03:47,250 --> 00:03:51,710
+enough it returns the weather
+from our favorite city.
+
+78
+00:03:51,710 --> 00:03:54,210
+Now, the code as we've written
+it, is a little bit brittle.
+
+79
+00:03:54,210 --> 00:03:58,010
+And that's because, inside that
+done method, that result
+
+80
+00:03:58,010 --> 00:04:02,880
+parameter we need to know that
+we can call result.weather to
+
+81
+00:04:02,880 --> 00:04:04,180
+get the weather.
+
+82
+00:04:04,180 --> 00:04:07,160
+But wouldn't it be better if
+that done method only had to
+
+83
+00:04:07,160 --> 00:04:11,170
+now about result, instead of
+having to know that it needed
+
+84
+00:04:11,170 --> 00:04:14,060
+to call the weather function
+on result?
+
+85
+00:04:17,260 --> 00:04:20,320
+So, back in our today method,
+we need some way of
+
+86
+00:04:20,320 --> 00:04:25,790
+intercepting the success call
+back and then only returning
+
+87
+00:04:25,790 --> 00:04:29,800
+the weather string to
+the done method.
+
+88
+00:04:29,800 --> 00:04:31,360
+How do we do that?
+
+89
+00:04:31,360 --> 00:04:33,650
+Well, there's two steps
+to do that.
+
+90
+00:04:33,650 --> 00:04:36,870
+First, we need to create our
+own promise from scratch.
+
+91
+00:04:36,870 --> 00:04:39,490
+Up until now, we've been getting
+the promise from our
+
+92
+00:04:39,490 --> 00:04:40,660
+AJAX request,
+
+93
+00:04:40,660 --> 00:04:43,340
+because it happens to return
+an object of type promise.
+
+94
+00:04:43,340 --> 00:04:45,660
+But let's create one
+from scratch now.
+
+95
+00:04:45,660 --> 00:04:47,800
+To get a promise object
+we can use the
+
+96
+00:04:47,800 --> 00:04:50,410
+deferred jQuery method.
+
+97
+00:04:50,410 --> 00:04:54,220
+So, we'll set our promise equal
+to this deferred method.
+
+98
+00:04:54,220 --> 00:04:57,050
+Next, inside of our AJAX
+request we'll create a
+
+99
+00:04:57,050 --> 00:04:58,680
+success call back.
+
+100
+00:04:58,680 --> 00:05:01,480
+And in here it's going to get the
+results from the server.
+
+101
+00:05:01,480 --> 00:05:04,750
+And somehow, we need to
+tell it to only return
+
+102
+00:05:04,750 --> 00:05:08,200
+result.weather for that
+done call back
+
+103
+00:05:08,200 --> 00:05:10,730
+inside our main code.
+
+104
+00:05:10,730 --> 00:05:14,180
+It turns out promise has a
+method called resolve, which
+
+105
+00:05:14,180 --> 00:05:17,500
+triggers the done method that
+we defined earlier.
+
+106
+00:05:17,500 --> 00:05:21,850
+So, inside of our success method
+all we need to do is
+
+107
+00:05:21,850 --> 00:05:25,570
+call promise.resolve and pass
+any arguments we want to send
+
+108
+00:05:25,570 --> 00:05:26,830
+to the done method.
+
+109
+00:05:26,830 --> 00:05:28,580
+Like so.
+
+110
+00:05:28,580 --> 00:05:31,300
+So now the weather gets passed
+into the done method.
+
+111
+00:05:31,300 --> 00:05:34,160
+And we don't have to call
+result.weather anymore.
+
+112
+00:05:34,160 --> 00:05:37,380
+And the code should
+work great.
+
+113
+00:05:37,380 --> 00:05:40,280
+So the Weather object is now
+responsible for parsing the
+
+114
+00:05:40,280 --> 00:05:41,890
+JSON response.
+
+115
+00:05:41,890 --> 00:05:45,520
+That way when we invoke this
+promise in other functions
+
+116
+00:05:45,520 --> 00:05:47,940
+throughout our code, we
+don't have to worry
+
+117
+00:05:47,940 --> 00:05:49,310
+about parsing it.
+
+118
+00:05:49,310 --> 00:05:53,710
+We don't have to remember
+to call result.weather.
+
+119
+00:05:53,710 --> 00:05:58,200
+Just to review, to create a new
+promise we call the jQuery
+
+120
+00:05:58,200 --> 00:06:02,290
+deferred method, like
+you see here.
+
+121
+00:06:02,290 --> 00:06:05,550
+We can then call the resolve
+method on the promise, which
+
+122
+00:06:05,550 --> 00:06:10,140
+we'll call the done call back on
+the promise, if it exists.
+
+123
+00:06:10,140 --> 00:06:12,300
+In the same way, if we need to
+create a method that gets
+
+124
+00:06:12,300 --> 00:06:19,060
+called when a promise fails, we
+can call promise.reject if
+
+125
+00:06:19,060 --> 00:06:21,020
+we want the promise to fail.
+
+126
+00:06:21,020 --> 00:06:23,470
+And that will call
+the call back
+
+127
+00:06:23,470 --> 00:06:26,070
+promise.fail, as you see here.
+
+128
+00:06:26,070 --> 00:06:29,100
+In the next slide, you'll
+see this in action.
+
+129
+00:06:29,100 --> 00:06:31,270
+We need to define what
+happens when our AJAX
+
+130
+00:06:31,270 --> 00:06:32,770
+method errors out.
+
+131
+00:06:32,770 --> 00:06:35,190
+So, here's our AJAX call back.
+
+132
+00:06:35,190 --> 00:06:38,200
+Inside there we're going to
+define a little error message, which
+
+133
+00:06:38,200 --> 00:06:39,860
+is just invalid location.
+
+134
+00:06:39,860 --> 00:06:42,140
+And then we'll call the
+promise.reject method with
+
+135
+00:06:42,140 --> 00:06:43,930
+that error.
+
+136
+00:06:43,930 --> 00:06:45,490
+Then in our main code
+we'll just define
+
+137
+00:06:45,490 --> 00:06:47,180
+the fail call back.
+
+138
+00:06:47,180 --> 00:06:49,510
+In this case, we'll take that
+error and we'll just print it
+
+139
+00:06:49,510 --> 00:06:51,820
+out to the log.
+
+140
+00:06:51,820 --> 00:06:56,650
+Here, we could have also just
+called today promise.fail, but
+
+141
+00:06:56,650 --> 00:06:59,875
+we decided to chain this
+onto the done method.
+
+142
+00:07:02,790 --> 00:07:04,150
+So let's jump back
+into the browser.
+
+143
+00:07:04,150 --> 00:07:08,210
+And here you can see when the
+promise fails, it prints out
+
+144
+00:07:08,210 --> 00:07:11,350
+the error to the console.
+
+145
+00:07:11,350 --> 00:07:13,660
+Let's jump into another example
+and show you where
+
+146
+00:07:13,660 --> 00:07:16,710
+promises start getting
+really useful.
+
+147
+00:07:16,710 --> 00:07:20,740
+And if you're not following,
+bear us because there's some
+
+148
+00:07:20,740 --> 00:07:22,650
+cool stuff coming up.
+
+149
+00:07:22,650 --> 00:07:25,890
+So here we have the same old
+weather promise that we saw
+
+150
+00:07:25,890 --> 00:07:27,850
+before, over here
+on the right.
+
+151
+00:07:27,850 --> 00:07:30,410
+And then on the left we're
+going to create a new
+
+152
+00:07:30,410 --> 00:07:34,280
+JavaScript object called City,
+which has a find method, which
+
+153
+00:07:34,280 --> 00:07:37,770
+creates a promise for us
+doing an AJAX request.
+
+154
+00:07:37,770 --> 00:07:42,770
+This is going to get information
+about a particular city.
+
+155
+00:07:42,770 --> 00:07:45,500
+Here's what these promises
+are going to do for us.
+
+156
+00:07:45,500 --> 00:07:48,290
+When we go back into our browser
+and we click on the
+
+157
+00:07:48,290 --> 00:07:51,760
+More Info button next to one of
+these cities, it's going to
+
+158
+00:07:51,760 --> 00:07:55,510
+go fetch some information about
+that city, as well as
+
+159
+00:07:55,510 --> 00:07:58,340
+the weather and display
+them both on the page.
+
+160
+00:07:58,340 --> 00:07:59,580
+Let's take a look at the
+rest of the code
+
+161
+00:07:59,580 --> 00:08:00,830
+to make this happen.
+
+162
+00:08:03,390 --> 00:08:04,780
+Here's our HTML.
+
+163
+00:08:04,780 --> 00:08:08,120
+You can see we have our buttons
+and our results divs.
+
+164
+00:08:08,120 --> 00:08:10,480
+Then in our JavaScript we're
+going to create a click
+
+165
+00:08:10,480 --> 00:08:12,410
+handler for that button.
+
+166
+00:08:12,410 --> 00:08:13,505
+We'll go ahead and
+get the location
+
+167
+00:08:13,505 --> 00:08:16,180
+out of the data element.
+
+168
+00:08:16,180 --> 00:08:20,930
+Then we'll get the results div
+and empty it out, just in case
+
+169
+00:08:20,930 --> 00:08:23,200
+we clicked the button before.
+
+170
+00:08:23,200 --> 00:08:25,520
+Then we'll call this today
+method on the weather object,
+
+171
+00:08:25,520 --> 00:08:26,730
+sending in the location.
+
+172
+00:08:26,730 --> 00:08:29,230
+And specify that when it's done,
+it should run this call
+
+173
+00:08:29,230 --> 00:08:31,150
+back, which will update
+the result div
+
+174
+00:08:31,150 --> 00:08:33,390
+with the current weather.
+
+175
+00:08:33,390 --> 00:08:37,039
+Then we'll call the find method
+on the City object,
+
+176
+00:08:37,039 --> 00:08:38,450
+sending in the location.
+
+177
+00:08:38,450 --> 00:08:40,850
+And when it's done, it should
+run our call back which
+
+178
+00:08:40,850 --> 00:08:46,570
+updates our results with some
+HTML, which displays the title
+
+179
+00:08:46,570 --> 00:08:49,020
+and image of the city.
+
+180
+00:08:49,020 --> 00:08:50,160
+Now, there's something
+that's a little
+
+181
+00:08:50,160 --> 00:08:52,020
+fishy about this code.
+
+182
+00:08:52,020 --> 00:08:54,620
+See, these two AJAX
+calls are going to
+
+183
+00:08:54,620 --> 00:08:57,250
+get fired off together.
+
+184
+00:08:57,250 --> 00:09:01,130
+And sometimes the weather call
+is going to get back first,
+
+185
+00:09:01,130 --> 00:09:03,340
+and sometimes the city
+information call is going to
+
+186
+00:09:03,340 --> 00:09:05,180
+get back first.
+
+187
+00:09:05,180 --> 00:09:06,390
+Allow me to illustrate.
+
+188
+00:09:06,390 --> 00:09:08,440
+So here we have the two
+different calls.
+
+189
+00:09:08,440 --> 00:09:10,165
+The first time weather
+came back first and
+
+190
+00:09:10,165 --> 00:09:11,850
+appended to the screen.
+
+191
+00:09:11,850 --> 00:09:14,470
+And the second time we call it,
+looks like the city ended
+
+192
+00:09:14,470 --> 00:09:15,310
+up going first.
+
+193
+00:09:15,310 --> 00:09:18,070
+So the image is now
+above the weather.
+
+194
+00:09:18,070 --> 00:09:20,665
+So, how might we fix this?
+
+195
+00:09:23,380 --> 00:09:26,150
+Well, it turns out that when
+you're working with promises
+
+196
+00:09:26,150 --> 00:09:29,590
+there's two additional jQuery
+functions which you can use to
+
+197
+00:09:29,590 --> 00:09:33,820
+give you the behavior we need, called
+when and then.
+
+198
+00:09:33,820 --> 00:09:37,110
+The when function takes in
+any number of promises.
+
+199
+00:09:37,110 --> 00:09:41,000
+The then function contains the
+call back data in the same
+
+200
+00:09:41,000 --> 00:09:44,610
+order that you called in
+the when function.
+
+201
+00:09:44,610 --> 00:09:46,460
+So this is the solution
+we needed.
+
+202
+00:09:46,460 --> 00:09:49,960
+So, now when we call each of
+these promises, our code is
+
+203
+00:09:49,960 --> 00:09:53,780
+going to wait until both of
+the promises are done.
+
+204
+00:09:53,780 --> 00:09:56,795
+And afterwards it will call the
+then callback, displaying
+
+205
+00:09:56,795 --> 00:09:59,330
+the information on the screen
+at the same time.
+
+206
+00:10:02,790 --> 00:10:04,410
+So, let's go ahead and use when
+and then in our current
+
+207
+00:10:04,410 --> 00:10:08,240
+code to make this work.
+
+208
+00:10:08,240 --> 00:10:11,790
+Here, you can see we're calling
+when and sending in
+
+209
+00:10:11,790 --> 00:10:13,590
+each of the promises.
+
+210
+00:10:13,590 --> 00:10:16,060
+And we'll chain that with the
+then message which has two
+
+211
+00:10:16,060 --> 00:10:19,720
+parameters, weather result and
+city result, which it gets
+
+212
+00:10:19,720 --> 00:10:23,190
+back from the done functions
+of each of the promises,
+
+213
+00:10:23,190 --> 00:10:27,510
+and then we can append both of
+these results to our div.
+
+214
+00:10:27,510 --> 00:10:30,280
+And now it doesn't matter if the
+weather finishes first or
+
+215
+00:10:30,280 --> 00:10:32,060
+the city finishes first.
+
+216
+00:10:32,060 --> 00:10:35,490
+As you can see here, the city
+result will always be appended
+
+217
+00:10:35,490 --> 00:10:36,740
+to the page first.
+
+218
+00:10:40,010 --> 00:10:41,070
+Let's jump back into
+the browser.
+
+219
+00:10:41,070 --> 00:10:44,930
+And as you can see here, when
+we click on More Info on any
+
+220
+00:10:44,930 --> 00:10:47,820
+of these favorite cities, it
+will always display the
+
+221
+00:10:47,820 --> 00:10:49,430
+information in the
+correct order.
+
+222
+00:10:52,780 --> 00:10:57,170
+Whoa, that was a tough level.
+
+223
+00:10:57,170 --> 00:10:58,500
+Good luck with the challenges.
+
+224
+00:10:58,500 --> 00:10:59,530
+I believe in you.
+
+225
+00:10:59,530 --> 00:11:00,620
+You can do it.
+
+226
+00:11:00,620 --> 00:11:01,870
+I promise you can.

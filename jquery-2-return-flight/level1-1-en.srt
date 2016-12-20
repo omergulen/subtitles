@@ -1,0 +1,598 @@
+﻿1
+00:00:02,070 --> 00:00:04,860
+You're watching Try jQuery,
+The Return Flight.
+
+2
+00:00:04,860 --> 00:00:06,000
+I'm Gregg Pollack.
+
+3
+00:00:06,000 --> 00:00:07,840
+And in order to do this course,
+you need to have
+
+4
+00:00:07,840 --> 00:00:12,690
+already played through Try
+jQuery, our previous course.
+
+5
+00:00:12,690 --> 00:00:14,110
+So if you haven't, go do that,
+
+6
+00:00:14,110 --> 00:00:18,420
+and then we'll get started in
+this level with some Ajax.
+
+7
+00:00:18,420 --> 00:00:22,480
+Let's take a look at a typical
+web request without Ajax.
+
+8
+00:00:22,480 --> 00:00:26,180
+So our web browser requests
+a URL from our server.
+
+9
+00:00:26,180 --> 00:00:29,390
+Our server then sends a response
+which contains an
+
+10
+00:00:29,390 --> 00:00:32,870
+HTML file and maybe some
+JavaScript files.
+
+11
+00:00:32,870 --> 00:00:37,070
+Then our browser takes the
+HTML, loads that into our
+
+12
+00:00:37,070 --> 00:00:39,560
+document object model, which
+we learned about in the
+
+13
+00:00:39,560 --> 00:00:40,880
+previous course.
+
+14
+00:00:40,880 --> 00:00:43,910
+Then our JavaScript gets
+executed, which may interact
+
+15
+00:00:43,910 --> 00:00:45,880
+with the DOM.
+
+16
+00:00:45,880 --> 00:00:48,940
+Now let's figure out how
+communication works with Ajax,
+
+17
+00:00:48,940 --> 00:00:51,700
+which, by the way, stands
+for Asynchronous
+
+18
+00:00:51,700 --> 00:00:54,090
+JavaScript and XML.
+
+19
+00:00:54,090 --> 00:00:56,970
+And it's basically a way for
+communicating with the web
+
+20
+00:00:56,970 --> 00:01:01,120
+server without doing a
+full-page refresh.
+
+21
+00:01:01,120 --> 00:01:02,900
+So we already have
+our page loaded.
+
+22
+00:01:02,900 --> 00:01:05,430
+And without refreshing the page,
+we can go and fetch more
+
+23
+00:01:05,430 --> 00:01:08,200
+data from the server, and if
+we want, load that into the
+
+24
+00:01:08,200 --> 00:01:10,780
+page dynamically.
+
+25
+00:01:10,780 --> 00:01:12,550
+Here's our server and
+our browser again,
+
+26
+00:01:12,550 --> 00:01:15,330
+and notice the browser has
+already loaded our web page
+
+27
+00:01:15,330 --> 00:01:16,710
+into the DOM.
+
+28
+00:01:16,710 --> 00:01:19,430
+But we want to get additional
+data from the server.
+
+29
+00:01:19,430 --> 00:01:21,910
+So inside of our JavaScript,
+we do an Ajax
+
+30
+00:01:21,910 --> 00:01:24,010
+request to the server.
+
+31
+00:01:24,010 --> 00:01:27,250
+Our web server then returns an
+Ajax response, which could be
+
+32
+00:01:27,250 --> 00:01:30,410
+HTML or another data format.
+
+33
+00:01:30,410 --> 00:01:33,970
+Then our JavaScript can act
+on that response, perhaps
+
+34
+00:01:33,970 --> 00:01:36,590
+interacting with the DOM and
+updating our web page.
+
+35
+00:01:39,120 --> 00:01:42,460
+Now let's jump into an example
+where we can use some Ajax.
+
+36
+00:01:42,460 --> 00:01:43,195
+This should look familiar.
+
+37
+00:01:43,195 --> 00:01:45,310
+It's from Try jQuery.
+
+38
+00:01:45,310 --> 00:01:48,170
+You can see here when we click
+on Flight Details, it gives us
+
+39
+00:01:48,170 --> 00:01:50,390
+some details from the flight.
+
+40
+00:01:50,390 --> 00:01:53,780
+And then when we click on View
+Boarding Pass, it gives us
+
+41
+00:01:53,780 --> 00:01:55,160
+this image.
+
+42
+00:01:55,160 --> 00:01:58,700
+Now in our previous course, we
+loaded all this data into the
+
+43
+00:01:58,700 --> 00:02:02,250
+page and just revealed it
+as we clicked on things.
+
+44
+00:02:02,250 --> 00:02:06,150
+However, this time let's wait
+to load those flight details
+
+45
+00:02:06,150 --> 00:02:07,850
+until someone clicks
+that button.
+
+46
+00:02:07,850 --> 00:02:10,475
+And then we'll go and fetch that
+from the server and load
+
+47
+00:02:10,475 --> 00:02:13,050
+it into the page.
+
+48
+00:02:13,050 --> 00:02:16,390
+Here's some of the code from
+that Try jQuery example.
+
+49
+00:02:16,390 --> 00:02:20,280
+You can see we have a title,
+Hawaiian Vacation, a button,
+
+50
+00:02:20,280 --> 00:02:23,980
+Flight Details, and then a DIV
+where we can click to view the
+
+51
+00:02:23,980 --> 00:02:24,850
+boarding pass,
+
+52
+00:02:24,850 --> 00:02:28,230
+but none of the data we need
+is loaded in there yet.
+
+53
+00:02:28,230 --> 00:02:29,470
+Then we have some
+event handlers.
+
+54
+00:02:29,470 --> 00:02:32,270
+So if someone clicks the button
+inside the confirmation
+
+55
+00:02:32,270 --> 00:02:37,790
+class DIV, it will find the
+ticket and reveal it.
+
+56
+00:02:37,790 --> 00:02:40,520
+Then we have another click
+handler that looks for the
+
+57
+00:02:40,520 --> 00:02:42,370
+View Boarding Pass link.
+
+58
+00:02:42,370 --> 00:02:46,090
+And if that gets clicked, it
+will show the boarding pass.
+
+59
+00:02:46,090 --> 00:02:49,470
+So how would we load the ticket
+information inside that
+
+60
+00:02:49,470 --> 00:02:53,930
+ticket DIV from the server when
+our button gets clipped?
+
+61
+00:02:53,930 --> 00:02:57,350
+To do this, we're going to use
+the jQuery Ajax function,
+
+62
+00:02:57,350 --> 00:03:00,970
+which requires a URL and has
+optionally a bunch of other
+
+63
+00:03:00,970 --> 00:03:03,240
+settings which we'll get to.
+
+64
+00:03:03,240 --> 00:03:06,490
+Here's our Ajax call, and here's
+the URL which we want
+
+65
+00:03:06,490 --> 00:03:10,140
+to call, confirmation.html.
+
+66
+00:03:10,140 --> 00:03:13,210
+Our second argument is a
+JavaScript object which
+
+67
+00:03:13,210 --> 00:03:15,970
+contains one option
+called success.
+
+68
+00:03:15,970 --> 00:03:18,670
+This is where we tell our
+browser what to do if a
+
+69
+00:03:18,670 --> 00:03:22,060
+response gets successfully
+returned to this call.
+
+70
+00:03:22,060 --> 00:03:23,940
+The response we're going to get
+back from the server in
+
+71
+00:03:23,940 --> 00:03:28,090
+this case is going to be some
+HTML which looks like this.
+
+72
+00:03:28,090 --> 00:03:29,960
+Notice this is not
+a full web page.
+
+73
+00:03:29,960 --> 00:03:32,970
+This is just the HTML which
+you want to load into our
+
+74
+00:03:32,970 --> 00:03:34,870
+ticket DIV.
+
+75
+00:03:34,870 --> 00:03:37,970
+Now inside of our success call
+back, we're going to find the
+
+76
+00:03:37,970 --> 00:03:41,730
+ticket, load the HTML that we
+got back from the server into
+
+77
+00:03:41,730 --> 00:03:43,270
+it, and then reveal
+it by calling
+
+78
+00:03:43,270 --> 00:03:46,270
+the slide down function.
+
+79
+00:03:46,270 --> 00:03:49,150
+Before we see this Ajax call an
+action, let's simplify the
+
+80
+00:03:49,150 --> 00:03:50,710
+URL we're calling.
+
+81
+00:03:50,710 --> 00:03:53,880
+See here we can specify
+a relative URL.
+
+82
+00:03:53,880 --> 00:03:56,620
+That's because by default this
+Ajax call will use the same
+
+83
+00:03:56,620 --> 00:03:58,780
+domain that your browser
+has loaded.
+
+84
+00:03:58,780 --> 00:04:00,820
+It's the same thing as
+doing this Ajax call
+
+85
+00:04:00,820 --> 00:04:02,070
+you see down here.
+
+86
+00:04:04,910 --> 00:04:07,550
+So if we jump into the browser
+and we click the Flight
+
+87
+00:04:07,550 --> 00:04:10,440
+Details button, we can see that
+they get loaded using
+
+88
+00:04:10,440 --> 00:04:15,020
+Ajax from the server and then
+displayed on the screen.
+
+89
+00:04:15,020 --> 00:04:17,230
+You also might notice that on
+the bottom here we're using
+
+90
+00:04:17,230 --> 00:04:21,980
+Chrome DevTools to actually see
+the Ajax request happen.
+
+91
+00:04:21,980 --> 00:04:23,420
+This is really convenient.
+
+92
+00:04:23,420 --> 00:04:26,230
+If you're not familiar with
+Chrome DevTools, Code School
+
+93
+00:04:26,230 --> 00:04:28,600
+has a great course called
+Discover DevTools which will
+
+94
+00:04:28,600 --> 00:04:32,770
+teach you everything you
+need to know about it.
+
+95
+00:04:32,770 --> 00:04:35,050
+There's another method for doing
+simple Ajax calls in
+
+96
+00:04:35,050 --> 00:04:38,760
+jQuery using the GET method
+which only takes two
+
+97
+00:04:38,760 --> 00:04:42,290
+parameters, the URL and what
+to do when it gets back a
+
+98
+00:04:42,290 --> 00:04:43,810
+successful response.
+
+99
+00:04:43,810 --> 00:04:46,390
+So if we were to rewrite this
+request using the GET
+
+100
+00:04:46,390 --> 00:04:48,760
+function, it would look
+something like this.
+
+101
+00:04:51,530 --> 00:04:53,520
+You might have noticed that
+every time we do this Ajax
+
+102
+00:04:53,520 --> 00:04:56,970
+request, we're hitting the same
+URL, that same static
+
+103
+00:04:56,970 --> 00:04:59,280
+confirmation.html file.
+
+104
+00:04:59,280 --> 00:05:02,150
+But we like to create
+dynamic websites.
+
+105
+00:05:02,150 --> 00:05:05,500
+How might we do a request that
+sends along the confirmation
+
+106
+00:05:05,500 --> 00:05:07,850
+number, something that looks
+like this that appends the
+
+107
+00:05:07,850 --> 00:05:10,250
+confirmation number
+to the URL?
+
+108
+00:05:10,250 --> 00:05:13,580
+Well, of course the easy
+solution here is simply to put
+
+109
+00:05:13,580 --> 00:05:18,340
+that inside of the Ajax request
+and we'd be fine.
+
+110
+00:05:18,340 --> 00:05:21,110
+However, there's a better
+way to do that in Ajax.
+
+111
+00:05:21,110 --> 00:05:24,330
+This is where the Ajax
+data option comes in.
+
+112
+00:05:24,330 --> 00:05:29,410
+This simply takes a JavaScript
+object of keys and values and
+
+113
+00:05:29,410 --> 00:05:30,980
+adds that to the URL.
+
+114
+00:05:30,980 --> 00:05:35,460
+So these two pieces of
+code are equivalent.
+
+115
+00:05:35,460 --> 00:05:37,740
+Another way we can get the
+confirmation number is if we
+
+116
+00:05:37,740 --> 00:05:40,270
+stored it inside of the HTML.
+
+117
+00:05:40,270 --> 00:05:42,020
+So here you can see
+the ticket DIV.
+
+118
+00:05:42,020 --> 00:05:45,650
+And we have an attribute called
+data-confNum that will
+
+119
+00:05:45,650 --> 00:05:47,960
+store our confirmation number.
+
+120
+00:05:47,960 --> 00:05:50,480
+And then inside of our Ajax
+call, we can use that data
+
+121
+00:05:50,480 --> 00:05:54,310
+option and specify to pull the
+confirmation number out of
+
+122
+00:05:54,310 --> 00:05:54,970
+that attribute.
+
+123
+00:05:54,970 --> 00:05:58,540
+This of course still results in
+the same URL request from
+
+124
+00:05:58,540 --> 00:06:01,830
+the previous slide.
+
+125
+00:06:01,830 --> 00:06:04,390
+Now it's time for you to try
+some Ajax calls, and I'll see
+
+126
+00:06:04,390 --> 00:06:05,640
+you the next section.

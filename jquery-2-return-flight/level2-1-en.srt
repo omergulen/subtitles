@@ -1,0 +1,228 @@
+﻿1
+00:00:02,060 --> 00:00:03,880
+You're watching JavaScript,
+The Return Flight.
+
+2
+00:00:03,880 --> 00:00:06,330
+And this is level two, where
+we're going to be using some
+
+3
+00:00:06,330 --> 00:00:10,150
+JavaScript to organize
+our jQuery code.
+
+4
+00:00:10,150 --> 00:00:13,150
+With all the code that we wrote
+in level one, things are
+
+5
+00:00:13,150 --> 00:00:17,370
+starting to get messy in our
+application.js file, and a
+
+6
+00:00:17,370 --> 00:00:18,950
+little disorganized.
+
+7
+00:00:18,950 --> 00:00:20,770
+So in this level, we're going
+to take a look at two
+
+8
+00:00:20,770 --> 00:00:23,560
+different ways we can organize
+this code, starting with
+
+9
+00:00:23,560 --> 00:00:27,562
+refactoring it to use
+JavaScript objects.
+
+10
+00:00:27,562 --> 00:00:31,440
+Here you can see, we have
+a confirmation variable.
+
+11
+00:00:31,440 --> 00:00:34,600
+Inside of that we have a
+JavaScript object, which has
+
+12
+00:00:34,600 --> 00:00:38,530
+an Init key, which contains
+a function.
+
+13
+00:00:38,530 --> 00:00:42,560
+This is where we're going to put
+all of our event handlers.
+
+14
+00:00:42,560 --> 00:00:46,130
+Then when we want to call this
+Init function, we place it
+
+15
+00:00:46,130 --> 00:00:48,460
+inside of our document
+ready and simply call
+
+16
+00:00:48,460 --> 00:00:50,910
+confirmation Init.
+
+17
+00:00:50,910 --> 00:00:53,380
+So every piece of functionality
+that has to do
+
+18
+00:00:53,380 --> 00:00:56,570
+with confirmation is going
+to get wrapped up in that
+
+19
+00:00:56,570 --> 00:00:57,820
+JavaScript object.
+
+20
+00:01:00,280 --> 00:01:02,850
+So as I mentioned, inside of our
+Init method we create our
+
+21
+00:01:02,850 --> 00:01:04,160
+event handlers.
+
+22
+00:01:04,160 --> 00:01:07,210
+So here we have our click
+handler for our button.
+
+23
+00:01:07,210 --> 00:01:09,130
+Inside of that it does
+the Ajax call.
+
+24
+00:01:09,130 --> 00:01:10,040
+And then here we have the
+
+25
+00:01:10,040 --> 00:01:12,610
+view-boarding-pass click handler.
+
+26
+00:01:12,610 --> 00:01:16,490
+And these handlers get invoked
+when the document is ready,
+
+27
+00:01:16,490 --> 00:01:18,855
+and it calls the confirmation
+Init method.
+
+28
+00:01:21,590 --> 00:01:24,180
+There's one more step we can
+take to organize our
+
+29
+00:01:24,180 --> 00:01:25,860
+JavaScript objects.
+
+30
+00:01:25,860 --> 00:01:28,770
+And that is to pull out the
+call backs from our event
+
+31
+00:01:28,770 --> 00:01:32,280
+handlers, the functions
+inside here.
+
+32
+00:01:32,280 --> 00:01:36,990
+So let's pull this out and
+give it its own key.
+
+33
+00:01:36,990 --> 00:01:40,330
+We're going to call it
+load confirmation.
+
+34
+00:01:40,330 --> 00:01:43,050
+And that's where we're going
+to have our Ajax call.
+
+35
+00:01:43,050 --> 00:01:46,230
+Then above, in our confirmation
+click handler,
+
+36
+00:01:46,230 --> 00:01:50,420
+we're simply going to pass
+in that function, calling
+
+37
+00:01:50,420 --> 00:01:53,160
+this.loadConfirmation.
+
+38
+00:01:53,160 --> 00:01:56,520
+We need to use this when we call
+load confirmation because
+
+39
+00:01:56,520 --> 00:02:00,640
+we're referencing the current
+object that we're inside.
+
+40
+00:02:00,640 --> 00:02:02,770
+Now, we'll use the same
+technique with the other click
+
+41
+00:02:02,770 --> 00:02:06,810
+handler and pull out that
+function call back into its
+
+42
+00:02:06,810 --> 00:02:09,650
+own key, showBoardingPass.
+
+43
+00:02:09,650 --> 00:02:13,180
+Then we'll specify
+this.showBoardingPass to send
+
+44
+00:02:13,180 --> 00:02:19,730
+in this function. Now, if we go
+back in the web page, yep, it
+
+45
+00:02:19,730 --> 00:02:20,700
+still works.
+
+46
+00:02:20,700 --> 00:02:24,720
+And this time our code
+is much cleaner.
+
+47
+00:02:24,720 --> 00:02:27,870
+Now, it's time for you to try
+out a JavaScript object in the
+
+48
+00:02:27,870 --> 00:02:29,120
+challenges.

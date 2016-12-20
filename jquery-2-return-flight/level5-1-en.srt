@@ -1,0 +1,718 @@
+﻿1
+00:00:02,070 --> 00:00:04,290
+You're watching jQuery,
+The Return Flight.
+
+2
+00:00:04,290 --> 00:00:06,510
+And in this level, we're going
+to be going over advanced
+
+3
+00:00:06,510 --> 00:00:10,990
+events and jQuery plugins.
+
+4
+00:00:10,990 --> 00:00:11,550
+OK.
+
+5
+00:00:11,550 --> 00:00:12,630
+New scenario.
+
+6
+00:00:12,630 --> 00:00:14,030
+We've got two functions.
+
+7
+00:00:14,030 --> 00:00:15,200
+One's called picture.
+
+8
+00:00:15,200 --> 00:00:16,660
+One's called status.
+
+9
+00:00:16,660 --> 00:00:19,670
+And they both just logout
+to the console.
+
+10
+00:00:19,670 --> 00:00:21,710
+We also have this button.
+
+11
+00:00:21,710 --> 00:00:24,016
+That's a plane, Boeing 777.
+
+12
+00:00:24,016 --> 00:00:27,650
+And when we click on this
+button, we want to call both
+
+13
+00:00:27,650 --> 00:00:29,190
+of these functions.
+
+14
+00:00:29,190 --> 00:00:32,710
+So what we might do is have a
+click handler that listens for
+
+15
+00:00:32,710 --> 00:00:35,310
+the button click and calls the
+picture function, and have
+
+16
+00:00:35,310 --> 00:00:37,540
+another handler which listens
+for the click
+
+17
+00:00:37,540 --> 00:00:39,800
+event and calls status.
+
+18
+00:00:39,800 --> 00:00:42,400
+Up above we have sort of a good
+reference for each of our
+
+19
+00:00:42,400 --> 00:00:43,100
+click handlers.
+
+20
+00:00:43,100 --> 00:00:45,180
+They are just there for
+your reference.
+
+21
+00:00:45,180 --> 00:00:47,570
+And when we click on that
+button, of course, both of
+
+22
+00:00:47,570 --> 00:00:49,320
+these functions get called.
+
+23
+00:00:49,320 --> 00:00:53,900
+But what if, at some point in
+time, we wanted to turn off
+
+24
+00:00:53,900 --> 00:00:58,160
+these event handlers, so when
+we click the button they
+
+25
+00:00:58,160 --> 00:01:00,040
+didn't happen anymore?
+
+26
+00:01:00,040 --> 00:01:04,650
+Well, we can do this by
+using the off method.
+
+27
+00:01:04,650 --> 00:01:06,970
+Just like jQuery has
+an on method, it
+
+28
+00:01:06,970 --> 00:01:09,220
+also has an off method.
+
+29
+00:01:09,220 --> 00:01:11,480
+And we simply specify
+the event name we
+
+30
+00:01:11,480 --> 00:01:12,870
+want to turn off.
+
+31
+00:01:12,870 --> 00:01:17,200
+So here, if we run button off
+click, it's going to remove
+
+32
+00:01:17,200 --> 00:01:19,400
+all of the click call backs.
+
+33
+00:01:19,400 --> 00:01:21,640
+So when we click the button,
+neither of those functions
+
+34
+00:01:21,640 --> 00:01:22,890
+gets called.
+
+35
+00:01:25,200 --> 00:01:27,470
+But what if we only wanted
+to turn off one
+
+36
+00:01:27,470 --> 00:01:29,230
+of these event handlers.
+
+37
+00:01:29,230 --> 00:01:30,680
+How could we do that?
+
+38
+00:01:30,680 --> 00:01:33,180
+Well, this is where
+event namespacing
+
+39
+00:01:33,180 --> 00:01:35,750
+starts to come in handy.
+
+40
+00:01:35,750 --> 00:01:38,300
+So here you can see, we're
+adding the namespace of image
+
+41
+00:01:38,300 --> 00:01:41,620
+when we call our picture
+function, and the namespace of
+
+42
+00:01:41,620 --> 00:01:45,050
+details when we call our
+status function.
+
+43
+00:01:45,050 --> 00:01:47,360
+Now, if we want to remove the
+click handler that calls the
+
+44
+00:01:47,360 --> 00:01:52,300
+picture function, all we have to
+do is call off click image.
+
+45
+00:01:55,630 --> 00:01:57,830
+Namespacing is just what
+it sounds like.
+
+46
+00:01:57,830 --> 00:02:01,730
+It's just about adding names,
+or labels, on these click
+
+47
+00:02:01,730 --> 00:02:05,900
+handlers, so if we need to pull
+one out or turn one off, we
+
+48
+00:02:05,900 --> 00:02:07,740
+can easily.
+
+49
+00:02:07,740 --> 00:02:11,650
+We could also simply
+write off.image,
+
+50
+00:02:11,650 --> 00:02:14,870
+and that would remove all types
+of event handlers that
+
+51
+00:02:14,870 --> 00:02:16,300
+end in .image.
+
+52
+00:02:20,060 --> 00:02:23,200
+So now, if I added a new
+function, we'll call it zoom,
+
+53
+00:02:23,200 --> 00:02:27,010
+which is going to zoom in on
+a picture, and we call this
+
+54
+00:02:27,010 --> 00:02:30,100
+function when we mouse
+over the button
+
+55
+00:02:30,100 --> 00:02:31,870
+for whatever reason.
+
+56
+00:02:31,870 --> 00:02:34,520
+Now, if we ever want to turn
+off the event handlers that
+
+57
+00:02:34,520 --> 00:02:38,130
+have the image namespace all
+at once, we can simply call
+
+58
+00:02:38,130 --> 00:02:42,260
+off.image, and it's going to
+turn off the click Image and
+
+59
+00:02:42,260 --> 00:02:45,055
+mouse over image event handlers
+on the button.
+
+60
+00:02:48,340 --> 00:02:50,320
+Another useful jQuery
+event function
+
+61
+00:02:50,320 --> 00:02:52,010
+is the trigger function.
+
+62
+00:02:52,010 --> 00:02:56,360
+This allows us to trigger an
+event using JavaScript, rather
+
+63
+00:02:56,360 --> 00:02:59,460
+than by interacting with the
+web page and, perhaps,
+
+64
+00:02:59,460 --> 00:03:01,890
+clicking on the button itself.
+
+65
+00:03:01,890 --> 00:03:05,010
+To use this in our code, we
+can simply run button,
+
+66
+00:03:05,010 --> 00:03:07,150
+trigger, click.
+
+67
+00:03:07,150 --> 00:03:09,800
+And this is going to do the
+same thing as if the user
+
+68
+00:03:09,800 --> 00:03:13,910
+actually clicked on the button,
+in our case, call the
+
+69
+00:03:13,910 --> 00:03:17,730
+picture and the status
+function.
+
+70
+00:03:17,730 --> 00:03:21,050
+We can also trigger individual
+namespace events If we want to
+
+71
+00:03:21,050 --> 00:03:22,400
+be more specific.
+
+72
+00:03:22,400 --> 00:03:27,240
+For example, we could trigger
+the click.details event, which
+
+73
+00:03:27,240 --> 00:03:29,350
+in this case would call
+the status function.
+
+74
+00:03:34,140 --> 00:03:36,390
+Let's jump into a new example
+and use some of these
+
+75
+00:03:36,390 --> 00:03:37,455
+techniques.
+
+76
+00:03:37,455 --> 00:03:40,620
+Here you can see, we have three
+different vacations.
+
+77
+00:03:40,620 --> 00:03:44,360
+And we can show the price for
+each of them, which shows us
+
+78
+00:03:44,360 --> 00:03:46,840
+how much it's going to
+cost for three days.
+
+79
+00:03:49,450 --> 00:03:52,930
+If we take a look at the HTML,
+we can see that each of them
+
+80
+00:03:52,930 --> 00:03:55,370
+is a list item with a
+classification.
+
+81
+00:03:55,370 --> 00:03:59,660
+It has the price stored right
+there in the HTML for us and
+
+82
+00:03:59,660 --> 00:04:02,580
+then, of course, an
+h3 and the button.
+
+83
+00:04:02,580 --> 00:04:04,850
+Here's another vacation.
+
+84
+00:04:04,850 --> 00:04:07,920
+And then finally, we have this
+show all prices button, which
+
+85
+00:04:07,920 --> 00:04:11,360
+we'll implement in
+a little bit.
+
+86
+00:04:11,360 --> 00:04:15,040
+Each of these needs its own
+event handlers, obviously.
+
+87
+00:04:15,040 --> 00:04:16,279
+First, let's define
+the handler on
+
+88
+00:04:16,279 --> 00:04:17,810
+the show price button.
+
+89
+00:04:17,810 --> 00:04:19,769
+So we're going to look
+inside vacation
+
+90
+00:04:19,769 --> 00:04:21,839
+for clicks that happen.
+
+91
+00:04:21,839 --> 00:04:25,110
+And notice we're using a
+namespace on the click event,
+
+92
+00:04:25,110 --> 00:04:28,920
+since it's part of the
+price responsibility.
+
+93
+00:04:28,920 --> 00:04:30,850
+It calls the show price
+method, which
+
+94
+00:04:30,850 --> 00:04:32,590
+we'll define in a minute.
+
+95
+00:04:32,590 --> 00:04:34,720
+Also notice we're
+using the proper
+
+96
+00:04:34,720 --> 00:04:36,540
+delegation syntax for this.
+
+97
+00:04:39,960 --> 00:04:42,700
+So now that we have this event
+handler, let's define the show
+
+98
+00:04:42,700 --> 00:04:45,340
+price function.
+
+99
+00:04:45,340 --> 00:04:48,470
+Show price is going to find the
+closest vacation div to
+
+100
+00:04:48,470 --> 00:04:50,540
+the button we just clicked.
+
+101
+00:04:50,540 --> 00:04:52,750
+Then it's going to
+grab the price
+
+102
+00:04:52,750 --> 00:04:54,710
+out of the data attribute.
+
+103
+00:04:54,710 --> 00:04:57,350
+Then it's going to create a new
+DOM element, which is a
+
+104
+00:04:57,350 --> 00:05:00,000
+paragraph, which specifies how
+much it's going to cost to
+
+105
+00:05:00,000 --> 00:05:01,820
+book three days of this trip.
+
+106
+00:05:01,820 --> 00:05:05,260
+And then finally, it's going to
+append the new DOM element
+
+107
+00:05:05,260 --> 00:05:06,868
+into the vacation list item.
+
+108
+00:05:09,800 --> 00:05:12,350
+To finish the functionality on
+the page, we need to implement
+
+109
+00:05:12,350 --> 00:05:15,160
+the show all prices button.
+
+110
+00:05:15,160 --> 00:05:19,350
+So when we click this, it calls
+show price on each of
+
+111
+00:05:19,350 --> 00:05:23,460
+the different vacations and
+shows the proper price.
+
+112
+00:05:23,460 --> 00:05:26,560
+Well, we want to implement this
+in a way that allows us
+
+113
+00:05:26,560 --> 00:05:31,080
+to use that same show
+price function.
+
+114
+00:05:31,080 --> 00:05:32,940
+How would we do that?
+
+115
+00:05:32,940 --> 00:05:36,290
+Well, our typical event
+handler syntax looks
+
+116
+00:05:36,290 --> 00:05:37,210
+something like this.
+
+117
+00:05:37,210 --> 00:05:37,420
+Right?
+
+118
+00:05:37,420 --> 00:05:40,960
+This is the generic layout,
+where we have the DOM element,
+
+119
+00:05:40,960 --> 00:05:44,170
+followed by the event, followed
+by, optionally, the
+
+120
+00:05:44,170 --> 00:05:47,350
+namespace, and then the
+method to call.
+
+121
+00:05:47,350 --> 00:05:51,410
+Well, the interesting thing
+about event handlers is that
+
+122
+00:05:51,410 --> 00:05:54,210
+they can also be custom.
+
+123
+00:05:54,210 --> 00:05:57,400
+So we can come up with
+a name for the event.
+
+124
+00:05:57,400 --> 00:06:02,200
+In this case, we're creating
+a custom event called show,
+
+125
+00:06:02,200 --> 00:06:05,400
+which gets triggered on the
+vacation list item.
+
+126
+00:06:05,400 --> 00:06:08,590
+And it calls the show
+price function.
+
+127
+00:06:08,590 --> 00:06:10,300
+Well, interesting.
+
+128
+00:06:10,300 --> 00:06:13,440
+So how do we trigger that event
+to happen if it's not
+
+129
+00:06:13,440 --> 00:06:18,230
+hooked on to some click or hover
+event on our web page?
+
+130
+00:06:18,230 --> 00:06:21,690
+Well, we recently learned
+about trigger.
+
+131
+00:06:21,690 --> 00:06:25,580
+So if we want to trigger this
+event on all of the vacations, we
+
+132
+00:06:25,580 --> 00:06:30,300
+call trigger show.price,
+as we see here.
+
+133
+00:06:30,300 --> 00:06:33,820
+And it will call the show price
+function for each of the
+
+134
+00:06:33,820 --> 00:06:37,220
+different vacations.
+
+135
+00:06:37,220 --> 00:06:40,080
+If we wanted to trigger this
+event on a single vacation, we
+
+136
+00:06:40,080 --> 00:06:43,830
+could simply grab one vacation
+list item and call trigger
+
+137
+00:06:43,830 --> 00:06:44,680
+show price.
+
+138
+00:06:44,680 --> 00:06:45,930
+Same thing.
+
+139
+00:06:48,720 --> 00:06:51,060
+So to bring it all
+together, we have
+
+140
+00:06:51,060 --> 00:06:52,600
+our show price function.
+
+141
+00:06:52,600 --> 00:06:55,840
+We already created our vacation
+event handler, for
+
+142
+00:06:55,840 --> 00:06:58,090
+when people click an
+individual button.
+
+143
+00:06:58,090 --> 00:07:01,580
+We have our show price
+custom event.
+
+144
+00:07:01,580 --> 00:07:04,000
+And then all we have to do is listen
+for the click event on
+
+145
+00:07:04,000 --> 00:07:05,840
+the show prices link.
+
+146
+00:07:05,840 --> 00:07:09,460
+When it's clicked, we need to
+prevent default, you know, prevent that
+
+147
+00:07:09,460 --> 00:07:11,500
+link from being followed.
+
+148
+00:07:11,500 --> 00:07:15,645
+And then, all we have to do is
+trigger show price on all of
+
+149
+00:07:15,645 --> 00:07:16,895
+the vacations.
+
+150
+00:07:19,950 --> 00:07:22,280
+Now, if we go back into the
+browser and click on show all
+
+151
+00:07:22,280 --> 00:07:26,100
+prices, we can see that it
+properly calls the show price
+
+152
+00:07:26,100 --> 00:07:27,870
+method on each of
+our vacations.
+
+153
+00:07:31,160 --> 00:07:33,450
+Time for you to play with some
+events in the challenges,
+
+154
+00:07:33,450 --> 00:07:34,700
+and I'll see you in
+the next section.

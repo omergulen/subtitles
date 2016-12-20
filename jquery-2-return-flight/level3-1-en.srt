@@ -1,0 +1,365 @@
+﻿1
+00:00:02,040 --> 00:00:04,610
+You're watching jQuery, The
+Return Flight, and in level
+
+2
+00:00:04,610 --> 00:00:06,820
+three, we're going to
+be going over Ajax
+
+3
+00:00:06,820 --> 00:00:10,050
+forms, and using JSON.
+
+4
+00:00:10,050 --> 00:00:12,680
+In this level, we have a new
+example, it's a form where we
+
+5
+00:00:12,680 --> 00:00:16,420
+can select a destination, the
+number of tickets we want, and
+
+6
+00:00:16,420 --> 00:00:18,070
+then we can book the trip.
+
+7
+00:00:18,070 --> 00:00:21,750
+When we click that, it submits
+the form as a full page
+
+8
+00:00:21,750 --> 00:00:25,860
+refresh and it comes up
+with this response.
+
+9
+00:00:25,860 --> 00:00:29,960
+Now, how might we do
+that using Ajax?
+
+10
+00:00:29,960 --> 00:00:33,210
+So when that button is clicked,
+we need to figure out
+
+11
+00:00:33,210 --> 00:00:36,360
+how to trigger an
+Ajax request.
+
+12
+00:00:36,360 --> 00:00:38,370
+It would look something
+like this.
+
+13
+00:00:38,370 --> 00:00:43,130
+We listen for the Submit event
+on the form, and then inside
+
+14
+00:00:43,130 --> 00:00:45,500
+of the callback function, we're
+going to do an Ajax
+
+15
+00:00:45,500 --> 00:00:48,900
+request to the book URL, and
+inside there, we need to
+
+16
+00:00:48,900 --> 00:00:53,520
+specify the type of the
+request to POST.
+
+17
+00:00:57,700 --> 00:01:00,440
+So now, when we select a
+destination, select the number
+
+18
+00:01:00,440 --> 00:01:06,330
+of tickets, click to book the
+trip, we oh it didn't work.
+
+19
+00:01:06,330 --> 00:01:09,105
+Something went wrong with
+our Ajax request.
+
+20
+00:01:11,670 --> 00:01:14,280
+So let's take a look
+back at our code.
+
+21
+00:01:14,280 --> 00:01:15,030
+Oh.
+
+22
+00:01:15,030 --> 00:01:16,650
+I see what's missing.
+
+23
+00:01:16,650 --> 00:01:21,150
+We forgot
+event.preventDefault to
+
+24
+00:01:21,150 --> 00:01:25,410
+prevent the default behavior
+of the form, which is to
+
+25
+00:01:25,410 --> 00:01:28,720
+submit and refresh
+the entire page.
+
+26
+00:01:28,720 --> 00:01:32,490
+So without it, it was doing the
+Ajax request, and it was
+
+27
+00:01:32,490 --> 00:01:35,440
+also submitting the form and
+refreshing the page.
+
+28
+00:01:35,440 --> 00:01:37,890
+Well, we don't want it to
+refresh the page, so we'll
+
+29
+00:01:37,890 --> 00:01:42,470
+prevent that default behavior
+from happening.
+
+30
+00:01:42,470 --> 00:01:43,130
+All right.
+
+31
+00:01:43,130 --> 00:01:45,440
+There's something else that's a
+little fishy here, and that
+
+32
+00:01:45,440 --> 00:01:48,980
+is that we're doing the Ajax
+request now, but it's not
+
+33
+00:01:48,980 --> 00:01:52,680
+sending any of that form data
+over, any of that form we
+
+34
+00:01:52,680 --> 00:01:53,700
+filled out.
+
+35
+00:01:53,700 --> 00:01:56,120
+So how do we add that?
+
+36
+00:01:56,120 --> 00:01:56,690
+Right.
+
+37
+00:01:56,690 --> 00:01:59,430
+That's the destination and
+the quantity you see
+
+38
+00:01:59,430 --> 00:02:00,900
+here in this HTML?
+
+39
+00:02:00,900 --> 00:02:02,930
+We need to attach that
+to our Ajax request.
+
+40
+00:02:06,210 --> 00:02:09,830
+As we saw in level one, we can
+use the data option to send
+
+41
+00:02:09,830 --> 00:02:13,910
+this information to our server,
+specifying a key of
+
+42
+00:02:13,910 --> 00:02:18,530
+destination, grabbing the value
+out of the HTML, and
+
+43
+00:02:18,530 --> 00:02:22,350
+doing the same thing with
+quantity, wrapping it up in a
+
+44
+00:02:22,350 --> 00:02:26,570
+JavaScript object, and sending
+that to the server.
+
+45
+00:02:26,570 --> 00:02:30,420
+This works fine, but there's
+a better way.
+
+46
+00:02:30,420 --> 00:02:34,760
+jQuery comes with a shortcut
+method called serialize which
+
+47
+00:02:34,760 --> 00:02:38,470
+you can use to merge all
+of the form fields for
+
+48
+00:02:38,470 --> 00:02:39,590
+submission.
+
+49
+00:02:39,590 --> 00:02:42,750
+So to use serialize, we simply
+put it right here and call
+
+50
+00:02:42,750 --> 00:02:47,480
+form.serialize, it pulls all the
+data out of the form and
+
+51
+00:02:47,480 --> 00:02:49,295
+sends it along with
+our Ajax request.
+
+52
+00:02:52,180 --> 00:02:54,480
+If we want to do anything on
+the page when our Ajax
+
+53
+00:02:54,480 --> 00:02:57,100
+response comes back, we're
+going to need to define a
+
+54
+00:02:57,100 --> 00:03:00,250
+success callback,
+as you see here.
+
+55
+00:03:00,250 --> 00:03:02,840
+The result coming back from the
+server is going to be a
+
+56
+00:03:02,840 --> 00:03:05,130
+snippet of HTML which
+looks like this.
+
+57
+00:03:08,310 --> 00:03:11,780
+So inside our success callback,
+let's simply remove
+
+58
+00:03:11,780 --> 00:03:16,260
+the form, hide the current
+vacation div, populate it with
+
+59
+00:03:16,260 --> 00:03:20,530
+the HTML from the result was
+returned, and then finally
+
+60
+00:03:20,530 --> 00:03:23,450
+fade it back in.
+
+61
+00:03:23,450 --> 00:03:26,090
+What else can we do to
+improve this code?
+
+62
+00:03:26,090 --> 00:03:29,750
+Well, remember back in level
+two when there were two DOM
+
+63
+00:03:29,750 --> 00:03:34,540
+look-ups looking us the same
+element, we re-factor this
+
+64
+00:03:34,540 --> 00:03:36,330
+into a variable.
+
+65
+00:03:36,330 --> 00:03:38,630
+Let's do that again.
+
+66
+00:03:38,630 --> 00:03:41,750
+So we'll create a form variable
+and set it equal to
+
+67
+00:03:41,750 --> 00:03:45,520
+this, which, because we're
+inside an event handler,
+
+68
+00:03:45,520 --> 00:03:47,940
+happens to be the
+form element.
+
+69
+00:03:47,940 --> 00:03:50,100
+Then inside of our data option,
+we can just specify
+
+70
+00:03:50,100 --> 00:03:53,380
+form.serialize, and then inside
+success, form.remove.
+
+71
+00:03:56,770 --> 00:03:58,250
+And then here we are back
+in our browser.
+
+72
+00:03:58,250 --> 00:04:01,550
+We select the destination, the
+number of tickets, and we book
+
+73
+00:04:01,550 --> 00:04:03,300
+the trip, and it happens.
+
+74
+00:04:03,300 --> 00:04:08,160
+And this time, using Ajax,
+without a page refresh.
+
+75
+00:04:08,160 --> 00:04:11,420
+Now why don't you try to create
+some Ajax forms, and
+
+76
+00:04:11,420 --> 00:04:12,670
+I'll see you in the
+next section.

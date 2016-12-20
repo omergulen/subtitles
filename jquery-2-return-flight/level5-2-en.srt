@@ -1,0 +1,960 @@
+﻿1
+00:00:02,090 --> 00:00:04,590
+In this next section, we're
+going to be taking a look at
+
+2
+00:00:04,590 --> 00:00:08,270
+JavaScript plugins, which are a
+way to encapsulate behavior
+
+3
+00:00:08,270 --> 00:00:09,820
+that we might want to
+reuse in different
+
+4
+00:00:09,820 --> 00:00:12,830
+places around our website.
+
+5
+00:00:12,830 --> 00:00:16,430
+Here's our vacation page again
+where we can show prices, just
+
+6
+00:00:16,430 --> 00:00:17,080
+like you see here.
+
+7
+00:00:17,080 --> 00:00:20,240
+And we can also specify if
+we're not interested in
+
+8
+00:00:20,240 --> 00:00:21,490
+specific vacations.
+
+9
+00:00:26,050 --> 00:00:29,770
+We can also show all prices
+for all the vacations.
+
+10
+00:00:29,770 --> 00:00:31,480
+And we want to encapsulate
+all of this
+
+11
+00:00:31,480 --> 00:00:34,816
+functionality into a plugin.
+
+12
+00:00:34,816 --> 00:00:36,680
+Here's the HTML from
+that page.
+
+13
+00:00:36,680 --> 00:00:39,360
+So when we click that Show Price
+button, we're going to
+
+14
+00:00:39,360 --> 00:00:40,590
+add a "p" for the price.
+
+15
+00:00:40,590 --> 00:00:44,080
+When we click the Not Interested
+link, it's going to
+
+16
+00:00:44,080 --> 00:00:46,360
+hide that vacation.
+
+17
+00:00:46,360 --> 00:00:50,140
+And then finally, when we click
+the Show All Prices
+
+18
+00:00:50,140 --> 00:00:51,350
+button, it's going
+to show all the
+
+19
+00:00:51,350 --> 00:00:52,600
+prices for all the vacations.
+
+20
+00:00:55,250 --> 00:00:57,540
+So let's start setting
+up our plugin.
+
+21
+00:00:57,540 --> 00:01:02,320
+To do that, we write
+$.fn.pricify.
+
+22
+00:01:02,790 --> 00:01:07,120
+Pricify is the name of our
+plugin, and using that .fn
+
+23
+00:01:07,120 --> 00:01:10,980
+makes this method available
+to all jQuery objects.
+
+24
+00:01:10,980 --> 00:01:13,600
+So inside there, we
+define a function.
+
+25
+00:01:13,600 --> 00:01:16,640
+And just to start taking
+baby steps, let's
+
+26
+00:01:16,640 --> 00:01:18,580
+do two console logs.
+
+27
+00:01:18,580 --> 00:01:21,000
+One to designate that
+pricify was called,
+
+28
+00:01:21,000 --> 00:01:23,860
+and the second log to figure out
+the value of this, which
+
+29
+00:01:23,860 --> 00:01:26,670
+will be the jQuery object the
+plugin was called on.
+
+30
+00:01:26,670 --> 00:01:28,690
+To invoke this method,
+we simply need to
+
+31
+00:01:28,690 --> 00:01:30,650
+grab a jQuery object.
+
+32
+00:01:30,650 --> 00:01:34,390
+In this case, we're going to
+grab all the Vacation objects,
+
+33
+00:01:34,390 --> 00:01:37,471
+and call .pricify.
+
+34
+00:01:37,471 --> 00:01:39,640
+If we take a look at the
+console, we can say that
+
+35
+00:01:39,640 --> 00:01:43,280
+pricify called gets
+executed once.
+
+36
+00:01:43,280 --> 00:01:47,390
+And then for this, we can see
+it's the value of each of our
+
+37
+00:01:47,390 --> 00:01:49,255
+different vacation list items.
+
+38
+00:01:52,890 --> 00:01:54,760
+Let's ditch the console
+logs and start
+
+39
+00:01:54,760 --> 00:01:56,620
+implementing this plugin.
+
+40
+00:01:56,620 --> 00:01:59,680
+So first thing we're going
+to do is set the Vacation
+
+41
+00:01:59,680 --> 00:02:04,270
+variable equal to this, which
+will be of course, vacation--
+
+42
+00:02:04,270 --> 00:02:06,340
+based on how we call it here.
+
+43
+00:02:06,340 --> 00:02:08,350
+Then we're going to create a
+ClickHandler when the button
+
+44
+00:02:08,350 --> 00:02:09,530
+gets pushed.
+
+45
+00:02:09,530 --> 00:02:11,820
+And then, of course, inside of
+that, we'll get the price,
+
+46
+00:02:11,820 --> 00:02:13,330
+just like we did before--
+
+47
+00:02:13,330 --> 00:02:16,830
+create the details, which are
+what it costs to book for
+
+48
+00:02:16,830 --> 00:02:17,405
+three days.
+
+49
+00:02:17,405 --> 00:02:20,230
+And then, we'll hide
+the button, and
+
+50
+00:02:20,230 --> 00:02:22,030
+append the price details.
+
+51
+00:02:22,030 --> 00:02:25,280
+Then lastly, we only want the
+Pricify method to get loaded
+
+52
+00:02:25,280 --> 00:02:26,830
+when the document is ready.
+
+53
+00:02:30,790 --> 00:02:32,510
+So now, we can jump back
+into our browser.
+
+54
+00:02:32,510 --> 00:02:34,643
+And when we click Show Price--
+
+55
+00:02:34,643 --> 00:02:37,500
+uh oh, you see what it did?
+
+56
+00:02:37,500 --> 00:02:40,670
+It showed you the prices for
+all of them, all at once.
+
+57
+00:02:40,670 --> 00:02:41,970
+And it's the same price.
+
+58
+00:02:41,970 --> 00:02:44,250
+Which is definitely
+not what we want.
+
+59
+00:02:44,250 --> 00:02:47,430
+We need each of these to show
+each price, as we click the
+
+60
+00:02:47,430 --> 00:02:48,250
+different buttons.
+
+61
+00:02:48,250 --> 00:02:49,720
+So what went wrong?
+
+62
+00:02:52,480 --> 00:02:56,040
+Well, it turns out that when we
+set this equal to vacation,
+
+63
+00:02:56,040 --> 00:02:59,690
+this is pointing to all of
+the vacation elements.
+
+64
+00:02:59,690 --> 00:03:01,510
+Remember the console
+logs from earlier?
+
+65
+00:03:01,510 --> 00:03:03,200
+It's all the elements it once.
+
+66
+00:03:03,200 --> 00:03:06,030
+And when we call Append, it'll
+append it in multiple
+
+67
+00:03:06,030 --> 00:03:07,970
+places, which is why
+we saw that price
+
+68
+00:03:07,970 --> 00:03:09,950
+on each of the vacations.
+
+69
+00:03:09,950 --> 00:03:12,720
+So to fix this, we're going to
+use the jQuery object method
+
+70
+00:03:12,720 --> 00:03:14,540
+called Each, which
+is going to go
+
+71
+00:03:14,540 --> 00:03:16,890
+through each of our vacations.
+
+72
+00:03:16,890 --> 00:03:20,440
+This is similar to our previous
+Each that we saw in
+
+73
+00:03:20,440 --> 00:03:25,250
+previous levels, except that was
+a jQuery utility method.
+
+74
+00:03:25,250 --> 00:03:28,970
+And this is just an Each method
+that we can call on any
+
+75
+00:03:28,970 --> 00:03:31,130
+jQuery object.
+
+76
+00:03:31,130 --> 00:03:34,510
+To use it, we're going to
+call this .each
+
+77
+00:03:34,510 --> 00:03:37,450
+and send in a function.
+
+78
+00:03:37,450 --> 00:03:39,815
+This of course is going
+to be an array of
+
+79
+00:03:39,815 --> 00:03:42,740
+our vacation items.
+
+80
+00:03:42,740 --> 00:03:45,670
+And then as it goes into the
+function, running it one time
+
+81
+00:03:45,670 --> 00:03:49,650
+for each item, it's going to set
+the value of that vacation
+
+82
+00:03:49,650 --> 00:03:52,880
+equal to the Vacation variable,
+set the proper
+
+83
+00:03:52,880 --> 00:03:56,440
+ClickHandler for each of them,
+and then it should work.
+
+84
+00:04:00,310 --> 00:04:02,950
+So now if we go back into our
+browser, we can see that Show
+
+85
+00:04:02,950 --> 00:04:06,520
+Price works properly for
+each of our vacations.
+
+86
+00:04:11,140 --> 00:04:13,580
+Now, what if we wanted to allow
+our plugin to accept
+
+87
+00:04:13,580 --> 00:04:14,860
+different arguments?
+
+88
+00:04:14,860 --> 00:04:17,600
+For example, if we wanted to
+change the number of days that
+
+89
+00:04:17,600 --> 00:04:20,300
+it displays in the price.
+
+90
+00:04:20,300 --> 00:04:23,050
+Well, we could simply send
+in a JavaScript object,
+
+91
+00:04:23,050 --> 00:04:24,490
+like you see here.
+
+92
+00:04:24,490 --> 00:04:26,850
+Then in our plugin, we
+simply update it to
+
+93
+00:04:26,850 --> 00:04:29,400
+take the Options parameter.
+
+94
+00:04:29,400 --> 00:04:31,750
+Then we have the normal
+Price variable.
+
+95
+00:04:31,750 --> 00:04:34,680
+And then in our Details
+variable, we simply build a
+
+96
+00:04:34,680 --> 00:04:38,230
+string using the Options
+JavaScript object.
+
+97
+00:04:38,230 --> 00:04:42,220
+So we just call options.days to
+get out the number of days
+
+98
+00:04:42,220 --> 00:04:44,710
+that we want to calculate
+the price for.
+
+99
+00:04:44,710 --> 00:04:47,500
+But what if we wanted our plugin
+to take in optional
+
+100
+00:04:47,500 --> 00:04:48,590
+parameters?
+
+101
+00:04:48,590 --> 00:04:51,930
+For example, if we want it to
+default to showing the price
+
+102
+00:04:51,930 --> 00:04:56,020
+for three days, if we
+don't specify it.
+
+103
+00:04:56,020 --> 00:05:00,500
+So we can either call it with
+five days, as you see here, or
+
+104
+00:05:00,500 --> 00:05:02,160
+with no parameters at all,
+
+105
+00:05:02,160 --> 00:05:03,410
+and it will default to three.
+
+106
+00:05:06,420 --> 00:05:08,860
+To do this properly, we're going
+to learn a new utility
+
+107
+00:05:08,860 --> 00:05:13,320
+method called Extend, which
+can take in two or more
+
+108
+00:05:13,320 --> 00:05:16,790
+JavaScript objects
+and combine them.
+
+109
+00:05:16,790 --> 00:05:19,860
+So for example, if we called
+Extend with two JavaScript
+
+110
+00:05:19,860 --> 00:05:22,980
+objects, one having days three,
+the other having price
+
+111
+00:05:22,980 --> 00:05:26,430
+five, it would combine them into
+one JavaScript object,
+
+112
+00:05:26,430 --> 00:05:29,510
+which has days three,
+price five.
+
+113
+00:05:29,510 --> 00:05:34,250
+If we called Extend with days
+three and then an empty
+
+114
+00:05:34,250 --> 00:05:38,620
+JavaScript object, we would
+simply get back days three.
+
+115
+00:05:38,620 --> 00:05:44,030
+Then if we called days three
+and then days five, this
+
+116
+00:05:44,030 --> 00:05:48,140
+second JavaScript object would
+overwrite the first one.
+
+117
+00:05:48,140 --> 00:05:50,610
+And we get days five.
+
+118
+00:05:50,610 --> 00:05:55,100
+So as you can see, this is how
+we can specify a default value
+
+119
+00:05:55,100 --> 00:05:57,300
+of days three.
+
+120
+00:05:57,300 --> 00:06:00,520
+And then if we pass in a second
+JavaScript object that
+
+121
+00:06:00,520 --> 00:06:03,390
+simply has days five in
+it, it's going to
+
+122
+00:06:03,390 --> 00:06:04,640
+override the default.
+
+123
+00:06:07,970 --> 00:06:10,970
+So here we are, back in
+our Pricify plugin.
+
+124
+00:06:10,970 --> 00:06:14,330
+We're going to use the Extend
+Utility method, set the
+
+125
+00:06:14,330 --> 00:06:17,050
+default number of days to three,
+and then the second
+
+126
+00:06:17,050 --> 00:06:19,900
+parameter is going to the
+Options object, which we pass
+
+127
+00:06:19,900 --> 00:06:22,180
+in to the function.
+
+128
+00:06:22,180 --> 00:06:24,760
+These two objects will be
+combined into a settings
+
+129
+00:06:24,760 --> 00:06:27,440
+variable, which we can
+then use later on.
+
+130
+00:06:27,440 --> 00:06:30,860
+Now we have other settings
+inside of this plugin, which
+
+131
+00:06:30,860 --> 00:06:32,580
+we have defined as
+variables here.
+
+132
+00:06:32,580 --> 00:06:36,250
+But why not define them
+inside of our
+
+133
+00:06:36,250 --> 00:06:38,880
+Settings JavaScript object?
+
+134
+00:06:38,880 --> 00:06:39,420
+Let's do that.
+
+135
+00:06:39,420 --> 00:06:40,680
+Let's move them inside
+of our settings.
+
+136
+00:06:43,290 --> 00:06:45,240
+So now we have our Settings
+object with all the different
+
+137
+00:06:45,240 --> 00:06:47,930
+settings that our plugin uses.
+
+138
+00:06:47,930 --> 00:06:50,890
+So now, we need to go back
+into our EventHandler and
+
+139
+00:06:50,890 --> 00:06:53,200
+update that to use
+our new settings.
+
+140
+00:06:53,200 --> 00:06:56,570
+And to access each of these
+values inside of our settings,
+
+141
+00:06:56,570 --> 00:06:58,670
+we'll do like settings
+vacation.
+
+142
+00:06:58,670 --> 00:07:02,740
+We'll do settings.days
+and settings.price.
+
+143
+00:07:02,740 --> 00:07:03,440
+OK.
+
+144
+00:07:03,440 --> 00:07:04,850
+Let's use these.
+
+145
+00:07:04,850 --> 00:07:07,680
+So let's move them
+into our code.
+
+146
+00:07:07,680 --> 00:07:10,680
+So first, we use
+settings.vacation.on, to get
+
+147
+00:07:10,680 --> 00:07:12,530
+our current vacation.
+
+148
+00:07:12,530 --> 00:07:16,130
+Then we'll create the details
+DOM object, then hide the Show
+
+149
+00:07:16,130 --> 00:07:19,510
+Price button, and lastly, append
+our DOM object to our
+
+150
+00:07:19,510 --> 00:07:20,760
+current vacation.
+
+151
+00:07:24,560 --> 00:07:28,890
+So now if we go back into our
+browser, we can see that, yep,
+
+152
+00:07:28,890 --> 00:07:30,040
+it still works.
+
+153
+00:07:30,040 --> 00:07:31,490
+And now our code is
+a lot cleaner
+
+154
+00:07:31,490 --> 00:07:32,700
+and even more flexible.
+
+155
+00:07:32,700 --> 00:07:36,540
+But we still need to implement
+this Show All Prices button.
+
+156
+00:07:36,540 --> 00:07:38,800
+Let's do that now.
+
+157
+00:07:38,800 --> 00:07:42,240
+Now here's the HTML for our Show
+All Prices link, which
+
+158
+00:07:42,240 --> 00:07:45,290
+has a class of Show Prices.
+
+159
+00:07:45,290 --> 00:07:50,150
+And we could make this trigger
+all of the Click Pricify
+
+160
+00:07:50,150 --> 00:07:51,530
+events on all of the buttons.
+
+161
+00:07:51,530 --> 00:07:53,840
+But there's a cleaner
+way to do this.
+
+162
+00:07:56,810 --> 00:07:59,500
+We're going to create a custom
+event which will call the same
+
+163
+00:07:59,500 --> 00:08:03,040
+function that Click
+Pricify uses.
+
+164
+00:08:03,040 --> 00:08:05,700
+So the first step down
+this road is to
+
+165
+00:08:05,700 --> 00:08:07,410
+factor out this function.
+
+166
+00:08:07,410 --> 00:08:09,310
+Let's split this out into
+its own function,
+
+167
+00:08:09,310 --> 00:08:13,160
+and we're going to call it
+"Show." This encapsulates all
+
+168
+00:08:13,160 --> 00:08:15,480
+the behavior we want
+when we click on
+
+169
+00:08:15,480 --> 00:08:16,980
+the Show Price button.
+
+170
+00:08:16,980 --> 00:08:21,400
+So now our Click Pricify
+EventHandler simply calls this
+
+171
+00:08:21,400 --> 00:08:22,650
+Show function.
+
+172
+00:08:25,240 --> 00:08:26,440
+Let's shrink that down.
+
+173
+00:08:26,440 --> 00:08:30,030
+And now we're going to create
+a custom event called Show--
+
+174
+00:08:30,030 --> 00:08:31,780
+it's show.pricify--
+
+175
+00:08:31,780 --> 00:08:35,770
+which calls the same
+Show function.
+
+176
+00:08:35,770 --> 00:08:38,419
+Now all we have to do to make
+the Show All Prices button
+
+177
+00:08:38,419 --> 00:08:41,659
+work is create a ClickHandler
+like you see here--
+
+178
+00:08:41,659 --> 00:08:44,600
+prevent the default behavior
+from happening; we don't want
+
+179
+00:08:44,600 --> 00:08:47,360
+it to follow the Show
+All Prices link--
+
+180
+00:08:47,360 --> 00:08:51,620
+and then trigger the custom
+event show.pricify on all of
+
+181
+00:08:51,620 --> 00:08:52,870
+our vacations.
+
+182
+00:08:57,060 --> 00:08:59,880
+Now when we call the Show All
+Prices button, that custom
+
+183
+00:08:59,880 --> 00:09:01,780
+event gets called.
+
+184
+00:09:01,780 --> 00:09:04,290
+And they all work.
+
+185
+00:09:04,290 --> 00:09:07,240
+Next up though, let's go ahead
+and implement that Not
+
+186
+00:09:07,240 --> 00:09:10,490
+Interested link, so it makes the
+vacation disappear when we
+
+187
+00:09:10,490 --> 00:09:12,750
+click on it.
+
+188
+00:09:12,750 --> 00:09:14,790
+Inside each of the vacations,
+they have a link at the
+
+189
+00:09:14,790 --> 00:09:17,690
+bottom, which has
+Not Interested.
+
+190
+00:09:17,690 --> 00:09:20,040
+So to make this work,
+first we're going to
+
+191
+00:09:20,040 --> 00:09:22,130
+create a Remove function.
+
+192
+00:09:22,130 --> 00:09:24,890
+This is going to grab our
+current vacation, fade it off
+
+193
+00:09:24,890 --> 00:09:29,800
+the page, and then turn off
+all of the EventHandlers.
+
+194
+00:09:29,800 --> 00:09:32,830
+Lastly, we need to create a
+ClickHandler, so that when
+
+195
+00:09:32,830 --> 00:09:35,810
+somebody clicks the Not
+Interested link, it calls the
+
+196
+00:09:35,810 --> 00:09:37,320
+Remove function that
+we just declared.
+
+197
+00:09:40,860 --> 00:09:44,150
+Now when we jump back into our
+browser, we can click the Not
+
+198
+00:09:44,150 --> 00:09:46,110
+Interested link, and
+it will properly
+
+199
+00:09:46,110 --> 00:09:47,890
+fade off each vacation.
+
+200
+00:09:53,040 --> 00:09:55,600
+Plugins can be really helpful
+when you need to encapsulate a
+
+201
+00:09:55,600 --> 00:09:58,580
+piece of behavior that you may
+want to use in different parts
+
+202
+00:09:58,580 --> 00:10:01,840
+of your application, or even
+package up and use in
+
+203
+00:10:01,840 --> 00:10:03,930
+different applications.
+
+204
+00:10:03,930 --> 00:10:05,880
+Now it's time for you to
+create you own plugins.
+
+205
+00:10:05,880 --> 00:10:07,140
+And I'll see you in
+the final level.

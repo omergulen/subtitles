@@ -1,0 +1,1053 @@
+﻿1
+00:00:02,050 --> 00:00:04,790
+You're watching jQuery, The
+Return Flight, and in this
+
+2
+00:00:04,790 --> 00:00:05,900
+level, we're going
+to be taking a
+
+3
+00:00:05,900 --> 00:00:08,830
+look at utility methods.
+
+4
+00:00:08,830 --> 00:00:10,050
+Here's a new example.
+
+5
+00:00:10,050 --> 00:00:12,310
+It's simply a Show
+Favorite button.
+
+6
+00:00:12,310 --> 00:00:15,540
+When we click that, it's going
+to go to the server using Ajax
+
+7
+00:00:15,540 --> 00:00:18,950
+and populate the data and show
+our city, like you see here.
+
+8
+00:00:18,950 --> 00:00:21,080
+So what does a code
+for this look like?
+
+9
+00:00:21,080 --> 00:00:22,590
+Here's the HTML for the page.
+
+10
+00:00:22,590 --> 00:00:26,680
+You can see we have our favorite
+div and our Show
+
+11
+00:00:26,680 --> 00:00:29,460
+Favorites button there at the
+bottom, which populates our
+
+12
+00:00:29,460 --> 00:00:31,560
+image and our paragraph.
+
+13
+00:00:31,560 --> 00:00:33,610
+Here's the jQuery code that
+we would write to
+
+14
+00:00:33,610 --> 00:00:36,020
+make this page work.
+
+15
+00:00:36,020 --> 00:00:38,740
+First, we need a Click Handler
+for the button.
+
+16
+00:00:38,740 --> 00:00:43,050
+The Callback function is going
+to do an Ajax call with the
+
+17
+00:00:43,050 --> 00:00:45,520
+URL cities/favorite/1.
+
+18
+00:00:45,520 --> 00:00:48,540
+On success, it's going to return
+some JSON, which looks
+
+19
+00:00:48,540 --> 00:00:51,620
+like this with the image
+and the name.
+
+20
+00:00:51,620 --> 00:00:53,975
+From there, we're going to grab
+the favorite div, find
+
+21
+00:00:53,975 --> 00:00:57,500
+the paragraph, populate that
+with the name of the city from
+
+22
+00:00:57,500 --> 00:00:58,970
+the result.
+
+23
+00:00:58,970 --> 00:01:02,800
+Then we'll find the image in
+our div and populate the
+
+24
+00:01:02,800 --> 00:01:06,230
+source attribute with our image
+that was returned from
+
+25
+00:01:06,230 --> 00:01:08,800
+our server.
+
+26
+00:01:08,800 --> 00:01:11,660
+This works fine, but what if
+we have multiple favorites?
+
+27
+00:01:11,660 --> 00:01:13,420
+We don't want to have
+to do a call to the
+
+28
+00:01:13,420 --> 00:01:14,880
+server for each favorite.
+
+29
+00:01:14,880 --> 00:01:17,510
+We want to do one call
+and get back all of
+
+30
+00:01:17,510 --> 00:01:20,500
+our favorite cities.
+
+31
+00:01:20,500 --> 00:01:23,430
+The JSON that we might get back
+in this scenario might
+
+32
+00:01:23,430 --> 00:01:25,210
+look something like this.
+
+33
+00:01:25,210 --> 00:01:30,060
+As you can see, we have
+an array of objects.
+
+34
+00:01:30,060 --> 00:01:33,800
+Now, if this gets returned, our
+success callback no longer
+
+35
+00:01:33,800 --> 00:01:36,140
+is going to work as
+we want it to.
+
+36
+00:01:36,140 --> 00:01:39,840
+We need a way of populating the
+data from this JSON that
+
+37
+00:01:39,840 --> 00:01:42,590
+got returned into all
+of the different
+
+38
+00:01:42,590 --> 00:01:46,420
+favorite divs on our website.
+
+39
+00:01:46,420 --> 00:01:49,120
+Here you can see three favorite
+divs that we already
+
+40
+00:01:49,120 --> 00:01:50,180
+have on the page.
+
+41
+00:01:50,180 --> 00:01:52,370
+We just need to populate
+it with this new
+
+42
+00:01:52,370 --> 00:01:53,730
+data that comes back.
+
+43
+00:01:53,730 --> 00:01:58,070
+But how do we iterate over each
+of the different items in
+
+44
+00:01:58,070 --> 00:01:59,980
+our JSON array?
+
+45
+00:01:59,980 --> 00:02:04,640
+This is where we can use
+the each jQuery method.
+
+46
+00:02:04,640 --> 00:02:07,290
+The each function takes
+two parameters.
+
+47
+00:02:07,290 --> 00:02:10,600
+The first is a collection that
+we want to iterate through,
+
+48
+00:02:10,600 --> 00:02:13,930
+and the second is a function
+that is going to get called on
+
+49
+00:02:13,930 --> 00:02:16,150
+each item in our collection.
+
+50
+00:02:16,150 --> 00:02:18,010
+This gives us two parameters.
+
+51
+00:02:18,010 --> 00:02:19,880
+The first is the index.
+
+52
+00:02:19,880 --> 00:02:23,240
+So when we first go through
+the array, it's going to
+
+53
+00:02:23,240 --> 00:02:26,230
+populate index with zero
+for the first item.
+
+54
+00:02:26,230 --> 00:02:29,740
+And then it's going to set
+object equal to that first
+
+55
+00:02:29,740 --> 00:02:31,100
+item in the array.
+
+56
+00:02:31,100 --> 00:02:34,290
+And then it's going to go
+through again and set index to
+
+57
+00:02:34,290 --> 00:02:37,440
+one and then do the next item
+and so on and so on.
+
+58
+00:02:37,440 --> 00:02:41,760
+So let's use this inside of
+our success callback.
+
+59
+00:02:41,760 --> 00:02:43,230
+So here's the each method.
+
+60
+00:02:43,230 --> 00:02:46,380
+And our first argument is the
+result that we got back from
+
+61
+00:02:46,380 --> 00:02:47,500
+the server.
+
+62
+00:02:47,500 --> 00:02:50,130
+Our second argument is a
+function with two parameters.
+
+63
+00:02:50,130 --> 00:02:52,930
+The first is, of course, the
+index that we're currently at
+
+64
+00:02:52,930 --> 00:02:53,590
+in the array.
+
+65
+00:02:53,590 --> 00:02:55,990
+And the second is our current
+city as we're iterating
+
+66
+00:02:55,990 --> 00:02:57,760
+through the results.
+
+67
+00:02:57,760 --> 00:03:01,100
+Then we simply need to grab the
+appropriate favorite div.
+
+68
+00:03:01,100 --> 00:03:04,420
+Here we're using the index to
+find the appropriate div.
+
+69
+00:03:04,420 --> 00:03:08,350
+And then simply populate the
+paragraph and the image, like
+
+70
+00:03:08,350 --> 00:03:09,600
+we did before.
+
+71
+00:03:13,160 --> 00:03:15,980
+So here you can see when we
+hit Display Favorites, it
+
+72
+00:03:15,980 --> 00:03:19,070
+fetches our JSON array
+and populates all of
+
+73
+00:03:19,070 --> 00:03:22,410
+our favorite cities.
+
+74
+00:03:22,410 --> 00:03:24,660
+So in the previous level,
+we booked our flights.
+
+75
+00:03:24,660 --> 00:03:28,980
+And now we need a way to view
+all of our flight statuses.
+
+76
+00:03:28,980 --> 00:03:31,990
+But this could change from
+moment to moment.
+
+77
+00:03:31,990 --> 00:03:34,170
+As you can see, when we go to
+the page, it shows us a couple
+
+78
+00:03:34,170 --> 00:03:35,390
+flight statuses.
+
+79
+00:03:35,390 --> 00:03:38,420
+But there's also this Update
+Flight Status button.
+
+80
+00:03:38,420 --> 00:03:41,180
+And when we click that, we want
+to be able to do an Ajax
+
+81
+00:03:41,180 --> 00:03:44,730
+request, which will return an
+array of all the different
+
+82
+00:03:44,730 --> 00:03:50,050
+flight statuses and rebuild this
+list on this page in case
+
+83
+00:03:50,050 --> 00:03:52,506
+any have changed.
+
+84
+00:03:52,506 --> 00:03:55,250
+Here you can see the JSON
+response that we're going to
+
+85
+00:03:55,250 --> 00:03:59,240
+get back from the server once
+we do our AJAX request.
+
+86
+00:03:59,240 --> 00:04:02,320
+It's an array of flight
+statuses.
+
+87
+00:04:02,320 --> 00:04:04,770
+Our JavaScript might look
+something like this, where
+
+88
+00:04:04,770 --> 00:04:06,530
+we're listening for the
+click event on the
+
+89
+00:04:06,530 --> 00:04:08,280
+Update Status button.
+
+90
+00:04:08,280 --> 00:04:10,630
+When it's clicked, we'll
+do an AJAX request
+
+91
+00:04:10,630 --> 00:04:12,190
+to the status URL.
+
+92
+00:04:12,190 --> 00:04:15,860
+We set the content type to
+JSON, we set the data type to
+
+93
+00:04:15,860 --> 00:04:19,500
+JSON, and then we just need to
+specify what to do we get back
+
+94
+00:04:19,500 --> 00:04:21,570
+the result.
+
+95
+00:04:21,570 --> 00:04:25,140
+Alternatively, we could have
+written out this request using
+
+96
+00:04:25,140 --> 00:04:30,670
+the jQuery get JSON function,
+like you see here.
+
+97
+00:04:30,670 --> 00:04:32,410
+It's doing basically
+the same thing.
+
+98
+00:04:35,110 --> 00:04:37,630
+Let's go ahead and use this
+alternative syntax.
+
+99
+00:04:37,630 --> 00:04:40,560
+So now inside this callback, we
+need to take the results,
+
+100
+00:04:40,560 --> 00:04:46,310
+which are JSON, and translate
+them into some HTML which we'll
+
+101
+00:04:46,310 --> 00:04:49,110
+store in the status
+elements variable.
+
+102
+00:04:49,110 --> 00:04:51,910
+And then we'll update our status
+list element with the
+
+103
+00:04:51,910 --> 00:04:54,120
+HTML that was generated.
+
+104
+00:04:54,120 --> 00:04:58,430
+We want our status elements to
+each be a list item, an LI.
+
+105
+00:04:58,430 --> 00:05:00,540
+So the HTML might look
+something like this.
+
+106
+00:05:03,610 --> 00:05:05,520
+There's a few different
+ways we could do this.
+
+107
+00:05:05,520 --> 00:05:09,220
+Sure, we could use each, and we
+could iterate through each
+
+108
+00:05:09,220 --> 00:05:12,270
+of them and build up a string
+and append to the string.
+
+109
+00:05:12,270 --> 00:05:14,910
+But this time, let's
+try using the
+
+110
+00:05:14,910 --> 00:05:17,370
+jQuery map utility function.
+
+111
+00:05:17,370 --> 00:05:21,800
+Map takes a collection that's
+going to be our array.
+
+112
+00:05:21,800 --> 00:05:24,950
+Then our second parameter is a
+function which gets called on
+
+113
+00:05:24,950 --> 00:05:28,190
+each item inside our collection,
+each setting the
+
+114
+00:05:28,190 --> 00:05:31,620
+first parameter as the item
+we're currently iterating
+
+115
+00:05:31,620 --> 00:05:35,890
+through and the second parameter
+as the index.
+
+116
+00:05:35,890 --> 00:05:41,730
+Notice that between the each and
+the map jQuery functions,
+
+117
+00:05:41,730 --> 00:05:44,140
+the parameters are switched.
+
+118
+00:05:44,140 --> 00:05:46,230
+With map, it's item and index.
+
+119
+00:05:46,230 --> 00:05:48,680
+And with each, it's
+index then item.
+
+120
+00:05:48,680 --> 00:05:52,240
+It's a little tricky.
+
+121
+00:05:52,240 --> 00:05:55,410
+The difference between the two
+is mainly that map returns an
+
+122
+00:05:55,410 --> 00:05:59,070
+array modified by what is
+returned in the function
+
+123
+00:05:59,070 --> 00:06:01,140
+passed as an argument.
+
+124
+00:06:01,140 --> 00:06:03,110
+Now, I know that sounds
+really confusing.
+
+125
+00:06:03,110 --> 00:06:05,510
+An example is worth 1,000
+explanations.
+
+126
+00:06:05,510 --> 00:06:06,760
+Here, let me show you.
+
+127
+00:06:06,760 --> 00:06:11,680
+So here we have an array of
+numbers called it myNumbers.
+
+128
+00:06:11,680 --> 00:06:14,940
+And our goal is to create a new
+string which adds one to
+
+129
+00:06:14,940 --> 00:06:16,520
+each of these numbers.
+
+130
+00:06:16,520 --> 00:06:19,690
+So here's our variable,
+newNumbers.
+
+131
+00:06:19,690 --> 00:06:22,150
+Inside there, we're going to
+call the map function.
+
+132
+00:06:22,150 --> 00:06:25,490
+Send in is our collection,
+the myNumbers array.
+
+133
+00:06:25,490 --> 00:06:28,560
+Then we're going to go through
+each item in the myNumbers
+
+134
+00:06:28,560 --> 00:06:34,640
+collection, adding plus one to
+each of them and returning it.
+
+135
+00:06:34,640 --> 00:06:37,930
+So the value of myNumbers
+at the end of this
+
+136
+00:06:37,930 --> 00:06:39,380
+is still the same.
+
+137
+00:06:39,380 --> 00:06:40,860
+It wasn't changed.
+
+138
+00:06:40,860 --> 00:06:42,740
+It's still one, two,
+three, four.
+
+139
+00:06:42,740 --> 00:06:46,300
+And newNumbers is equal to
+two, three, four, five,
+
+140
+00:06:46,300 --> 00:06:48,490
+because that's the
+array that got
+
+141
+00:06:48,490 --> 00:06:51,155
+returned by the map function.
+
+142
+00:06:54,460 --> 00:06:57,400
+If that didn't make sense,
+here's another example.
+
+143
+00:06:57,400 --> 00:07:00,290
+Up here at the top, you can see
+the JSON array that got
+
+144
+00:07:00,290 --> 00:07:03,870
+returned from our get
+JSON request.
+
+145
+00:07:03,870 --> 00:07:06,200
+Inside there, you can see
+all of our different
+
+146
+00:07:06,200 --> 00:07:08,630
+names and our statuses.
+
+147
+00:07:08,630 --> 00:07:13,450
+Now, we're going to send
+each of these into map.
+
+148
+00:07:13,450 --> 00:07:20,180
+So here we have map, result,
+function, status, i.
+
+149
+00:07:20,180 --> 00:07:23,460
+And we're going to go through
+each of these, create a new
+
+150
+00:07:23,460 --> 00:07:27,950
+list item, which is populated
+to just our LI tags.
+
+151
+00:07:27,950 --> 00:07:31,220
+And then we're going to
+return list item.
+
+152
+00:07:31,220 --> 00:07:36,980
+Now, each of these goes into the
+map, and it returns an LI
+
+153
+00:07:36,980 --> 00:07:40,200
+so that what gets returned
+from the map function is
+
+154
+00:07:40,200 --> 00:07:42,440
+simply an array of
+different LIs.
+
+155
+00:07:46,080 --> 00:07:48,670
+Obviously, we want our list
+items to have some more data
+
+156
+00:07:48,670 --> 00:07:53,330
+inside of them, so let's build
+out our map function so that
+
+157
+00:07:53,330 --> 00:07:56,560
+this time we create a new
+H3 Dom element and
+
+158
+00:07:56,560 --> 00:07:58,200
+append it to the list.
+
+159
+00:07:58,200 --> 00:08:01,190
+Then we create a new
+paragraph and also
+
+160
+00:08:01,190 --> 00:08:02,630
+append that to the list.
+
+161
+00:08:02,630 --> 00:08:04,430
+Now, here's the array
+that gets returned
+
+162
+00:08:04,430 --> 00:08:05,680
+from the map function.
+
+163
+00:08:12,450 --> 00:08:15,980
+Now, let's take this map
+function and move it back into
+
+164
+00:08:15,980 --> 00:08:18,950
+our get JSON function.
+
+165
+00:08:18,950 --> 00:08:21,980
+So inside of here, we need
+to create a new variable.
+
+166
+00:08:21,980 --> 00:08:23,890
+So we can store what
+gets returned
+
+167
+00:08:23,890 --> 00:08:25,290
+from the map function.
+
+168
+00:08:25,290 --> 00:08:28,700
+We'll call it status elements.
+
+169
+00:08:28,700 --> 00:08:32,289
+Then the only thing we need to
+do is grab our current status
+
+170
+00:08:32,289 --> 00:08:36,419
+list and set the HTML equal
+to the status elements.
+
+171
+00:08:36,419 --> 00:08:40,110
+Even though status elements is
+an array of jQuery objects,
+
+172
+00:08:40,110 --> 00:08:43,730
+when we populate it onto the
+page, it's going to take each
+
+173
+00:08:43,730 --> 00:08:47,900
+of those jQuery objects and
+create a bunch of list items
+
+174
+00:08:47,900 --> 00:08:49,150
+in our unordered list.
+
+175
+00:08:51,830 --> 00:08:54,100
+So now when we go and click
+Update Flight Status, you can
+
+176
+00:08:54,100 --> 00:08:57,640
+see it goes and grabs that
+JSON array, uses the map
+
+177
+00:08:57,640 --> 00:09:01,830
+function to transform that into
+HTML, and populates each
+
+178
+00:09:01,830 --> 00:09:03,080
+list item on the page.
+
+179
+00:09:05,490 --> 00:09:07,250
+Understanding the difference
+between each
+
+180
+00:09:07,250 --> 00:09:08,970
+and map can be difficult.
+
+181
+00:09:08,970 --> 00:09:13,930
+So let's go over it one more
+time in the Chrome console.
+
+182
+00:09:13,930 --> 00:09:16,880
+Here you can see we have
+a simple array of three
+
+183
+00:09:16,880 --> 00:09:17,550
+different cities--
+
+184
+00:09:17,550 --> 00:09:20,410
+Paris, London, and Orlando.
+
+185
+00:09:20,410 --> 00:09:23,580
+We're going to iterate
+through each of them.
+
+186
+00:09:23,580 --> 00:09:25,315
+And what we're going to do is
+we're going to print out to
+
+187
+00:09:25,315 --> 00:09:31,430
+the console the result of just
+appending their city name with
+
+188
+00:09:31,430 --> 00:09:33,900
+their current index.
+
+189
+00:09:33,900 --> 00:09:37,150
+Once we run this, we can see
+it runs Paris zero, London
+
+190
+00:09:37,150 --> 00:09:39,140
+one, Orlando two.
+
+191
+00:09:39,140 --> 00:09:40,930
+It just logs that out
+to the screen.
+
+192
+00:09:40,930 --> 00:09:45,410
+The each method does return an
+array, but it simply returns
+
+193
+00:09:45,410 --> 00:09:49,000
+an array of the cities as they
+were when we created them,
+
+194
+00:09:49,000 --> 00:09:51,180
+exactly the same.
+
+195
+00:09:51,180 --> 00:09:54,760
+Now, let's use the map function
+on our cities array.
+
+196
+00:09:54,760 --> 00:09:58,070
+We'll create this same result,
+log that result to the
+
+197
+00:09:58,070 --> 00:10:02,770
+console, and then explicitly
+return that result.
+
+198
+00:10:02,770 --> 00:10:06,790
+The console log prints out the
+exact same thing that our each
+
+199
+00:10:06,790 --> 00:10:07,780
+function did.
+
+200
+00:10:07,780 --> 00:10:10,300
+So this time what gets returned
+is a completely new
+
+201
+00:10:10,300 --> 00:10:13,060
+array which contains
+Paris zero, London
+
+202
+00:10:13,060 --> 00:10:14,920
+one, and Orlando two.
+
+203
+00:10:18,060 --> 00:10:19,860
+Before you jump into the
+challenges, there's one more
+
+204
+00:10:19,860 --> 00:10:22,690
+optimization that I want
+to show you how to do.
+
+205
+00:10:22,690 --> 00:10:25,690
+You see down here where we're
+updating the HTML with all of
+
+206
+00:10:25,690 --> 00:10:27,290
+our status elements?
+
+207
+00:10:27,290 --> 00:10:30,330
+Well, we're going to give
+the DOM a break.
+
+208
+00:10:30,330 --> 00:10:34,390
+Optimize this by using
+the detach function.
+
+209
+00:10:34,390 --> 00:10:39,220
+This allows us to remove an
+element from the DOM, do
+
+210
+00:10:39,220 --> 00:10:43,490
+things to it, and then append
+it back to the DOM.
+
+211
+00:10:43,490 --> 00:10:45,990
+So instead of updating all the
+HTML elements while they're
+
+212
+00:10:45,990 --> 00:10:49,720
+displayed, we're going to
+remove it from the page,
+
+213
+00:10:49,720 --> 00:10:52,430
+modify it, and then display
+it all at once.
+
+214
+00:10:52,430 --> 00:10:54,670
+It's a little more efficient.
+
+215
+00:10:54,670 --> 00:10:58,540
+So here you can see, we detach
+the status list from the DOM.
+
+216
+00:10:58,540 --> 00:11:01,750
+Then we update it with our
+new status elements.
+
+217
+00:11:01,750 --> 00:11:05,960
+And then we re-append it
+back to our status div.
+
+218
+00:11:09,230 --> 00:11:10,710
+And that's all there is to it.
+
+219
+00:11:10,710 --> 00:11:13,360
+Now, when we go back to our page
+and we update our flight
+
+220
+00:11:13,360 --> 00:11:17,950
+status, we can see that it
+properly detaches, updates,
+
+221
+00:11:17,950 --> 00:11:20,230
+and re-attaches, not that
+we can see that.
+
+222
+00:11:20,230 --> 00:11:22,520
+But now, it's a little
+more efficient.
+
+223
+00:11:22,520 --> 00:11:24,990
+And it's time for you to try
+this in the challenges.

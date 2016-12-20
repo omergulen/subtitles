@@ -1,0 +1,348 @@
+﻿1
+00:00:02,070 --> 00:00:04,620
+You may have heard of the
+term JSON before.
+
+2
+00:00:04,620 --> 00:00:07,860
+It stands for JavaScript
+Object Notation.
+
+3
+00:00:07,860 --> 00:00:11,466
+And it's simply a data format,
+kind of like XML, if you know
+
+4
+00:00:11,466 --> 00:00:13,070
+what XML is.
+
+5
+00:00:13,070 --> 00:00:16,219
+And up until now, when we've
+been doing AJAX requests,
+
+6
+00:00:16,219 --> 00:00:20,010
+we've always been getting HTML
+back as the response from the
+
+7
+00:00:20,010 --> 00:00:22,920
+server, and we simply load
+it into the page.
+
+8
+00:00:22,920 --> 00:00:26,270
+Here was the HTML from
+our last example.
+
+9
+00:00:26,270 --> 00:00:29,380
+So in this case, our server
+is deciding how we want to
+
+10
+00:00:29,380 --> 00:00:31,070
+display that information
+in the page.
+
+11
+00:00:31,070 --> 00:00:33,890
+Because it's already giving us
+formatted HTML, and we just
+
+12
+00:00:33,890 --> 00:00:35,190
+put it in there.
+
+13
+00:00:35,190 --> 00:00:38,910
+However, what if the
+response was JSON?
+
+14
+00:00:38,910 --> 00:00:41,060
+It might look something
+like this.
+
+15
+00:00:41,060 --> 00:00:44,450
+As you can see, we have keys
+and values for all the
+
+16
+00:00:44,450 --> 00:00:48,180
+important information that we
+need to display to the user.
+
+17
+00:00:48,180 --> 00:00:52,290
+And now, it's up to us, it's up
+to our JavaScript code, to
+
+18
+00:00:52,290 --> 00:00:56,740
+take that data and format it,
+maybe into some HTML, and
+
+19
+00:00:56,740 --> 00:00:57,990
+display it on the page.
+
+20
+00:01:00,690 --> 00:01:03,100
+If we look back at our previous
+code, we're going to
+
+21
+00:01:03,100 --> 00:01:05,530
+need to make some modifications
+if we want to be
+
+22
+00:01:05,530 --> 00:01:06,780
+using JSON.
+
+23
+00:01:08,820 --> 00:01:12,740
+First thing we can do is specify
+that the response
+
+24
+00:01:12,740 --> 00:01:17,120
+we're getting back we expect
+to be in a JSON format.
+
+25
+00:01:17,120 --> 00:01:20,700
+Then we can also specify
+a content type.
+
+26
+00:01:20,700 --> 00:01:23,630
+This gets sent, with a request,
+to the server and
+
+27
+00:01:23,630 --> 00:01:26,940
+tells the server, hey,
+we want this response
+
+28
+00:01:26,940 --> 00:01:30,150
+to be in a JSON format.
+
+29
+00:01:30,150 --> 00:01:33,100
+We also need to change the
+success call back.
+
+30
+00:01:33,100 --> 00:01:35,320
+Because as you see here, we're
+simply taking the result we
+
+31
+00:01:35,320 --> 00:01:38,420
+get back from the server and
+displaying it on the page.
+
+32
+00:01:38,420 --> 00:01:41,210
+But we don't want to
+display our JSON.
+
+33
+00:01:41,210 --> 00:01:44,420
+Instead, we want to create some
+HTML out of it and then
+
+34
+00:01:44,420 --> 00:01:45,370
+display it on the page.
+
+35
+00:01:45,370 --> 00:01:48,210
+So let's do that now.
+
+36
+00:01:48,210 --> 00:01:50,950
+Just for reference, here's the
+JSON that gets sent as a
+
+37
+00:01:50,950 --> 00:01:52,950
+response from the server.
+
+38
+00:01:52,950 --> 00:01:56,260
+Now, our JavaScript will
+automatically convert this
+
+39
+00:01:56,260 --> 00:01:59,950
+from JSON into a JavaScript
+object.
+
+40
+00:01:59,950 --> 00:02:02,520
+So we can use that to construct
+our HTML, which
+
+41
+00:02:02,520 --> 00:02:04,840
+you'll see in a minute.
+
+42
+00:02:04,840 --> 00:02:08,240
+Here, we declare a variable
+called message, which starts
+
+43
+00:02:08,240 --> 00:02:10,850
+out as just two paragraph
+tags.
+
+44
+00:02:10,850 --> 00:02:13,330
+This little box, here at the
+bottom, will show you what our
+
+45
+00:02:13,330 --> 00:02:15,940
+HTML looks like,
+as we build it.
+
+46
+00:02:15,940 --> 00:02:19,350
+Then we're going to append to
+this string the destination,
+
+47
+00:02:19,350 --> 00:02:22,540
+which will contain
+result.location which is from
+
+48
+00:02:22,540 --> 00:02:25,640
+the JavaScript object
+from our JSON.
+
+49
+00:02:25,640 --> 00:02:31,170
+Then we'll append the price
+referencing result.totalPrice,
+
+50
+00:02:31,170 --> 00:02:35,410
+and then the number of nights, then
+our confirmation code.
+
+51
+00:02:35,410 --> 00:02:37,710
+And then we'll simply
+insert this new DOM
+
+52
+00:02:37,710 --> 00:02:39,030
+node into our HTML.
+
+53
+00:02:43,080 --> 00:02:43,990
+Put it all together,
+
+54
+00:02:43,990 --> 00:02:46,630
+and our final code looks
+something like this.
+
+55
+00:02:46,630 --> 00:02:49,080
+But there's one more thing
+that we can do
+
+56
+00:02:49,080 --> 00:02:50,250
+to clean this up.
+
+57
+00:02:50,250 --> 00:02:52,490
+There's some duplication
+going on.
+
+58
+00:02:52,490 --> 00:02:57,070
+See, we're referencing the
+endpoint from our AJAX request
+
+59
+00:02:57,070 --> 00:03:01,220
+and from inside the
+form action.
+
+60
+00:03:01,220 --> 00:03:04,210
+So how do we eliminate
+this duplication?
+
+61
+00:03:04,210 --> 00:03:07,890
+Well, one way people eliminate
+this is by grabbing that
+
+62
+00:03:07,890 --> 00:03:11,050
+action attribute using
+one of these
+
+63
+00:03:11,050 --> 00:03:13,790
+attribute helper methods.
+
+64
+00:03:13,790 --> 00:03:17,830
+So inside of our AJAX call,
+instead of hard coding our URL
+
+65
+00:03:17,830 --> 00:03:22,190
+endpoint, we're simply going
+to get the form element and
+
+66
+00:03:22,190 --> 00:03:24,730
+grab the action attribute
+out of it.
+
+67
+00:03:24,730 --> 00:03:27,880
+All right,
+
+68
+00:03:27,880 --> 00:03:32,450
+so here's what our final event
+handler looks like.
+
+69
+00:03:32,450 --> 00:03:36,250
+And if we jump into the form,
+select a destination, the
+
+70
+00:03:36,250 --> 00:03:39,510
+number of tickets, and book it,
+we can see that it works,
+
+71
+00:03:39,510 --> 00:03:41,916
+this time, using JSON.
+
+72
+00:03:41,916 --> 00:03:45,280
+Time for you to get familiar
+with some JSON, and I'll see
+
+73
+00:03:45,280 --> 00:03:46,530
+you in the next level.

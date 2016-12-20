@@ -1,0 +1,345 @@
+﻿1
+00:00:02,060 --> 00:00:04,490
+Here in our AJAX function we
+have a success call back,
+
+2
+00:00:04,490 --> 00:00:07,220
+which tells our code what
+to do when a request is
+
+3
+00:00:07,220 --> 00:00:08,500
+successful.
+
+4
+00:00:08,500 --> 00:00:11,680
+However, what happens when a
+request gets a timeout, an
+
+5
+00:00:11,680 --> 00:00:13,530
+abort, or server error?
+
+6
+00:00:13,530 --> 00:00:16,230
+We need to tell our code what
+to do in that case.
+
+7
+00:00:16,230 --> 00:00:20,070
+Which is why we're also going to
+specify an error call back.
+
+8
+00:00:20,070 --> 00:00:22,960
+This call back as a couple
+parameters, request, error
+
+9
+00:00:22,960 --> 00:00:24,490
+type and error message.
+
+10
+00:00:24,490 --> 00:00:27,230
+And we're just going to print
+out error type and error
+
+11
+00:00:27,230 --> 00:00:30,390
+message to the screen
+if an error happens.
+
+12
+00:00:30,390 --> 00:00:34,420
+So if we trigger our AJAX
+request, and our server times
+
+13
+00:00:34,420 --> 00:00:37,240
+out-- it never returns
+any response--
+
+14
+00:00:37,240 --> 00:00:38,440
+this is what we're
+going to get.
+
+15
+00:00:38,440 --> 00:00:42,480
+This alert will appear
+on our browser.
+
+16
+00:00:42,480 --> 00:00:45,280
+You might be wondering, how
+long does our AJAX request
+
+17
+00:00:45,280 --> 00:00:50,150
+wait before it times out and
+calls that error call back?
+
+18
+00:00:50,150 --> 00:00:53,420
+Well, every browser is
+different, which is why we
+
+19
+00:00:53,420 --> 00:00:57,610
+might want to specify exactly
+how long to wait using the
+
+20
+00:00:57,610 --> 00:00:59,550
+Timeout option.
+
+21
+00:00:59,550 --> 00:01:02,590
+Here you can see we specified
+a timeout of 3,000.
+
+22
+00:01:02,590 --> 00:01:05,830
+That's 3,000 milliseconds which,
+of course, amounts to
+
+23
+00:01:05,830 --> 00:01:07,220
+three seconds.
+
+24
+00:01:07,220 --> 00:01:09,100
+So after three seconds
+it's going to
+
+25
+00:01:09,100 --> 00:01:11,440
+call that error callback.
+
+26
+00:01:11,440 --> 00:01:13,950
+There's two other call backs
+you should be aware of.
+
+27
+00:01:13,950 --> 00:01:16,220
+The first is Before Send.
+
+28
+00:01:16,220 --> 00:01:20,190
+This runs before the AJAX
+request gets fired off.
+
+29
+00:01:20,190 --> 00:01:23,920
+This might be a good place in
+our code to trigger a spinner,
+
+30
+00:01:23,920 --> 00:01:27,090
+or a loading screen, so the
+user knows that an AJAX
+
+31
+00:01:27,090 --> 00:01:29,570
+request has been fired off
+and is waiting to receive
+
+32
+00:01:29,570 --> 00:01:31,530
+something back from
+the server.
+
+33
+00:01:31,530 --> 00:01:33,190
+Then there's a complete
+call back.
+
+34
+00:01:33,190 --> 00:01:36,920
+This is going to get run after
+success or after error.
+
+35
+00:01:36,920 --> 00:01:38,963
+So it's probably the last thing
+that's going to get run
+
+36
+00:01:38,963 --> 00:01:40,490
+in our AJAX function.
+
+37
+00:01:40,490 --> 00:01:43,035
+And this might be a good
+place to turn off
+
+38
+00:01:43,035 --> 00:01:44,450
+that loading screen.
+
+39
+00:01:44,450 --> 00:01:47,060
+In our case, we're going to use
+a little plane animation
+
+40
+00:01:47,060 --> 00:01:51,950
+to tell our user that the AJAX
+request has been fired off.
+
+41
+00:01:51,950 --> 00:01:54,940
+So here we are back in our
+browser, and when we click the
+
+42
+00:01:54,940 --> 00:01:57,580
+flight details button we can
+see that little plane
+
+43
+00:01:57,580 --> 00:02:00,690
+animation pops up, and then
+once our data has been
+
+44
+00:02:00,690 --> 00:02:04,180
+returned from or AJAX request,
+it gets loaded into the page
+
+45
+00:02:04,180 --> 00:02:05,830
+as you see here.
+
+46
+00:02:05,830 --> 00:02:09,280
+Now let's click on the View
+Boarding Pass link.
+
+47
+00:02:09,280 --> 00:02:12,990
+And it doesn't seem
+to be working.
+
+48
+00:02:12,990 --> 00:02:15,030
+Turns out we've got a
+bug in our code and
+
+49
+00:02:15,030 --> 00:02:17,380
+we need to fix it.
+
+50
+00:02:17,380 --> 00:02:20,930
+Here is our AJAX response that
+came back from the server that
+
+51
+00:02:20,930 --> 00:02:23,400
+contains our View Boarding
+Pass link.
+
+52
+00:02:23,400 --> 00:02:25,390
+And here is the click
+handler which
+
+53
+00:02:25,390 --> 00:02:26,750
+doesn't seem to be working.
+
+54
+00:02:26,750 --> 00:02:30,280
+This is the one that looks for
+the View Boarding Pass class,
+
+55
+00:02:30,280 --> 00:02:34,460
+and adds a click handler which
+shows the boarding pass.
+
+56
+00:02:34,460 --> 00:02:38,360
+Well it turns out that this code
+only gets run once when
+
+57
+00:02:38,360 --> 00:02:42,880
+the page is loaded, but when the
+page is loaded, our View
+
+58
+00:02:42,880 --> 00:02:46,190
+Boarding Pass link
+didn't exist yet.
+
+59
+00:02:46,190 --> 00:02:49,620
+It didn't exist until after
+we ran our AJAX call.
+
+60
+00:02:49,620 --> 00:02:52,770
+So we need to change this click
+handler so that it's
+
+61
+00:02:52,770 --> 00:02:55,710
+always looking for this link,
+and not just once when the
+
+62
+00:02:55,710 --> 00:02:58,470
+page is loaded.
+
+63
+00:02:58,470 --> 00:03:01,760
+To fix this we're going to
+use Event Delegation.
+
+64
+00:03:01,760 --> 00:03:04,380
+So here, you can see, we're
+telling the browser now to
+
+65
+00:03:04,380 --> 00:03:08,930
+listen for click events inside
+confirmation, and when they
+
+66
+00:03:08,930 --> 00:03:13,600
+happen, check to see if the
+target was View Boarding Pass.
+
+67
+00:03:13,600 --> 00:03:16,460
+And if it is, go ahead and
+show that boarding pass.
+
+68
+00:03:19,320 --> 00:03:22,560
+So now if we go back into our
+browser, we can view flight
+
+69
+00:03:22,560 --> 00:03:26,460
+details, and now we can also
+view the boarding pass.
+
+70
+00:03:29,350 --> 00:03:30,660
+You've reached the
+end of level one.
+
+71
+00:03:30,660 --> 00:03:33,150
+It's time for you to do a few
+more AJAX challenges, and I'll
+
+72
+00:03:33,150 --> 00:03:34,400
+see you in the next level.

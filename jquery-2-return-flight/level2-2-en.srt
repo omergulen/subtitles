@@ -1,0 +1,690 @@
+﻿1
+00:00:02,090 --> 00:00:04,920
+JavaScript objects are great
+for organizing our code.
+
+2
+00:00:04,920 --> 00:00:06,880
+We start out with an init method
+
+3
+00:00:06,880 --> 00:00:09,930
+and inside, DOM load this
+init method gets called.
+
+4
+00:00:09,930 --> 00:00:15,010
+However, this is limited to
+one confirmation per page.
+
+5
+00:00:15,010 --> 00:00:17,170
+What if we needed
+to have multiple
+
+6
+00:00:17,170 --> 00:00:19,300
+confirmations on our page?
+
+7
+00:00:19,300 --> 00:00:23,160
+Then we might want to use
+a function instead to
+
+8
+00:00:23,160 --> 00:00:25,650
+encapsulate our code.
+
+9
+00:00:25,650 --> 00:00:28,220
+A function might look something
+like this, where we
+
+10
+00:00:28,220 --> 00:00:30,750
+have capital Vacation.
+
+11
+00:00:30,750 --> 00:00:33,000
+And we can send in parameters
+into our function, which
+
+12
+00:00:33,000 --> 00:00:35,300
+allows us to customize them.
+
+13
+00:00:35,300 --> 00:00:39,480
+Then we will initialize the
+vacation to this destination,
+
+14
+00:00:39,480 --> 00:00:42,470
+much like we initialized
+in our object.
+
+15
+00:00:42,470 --> 00:00:45,140
+Then inside of our document
+ready, we can call this
+
+16
+00:00:45,140 --> 00:00:48,570
+function by using this syntax,
+sending in specific
+
+17
+00:00:48,570 --> 00:00:49,830
+parameters, if we want to.
+
+18
+00:00:49,830 --> 00:00:53,860
+In this case, we're going to
+have a Paris vacation and a
+
+19
+00:00:53,860 --> 00:00:55,110
+London vacation.
+
+20
+00:00:58,160 --> 00:01:01,280
+Let's take a closer look at this
+function, add a few more
+
+21
+00:01:01,280 --> 00:01:04,739
+lines of code, starting
+with console.log.
+
+22
+00:01:04,739 --> 00:01:07,960
+console.log is a function that
+we use in JavaScript to do
+
+23
+00:01:07,960 --> 00:01:11,610
+debugging on our browser
+console.
+
+24
+00:01:11,610 --> 00:01:13,720
+If you're not familiar, you want
+to get more familiar with
+
+25
+00:01:13,720 --> 00:01:16,590
+this, again, check out
+the Chrome Dev Tools
+
+26
+00:01:16,590 --> 00:01:18,920
+course that we have.
+
+27
+00:01:18,920 --> 00:01:21,010
+Inside of our vacation function,
+we're going to
+
+28
+00:01:21,010 --> 00:01:22,790
+create a details method.
+
+29
+00:01:22,790 --> 00:01:25,530
+This will contain a function
+which prints out the
+
+30
+00:01:25,530 --> 00:01:28,960
+destination onto the console.
+
+31
+00:01:28,960 --> 00:01:32,220
+To invoke this function, all
+we need to do is call
+
+32
+00:01:32,220 --> 00:01:33,470
+paris.details
+
+33
+00:01:33,470 --> 00:01:35,730
+parenthesis.
+
+34
+00:01:35,730 --> 00:01:40,960
+And we'll call the same method
+on our London vacation.
+
+35
+00:01:40,960 --> 00:01:44,540
+Now if we open up developer
+tools and run this code, we'll
+
+36
+00:01:44,540 --> 00:01:48,310
+see that it prints out, as
+we might expect, Paris.
+
+37
+00:01:48,310 --> 00:01:51,030
+And then it prints out London.
+
+38
+00:01:51,030 --> 00:01:53,900
+Pretty straightforward.
+
+39
+00:01:53,900 --> 00:01:57,240
+Could we call paris.destination?
+
+40
+00:01:57,240 --> 00:01:59,450
+We are sending in that
+destination.
+
+41
+00:01:59,450 --> 00:02:02,240
+Well, it turns out, we can't.
+
+42
+00:02:02,240 --> 00:02:05,240
+We can't access locally scoped
+variables, which is a subtle
+
+43
+00:02:05,240 --> 00:02:08,070
+difference between JavaScript
+objects
+
+44
+00:02:08,070 --> 00:02:10,190
+and JavaScript functions.
+
+45
+00:02:10,190 --> 00:02:14,180
+You can see here, it prints
+out undefined.
+
+46
+00:02:14,180 --> 00:02:16,900
+Let's take a look back at our
+JavaScript object from the
+
+47
+00:02:16,900 --> 00:02:21,020
+previous section, and then
+we'll move this into a
+
+48
+00:02:21,020 --> 00:02:22,960
+reusable function.
+
+49
+00:02:22,960 --> 00:02:25,840
+So here, you can see we started
+with init method that
+
+50
+00:02:25,840 --> 00:02:27,270
+had our event handlers.
+
+51
+00:02:27,270 --> 00:02:29,560
+Then we have the load
+confirmation and show boarding
+
+52
+00:02:29,560 --> 00:02:31,350
+pass methods.
+
+53
+00:02:31,350 --> 00:02:35,030
+And these all get fired off when
+we call confirmation.init
+
+54
+00:02:35,030 --> 00:02:37,590
+in our document ready.
+
+55
+00:02:37,590 --> 00:02:40,500
+To reorganize this JavaScript
+object into a reusable
+
+56
+00:02:40,500 --> 00:02:43,230
+function, we're going to
+start by declaring a
+
+57
+00:02:43,230 --> 00:02:45,200
+confirmation function.
+
+58
+00:02:45,200 --> 00:02:49,106
+This takes one parameter, which
+we're going to call el.
+
+59
+00:02:49,106 --> 00:02:53,580
+el refers to the element, the
+jQuery element, we're going to
+
+60
+00:02:53,580 --> 00:02:56,420
+be passing in to
+this function.
+
+61
+00:02:56,420 --> 00:02:58,460
+We're going to save a reference
+to this passed in
+
+62
+00:02:58,460 --> 00:03:02,360
+element, so we can use it in
+our callbacks, later on.
+
+63
+00:03:02,360 --> 00:03:05,100
+Then our helper methods go here,
+and our event handlers
+
+64
+00:03:05,100 --> 00:03:08,150
+go here, which we'll
+see in a minute.
+
+65
+00:03:08,150 --> 00:03:11,420
+Then inside of our document
+ready function, we can call
+
+66
+00:03:11,420 --> 00:03:17,130
+our confirmation function,
+passing in the Paris element.
+
+67
+00:03:17,130 --> 00:03:21,270
+And we can call our London
+confirmation, passing in the
+
+68
+00:03:21,270 --> 00:03:24,140
+London element.
+
+69
+00:03:24,140 --> 00:03:26,940
+Now let's add our methods
+and event listeners.
+
+70
+00:03:26,940 --> 00:03:29,850
+So here, you can see we have our
+load confirmation method
+
+71
+00:03:29,850 --> 00:03:32,470
+which contains a function
+callback.
+
+72
+00:03:32,470 --> 00:03:35,750
+And also, we have our show
+boarding pass method.
+
+73
+00:03:35,750 --> 00:03:38,710
+Then we're going to declare
+our click handlers.
+
+74
+00:03:38,710 --> 00:03:41,750
+The first click handler happens
+on the element that
+
+75
+00:03:41,750 --> 00:03:42,650
+we passed in.
+
+76
+00:03:42,650 --> 00:03:43,510
+So we can simply call
+
+77
+00:03:43,510 --> 00:03:50,430
+this.el.on.
+
+78
+00:03:50,430 --> 00:03:53,270
+In order to make this function
+reusable, we need to revise
+
+79
+00:03:53,270 --> 00:03:55,140
+some of the callbacks.
+
+80
+00:03:55,140 --> 00:03:58,780
+See, inside some of them, we
+have some hard coded elements.
+
+81
+00:03:58,780 --> 00:04:02,980
+Right, so this, here, will target
+all of the tickets.
+
+82
+00:04:02,980 --> 00:04:05,780
+And in our case, we only want
+to target the ticket that is
+
+83
+00:04:05,780 --> 00:04:07,225
+inside our current vacation.
+
+84
+00:04:10,710 --> 00:04:14,670
+So we're going to go ahead and
+create a new variable called
+
+85
+00:04:14,670 --> 00:04:17,550
+ticket, which finds
+the ticket inside
+
+86
+00:04:17,550 --> 00:04:18,820
+of our current vacation.
+
+87
+00:04:18,820 --> 00:04:21,149
+Then inside of our callback,
+we can simply say,
+
+88
+00:04:21,149 --> 00:04:22,399
+this.ticket.
+
+89
+00:04:25,760 --> 00:04:28,360
+Now if we jump into our browser
+and try it, we can see
+
+90
+00:04:28,360 --> 00:04:34,640
+that it doesn't work still.
+
+91
+00:04:34,640 --> 00:04:35,940
+Why is that?
+
+92
+00:04:35,940 --> 00:04:40,520
+Well, it turns out inside of
+this code, we're referencing
+
+93
+00:04:40,520 --> 00:04:43,210
+the wrong this.
+
+94
+00:04:43,210 --> 00:04:48,670
+This is where jQuery starts
+to get confusing.
+
+95
+00:04:48,670 --> 00:04:51,490
+So if we look back in our code
+and we did some debugging, we
+
+96
+00:04:51,490 --> 00:04:55,280
+would learn that the this inside
+of the success callback
+
+97
+00:04:55,280 --> 00:04:57,986
+isn't referring to the right this.
+
+98
+00:04:57,986 --> 00:05:00,560
+This is the wrong this.
+
+99
+00:05:00,560 --> 00:05:01,210
+Right?
+
+100
+00:05:01,210 --> 00:05:02,480
+I know, it gets confusing.
+
+101
+00:05:02,480 --> 00:05:06,540
+See, it turns out that sometimes
+jQuery changes the
+
+102
+00:05:06,540 --> 00:05:08,730
+value of this.
+
+103
+00:05:08,730 --> 00:05:12,040
+And inside AJAX callbacks,
+this is
+
+104
+00:05:12,040 --> 00:05:15,860
+set to the AJAX settings.
+
+105
+00:05:15,860 --> 00:05:19,200
+So we need some way of
+specifying to our AJAX
+
+106
+00:05:19,200 --> 00:05:25,520
+callback what the value
+of this should be.
+
+107
+00:05:25,520 --> 00:05:29,570
+So to fix this, and to use the
+right this, we're going to
+
+108
+00:05:29,570 --> 00:05:32,820
+declare a variable called
+confirmation and
+
+109
+00:05:32,820 --> 00:05:36,470
+set it equal to this.
+
+110
+00:05:36,470 --> 00:05:41,580
+Then inside of our AJAX call,
+we're going to set a new
+
+111
+00:05:41,580 --> 00:05:46,920
+option called context and set
+that equal to confirmation.
+
+112
+00:05:46,920 --> 00:05:51,400
+This option allows us to set
+the value of this inside of
+
+113
+00:05:51,400 --> 00:05:57,180
+our callbacks, which
+should fix this.
+
+114
+00:05:57,180 --> 00:06:00,110
+So if we go back into our
+browser, we can see now when
+
+115
+00:06:00,110 --> 00:06:05,800
+we click on the buttons,
+everything works as it should.
+
+116
+00:06:05,800 --> 00:06:07,890
+So we fixed the load
+confirmation method.
+
+117
+00:06:07,890 --> 00:06:11,080
+But the show boarding pass
+method still has some hard
+
+118
+00:06:11,080 --> 00:06:12,800
+coded selectors in it.
+
+119
+00:06:12,800 --> 00:06:15,655
+You know, this is the link that runs when
+that link is clicked, and
+
+120
+00:06:15,655 --> 00:06:17,230
+we show the boarding pass.
+
+121
+00:06:17,230 --> 00:06:20,210
+So inside of this method, you
+can see we prevent default, we
+
+122
+00:06:20,210 --> 00:06:23,350
+hide the view boarding pass
+link, we show the boarding
+
+123
+00:06:23,350 --> 00:06:25,030
+pass image.
+
+124
+00:06:25,030 --> 00:06:27,540
+These are the two lines of
+code that we need to fix.
+
+125
+00:06:27,540 --> 00:06:29,240
+But how do we reference
+these elements?
+
+126
+00:06:29,240 --> 00:06:33,140
+Do we use this or do we
+use confirmation?
+
+127
+00:06:33,140 --> 00:06:35,720
+Well, to figure that out,
+let's write two
+
+128
+00:06:35,720 --> 00:06:36,980
+lines to the console.
+
+129
+00:06:36,980 --> 00:06:38,760
+We'll write out this
+to the console.
+
+130
+00:06:38,760 --> 00:06:41,720
+And we'll write out confirmation
+to the console.
+
+131
+00:06:41,720 --> 00:06:44,440
+If you ever get confused, this
+is a good way to do a little
+
+132
+00:06:44,440 --> 00:06:47,790
+debugging, to figure out
+which object is what.
+
+133
+00:06:47,790 --> 00:06:51,470
+So now, if we go on to the
+console, we can see that this
+
+134
+00:06:51,470 --> 00:06:55,300
+represents the link that
+was clicked, the view
+
+135
+00:06:55,300 --> 00:06:56,930
+boarding pass link.
+
+136
+00:06:56,930 --> 00:07:01,060
+And confirmation refers
+to the confirmation
+
+137
+00:07:01,060 --> 00:07:02,965
+object that we're inside.
+
+138
+00:07:06,100 --> 00:07:10,790
+So our code can be revised so
+that we hide the link that was
+
+139
+00:07:10,790 --> 00:07:13,680
+clicked, which is referred
+to here as this.
+
+140
+00:07:13,680 --> 00:07:16,790
+And then we want to get the
+vacation element out of the
+
+141
+00:07:16,790 --> 00:07:20,390
+confirmation function, find
+the boarding pass
+
+142
+00:07:20,390 --> 00:07:22,470
+image, and show it.
+
+143
+00:07:25,940 --> 00:07:28,860
+Then if we jump back into our
+browser, we can view the
+
+144
+00:07:28,860 --> 00:07:33,470
+flight details for each vacation
+and also view each
+
+145
+00:07:33,470 --> 00:07:34,720
+boarding pass.
+
+146
+00:07:38,670 --> 00:07:40,880
+Time for you to create some
+reusable functions.
+
+147
+00:07:40,880 --> 00:07:42,680
+And I'll see you in level three,
+where we're going to go
+
+148
+00:07:42,680 --> 00:07:44,070
+into even more AJAX.
