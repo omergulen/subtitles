@@ -1,0 +1,355 @@
+﻿1
+00:00:04,210 --> 00:00:06,470
+So in section one, we
+covered property binding
+
+2
+00:00:06,470 --> 00:00:10,360
+and class binding, and then
+we covered event binding.
+
+3
+00:00:10,360 --> 00:00:12,880
+Both of these are
+one way binding —
+
+4
+00:00:12,880 --> 00:00:15,490
+one in that direction,
+one in that direction.
+
+5
+00:00:15,490 --> 00:00:18,720
+But how might we bind
+in both the directions,
+
+6
+00:00:18,720 --> 00:00:21,280
+like when we have
+a form field and we
+
+7
+00:00:21,280 --> 00:00:23,830
+want to keep it in
+sync between the data
+
+8
+00:00:23,830 --> 00:00:27,380
+we have over the JavaScript
+and the value and the HTML?
+
+9
+00:00:29,920 --> 00:00:32,800
+First off, let's add an
+input field in-between
+
+10
+00:00:32,800 --> 00:00:35,020
+the plus and the minus.
+
+11
+00:00:35,020 --> 00:00:37,120
+And we should be able
+to adjust the quantity
+
+12
+00:00:37,120 --> 00:00:39,940
+either by typing
+a number in here
+
+13
+00:00:39,940 --> 00:00:43,156
+or by pushing plus or minus.
+
+14
+00:00:43,156 --> 00:00:44,197
+How do we make that work?
+
+15
+00:00:46,820 --> 00:00:48,400
+Well, given what
+we know so far, we
+
+16
+00:00:48,400 --> 00:00:51,190
+could start by using
+property binding.
+
+17
+00:00:51,190 --> 00:00:54,610
+So we could bind to
+the value and bind
+
+18
+00:00:54,610 --> 00:00:57,100
+that to the carPart.quantity.
+
+19
+00:00:57,100 --> 00:00:58,720
+What would happen in this case?
+
+20
+00:00:58,720 --> 00:00:59,560
+Let's see.
+
+21
+00:00:59,560 --> 00:01:02,350
+So we increment using
+plus and decrement,
+
+22
+00:01:02,350 --> 00:01:06,010
+but now when we set the
+value by typing in 10 ...
+
+23
+00:01:06,010 --> 00:01:09,100
+well, it didn't remember the 10.
+
+24
+00:01:09,100 --> 00:01:10,310
+That's not good.
+
+25
+00:01:10,310 --> 00:01:14,800
+So we've only bound
+in one direction.
+
+26
+00:01:14,800 --> 00:01:18,550
+We can then use event binding
+to listen for input on our event
+
+27
+00:01:18,550 --> 00:01:19,330
+box.
+
+28
+00:01:19,330 --> 00:01:22,499
+So here, we could listen
+for the input event.
+
+29
+00:01:22,499 --> 00:01:24,040
+And when it happens,
+we're just going
+
+30
+00:01:24,040 --> 00:01:25,960
+to write some code
+here inline, we'll
+
+31
+00:01:25,960 --> 00:01:32,290
+set carPart.quantity equal
+to dollar sign event.target.value.
+
+32
+00:01:32,290 --> 00:01:34,200
+Now, let's see what happens.
+
+33
+00:01:34,200 --> 00:01:37,090
+We can change the quantity
+using the input field
+
+34
+00:01:37,090 --> 00:01:40,090
+and it remembers.
+
+35
+00:01:40,090 --> 00:01:41,140
+Sweet.
+
+36
+00:01:41,140 --> 00:01:43,930
+Information is flowing two ways.
+
+37
+00:01:43,930 --> 00:01:45,895
+But there's another
+way to do this.
+
+38
+00:01:48,530 --> 00:01:54,100
+First, back in our main.ts, we
+need to import the forms module
+
+39
+00:01:54,100 --> 00:01:55,660
+into our app.
+
+40
+00:01:55,660 --> 00:01:59,800
+Then to make it accessible,
+inside of our ng module,
+
+41
+00:01:59,800 --> 00:02:01,607
+we need to add it to
+the imports array.
+
+42
+00:02:05,080 --> 00:02:07,300
+Now we can use the
+ng model directive
+
+43
+00:02:07,300 --> 00:02:08,949
+inside of our app,
+which allows us
+
+44
+00:02:08,949 --> 00:02:12,820
+to have one command to
+express two-way data binding.
+
+45
+00:02:12,820 --> 00:02:15,580
+You can see this ng
+model command uses
+
+46
+00:02:15,580 --> 00:02:20,020
+both square brackets
+and parentheses
+
+47
+00:02:20,020 --> 00:02:23,350
+to signify that we
+have two way binding
+
+48
+00:02:23,350 --> 00:02:26,320
+and we just specify
+the component property
+
+49
+00:02:26,320 --> 00:02:28,270
+that we want to bind on.
+
+50
+00:02:28,270 --> 00:02:30,430
+And as you can see,
+it works just like it
+
+51
+00:02:30,430 --> 00:02:32,530
+did on the previous slide.
+
+52
+00:02:32,530 --> 00:02:35,410
+This syntax has a
+funny name, sometimes
+
+53
+00:02:35,410 --> 00:02:39,010
+it's called banana in a box.
+
+54
+00:02:39,010 --> 00:02:41,140
+Can you see why,
+with the parentheses
+
+55
+00:02:41,140 --> 00:02:42,220
+and the square brackets?
+
+56
+00:02:46,060 --> 00:02:49,630
+It's important to note that
+when we use the ngModel syntax,
+
+57
+00:02:49,630 --> 00:02:54,020
+we can only set it equal
+to a data bound property.
+
+58
+00:02:54,020 --> 00:02:57,340
+So because of that, we'll use
+it mostly for form fields.
+
+59
+00:02:57,340 --> 00:02:59,770
+Here are two different
+components properties
+
+60
+00:02:59,770 --> 00:03:03,370
+like user age and first
+name, those would be great.
+
+61
+00:03:03,370 --> 00:03:06,490
+But if we try to set
+this equal to a component
+
+62
+00:03:06,490 --> 00:03:09,790
+method, for example,
+it's going to error out,
+
+63
+00:03:09,790 --> 00:03:13,160
+it won't work at all.
+
+64
+00:03:13,160 --> 00:03:15,700
+In this level, we learn
+that the ngModel syntax
+
+65
+00:03:15,700 --> 00:03:18,970
+allows us to specify a
+component property, which
+
+66
+00:03:18,970 --> 00:03:21,640
+will use two-way binding.
+
+67
+00:03:21,640 --> 00:03:23,140
+We also learned
+that two way binding
+
+68
+00:03:23,140 --> 00:03:25,270
+means that if the component
+property is modified
+
+69
+00:03:25,270 --> 00:03:29,110
+inside the component
+or inside our web page,
+
+70
+00:03:29,110 --> 00:03:30,300
+it will stay in sync.
+
+71
+00:03:33,530 --> 00:03:35,020
+Have some fun with
+the challenges
+
+72
+00:03:35,020 --> 00:03:37,290
+with that banana in a box.
+
+73
+00:03:39,820 --> 00:03:43,180
+Box-- bocked-- bock-- binding.
+
+74
+00:03:43,180 --> 00:03:45,670
+Where as where-- where as
+where-- where is where--
+
+75
+00:03:45,670 --> 00:03:48,120
+id-- blah-- we'll do it again.
+
+76
+00:03:48,120 --> 00:03:52,890
+I don't always like banana, but
+when I do, I put it in a box.

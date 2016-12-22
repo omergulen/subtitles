@@ -1,0 +1,476 @@
+﻿1
+00:00:00,510 --> 00:00:04,170
+[SINGING] Put your pedal to
+the metal and burn up the road.
+
+2
+00:00:04,170 --> 00:00:07,470
+Start the race and load
+Angular 2 code.
+
+3
+00:00:07,470 --> 00:00:12,350
+A class decorator can help you in this moment.
+Tune your engine
+
+4
+00:00:12,350 --> 00:00:14,185
+with a template and component.
+
+5
+00:00:14,185 --> 00:00:17,841
+Use data binding to
+drift through the turns.
+
+6
+00:00:17,841 --> 00:00:19,740
+With import and export
+separate your concerns
+
+7
+00:00:19,740 --> 00:00:22,630
+Inject a service with your
+
+8
+00:00:22,630 --> 00:00:30,470
+racing crew while
+Accelerating Through Angular 2.
+
+9
+00:00:30,470 --> 00:00:32,479
+You're watching Accelerating
+through Angular 2.
+
+10
+00:00:32,479 --> 00:00:34,220
+I'm Gregg Pollack,
+and in this section,
+
+11
+00:00:34,220 --> 00:00:37,700
+we'll be splitting out our
+code into multiple files
+
+12
+00:00:37,700 --> 00:00:41,240
+to get things more organized.
+
+13
+00:00:41,240 --> 00:00:45,050
+We've been developing Angular
+2 all in one file: main.ts,
+
+14
+00:00:45,050 --> 00:00:47,280
+and obviously, it's
+not going to scale.
+
+15
+00:00:47,280 --> 00:00:50,030
+So we're going to split this
+into three different files.
+
+16
+00:00:50,030 --> 00:00:52,070
+First, our main.ts
+is going to be
+
+17
+00:00:52,070 --> 00:00:54,440
+just for bootstrapping
+our app and loading
+
+18
+00:00:54,440 --> 00:00:55,910
+our first component.
+
+19
+00:00:55,910 --> 00:00:59,210
+Then, our app.component.ts
+file is where
+
+20
+00:00:59,210 --> 00:01:00,920
+we'll have our page header.
+
+21
+00:01:00,920 --> 00:01:04,849
+And then finally, we'll have
+a car-parts.component.ts
+
+22
+00:01:04,849 --> 00:01:07,520
+that will have our
+list of car parts.
+
+23
+00:01:07,520 --> 00:01:13,340
+After this, we will have
+two separate components.
+
+24
+00:01:13,340 --> 00:01:14,984
+So let's jump back
+into our main.ts,
+
+25
+00:01:14,984 --> 00:01:16,400
+and you'll notice
+around here, I'm
+
+26
+00:01:16,400 --> 00:01:18,500
+using a lot of dot
+dot dots, which
+
+27
+00:01:18,500 --> 00:01:20,570
+means that code is still there.
+
+28
+00:01:20,570 --> 00:01:22,520
+It's just hiding because
+I couldn't fit it
+
+29
+00:01:22,520 --> 00:01:24,020
+all on one slide.
+
+30
+00:01:24,020 --> 00:01:26,120
+So just know that
+it's still there.
+
+31
+00:01:26,120 --> 00:01:29,900
+So we'll take some of this
+code out and into a new file
+
+32
+00:01:29,900 --> 00:01:33,080
+called app.component.ts.
+
+33
+00:01:33,080 --> 00:01:34,170
+Does this work?
+
+34
+00:01:34,170 --> 00:01:35,780
+No, it doesn't work.
+
+35
+00:01:35,780 --> 00:01:36,830
+It's actually broken.
+
+36
+00:01:36,830 --> 00:01:38,570
+We're bootstrapping
+our app component,
+
+37
+00:01:38,570 --> 00:01:42,320
+but inside our main.ts
+it doesn't have access
+
+38
+00:01:42,320 --> 00:01:43,580
+to our app component.
+
+39
+00:01:43,580 --> 00:01:45,800
+So how do we get
+access to a class
+
+40
+00:01:45,800 --> 00:01:47,595
+from another file in Angular?
+
+41
+00:01:50,270 --> 00:01:53,030
+First step is to
+export the class
+
+42
+00:01:53,030 --> 00:01:56,840
+that we want to import, in
+this case, our app component.
+
+43
+00:01:56,840 --> 00:02:02,150
+Then, inside main.ts,
+we'll import app component
+
+44
+00:02:02,150 --> 00:02:05,310
+from the file AppComponent.
+
+45
+00:02:05,310 --> 00:02:07,520
+Notice here, we use
+dot slash to specify
+
+46
+00:02:07,520 --> 00:02:09,690
+it's in the same directory.
+
+47
+00:02:09,690 --> 00:02:13,190
+And we don't have to
+write dot ts at the end.
+
+48
+00:02:13,190 --> 00:02:16,920
+Also worth noting, the names
+here have to be the same.
+
+49
+00:02:16,920 --> 00:02:19,280
+We're exporting AppComponent,
+ so that's
+
+50
+00:02:19,280 --> 00:02:22,940
+what we write inside of
+our import statement —
+
+51
+00:02:22,940 --> 00:02:25,160
+AppComponent.
+
+52
+00:02:25,160 --> 00:02:27,150
+All right, we're halfway there.
+
+53
+00:02:27,150 --> 00:02:29,570
+If we look in our browser, we
+see that everything is still
+
+54
+00:02:29,570 --> 00:02:32,180
+working just fine,
+but we need to create
+
+55
+00:02:32,180 --> 00:02:34,250
+that second component.
+
+56
+00:02:34,250 --> 00:02:37,280
+Let's jump into that.
+
+57
+00:02:37,280 --> 00:02:39,320
+So here we are in
+our app component,
+
+58
+00:02:39,320 --> 00:02:42,470
+and we need to take the
+car parts specific code
+
+59
+00:02:42,470 --> 00:02:48,950
+and move that into a new file
+called car-parts.component.
+
+60
+00:02:48,950 --> 00:02:51,920
+And in here, we're going to
+import the component decorator
+
+61
+00:02:51,920 --> 00:02:54,860
+function, and then we'll declare
+a component, and inside of it,
+
+62
+00:02:54,860 --> 00:02:59,030
+we'll have a selector
+we'll call car parts.
+
+63
+00:02:59,030 --> 00:03:02,210
+Then, we already have the
+template, and our class,
+
+64
+00:03:02,210 --> 00:03:05,240
+in this case, we're going to
+write export class car parts
+
+65
+00:03:05,240 --> 00:03:08,690
+component, and that's it.
+
+66
+00:03:08,690 --> 00:03:11,240
+But now, how do we
+tell our application
+
+67
+00:03:11,240 --> 00:03:12,980
+about this component
+so we can use it?
+
+68
+00:03:16,980 --> 00:03:20,480
+First, if we go back
+inside our main.ts file,
+
+69
+00:03:20,480 --> 00:03:24,740
+we need to import this new
+component, like you see here.
+
+70
+00:03:24,740 --> 00:03:27,230
+Secondly, we need to
+add this component
+
+71
+00:03:27,230 --> 00:03:29,310
+to our module
+declarations array.
+
+72
+00:03:29,310 --> 00:03:33,930
+So it can be used in the
+rest of our application.
+
+73
+00:03:33,930 --> 00:03:35,960
+We can use this new
+component by going back
+
+74
+00:03:35,960 --> 00:03:41,340
+into our app.component.ts and
+specify right after the title
+
+75
+00:03:41,340 --> 00:03:43,719
+our car parts selector.
+
+76
+00:03:43,719 --> 00:03:46,385
+And if we jump into our browser,
+we can see that it still works.
+
+77
+00:03:49,260 --> 00:03:52,470
+So now, we've separated our
+concerns into three files,
+
+78
+00:03:52,470 --> 00:03:55,880
+and our application
+feels more scalable.
+
+79
+00:03:55,880 --> 00:03:58,980
+We've also created our
+first reusable component.
+
+80
+00:03:58,980 --> 00:04:02,090
+And components are meant
+to be reused, if we can,
+
+81
+00:04:02,090 --> 00:04:04,068
+in different parts
+of our application.
+
+82
+00:04:07,160 --> 00:04:08,990
+Remember, Angular
+2 applications use
+
+83
+00:04:08,990 --> 00:04:11,540
+a component-based architecture.
+
+84
+00:04:11,540 --> 00:04:14,600
+Components make up the
+different parts of our app.
+
+85
+00:04:14,600 --> 00:04:16,829
+This isn't the app
+that we're building,
+
+86
+00:04:16,829 --> 00:04:18,110
+but it could look like this.
+
+87
+00:04:18,110 --> 00:04:20,269
+Our app looks a little
+bit more like this,
+
+88
+00:04:20,269 --> 00:04:25,130
+where we have our app component
+and our car part component.
+
+89
+00:04:25,130 --> 00:04:26,600
+So what'd we learn?
+
+90
+00:04:26,600 --> 00:04:29,000
+Well, in our main.ts,
+that's usually
+
+91
+00:04:29,000 --> 00:04:32,510
+where we just import our first
+component and bootstrap it.
+
+92
+00:04:32,510 --> 00:04:34,640
+In order to import a
+class, we must make
+
+93
+00:04:34,640 --> 00:04:37,460
+sure to use the export keyword.
+
+94
+00:04:37,460 --> 00:04:40,670
+We use the directives metadata
+to list the directives
+
+95
+00:04:40,670 --> 00:04:42,530
+that our component uses.
+
+96
+00:04:42,530 --> 00:04:46,670
+And components are the building
+blocks of our application.
+
+97
+00:04:46,670 --> 00:04:48,770
+Here is what our
+architecture currently
+
+98
+00:04:48,770 --> 00:04:52,880
+looks like with our index file,
+and we have our three files,
+
+99
+00:04:52,880 --> 00:04:55,063
+main, app, and car parts.
+
+100
+00:04:57,220 --> 00:04:58,970
+Why don't you do some
+challenges, and I'll
+
+101
+00:04:58,970 --> 00:05:01,060
+see you in the next section.

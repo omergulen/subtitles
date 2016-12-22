@@ -1,0 +1,717 @@
+﻿1
+00:00:02,040 --> 00:00:02,840
+Welcome back.
+
+2
+00:00:02,840 --> 00:00:05,050
+And now it's time
+to use the internet,
+
+3
+00:00:05,050 --> 00:00:07,000
+what could possibly go wrong?
+
+4
+00:00:07,000 --> 00:00:10,040
+So up until now we've
+been using mock data.
+
+5
+00:00:10,040 --> 00:00:13,930
+How might we reach out to the
+internet for our car parts?
+
+6
+00:00:13,930 --> 00:00:18,490
+Well, our car parts currently
+asked our service for data.
+
+7
+00:00:18,490 --> 00:00:20,870
+So it's really
+inside the service
+
+8
+00:00:20,870 --> 00:00:22,790
+that we want to fetch
+the appropriate data
+
+9
+00:00:22,790 --> 00:00:28,569
+from the internet and return
+that back onto our template.
+
+10
+00:00:28,569 --> 00:00:30,110
+Before we get into
+it, it's important
+
+11
+00:00:30,110 --> 00:00:33,730
+that you understand how Angular
+loads first in our browser
+
+12
+00:00:33,730 --> 00:00:35,800
+and then loads data.
+
+13
+00:00:35,800 --> 00:00:39,530
+So when our browser first
+tries to access our website,
+
+14
+00:00:39,530 --> 00:00:43,870
+it sends back each HTML
+CSS, it loads up Angular,
+
+15
+00:00:43,870 --> 00:00:45,730
+and then when it's
+done loading, it'll
+
+16
+00:00:45,730 --> 00:00:49,940
+go back and fetch API
+data like car parts,
+
+17
+00:00:49,940 --> 00:00:52,080
+and then our server
+sends back JSON,
+
+18
+00:00:52,080 --> 00:00:55,950
+which then loads into our page.
+
+19
+00:00:55,950 --> 00:00:58,560
+Let's go through the steps
+needed to make this happen.
+
+20
+00:00:58,560 --> 00:01:02,850
+First, we need to create a
+JSON file with car parts data,
+
+21
+00:01:02,850 --> 00:01:05,129
+we'll call it car-parts.JSON.
+
+22
+00:01:05,129 --> 00:01:06,900
+Then we'll ensure our
+application includes
+
+23
+00:01:06,900 --> 00:01:10,430
+the libraries it needs
+to do HTTP calls.
+
+24
+00:01:10,430 --> 00:01:15,670
+Then we'll tell our injector
+about the HTTP provider.
+
+25
+00:01:15,670 --> 00:01:19,210
+Then we'll inject the HTTP
+dependency into our service
+
+26
+00:01:19,210 --> 00:01:21,180
+and make the get request.
+
+27
+00:01:21,180 --> 00:01:22,900
+And lastly, we'll
+listen for data
+
+28
+00:01:22,900 --> 00:01:27,870
+returned by this request
+inside our car parts component.
+
+29
+00:01:27,870 --> 00:01:30,470
+The first step is easy, we
+just brought over our mock data
+
+30
+00:01:30,470 --> 00:01:33,470
+into our car-parts.JSON file.
+
+31
+00:01:33,470 --> 00:01:36,580
+But I've wrapped our
+array in an object
+
+32
+00:01:36,580 --> 00:01:40,840
+to make it feel a little more
+realistic in that data object.
+
+33
+00:01:40,840 --> 00:01:43,540
+So we'll have to keep that in
+mind, that to get to the data
+
+34
+00:01:43,540 --> 00:01:45,955
+we need to go through
+that data keyword.
+
+35
+00:01:48,840 --> 00:01:51,840
+Next we need to make sure we're
+including the right libraries.
+
+36
+00:01:51,840 --> 00:01:53,800
+The HTTP library
+provides the get
+
+37
+00:01:53,800 --> 00:01:56,180
+method will need to call
+out to the internet.
+
+38
+00:01:56,180 --> 00:01:59,290
+And the RxJS library
+stands for Reactive X
+
+39
+00:01:59,290 --> 00:02:02,920
+and provides an advanced
+tooling for our HTTP calls.
+
+40
+00:02:02,920 --> 00:02:05,070
+If you use that five
+minute quick start,
+
+41
+00:02:05,070 --> 00:02:07,070
+well, it's already
+including these libraries,
+
+42
+00:02:07,070 --> 00:02:10,400
+you don't need to
+worry about it.
+
+43
+00:02:10,400 --> 00:02:13,340
+Step three is we need to tell
+our dependency injector that it
+
+44
+00:02:13,340 --> 00:02:16,610
+can inject the HTTP service.
+
+45
+00:02:16,610 --> 00:02:19,790
+To do this, we're going to
+go inside our main.ts file.
+
+46
+00:02:19,790 --> 00:02:24,210
+And inside here, we will
+import the HTTP module.
+
+47
+00:02:24,210 --> 00:02:27,130
+Then we'll include the
+library by simply adding it
+
+48
+00:02:27,130 --> 00:02:28,960
+to our list of imports.
+
+49
+00:02:28,960 --> 00:02:32,380
+Do we need to also add
+it to our providers list?
+
+50
+00:02:32,380 --> 00:02:35,490
+Well, it turns out we
+don't because it's already
+
+51
+00:02:35,490 --> 00:02:39,950
+getting added as a provider
+inside of the HTTP module.
+
+52
+00:02:39,950 --> 00:02:41,150
+Let's take a look.
+
+53
+00:02:41,150 --> 00:02:43,490
+If we dive under the
+covers of the HTTP module,
+
+54
+00:02:43,490 --> 00:02:48,050
+we'll see in there, there is
+another ngModule decorator.
+
+55
+00:02:48,050 --> 00:02:52,230
+And inside, it declares a list
+of providers, one of which
+
+56
+00:02:52,230 --> 00:02:53,950
+is Http.
+
+57
+00:02:53,950 --> 00:02:59,770
+Now, we'll be able to inject the
+Http library where we need it.
+
+58
+00:02:59,770 --> 00:03:03,710
+Time to inject it and use it
+to call out to the internet.
+
+59
+00:03:03,710 --> 00:03:08,350
+So first, we need to import
+our Http library as well
+
+60
+00:03:08,350 --> 00:03:11,260
+as a part of the
+Reactive X library,
+
+61
+00:03:11,260 --> 00:03:13,540
+we just need map in this case.
+
+62
+00:03:13,540 --> 00:03:15,860
+Then we'll create a
+constructor so we can
+
+63
+00:03:15,860 --> 00:03:19,090
+inject HTTP as a dependency.
+
+64
+00:03:19,090 --> 00:03:22,960
+We can do this because our
+service class is injectable.
+
+65
+00:03:22,960 --> 00:03:25,590
+If we weren't using the
+injectable decorator,
+
+66
+00:03:25,590 --> 00:03:29,170
+then our service class couldn't
+have additional dependencies.
+
+67
+00:03:29,170 --> 00:03:31,970
+Now, inside the
+car-parts method,
+
+68
+00:03:31,970 --> 00:03:33,980
+we'll write a bunch of code.
+
+69
+00:03:33,980 --> 00:03:35,370
+And there's a lot going on here.
+
+70
+00:03:35,370 --> 00:03:38,180
+So I'm going to split it
+out into multiple pieces
+
+71
+00:03:38,180 --> 00:03:40,280
+and we'll go through
+it step by step.
+
+72
+00:03:40,280 --> 00:03:44,660
+First, calling the get method
+and fetching our JSON file.
+
+73
+00:03:44,660 --> 00:03:47,200
+You might expect this
+to return a promise.
+
+74
+00:03:47,200 --> 00:03:49,780
+But it actually
+returns an observable.
+
+75
+00:03:49,780 --> 00:03:51,930
+Observables give us
+additional functionality
+
+76
+00:03:51,930 --> 00:03:53,340
+on our HTTP calls.
+
+77
+00:03:53,340 --> 00:03:57,330
+One of which is to treat the
+return value like an array.
+
+78
+00:03:57,330 --> 00:04:01,700
+Which leads us to
+the map method.
+
+79
+00:04:01,700 --> 00:04:02,910
+We call the map method.
+
+80
+00:04:02,910 --> 00:04:05,270
+And then we're saying
+for the data returned,
+
+81
+00:04:05,270 --> 00:04:07,310
+do this to the response.
+
+82
+00:04:07,310 --> 00:04:08,843
+And we're using the fat arrow.
+
+83
+00:04:08,843 --> 00:04:13,830
+We call JSON on the response
+to parse the string into JSON.
+
+84
+00:04:13,830 --> 00:04:17,220
+And the array we want, remember,
+is under that data keyword,
+
+85
+00:04:17,220 --> 00:04:19,740
+so we call dot data.
+
+86
+00:04:19,740 --> 00:04:22,250
+Lastly, we tell our
+TypeScript compiler
+
+87
+00:04:22,250 --> 00:04:25,650
+to treat what gets returned
+like an array of CarParts.
+
+88
+00:04:28,540 --> 00:04:30,340
+Back in our CarParts
+component file,
+
+89
+00:04:30,340 --> 00:04:33,390
+we need to change some code
+because our service now
+
+90
+00:04:33,390 --> 00:04:35,320
+returns an observable object.
+
+91
+00:04:35,320 --> 00:04:37,630
+And we need to
+subscribe to that stream
+
+92
+00:04:37,630 --> 00:04:41,030
+and tell our component what
+to do when that data arrives.
+
+93
+00:04:41,030 --> 00:04:45,600
+So we'll write subscribe, and
+when our car parts arrive,
+
+94
+00:04:45,600 --> 00:04:48,780
+we'll set this.CarParts,
+our local car parts
+
+95
+00:04:48,780 --> 00:04:51,934
+array, equal to the
+data that we receive.
+
+96
+00:04:54,900 --> 00:04:58,100
+If we called this up in our
+browser, we would see nothing.
+
+97
+00:04:58,100 --> 00:04:59,220
+It would break.
+
+98
+00:04:59,220 --> 00:05:02,280
+And it would give us this error,
+cannot read property 'length'
+
+99
+00:05:02,280 --> 00:05:03,590
+of undefined.
+
+100
+00:05:03,590 --> 00:05:07,120
+And it comes down to
+this line of code.
+
+101
+00:05:07,120 --> 00:05:10,700
+this.CarParts —
+well, is undefined.
+
+102
+00:05:10,700 --> 00:05:14,716
+And underneath the covers it's
+trying to call.length on it.
+
+103
+00:05:14,716 --> 00:05:15,430
+Hmm.
+
+104
+00:05:15,430 --> 00:05:17,350
+Well, remember that
+graph I showed you
+
+105
+00:05:17,350 --> 00:05:19,240
+at the beginning of the section?
+
+106
+00:05:19,240 --> 00:05:22,540
+Angular loads and then
+it evaluates the code,
+
+107
+00:05:22,540 --> 00:05:25,570
+but we haven't called
+out to get our data yet.
+
+108
+00:05:25,570 --> 00:05:29,450
+So it's calling
+this.CarParts.length,
+
+109
+00:05:29,450 --> 00:05:33,490
+but this.CarParts is
+currently undefined.
+
+110
+00:05:33,490 --> 00:05:37,160
+So we need to make
+sure that this.CarParts
+
+111
+00:05:37,160 --> 00:05:39,930
+is an array before we
+try to use this for-loop.
+
+112
+00:05:42,950 --> 00:05:46,860
+One way to solve this problem
+is to use the arrays isArray
+
+113
+00:05:46,860 --> 00:05:49,860
+function to make
+sure this.CarParts
+
+114
+00:05:49,860 --> 00:05:54,870
+is an array before we
+try to loop over it.
+
+115
+00:05:54,870 --> 00:05:56,480
+Now, if we jump back
+into our browser,
+
+116
+00:05:56,480 --> 00:06:00,060
+we can see that we can now
+increment and decrement
+
+117
+00:06:00,060 --> 00:06:05,540
+our different car parts all
+loaded across the internet.
+
+118
+00:06:05,540 --> 00:06:08,410
+Before we move on to challenges,
+I've got a few last thoughts.
+
+119
+00:06:08,410 --> 00:06:12,390
+First of all, we didn't put any
+error handling in this code.
+
+120
+00:06:12,390 --> 00:06:14,580
+And if you're actually
+calling across the internet
+
+121
+00:06:14,580 --> 00:06:17,510
+to a data API,
+you're going to want
+
+122
+00:06:17,510 --> 00:06:21,180
+to code in error handling to
+make sure you fail gracefully
+
+123
+00:06:21,180 --> 00:06:23,760
+when that API doesn't work.
+
+124
+00:06:23,760 --> 00:06:27,150
+Also since we isolated our
+network calls as a service,
+
+125
+00:06:27,150 --> 00:06:30,730
+we could easily write a
+RacingDataService mock
+
+126
+00:06:30,730 --> 00:06:35,180
+and inject it when we're
+testing or developing offline.
+
+127
+00:06:35,180 --> 00:06:38,700
+Lastly, observables
+are really cool.
+
+128
+00:06:38,700 --> 00:06:43,879
+And they're worth learning about
+if you do lots of http calls.
+
+129
+00:06:43,879 --> 00:06:45,420
+So what did we learn
+in this section?
+
+130
+00:06:45,420 --> 00:06:48,000
+Well, Angular apps
+usually load data
+
+131
+00:06:48,000 --> 00:06:52,410
+using service classes after
+the application is initialized
+
+132
+00:06:52,410 --> 00:06:54,190
+and running.
+
+133
+00:06:54,190 --> 00:06:57,610
+We can use the HTTP library
+through dependency injection
+
+134
+00:06:57,610 --> 00:06:59,800
+to make internet calls.
+
+135
+00:06:59,800 --> 00:07:04,250
+And our HTTP calls return an
+observable, not a promise,
+
+136
+00:07:04,250 --> 00:07:06,980
+which behaves more
+like an array.
+
+137
+00:07:06,980 --> 00:07:10,501
+So why don't you get your
+hands dirty in the challenges,
+
+138
+00:07:10,501 --> 00:07:13,747
+and I will see you
+in the outro video.
+
+139
+00:07:13,747 --> 00:07:16,960
+[BEEP BEEP] --still
+kind of sucks.
+
+140
+00:07:16,960 --> 00:07:18,000
+No.
+
+141
+00:07:18,000 --> 00:07:20,579
+So this great-- [BEEP BEEP]
+And wow, if I read that,
+
+142
+00:07:20,579 --> 00:07:21,495
+I wouldn't understand.
+
+143
+00:07:21,495 --> 00:07:24,100
+I'm just trying to put
+it in my own words.
+
+144
+00:07:24,100 --> 00:07:25,034
+Cool.
+
+145
+00:07:25,034 --> 00:07:26,435
+These are your own words.
+
+146
+00:07:26,435 --> 00:07:29,240
+Oh. [LAUGHING] That's
+one way to do it.
+
+147
+00:07:29,240 --> 00:07:31,940
+[LAUGHING] That's hilarious.
+
+148
+00:07:31,940 --> 00:07:32,840
+Is this easy to you?
+
+149
+00:07:32,840 --> 00:07:33,340
+All right.
+
+150
+00:07:33,340 --> 00:07:34,040
+I like it.
+
+151
+00:07:34,040 --> 00:07:35,890
+I like it. [BEEP]
