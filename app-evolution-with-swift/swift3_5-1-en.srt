@@ -1,0 +1,722 @@
+﻿1
+00:00:00,732 --> 00:00:03,360
+[SINGING] Starting back
+in the machine age,
+
+2
+00:00:03,360 --> 00:00:05,820
+the telephone had
+just taken the stage.
+
+3
+00:00:05,820 --> 00:00:08,060
+No one predicted
+its acceleration,
+
+4
+00:00:08,060 --> 00:00:10,440
+evolving all of
+our communication.
+
+5
+00:00:10,440 --> 00:00:12,970
+Today we build with
+storyboards, use
+
+6
+00:00:12,970 --> 00:00:15,160
+Xcode projects where
+they're stored
+
+7
+00:00:15,160 --> 00:00:17,760
+Controllers with scroll,
+navigate, and tables
+
+8
+00:00:17,760 --> 00:00:20,380
+Outlets, actions,
+buttons and labels.
+
+9
+00:00:20,380 --> 00:00:23,450
+To code a phone is a learned
+gift with the App Evolution
+
+10
+00:00:23,450 --> 00:00:24,046
+with Swift.
+
+11
+00:00:27,910 --> 00:00:30,097
+Welcome back to App
+Evolution with Swift.
+
+12
+00:00:30,097 --> 00:00:31,680
+In this level, we'll
+be looking at how
+
+13
+00:00:31,680 --> 00:00:34,670
+to connect two view controllers
+together and then transition
+
+14
+00:00:34,670 --> 00:00:37,920
+between them.
+
+15
+00:00:37,920 --> 00:00:40,090
+We've got a great start
+on our Table View.
+
+16
+00:00:40,090 --> 00:00:42,480
+But now, it's time to connect
+that up to our Product View
+
+17
+00:00:42,480 --> 00:00:44,660
+Controller, so that
+when we tap on a cell,
+
+18
+00:00:44,660 --> 00:00:48,430
+we can show some detailed
+information about each product.
+
+19
+00:00:48,430 --> 00:00:50,410
+On the surface, doing
+this is pretty simple
+
+20
+00:00:50,410 --> 00:00:53,991
+and involves something called
+a Navigation Controller.
+
+21
+00:00:53,991 --> 00:00:56,220
+A navigation controller
+manages moving
+
+22
+00:00:56,220 --> 00:00:57,890
+between any view controllers.
+
+23
+00:00:57,890 --> 00:01:00,660
+And the way you set it up is
+to set one view controller
+
+24
+00:01:00,660 --> 00:01:04,040
+as the root view controller
+for the navigation stack.
+
+25
+00:01:04,040 --> 00:01:06,750
+And then transition to any other
+view controller with something
+
+26
+00:01:06,750 --> 00:01:08,570
+called a segue.
+
+27
+00:01:08,570 --> 00:01:09,070
+Yes.
+
+28
+00:01:09,070 --> 00:01:11,610
+That's how that word's
+pronounced, segue.
+
+29
+00:01:11,610 --> 00:01:13,320
+And it literally
+means to transition
+
+30
+00:01:13,320 --> 00:01:15,540
+from one thing to another.
+
+31
+00:01:15,540 --> 00:01:18,310
+So let's jump into Xcode
+at a navigation controller
+
+32
+00:01:18,310 --> 00:01:21,490
+and create a segue.
+
+33
+00:01:21,490 --> 00:01:23,270
+Before we add a
+navigation controller,
+
+34
+00:01:23,270 --> 00:01:27,090
+let's organize our
+storyboard a bit.
+
+35
+00:01:27,090 --> 00:01:30,140
+If we option-click and drag
+on the storyboard editor,
+
+36
+00:01:30,140 --> 00:01:32,590
+it zooms out so we can see
+all of our view controllers
+
+37
+00:01:32,590 --> 00:01:34,240
+at once.
+
+38
+00:01:34,240 --> 00:01:37,070
+We want to organize
+these a bit differently.
+
+39
+00:01:37,070 --> 00:01:39,557
+We'll take the Contact View
+Controller and move it up.
+
+40
+00:01:42,356 --> 00:01:44,230
+We'll take the Products
+Table View Controller
+
+41
+00:01:44,230 --> 00:01:47,030
+and move it all the
+way to the left.
+
+42
+00:01:47,030 --> 00:01:48,610
+And, take the Product
+View Controller
+
+43
+00:01:48,610 --> 00:01:50,908
+and move it to the right of
+the Table View Controller.
+
+44
+00:01:53,540 --> 00:01:55,870
+Now, we'll click on the
+Products Table View Controller
+
+45
+00:01:55,870 --> 00:02:02,440
+again and choose Editor, Embed
+In, Navigation Controller.
+
+46
+00:02:02,440 --> 00:02:03,920
+Because our table
+view controller
+
+47
+00:02:03,920 --> 00:02:06,270
+is now in this
+navigation controller,
+
+48
+00:02:06,270 --> 00:02:09,250
+if we connect up segues
+between other view controllers,
+
+49
+00:02:09,250 --> 00:02:12,090
+we'll be able to
+transition between them.
+
+50
+00:02:12,090 --> 00:02:15,230
+We'll scroll a bit so we
+can see both controllers.
+
+51
+00:02:15,230 --> 00:02:17,949
+And we'll right-click and
+drag from the prototype cell
+
+52
+00:02:17,949 --> 00:02:19,240
+to the product view controller.
+
+53
+00:02:25,320 --> 00:02:26,980
+In the Segue Helper
+that comes up,
+
+54
+00:02:26,980 --> 00:02:28,724
+we'll choose Show a
+Segue, which means
+
+55
+00:02:28,724 --> 00:02:30,890
+we're going to show the
+product view controller when
+
+56
+00:02:30,890 --> 00:02:33,640
+the product cell is tapped.
+
+57
+00:02:33,640 --> 00:02:37,960
+If we click on that segue,
+we can give it a name.
+
+58
+00:02:37,960 --> 00:02:39,390
+In the Attributes
+Inspector, we'll
+
+59
+00:02:39,390 --> 00:02:41,980
+type Show Product and
+hit Enter, since that's
+
+60
+00:02:41,980 --> 00:02:46,780
+what this segue is responsible
+for: showing a product.
+
+61
+00:02:46,780 --> 00:02:53,900
+Now if we build and
+run our app and we
+
+62
+00:02:53,900 --> 00:02:56,900
+tap on one of those cells,
+we see that it pushes over
+
+63
+00:02:56,900 --> 00:03:00,570
+to the product view controller.
+
+64
+00:03:00,570 --> 00:03:03,310
+Our segue's working great, so
+now let's make a plan of attack
+
+65
+00:03:03,310 --> 00:03:07,240
+for passing data from the first
+view controller to the second.
+
+66
+00:03:07,240 --> 00:03:09,980
+Every view controller, even
+table view controllers,
+
+67
+00:03:09,980 --> 00:03:12,350
+has a function called
+Prepare For Segue,
+
+68
+00:03:12,350 --> 00:03:14,970
+that gets called
+whenever a segue happens.
+
+69
+00:03:14,970 --> 00:03:16,440
+We need to override
+that function
+
+70
+00:03:16,440 --> 00:03:19,550
+and pass the product name to
+the product view controller
+
+71
+00:03:19,550 --> 00:03:21,620
+during the segue.
+
+72
+00:03:21,620 --> 00:03:24,640
+We'll also need to add a product
+name property to the product
+
+73
+00:03:24,640 --> 00:03:26,970
+view controller that
+will store the value when
+
+74
+00:03:26,970 --> 00:03:28,980
+it gets passed over.
+
+75
+00:03:28,980 --> 00:03:30,710
+Adding that product
+name property
+
+76
+00:03:30,710 --> 00:03:34,360
+in the ProductViewController
+Swift file looks like this.
+
+77
+00:03:34,360 --> 00:03:36,900
+Note that we made this
+variable an optional string,
+
+78
+00:03:36,900 --> 00:03:40,260
+because any data that we
+don't know until the app runs,
+
+79
+00:03:40,260 --> 00:03:42,830
+has to be marked as optional.
+
+80
+00:03:42,830 --> 00:03:45,680
+Then we'll update the
+product name labels text
+
+81
+00:03:45,680 --> 00:03:47,670
+to come from the
+product name variable,
+
+82
+00:03:47,670 --> 00:03:50,710
+instead of just hard
+coding a string.
+
+83
+00:03:50,710 --> 00:03:52,710
+Over in
+ProductsTableViewController,
+
+84
+00:03:52,710 --> 00:03:55,240
+we'll add the Prepare
+For Segue function.
+
+85
+00:03:55,240 --> 00:03:58,540
+Remember, this function runs
+every time a segue happens.
+
+86
+00:03:58,540 --> 00:04:03,770
+So whatever we tap a cell in
+our app, this function will run.
+
+87
+00:04:03,770 --> 00:04:06,330
+Since there can be multiple
+segues in one controller,
+
+88
+00:04:06,330 --> 00:04:08,460
+we should first check of
+the segue's identifier
+
+89
+00:04:08,460 --> 00:04:10,040
+is Show Product.
+
+90
+00:04:10,040 --> 00:04:12,670
+Remember when we set the
+segue name in the storyboard?
+
+91
+00:04:12,670 --> 00:04:15,290
+Here's where that's paying off.
+
+92
+00:04:15,290 --> 00:04:16,899
+So inside of this
+conditional, we
+
+93
+00:04:16,899 --> 00:04:18,750
+need a way to capture
+the view controller
+
+94
+00:04:18,750 --> 00:04:20,790
+that we're transitioning
+to, so that we can
+
+95
+00:04:20,790 --> 00:04:24,330
+set the product name property.
+
+96
+00:04:24,330 --> 00:04:27,400
+Looking at the documentation
+for UIStoryboardsegue,
+
+97
+00:04:27,400 --> 00:04:31,430
+we can see that it has a
+property called destination.
+
+98
+00:04:31,430 --> 00:04:33,760
+If we access that
+property, we get a copy
+
+99
+00:04:33,760 --> 00:04:36,380
+of the view controller
+we're transitioning to,
+
+100
+00:04:36,380 --> 00:04:39,650
+which in this case is our
+product view controller.
+
+101
+00:04:39,650 --> 00:04:42,090
+So we can grab a copy of
+that product view controller
+
+102
+00:04:42,090 --> 00:04:46,190
+like this, and assign it to
+a variable named product VC.
+
+103
+00:04:46,190 --> 00:04:48,410
+But that alone is not enough.
+
+104
+00:04:48,410 --> 00:04:51,920
+Destination View Controller
+returns a UI view controller,
+
+105
+00:04:51,920 --> 00:04:54,370
+but we want Swift to know
+that this is specifically
+
+106
+00:04:54,370 --> 00:04:55,620
+a product view controller.
+
+107
+00:04:58,450 --> 00:05:01,370
+We can do that by adding
+as ProductViewController
+
+108
+00:05:01,370 --> 00:05:03,420
+to the end of this statement.
+
+109
+00:05:03,420 --> 00:05:06,625
+As is a way to convert from
+one data type to another.
+
+110
+00:05:06,625 --> 00:05:08,500
+So here we're trying to
+let the compiler know
+
+111
+00:05:08,500 --> 00:05:10,930
+that our destination view
+controller is, in fact,
+
+112
+00:05:10,930 --> 00:05:14,400
+a product view controller.
+
+113
+00:05:14,400 --> 00:05:17,610
+When we do that though, we run
+into another little problem.
+
+114
+00:05:17,610 --> 00:05:20,180
+An error message that
+says UIViewController
+
+115
+00:05:20,180 --> 00:05:22,310
+is not convertible to
+ProductViewController.
+
+116
+00:05:22,310 --> 00:05:25,550
+Did you mean to use
+as to force downcast?
+
+117
+00:05:25,550 --> 00:05:27,620
+That's a crazy error
+message, right?
+
+118
+00:05:27,620 --> 00:05:29,080
+So what's happening
+is the compiler
+
+119
+00:05:29,080 --> 00:05:31,300
+can't just take our
+word for it and be sure
+
+120
+00:05:31,300 --> 00:05:33,810
+that the destination view
+controller is a product view
+
+121
+00:05:33,810 --> 00:05:35,000
+controller.
+
+122
+00:05:35,000 --> 00:05:38,390
+And if it's not sure, it won't
+compile your code and run.
+
+123
+00:05:38,390 --> 00:05:40,020
+That's because if
+it guesses wrong,
+
+124
+00:05:40,020 --> 00:05:42,410
+the app's going to crash.
+
+125
+00:05:42,410 --> 00:05:45,580
+We can fix this by
+again using optionals.
+
+126
+00:05:45,580 --> 00:05:48,410
+Remember, if we can't be
+sure that a value will exist,
+
+127
+00:05:48,410 --> 00:05:51,240
+it should probably be
+marked as optional.
+
+128
+00:05:51,240 --> 00:05:54,190
+Adding the question mark
+to the end of the as word
+
+129
+00:05:54,190 --> 00:05:57,230
+here returns an optional
+product view controller
+
+130
+00:05:57,230 --> 00:06:00,840
+and stores it in the
+Product VC variable.
+
+131
+00:06:00,840 --> 00:06:02,590
+We can use that same
+question mark trick
+
+132
+00:06:02,590 --> 00:06:05,740
+from before by
+writing, Product VC?
+
+133
+00:06:05,740 --> 00:06:09,860
+dot product name and setting
+that equal to a string.
+
+134
+00:06:09,860 --> 00:06:12,610
+Remember, this means
+only set the product name
+
+135
+00:06:12,610 --> 00:06:15,030
+if the product VC exists.
+
+136
+00:06:15,030 --> 00:06:19,550
+It doesn't exist, the code won't
+run, and therefore won't crash.
+
+137
+00:06:19,550 --> 00:06:21,830
+It's also important to
+note that in this scenario,
+
+138
+00:06:21,830 --> 00:06:25,070
+the segue would still transition
+between the view controllers.
+
+139
+00:06:25,070 --> 00:06:27,630
+We just wouldn't be sending
+any extra data along
+
+140
+00:06:27,630 --> 00:06:28,380
+with the segue.
+
+141
+00:06:31,460 --> 00:06:33,140
+Now, whenever we
+tap on a cell, we're
+
+142
+00:06:33,140 --> 00:06:35,370
+directed to the Product
+View Controller.
+
+143
+00:06:35,370 --> 00:06:37,740
+And we're shown the text
+that we set in the Prepare
+
+144
+00:06:37,740 --> 00:06:40,440
+For Segue method.
+
+145
+00:06:40,440 --> 00:06:42,090
+This is pretty powerful stuff.
+
+146
+00:06:42,090 --> 00:06:45,100
+We were able to get one view
+controller to tell another view
+
+147
+00:06:45,100 --> 00:06:47,700
+controller what data to display.
+
+148
+00:06:47,700 --> 00:06:49,960
+So now it's your turn to
+try passing some data along
+
+149
+00:06:49,960 --> 00:06:52,750
+with a segue in your app,
+and take some challenges.
+
+150
+00:06:52,750 --> 00:06:55,070
+And I'll see you in
+the next section.
+

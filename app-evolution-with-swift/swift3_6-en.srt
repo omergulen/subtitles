@@ -1,0 +1,700 @@
+﻿1
+00:00:00,000 --> 00:00:01,100
+[MUSIC PLAYING]
+
+2
+00:00:01,100 --> 00:00:03,360
+[SINGING] Starting back in
+the machine age,
+
+3
+00:00:03,360 --> 00:00:05,740
+the telephone had
+just taken the stage.
+
+4
+00:00:05,740 --> 00:00:08,660
+No one predicted its
+acceleration evolving
+
+5
+00:00:08,660 --> 00:00:10,440
+all of our communication.
+
+6
+00:00:10,440 --> 00:00:14,110
+Today we build with storyboards
+ use Xcode projects
+
+7
+00:00:14,110 --> 00:00:15,160
+where they're stored.
+
+8
+00:00:15,160 --> 00:00:18,340
+Controllers with scroll,
+navigate and tables. Outlets,
+
+9
+00:00:18,340 --> 00:00:19,725
+actions, buttons, and labels.
+
+10
+00:00:19,725 --> 00:00:22,210
+To code a phone
+is a learned gift
+
+11
+00:00:22,210 --> 00:00:23,945
+with the App
+Evolution with Swift.
+
+12
+00:00:27,200 --> 00:00:29,290
+Welcome back to App
+Evolution with Swift.
+
+13
+00:00:32,900 --> 00:00:35,800
+Right now, we're passing just
+product name into the product
+
+14
+00:00:35,800 --> 00:00:36,920
+view controller.
+
+15
+00:00:36,920 --> 00:00:40,050
+But that means we can only
+pass one piece of data.
+
+16
+00:00:40,050 --> 00:00:42,850
+What if we wanted to also pass
+stuff like the product image
+
+17
+00:00:42,850 --> 00:00:46,200
+name, or even the cell
+image for that cell?
+
+18
+00:00:46,200 --> 00:00:48,580
+One thing we could do is
+create multiple variables
+
+19
+00:00:48,580 --> 00:00:50,050
+inside of product
+view controller
+
+20
+00:00:50,050 --> 00:00:52,050
+and pass values into them.
+
+21
+00:00:52,050 --> 00:00:53,850
+But that would quickly
+get really messy.
+
+22
+00:00:53,850 --> 00:00:55,280
+Especially as we
+have more and more
+
+23
+00:00:55,280 --> 00:00:57,670
+values that we wanted to pass.
+
+24
+00:00:57,670 --> 00:00:59,550
+So instead, we can
+create a new class,
+
+25
+00:00:59,550 --> 00:01:02,120
+to hold all of those
+variables as properties
+
+26
+00:01:02,120 --> 00:01:06,110
+and then just pass one
+object over instead of three.
+
+27
+00:01:06,110 --> 00:01:10,330
+So let's jump into Xcode
+to see how we can do that.
+
+28
+00:01:10,330 --> 00:01:12,930
+The first thing we'll do is
+create a brand new Swift file.
+
+29
+00:01:17,080 --> 00:01:19,520
+And instead of choosing
+a Cocoa Touch Class,
+
+30
+00:01:19,520 --> 00:01:21,715
+we'll just choose
+an empty Swift file.
+
+31
+00:01:21,715 --> 00:01:23,340
+This is because we're
+not going to need
+
+32
+00:01:23,340 --> 00:01:27,120
+to subclass any
+of UI Kit classes,
+
+33
+00:01:27,120 --> 00:01:30,810
+so instead, we'll
+just start fresh.
+
+34
+00:01:30,810 --> 00:01:34,570
+We'll name this file Product,
+with a capital P dot Swift
+
+35
+00:01:34,570 --> 00:01:35,391
+and hit Create.
+
+36
+00:01:38,040 --> 00:01:40,085
+Since we do want this
+to be a class file,
+
+37
+00:01:40,085 --> 00:01:43,630
+we'll type Class,
+Product with a capital P,
+
+38
+00:01:43,630 --> 00:01:46,490
+and the opening and
+closing curly brackets.
+
+39
+00:01:46,490 --> 00:01:49,560
+And we'll create three
+variables in this class.
+
+40
+00:01:49,560 --> 00:01:51,540
+The first one will
+be called Name,
+
+41
+00:01:51,540 --> 00:01:54,360
+and it will be an
+optional string.
+
+42
+00:01:54,360 --> 00:01:56,470
+The next one will be
+called Product image
+
+43
+00:01:56,470 --> 00:01:59,030
+and it will also be
+an optional string.
+
+44
+00:01:59,030 --> 00:02:00,730
+Then the third
+will be Cell Image,
+
+45
+00:02:00,730 --> 00:02:03,680
+and again it will be
+an optional string.
+
+46
+00:02:03,680 --> 00:02:06,292
+Now we'll be able to create
+objects of type product
+
+47
+00:02:06,292 --> 00:02:08,500
+and then we'll be able to
+set each one of those three
+
+48
+00:02:08,500 --> 00:02:11,170
+variables for those
+objects with dot notation
+
+49
+00:02:11,170 --> 00:02:14,640
+to the info for each
+individual product.
+
+50
+00:02:14,640 --> 00:02:17,870
+We'll do that inside of our
+products table view controller,
+
+51
+00:02:17,870 --> 00:02:21,580
+and we can create those product
+objects inside of ViewDidLoad,
+
+52
+00:02:21,580 --> 00:02:22,320
+like this.
+
+53
+00:02:31,840 --> 00:02:34,100
+Then, for each one of
+these product objects,
+
+54
+00:02:34,100 --> 00:02:48,890
+we need to set their name,
+product image, and cell image.
+
+55
+00:02:56,624 --> 00:02:59,040
+We should also note that we've
+added all of the remaining
+
+56
+00:02:59,040 --> 00:03:01,250
+necessary images to
+our asset catalog,
+
+57
+00:03:01,250 --> 00:03:04,171
+so we've got all four full
+screen images loaded in.
+
+58
+00:03:07,402 --> 00:03:09,610
+Now, we need to fill in the
+rest of the data for each
+
+59
+00:03:09,610 --> 00:03:11,780
+of these products and
+we'll skip ahead here
+
+60
+00:03:11,780 --> 00:03:13,900
+so you don't have to watch
+us type all of this in.
+
+61
+00:03:18,330 --> 00:03:21,320
+The place we need to put all
+this data is in an array.
+
+62
+00:03:21,320 --> 00:03:23,990
+And we don't even need our
+product names array anymore,
+
+63
+00:03:23,990 --> 00:03:27,590
+so we'll rename it from
+product names to products,
+
+64
+00:03:27,590 --> 00:03:29,890
+and instead of holding
+a group of strings,
+
+65
+00:03:29,890 --> 00:03:32,950
+it will hold the group
+of product objects.
+
+66
+00:03:32,950 --> 00:03:34,450
+We'll adjust the
+name of the array
+
+67
+00:03:34,450 --> 00:03:36,730
+in ViewDidLoad to Products.
+
+68
+00:03:36,730 --> 00:03:38,560
+Instead of using these
+hard-coded strings,
+
+69
+00:03:38,560 --> 00:03:40,620
+we can use the product one,
+
+70
+00:03:40,620 --> 00:03:43,600
+two, three, and four objects.
+
+71
+00:03:50,700 --> 00:03:53,630
+Down in the TableView
+NumberOfRowsInSection function,
+
+72
+00:03:53,630 --> 00:03:56,290
+we can update this code to
+unwrap the optional products
+
+73
+00:03:56,290 --> 00:04:03,190
+array instead of
+product names, and also
+
+74
+00:04:03,190 --> 00:04:05,530
+make these unwrapped variable
+names a little shorter.
+
+75
+00:04:10,400 --> 00:04:13,310
+Down in the TableView
+CellForRowAtIndexPath function,
+
+76
+00:04:13,310 --> 00:04:14,750
+we'll do something similar.
+
+77
+00:04:14,750 --> 00:04:17,240
+We'll grab just
+one product object,
+
+78
+00:04:17,240 --> 00:04:23,440
+and grab it from the products
+array and let p equal
+
+79
+00:04:23,440 --> 00:04:25,368
+that product,
+unwrapping the optional.
+
+80
+00:04:28,000 --> 00:04:30,370
+Then, we can adjust the
+text label dot text,
+
+81
+00:04:30,370 --> 00:04:35,590
+to come from p dot name,
+which is the string
+
+82
+00:04:35,590 --> 00:04:37,111
+inside of the product object.
+
+83
+00:04:40,410 --> 00:04:42,730
+We can move the image
+setting code up as well.
+
+84
+00:04:45,890 --> 00:04:48,790
+But if we try to replace the
+hard coded image with p dot
+
+85
+00:04:48,790 --> 00:04:51,470
+cell image, we'll get
+an error, and that's
+
+86
+00:04:51,470 --> 00:04:53,780
+because cell image is optional.
+
+87
+00:04:53,780 --> 00:04:55,390
+And this UI image
+initializer has
+
+88
+00:04:55,390 --> 00:04:58,170
+to be absolutely sure that the
+image we're using to create it
+
+89
+00:04:58,170 --> 00:05:00,480
+exists.
+
+90
+00:05:00,480 --> 00:05:02,860
+So we can wrap
+that too, by typing
+
+91
+00:05:02,860 --> 00:05:07,860
+if let i equals
+p dot cell image,
+
+92
+00:05:07,860 --> 00:05:10,590
+and move the cell image
+creation code inside of that
+
+93
+00:05:10,590 --> 00:05:13,370
+if let block.
+
+94
+00:05:13,370 --> 00:05:16,570
+Then we can use the unwrapped
+image name from the variable i
+
+95
+00:05:16,570 --> 00:05:21,360
+and that will show the right
+image view in the cell.
+
+96
+00:05:21,360 --> 00:05:23,890
+Next, down in the prepare
+for segue function,
+
+97
+00:05:23,890 --> 00:05:26,250
+we can just pass a product
+object over, instead
+
+98
+00:05:26,250 --> 00:05:31,480
+of a product name string,
+and pulled the product
+
+99
+00:05:31,480 --> 00:05:32,844
+from the products array.
+
+100
+00:05:32,844 --> 00:05:35,010
+But we still get an error,
+because the product view
+
+101
+00:05:35,010 --> 00:05:38,790
+controller still doesn't
+have the right variable set.
+
+102
+00:05:38,790 --> 00:05:40,830
+So, if we go into the
+product view controller,
+
+103
+00:05:40,830 --> 00:05:44,240
+we can change our product name
+variable to just Product
+
+104
+00:05:44,240 --> 00:05:46,270
+and instead of having
+a string as the type,
+
+105
+00:05:46,270 --> 00:05:47,710
+we'll use that product class.
+
+106
+00:05:52,300 --> 00:06:00,370
+Just like in the cell, we can
+unwrap that product object,
+
+107
+00:06:00,370 --> 00:06:05,530
+pull our label code inside
+of that unwrapped block,
+
+108
+00:06:05,530 --> 00:06:10,860
+and then grab p dot name
+as the text for the label.
+
+109
+00:06:10,860 --> 00:06:13,560
+Then, we can unwrap the image
+and copy the image view inside
+
+110
+00:06:13,560 --> 00:06:22,390
+of that block. 
+ Instead of the hard coded image
+
+111
+00:06:22,390 --> 00:06:24,680
+name we can just pass
+I, which is going to be
+
+112
+00:06:24,680 --> 00:06:26,256
+the unwrapped product image.
+
+113
+00:06:29,660 --> 00:06:33,780
+Now, if we build
+and run the app,
+
+114
+00:06:33,780 --> 00:06:35,420
+you can see we've
+got dynamic cell
+
+115
+00:06:35,420 --> 00:06:40,810
+images for each cell,
+dynamic cell text,
+
+116
+00:06:40,810 --> 00:06:42,880
+and when we tap on
+each one of the cells,
+
+117
+00:06:42,880 --> 00:06:45,049
+the correct text and
+correct product image
+
+118
+00:06:45,049 --> 00:06:46,715
+is shown in the product
+view controller.
+
+119
+00:06:54,274 --> 00:06:55,190
+And there you have it.
+
+120
+00:06:55,190 --> 00:06:57,930
+Now we're passing only one
+object from our Products table
+
+121
+00:06:57,930 --> 00:07:00,830
+view controller, over to
+the product view controller,
+
+122
+00:07:00,830 --> 00:07:03,600
+and we're able to read
+from that object, any place
+
+123
+00:07:03,600 --> 00:07:04,948
+that we need to display data.
+
+124
+00:07:08,090 --> 00:07:10,670
+So, now it's your turn, to
+go try adding a custom class
+
+125
+00:07:10,670 --> 00:07:12,496
+to hold your data
+in your project,
+
+126
+00:07:12,496 --> 00:07:13,870
+and take some
+challenges and I'll
+
+127
+00:07:13,870 --> 00:07:16,800
+see you in the wrap up video.
+
+128
+00:07:16,800 --> 00:07:19,490
+Screencasts!
+
+129
+00:07:19,490 --> 00:07:21,720
+Screencasts.
+
+130
+00:07:21,720 --> 00:07:22,630
+[INAUDIBLE]
+
+131
+00:07:22,630 --> 00:07:23,580
+Oh, screencasts.
+
+132
+00:07:23,580 --> 00:07:26,220
+I didn't see you there,
+have you been here all along?
+
+133
+00:07:26,220 --> 00:07:27,360
+Screencasts.
+
+134
+00:07:27,360 --> 00:07:29,930
+I can't even do,
+like, fake angry ...
+
+135
+00:07:29,930 --> 00:07:31,950
+This is what I talk
+like when I'm angry.
+
+136
+00:07:31,950 --> 00:07:33,408
+If I ever talk to
+you like this, it
+
+137
+00:07:33,408 --> 00:07:35,156
+means I'm really angry with you.
+
+138
+00:07:35,156 --> 00:07:36,890
+[LAUGHING]
+
+139
+00:07:36,890 --> 00:07:37,840
+Screencasts.
+
+140
+00:07:37,840 --> 00:07:39,100
+[Surprised Jon] Screencasts!
+
+141
+00:07:39,100 --> 00:07:41,350
+Oh OOOH.
+
+142
+00:07:41,350 --> 00:07:42,380
+[Jon á la Steve Jobs] Screencasts.
+
+143
+00:07:42,380 --> 00:07:43,490
+[LAUGHING]
+
+144
+00:07:43,490 --> 00:07:44,810
+What were you holding?
+
+145
+00:07:44,810 --> 00:07:47,330
+Just upholding the screencasts.
+
+146
+00:07:47,330 --> 00:07:48,460
+UI label
+
+147
+00:07:48,460 --> 00:07:51,260
+Just in case you need that for an out take.
+
+148
+00:07:51,260 --> 00:07:52,810
+[LAUGHING]
+

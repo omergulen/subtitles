@@ -1,0 +1,466 @@
+﻿1
+00:00:04,470 --> 00:00:05,111
+Welcome back.
+
+2
+00:00:05,111 --> 00:00:06,610
+Now that we've got
+some cells, we're
+
+3
+00:00:06,610 --> 00:00:10,960
+going to put some
+content inside of them.
+
+4
+00:00:10,960 --> 00:00:12,820
+UI table view
+cells actually come
+
+5
+00:00:12,820 --> 00:00:15,120
+preloaded with a few
+subviews that we don't even
+
+6
+00:00:15,120 --> 00:00:16,790
+have to wire up
+in the storyboard.
+
+7
+00:00:16,790 --> 00:00:18,454
+They're already wired up for us.
+
+8
+00:00:21,180 --> 00:00:22,290
+One is called image view.
+
+9
+00:00:22,290 --> 00:00:24,270
+And it can be used to
+display a small image
+
+10
+00:00:24,270 --> 00:00:26,600
+in the left side of the cell.
+
+11
+00:00:26,600 --> 00:00:28,460
+Another is called text label.
+
+12
+00:00:28,460 --> 00:00:31,070
+And it's a UI label that
+stretches across the rest
+
+13
+00:00:31,070 --> 00:00:33,060
+of the length of the cell.
+
+14
+00:00:33,060 --> 00:00:34,650
+We can create the
+cell by writing
+
+15
+00:00:34,650 --> 00:00:36,690
+this line of code
+here, which looks
+
+16
+00:00:36,690 --> 00:00:38,900
+at the storyboard for
+any prototype cells
+
+17
+00:00:38,900 --> 00:00:41,690
+with a reuse identifier
+of product cell
+
+18
+00:00:41,690 --> 00:00:44,409
+and then creates a cell
+object when it finds one.
+
+19
+00:00:44,409 --> 00:00:45,950
+Now you might have
+noticed that we're
+
+20
+00:00:45,950 --> 00:00:49,332
+creating this variable
+with let instead of var.
+
+21
+00:00:49,332 --> 00:00:50,790
+If you have a
+variable where you're
+
+22
+00:00:50,790 --> 00:00:53,550
+going to change it
+after it's been created,
+
+23
+00:00:53,550 --> 00:00:55,420
+you want to use var.
+
+24
+00:00:55,420 --> 00:00:57,780
+But if not, you want
+to use let, because it
+
+25
+00:00:57,780 --> 00:01:00,410
+makes the variable immutable.
+
+26
+00:01:00,410 --> 00:01:03,470
+So let's try setting the
+cell's text label text
+
+27
+00:01:03,470 --> 00:01:05,780
+property to Hello friend.
+
+28
+00:01:05,780 --> 00:01:08,940
+If we try that, though, we get
+an error that looks like this.
+
+29
+00:01:08,940 --> 00:01:10,550
+What's going on here?
+
+30
+00:01:10,550 --> 00:01:12,980
+Let's take a look at the docs
+for the UI table view cell
+
+31
+00:01:12,980 --> 00:01:15,680
+to find out.
+
+32
+00:01:15,680 --> 00:01:17,960
+When we do that, we'll
+see something interesting.
+
+33
+00:01:17,960 --> 00:01:21,770
+The text label property in the
+cell isn't just a UI label.
+
+34
+00:01:21,770 --> 00:01:24,630
+It's a UI label with a
+question mark after it.
+
+35
+00:01:24,630 --> 00:01:27,860
+That question mark means
+that this label is optional.
+
+36
+00:01:27,860 --> 00:01:30,960
+It may or may not exist.
+
+37
+00:01:30,960 --> 00:01:32,740
+So what would that
+mean if the text label
+
+38
+00:01:32,740 --> 00:01:34,980
+property didn't exist?
+
+39
+00:01:34,980 --> 00:01:37,800
+That would mean you'd
+still have a cell object.
+
+40
+00:01:37,800 --> 00:01:40,740
+The text label property
+wouldn't exist,
+
+41
+00:01:40,740 --> 00:01:43,770
+which means the text property
+of it wouldn't exist.
+
+42
+00:01:43,770 --> 00:01:46,576
+So trying to set it
+would crash the app.
+
+43
+00:01:46,576 --> 00:01:48,200
+This could actually
+happen because it's
+
+44
+00:01:48,200 --> 00:01:51,280
+possible to create a custom cell
+that doesn't have a text label
+
+45
+00:01:51,280 --> 00:01:53,070
+property.
+
+46
+00:01:53,070 --> 00:01:55,920
+That's why Swift has a way
+to mark types as optional.
+
+47
+00:01:55,920 --> 00:01:58,320
+It's a way to say the data
+could or could not exist.
+
+48
+00:02:01,330 --> 00:02:03,410
+Because the text
+label is optional,
+
+49
+00:02:03,410 --> 00:02:06,340
+we first have to check if
+it exists before we try
+
+50
+00:02:06,340 --> 00:02:08,930
+to set the text property on it.
+
+51
+00:02:08,930 --> 00:02:11,820
+And one way we can do that
+is with a conditional.
+
+52
+00:02:11,820 --> 00:02:15,080
+We can check if cell dot
+text label is not nil
+
+53
+00:02:15,080 --> 00:02:16,700
+and then set the text.
+
+54
+00:02:16,700 --> 00:02:18,240
+But inside of the
+conditional, we'll
+
+55
+00:02:18,240 --> 00:02:22,290
+need to add an exclamation
+point after the dot text label.
+
+56
+00:02:22,290 --> 00:02:23,940
+This is called force unwrapping.
+
+57
+00:02:23,940 --> 00:02:25,610
+And it's basically
+saying, trust me,
+
+58
+00:02:25,610 --> 00:02:27,860
+I'm absolutely sure this
+optional variable has
+
+59
+00:02:27,860 --> 00:02:29,240
+a value that's not nil.
+
+60
+00:02:29,240 --> 00:02:31,684
+So just use it like it exists.
+
+61
+00:02:31,684 --> 00:02:33,350
+There's an even better
+way to write this
+
+62
+00:02:33,350 --> 00:02:35,660
+without using a conditional
+using something called
+
+63
+00:02:35,660 --> 00:02:36,960
+optional chaining.
+
+64
+00:02:36,960 --> 00:02:38,780
+And that looks like this.
+
+65
+00:02:38,780 --> 00:02:41,940
+We just write cell dot text
+label with a question mark
+
+66
+00:02:41,940 --> 00:02:45,610
+after it dot text
+equals a string.
+
+67
+00:02:45,610 --> 00:02:48,090
+Adding that question mark
+after an optional property
+
+68
+00:02:48,090 --> 00:02:50,870
+means first check
+if this exists.
+
+69
+00:02:50,870 --> 00:02:53,550
+If it does exist, we'll continue
+running this line of code
+
+70
+00:02:53,550 --> 00:02:54,940
+and setting the text.
+
+71
+00:02:54,940 --> 00:02:57,850
+And if it doesn't exist, we'll
+stop running the line of code
+
+72
+00:02:57,850 --> 00:03:02,000
+right there, thus
+avoiding a crash.
+
+73
+00:03:02,000 --> 00:03:05,710
+If we put that updated code back
+in our cell creation function,
+
+74
+00:03:05,710 --> 00:03:08,070
+we can see that we've now
+got five cells that all
+
+75
+00:03:08,070 --> 00:03:10,900
+have the text Hello friend.
+
+76
+00:03:10,900 --> 00:03:13,600
+The cell's image view
+property is also optional.
+
+77
+00:03:13,600 --> 00:03:16,130
+So we can set it the same
+way by adding a question mark
+
+78
+00:03:16,130 --> 00:03:18,380
+after the image view property.
+
+79
+00:03:18,380 --> 00:03:20,040
+Then we just set
+that image property
+
+80
+00:03:20,040 --> 00:03:22,610
+to a UI image, named
+something that matches
+
+81
+00:03:22,610 --> 00:03:24,740
+an image in our asset catalog.
+
+82
+00:03:24,740 --> 00:03:27,110
+Here, we're setting
+it to image cell1,
+
+83
+00:03:27,110 --> 00:03:29,880
+because that's something we
+just added to our asset catalog.
+
+84
+00:03:29,880 --> 00:03:31,311
+And you can see the result here.
+
+85
+00:03:34,020 --> 00:03:35,930
+Now let's jump back
+into Xcode really quick
+
+86
+00:03:35,930 --> 00:03:40,669
+to see how we can customize
+cells in the storyboard.
+
+87
+00:03:40,669 --> 00:03:42,960
+We can actually adjust some
+properties of the prototype
+
+88
+00:03:42,960 --> 00:03:44,910
+cell from the storyboard.
+
+89
+00:03:44,910 --> 00:03:46,634
+For example, if we
+click on the cell,
+
+90
+00:03:46,634 --> 00:03:48,550
+we can click and drag
+the anchor at the bottom
+
+91
+00:03:48,550 --> 00:03:52,420
+to make the height
+of the cell bigger.
+
+92
+00:03:52,420 --> 00:03:54,074
+We'll set it to 100 points high.
+
+93
+00:03:54,074 --> 00:03:55,490
+And that should
+let the cell image
+
+94
+00:03:55,490 --> 00:03:59,355
+display its full resolution
+if we build and run again.
+
+95
+00:04:02,880 --> 00:04:04,990
+Now you can see that
+the cell height has changed.
+
+96
+00:04:04,990 --> 00:04:09,140
+And the image fits nicely
+in there without resizing.
+
+97
+00:04:09,140 --> 00:04:12,049
+So why don't you try displaying
+some dynamic data in your cells
+
+98
+00:04:12,049 --> 00:04:13,090
+and take some challenges?
+
+99
+00:04:13,090 --> 00:04:15,707
+And I'll see you
+in the next level.
+

@@ -1,0 +1,846 @@
+﻿1
+00:00:00,000 --> 00:00:01,100
+[MUSIC PLAYING]
+
+2
+00:00:01,100 --> 00:00:03,360
+[SINGING] Starting back in
+the machine age,
+
+3
+00:00:03,360 --> 00:00:05,820
+the telephone had
+just taken the stage.
+
+4
+00:00:05,820 --> 00:00:08,060
+No one had predicted
+its acceleration,
+
+5
+00:00:08,060 --> 00:00:10,440
+evolving all of
+our communication.
+
+6
+00:00:10,440 --> 00:00:14,110
+Today we build with storyboards
+ Use Xcode projects
+
+7
+00:00:14,110 --> 00:00:15,160
+where they're stored.
+
+8
+00:00:15,160 --> 00:00:18,340
+Controllers with scroll,navigate, and tables
+ Outlets,
+
+9
+00:00:18,340 --> 00:00:20,000
+and actions, buttons and labels.
+
+10
+00:00:20,000 --> 00:00:23,445
+To code a phone is a learned
+gift with the App Evolution
+
+11
+00:00:23,445 --> 00:00:23,945
+with Swift.
+
+12
+00:00:27,980 --> 00:00:30,139
+Welcome back to App
+Evolution with Swift.
+
+13
+00:00:30,139 --> 00:00:31,930
+In this level, we'll
+look at how to display
+
+14
+00:00:31,930 --> 00:00:33,480
+lists of data in tables.
+
+15
+00:00:36,260 --> 00:00:39,580
+Dropping labels and image views
+directly under the main view,
+
+16
+00:00:39,580 --> 00:00:41,640
+makes sense to
+display our content,
+
+17
+00:00:41,640 --> 00:00:44,200
+until we have something that
+would naturally appear better
+
+18
+00:00:44,200 --> 00:00:47,120
+in a list, like
+this list of phones.
+
+19
+00:00:47,120 --> 00:00:48,550
+In this case, it
+makes more sense
+
+20
+00:00:48,550 --> 00:00:51,650
+to use a Table View,
+instead of a normal view,
+
+21
+00:00:51,650 --> 00:00:53,960
+and we'll hook that up to
+a Table View Controller,
+
+22
+00:00:53,960 --> 00:00:57,220
+instead of a normal
+view controller.
+
+23
+00:00:57,220 --> 00:00:59,840
+A Table View Controller is
+just a special view controller
+
+24
+00:00:59,840 --> 00:01:01,340
+object that has
+support for working
+
+25
+00:01:01,340 --> 00:01:03,900
+with Table Views built in.
+
+26
+00:01:03,900 --> 00:01:06,030
+The main view of a
+Table View Controller
+
+27
+00:01:06,030 --> 00:01:09,020
+is a special object
+called, Table View,
+
+28
+00:01:09,020 --> 00:01:12,390
+and Table Views have subviews,
+just like view controllers do.
+
+29
+00:01:12,390 --> 00:01:15,610
+But those subviews
+are called table cells,
+
+30
+00:01:15,610 --> 00:01:18,100
+any normal subviews like
+labels and image views,
+
+31
+00:01:18,100 --> 00:01:21,730
+then go inside of
+those table cells.
+
+32
+00:01:21,730 --> 00:01:24,360
+Let's jump back into Xcode to
+create our first Table View
+
+33
+00:01:24,360 --> 00:01:26,920
+controller.
+
+34
+00:01:26,920 --> 00:01:28,920
+To start, we'll turn
+off the assistant editor
+
+35
+00:01:28,920 --> 00:01:31,160
+and go back in the
+standard editor mode,
+
+36
+00:01:31,160 --> 00:01:34,620
+and we'll scroll over so we
+have some more room to work.
+
+37
+00:01:34,620 --> 00:01:37,110
+Then, we'll create a brand
+new scene, using a Table View
+
+38
+00:01:37,110 --> 00:01:42,970
+controller, instead of a
+regular view controller,
+
+39
+00:01:42,970 --> 00:01:47,480
+and line it up a bit next
+to the first view controller.
+
+40
+00:01:47,480 --> 00:01:49,740
+We'll also make sure it's
+the initial view controller,
+
+41
+00:01:49,740 --> 00:01:51,911
+so that we'll see it when
+we build and run the app.
+
+42
+00:01:55,970 --> 00:01:58,800
+Now, let's click on the
+Good As Old Phones folder.
+
+43
+00:01:58,800 --> 00:02:03,700
+Right click and choose
+New File, and again, we'll
+
+44
+00:02:03,700 --> 00:02:06,950
+use the Cocoa Touch class
+in the iOS source section.
+
+45
+00:02:06,950 --> 00:02:10,289
+Hit Next, but this time
+instead of subclassing UI view
+
+46
+00:02:10,289 --> 00:02:13,660
+controller, we'll subclass
+UI Table View Controller,
+
+47
+00:02:13,660 --> 00:02:18,427
+and we'll name this class
+products Table View Controller.
+
+48
+00:02:18,427 --> 00:02:20,760
+We don't need to create a zip
+file because we've already
+
+49
+00:02:20,760 --> 00:02:23,130
+got that in our
+storyboard and we'll
+
+50
+00:02:23,130 --> 00:02:25,310
+keep the language as Swift.
+
+51
+00:02:25,310 --> 00:02:28,280
+Then we'll hit Next, save
+it in our project folder.
+
+52
+00:02:31,470 --> 00:02:34,180
+And you'll notice, there's a
+ton of boilerplate code in table
+
+53
+00:02:34,180 --> 00:02:36,160
+view controllers,
+we're not going
+
+54
+00:02:36,160 --> 00:02:38,197
+to need most of this
+for this course,
+
+55
+00:02:38,197 --> 00:02:40,405
+so let's just delete all of
+it so we can start fresh.
+
+56
+00:02:46,849 --> 00:02:49,140
+Don't forget to leave that
+last curly brace, because it
+
+57
+00:02:49,140 --> 00:02:51,292
+closes out the class.
+
+58
+00:02:51,292 --> 00:02:52,750
+Back in the main
+storyboard, we'll
+
+59
+00:02:52,750 --> 00:02:54,890
+click on the table
+view controller scene
+
+60
+00:02:54,890 --> 00:02:57,890
+and go into the class
+inspector, and set our class
+
+61
+00:02:57,890 --> 00:03:04,140
+to products Table View
+controller, and hit Return.
+
+62
+00:03:04,140 --> 00:03:06,240
+And now the storyboard
+Table View Controller
+
+63
+00:03:06,240 --> 00:03:08,880
+is associated with our products
+Table View Controller Swift
+
+64
+00:03:08,880 --> 00:03:09,960
+file.
+
+65
+00:03:09,960 --> 00:03:11,530
+We need to do one
+more thing now,
+
+66
+00:03:11,530 --> 00:03:14,230
+though, you can see that
+there is already a prototype
+
+67
+00:03:14,230 --> 00:03:16,110
+cell in this Table View.
+
+68
+00:03:16,110 --> 00:03:19,080
+If we click it to select it and
+look at the Attributes panel
+
+69
+00:03:19,080 --> 00:03:23,020
+you'll see there's a
+field labeled Identifier.
+
+70
+00:03:23,020 --> 00:03:26,510
+We want to set that Identifier
+to product cell and that's
+
+71
+00:03:26,510 --> 00:03:29,230
+going to let us access this
+prototype cell in our Swift
+
+72
+00:03:29,230 --> 00:03:30,870
+file.
+
+73
+00:03:30,870 --> 00:03:33,820
+Let's jump back in the slides
+to talk about reuse identifiers
+
+74
+00:03:33,820 --> 00:03:37,660
+and how dynamic cells work.
+
+75
+00:03:37,660 --> 00:03:40,840
+Table cells are recycled,
+as they scroll off screen,
+
+76
+00:03:40,840 --> 00:03:43,480
+and the only new cells
+that ever get created,
+
+77
+00:03:43,480 --> 00:03:46,850
+are the very first ones, as
+the Table View first loads.
+
+78
+00:03:46,850 --> 00:03:48,690
+Every other cell that's
+created after that,
+
+79
+00:03:48,690 --> 00:03:51,800
+is just pulled out of
+that recycling queue.
+
+80
+00:03:51,800 --> 00:03:54,330
+Let's take a look
+at how this works.
+
+81
+00:03:54,330 --> 00:03:56,900
+On load, three new
+cells are created,
+
+82
+00:03:56,900 --> 00:04:02,120
+we label them A, B, and C. 
+As the Table View scrolls a bit,
+
+83
+00:04:02,120 --> 00:04:04,370
+now four unique
+cells are visible,
+
+84
+00:04:04,370 --> 00:04:06,750
+the original A, B,
+and C, but also,
+
+85
+00:04:06,750 --> 00:04:10,980
+cell D. So in our
+applications memory,
+
+86
+00:04:10,980 --> 00:04:15,410
+there's four cells loaded,
+then after some more scrolling,
+
+87
+00:04:15,410 --> 00:04:17,940
+cell A is no longer visible.
+
+88
+00:04:17,940 --> 00:04:20,250
+But, rather than completely
+removing it from memory,
+
+89
+00:04:20,250 --> 00:04:22,670
+it gets placed in
+this recycling queue.
+
+90
+00:04:22,670 --> 00:04:27,690
+On screen only, cells
+B, C, and D are visible.
+
+91
+00:04:27,690 --> 00:04:31,690
+After even more scrolling, a new
+cell is ready to be displayed,
+
+92
+00:04:31,690 --> 00:04:34,620
+but there's no need to create
+a brand new cell object
+
+93
+00:04:34,620 --> 00:04:38,710
+because the recycled cell
+A can just be re-used.
+
+94
+00:04:38,710 --> 00:04:41,940
+At the end here, there are
+still only four cells in memory,
+
+95
+00:04:41,940 --> 00:04:45,200
+even though our Table View has
+displayed a total of five cells,
+
+96
+00:04:45,200 --> 00:04:47,230
+with different content.
+
+97
+00:04:47,230 --> 00:04:48,960
+This is a simple
+example, but think
+
+98
+00:04:48,960 --> 00:04:50,890
+of a Table View in
+something like the music
+
+99
+00:04:50,890 --> 00:04:54,640
+app, where you might have
+300 or 400 rows of albums.
+
+100
+00:04:54,640 --> 00:04:57,880
+It wouldn't be memory efficient
+to load all 300 of those cells
+
+101
+00:04:57,880 --> 00:05:00,260
+into memory, so this
+recycling approach,
+
+102
+00:05:00,260 --> 00:05:02,720
+make's sure that there's only
+a few cells that are ever
+
+103
+00:05:02,720 --> 00:05:06,470
+created, and just recycled
+with new content and new data,
+
+104
+00:05:06,470 --> 00:05:08,102
+as the table scrolls.
+
+105
+00:05:08,102 --> 00:05:09,310
+It's really memory efficient.
+
+106
+00:05:12,060 --> 00:05:14,180
+Because these
+cells get recycled,
+
+107
+00:05:14,180 --> 00:05:17,540
+unlike normal view controllers,
+the content for a table cell
+
+108
+00:05:17,540 --> 00:05:19,930
+needs to be set in code.
+
+109
+00:05:19,930 --> 00:05:22,250
+UI Table View Controller
+is like a view controller,
+
+110
+00:05:22,250 --> 00:05:24,850
+with table specific
+functions and two
+
+111
+00:05:24,850 --> 00:05:28,050
+of those that we'll use, and
+are automatically run for us,
+
+112
+00:05:28,050 --> 00:05:31,571
+are the functions TableView
+NumberOfRowsInSection,
+
+113
+00:05:31,571 --> 00:05:33,070
+and TableView
+CellForRowAtIndexPath.
+
+114
+00:05:35,720 --> 00:05:39,050
+The first sets the number
+of rows in the Table View,
+
+115
+00:05:39,050 --> 00:05:40,910
+and the second is
+responsible for creating
+
+116
+00:05:40,910 --> 00:05:44,990
+one cell for each row.
+
+117
+00:05:44,990 --> 00:05:47,610
+This function looks really
+long, so let's break apart
+
+118
+00:05:47,610 --> 00:05:50,330
+what it means.
+
+119
+00:05:50,330 --> 00:05:53,050
+First, is the name of
+the function Table View,
+
+120
+00:05:53,050 --> 00:05:55,340
+and there's
+parentheses after it,
+
+121
+00:05:55,340 --> 00:05:58,810
+inside of those parentheses,
+are two parameters as variables,
+
+122
+00:05:58,810 --> 00:06:01,650
+which are then available inside
+of the body of the function,
+
+123
+00:06:01,650 --> 00:06:03,660
+so we can use them,
+if we need them.
+
+124
+00:06:03,660 --> 00:06:07,870
+The variables table
+view and section,
+
+125
+00:06:07,870 --> 00:06:10,640
+the arrow end at the end
+means that the function
+
+126
+00:06:10,640 --> 00:06:13,274
+should return a number.
+
+127
+00:06:13,274 --> 00:06:15,440
+Now you might have
+noticed something strange
+
+128
+00:06:15,440 --> 00:06:18,790
+about these two functions—
+they both have the same name,
+
+129
+00:06:18,790 --> 00:06:19,831
+TableView.
+
+130
+00:06:19,831 --> 00:06:21,580
+But, they're actually
+different functions,
+
+131
+00:06:21,580 --> 00:06:24,060
+because they have different
+parameter names inside
+
+132
+00:06:24,060 --> 00:06:25,900
+of the function declaration.
+
+133
+00:06:25,900 --> 00:06:28,400
+The first one has the
+parameter names TableView
+
+134
+00:06:28,400 --> 00:06:31,330
+and NumberOfRowsInSection,
+and the second
+
+135
+00:06:31,330 --> 00:06:35,607
+has the parameters TableView
+and CellForRowAtIndexPath.
+
+136
+00:06:35,607 --> 00:06:37,440
+Because of that they're
+different functions
+
+137
+00:06:37,440 --> 00:06:41,180
+and they perform
+different operations.
+
+138
+00:06:41,180 --> 00:06:44,250
+Back in the TableView
+NumberOfRowsInSection version
+
+139
+00:06:44,250 --> 00:06:47,610
+of the function, we
+need to return an Int.
+
+140
+00:06:47,610 --> 00:06:49,480
+So, if we start simple
+and do just that,
+
+141
+00:06:49,480 --> 00:06:53,270
+we can write return five in
+the body of this function
+
+142
+00:06:53,270 --> 00:06:57,070
+and that means this TableView
+view will have five rows.
+
+143
+00:06:57,070 --> 00:06:59,450
+Now on to our second
+Table View function,
+
+144
+00:06:59,450 --> 00:07:02,330
+the CellForRowAtIndexPath one.
+
+145
+00:07:02,330 --> 00:07:05,130
+This function runs one
+time for each number of rows
+
+146
+00:07:05,130 --> 00:07:08,970
+that we set in the function
+above, which was five.
+
+147
+00:07:08,970 --> 00:07:11,390
+Based on the arrow at the end
+of the function, we can see
+
+148
+00:07:11,390 --> 00:07:16,520
+this one should return a
+UI Table View cell object.
+
+149
+00:07:16,520 --> 00:07:19,220
+We can create the cell by
+writing this line of code,
+
+150
+00:07:19,220 --> 00:07:21,930
+which looks at the storyboard
+for any prototype cells
+
+151
+00:07:21,930 --> 00:07:24,710
+with a re-use identifier
+of product cell
+
+152
+00:07:24,710 --> 00:07:27,500
+and then creates a cell
+object when it finds one.
+
+153
+00:07:27,500 --> 00:07:29,820
+Remember, that we set that
+re-use identifier back
+
+154
+00:07:29,820 --> 00:07:32,640
+in Xcode. Then we
+can just return
+
+155
+00:07:32,640 --> 00:07:34,070
+our new cell from the function.
+
+156
+00:07:37,607 --> 00:07:39,690
+Now we got our code, in
+the Table View Controller,
+
+157
+00:07:39,690 --> 00:07:44,520
+to create five rows and five
+cells to go in those rows.
+
+158
+00:07:44,520 --> 00:07:45,950
+But if we build
+and run right now,
+
+159
+00:07:45,950 --> 00:07:48,860
+our Table View is
+a bit confusing,
+
+160
+00:07:48,860 --> 00:07:51,300
+it looks like it's showing
+way more than five rows,
+
+161
+00:07:51,300 --> 00:07:54,630
+but that's not accurate.
+
+162
+00:07:54,630 --> 00:07:56,630
+It's a little bit easier
+to see what's going on,
+
+163
+00:07:56,630 --> 00:08:00,860
+by stopping the app,
+clicking on the Table View,
+
+164
+00:08:00,860 --> 00:08:03,740
+and in the Attributes inspector,
+changing the style from plain
+
+165
+00:08:03,740 --> 00:08:06,270
+to grouped.
+
+166
+00:08:06,270 --> 00:08:07,790
+When we do that
+we can even see
+
+167
+00:08:07,790 --> 00:08:10,440
+that the prototype cell
+looks a bit different.
+
+168
+00:08:10,440 --> 00:08:12,740
+It looks like the row
+is isolated, with gray
+
+169
+00:08:12,740 --> 00:08:15,200
+above and below it.
+
+170
+00:08:15,200 --> 00:08:18,910
+Now when we build and
+run the app again.
+
+171
+00:08:18,910 --> 00:08:23,220
+We can clearly see that the
+Table View has five cells.
+
+172
+00:08:23,220 --> 00:08:25,370
+They don't look like
+much yet, but before we
+
+173
+00:08:25,370 --> 00:08:28,356
+go any further, why don't you
+practice creating some cells
+
+174
+00:08:28,356 --> 00:08:29,730
+and take some
+challenges? And I'll
+
+175
+00:08:29,730 --> 00:08:31,940
+see you in the next section.
+

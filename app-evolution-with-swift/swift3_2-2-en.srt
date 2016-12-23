@@ -1,0 +1,273 @@
+﻿1
+00:00:02,630 --> 00:00:03,425
+Welcome back.
+
+2
+00:00:03,425 --> 00:00:05,050
+In this section,
+we're going to wire up
+
+3
+00:00:05,050 --> 00:00:10,220
+a button to trigger a
+function in our Swift file.
+
+4
+00:00:10,220 --> 00:00:12,920
+And the function is going to
+print a message to the console
+
+5
+00:00:12,920 --> 00:00:14,450
+every time that
+we tap the button.
+
+6
+00:00:19,300 --> 00:00:21,790
+To do this, we'll create
+a storyboard action,
+
+7
+00:00:21,790 --> 00:00:24,990
+which sends interaction
+information from a view back
+
+8
+00:00:24,990 --> 00:00:25,910
+to a view controller.
+
+9
+00:00:28,480 --> 00:00:30,650
+Outlets meant that we can
+have a controller change
+
+10
+00:00:30,650 --> 00:00:32,950
+the data that's
+displayed, but Actions
+
+11
+00:00:32,950 --> 00:00:34,730
+mean that we can
+have a user event run
+
+12
+00:00:34,730 --> 00:00:37,510
+some code in the controller.
+
+13
+00:00:37,510 --> 00:00:40,120
+Let's jump back into Xcode
+to set this action up.
+
+14
+00:00:42,670 --> 00:00:45,225
+Creating an action is a lot
+like creating an outlet.
+
+15
+00:00:45,225 --> 00:00:46,600
+We'll click on
+the object that we
+
+16
+00:00:46,600 --> 00:00:48,750
+want to receive the
+action, and control click
+
+17
+00:00:48,750 --> 00:00:52,010
+and drag down to the Swift file.
+
+18
+00:00:52,010 --> 00:00:55,170
+But instead of putting this
+new code up top by the Outlets,
+
+19
+00:00:55,170 --> 00:00:57,920
+we'll go to the very last
+line before the closing curly
+
+20
+00:00:57,920 --> 00:01:00,400
+bracket and let go of our mouse.
+
+21
+00:01:00,400 --> 00:01:02,070
+In the helper that
+pops up, we'll
+
+22
+00:01:02,070 --> 00:01:05,780
+change the connection
+from Outlet to Action.
+
+23
+00:01:05,780 --> 00:01:09,670
+The name we'll give
+is addToCartPressed,
+
+24
+00:01:09,670 --> 00:01:13,000
+the type will be
+AnyObject, and the event
+
+25
+00:01:13,000 --> 00:01:15,622
+should be Touch Up Inside.
+
+26
+00:01:15,622 --> 00:01:17,080
+There's a bunch of
+different events
+
+27
+00:01:17,080 --> 00:01:18,830
+you can choose from
+depending on what user
+
+28
+00:01:18,830 --> 00:01:20,850
+action you want to respond to.
+
+29
+00:01:20,850 --> 00:01:22,955
+For buttons, Touch Up
+Inside makes the most sense
+
+30
+00:01:22,955 --> 00:01:25,080
+because it means that the
+user tapped on the button
+
+31
+00:01:25,080 --> 00:01:26,640
+with their finger
+and then let go,
+
+32
+00:01:26,640 --> 00:01:30,980
+or touched up, inside of
+the button's hit area.
+
+33
+00:01:30,980 --> 00:01:34,060
+We'll leave the
+argument as Sender.
+
+34
+00:01:34,060 --> 00:01:36,740
+When we hit Connect, you can see
+that an entirely new function
+
+35
+00:01:36,740 --> 00:01:40,300
+got added with the @IBAction
+keyword in front of it.
+
+36
+00:01:40,300 --> 00:01:44,900
+Let's jump back into some
+slides to see how this works.
+
+37
+00:01:44,900 --> 00:01:47,260
+Here we can see the
+addToCartPressed function
+
+38
+00:01:47,260 --> 00:01:49,520
+that we created
+in our Swift file.
+
+39
+00:01:49,520 --> 00:01:53,830
+Every time we tap the button,
+this function will run.
+
+40
+00:01:53,830 --> 00:01:56,130
+You might've also
+noticed the arrow Void
+
+41
+00:01:56,130 --> 00:01:57,770
+at the end of this function.
+
+42
+00:01:57,770 --> 00:02:00,080
+That just means it
+doesn't return any values
+
+43
+00:02:00,080 --> 00:02:01,570
+after it's done running.
+
+44
+00:02:01,570 --> 00:02:05,450
+It just runs whatever code is
+inside of it, and then stops.
+
+45
+00:02:05,450 --> 00:02:07,430
+View Did Load was
+like that, too,
+
+46
+00:02:07,430 --> 00:02:09,639
+but being explicit
+about the return type
+
+47
+00:02:09,639 --> 00:02:11,670
+can help you quickly
+see what a function is
+
+48
+00:02:11,670 --> 00:02:14,180
+responsible for doing.
+
+49
+00:02:14,180 --> 00:02:17,580
+If we add the Print function
+with the message "Button tapped,"
+
+50
+00:02:17,580 --> 00:02:19,540
+whenever we tap the
+button, that message
+
+51
+00:02:19,540 --> 00:02:22,500
+will be logged to the console.
+
+52
+00:02:22,500 --> 00:02:25,700
+If we build and run our app and
+tap on the Add to Cart button,
+
+53
+00:02:25,700 --> 00:02:27,770
+we'll see that the
+console pops up and logs
+
+54
+00:02:27,770 --> 00:02:33,080
+the message "Button tapped"
+every time we tap the button.
+
+55
+00:02:33,080 --> 00:02:35,700
+Now it's your turn to create
+an action in your project
+
+56
+00:02:35,700 --> 00:02:38,834
+and take some challenges, and
+I'll see you in the next level.
+
+57
+00:02:38,834 --> 00:02:39,334
+.
+

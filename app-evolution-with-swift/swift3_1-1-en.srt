@@ -1,0 +1,863 @@
+﻿1
+00:00:02,570 --> 00:00:04,780
+Welcome to App
+Evolution with Swift.
+
+2
+00:00:04,780 --> 00:00:05,720
+I'm Jon Friskics.
+
+3
+00:00:05,720 --> 00:00:07,303
+And in this course,
+you'll be learning
+
+4
+00:00:07,303 --> 00:00:11,600
+how to build your first
+simple iOS app with Swift.
+
+5
+00:00:11,600 --> 00:00:14,070
+Swift is a programming language
+that Apple introduced in
+
+6
+00:00:14,070 --> 00:00:19,230
+June 2014 for creating
+iOS and OS X apps.
+
+7
+00:00:19,230 --> 00:00:21,670
+Apple has been updating Swift pretty regularly
+
+8
+00:00:21,670 --> 00:00:23,650
+with new features and fixes.
+
+9
+00:00:23,650 --> 00:00:25,650
+And as of the recording
+of this course,
+
+10
+00:00:25,650 --> 00:00:29,020
+Swift is at version 3.0.
+
+11
+00:00:29,020 --> 00:00:31,350
+You can still make
+apps with Objective-C.
+
+12
+00:00:31,350 --> 00:00:33,790
+But if you're just starting
+to learn iOS development right
+
+13
+00:00:33,790 --> 00:00:36,725
+now, it probably makes sense
+to learn with Swift first.
+
+14
+00:00:39,540 --> 00:00:41,770
+In this course, the simple
+app we're going to build
+
+15
+00:00:41,770 --> 00:00:43,970
+is for the fictional
+Good As Old phone
+
+16
+00:00:43,970 --> 00:00:46,510
+store, an antique
+phone shop that sells
+
+17
+00:00:46,510 --> 00:00:49,130
+nothing but old telephones.
+
+18
+00:00:49,130 --> 00:00:52,650
+This app will have the ability
+to view a list of old phones,
+
+19
+00:00:52,650 --> 00:00:55,630
+tap into that list to get
+details about each phone,
+
+20
+00:00:55,630 --> 00:00:59,710
+and display a message when the
+Add to Cart button is tapped.
+
+21
+00:00:59,710 --> 00:01:01,330
+We'll also have a
+contact screen that
+
+22
+00:01:01,330 --> 00:01:03,870
+contains more content than
+will fit on the device
+
+23
+00:01:03,870 --> 00:01:07,290
+that you need to
+scroll through to read.
+
+24
+00:01:07,290 --> 00:01:09,280
+As we make the different
+parts of this app,
+
+25
+00:01:09,280 --> 00:01:11,610
+we're going to be showing
+you short screencasts of how
+
+26
+00:01:11,610 --> 00:01:15,640
+to work in Xcode, which is the
+program that you write apps in.
+
+27
+00:01:15,640 --> 00:01:18,880
+So feel free to pause the video
+and head over to the Mac App
+
+28
+00:01:18,880 --> 00:01:21,510
+Store to download Xcode
+so you can follow along
+
+29
+00:01:21,510 --> 00:01:23,740
+on your own computer.
+
+30
+00:01:23,740 --> 00:01:25,369
+Xcode does only run on the Mac.
+
+31
+00:01:25,369 --> 00:01:27,410
+So if you're following
+along with all of the code
+
+32
+00:01:27,410 --> 00:01:29,560
+that we're writing, you
+will need a Mac in order
+
+33
+00:01:29,560 --> 00:01:31,500
+to be able to build an app.
+
+34
+00:01:31,500 --> 00:01:33,980
+If you're using a PC
+or other computer,
+
+35
+00:01:33,980 --> 00:01:38,480
+you can still watch the videos
+to see how all of this works.
+
+36
+00:01:38,480 --> 00:01:40,740
+[SINGING] Starting back
+in the machine age,
+
+37
+00:01:40,740 --> 00:01:43,210
+the telephone had
+just taken the stage.
+
+38
+00:01:43,210 --> 00:01:45,430
+No one predicted
+its acceleration,
+
+39
+00:01:45,430 --> 00:01:47,810
+evolving all of
+our communication.
+
+40
+00:01:47,810 --> 00:01:51,480
+Today we build with
+storyboard, use Xcode projects
+
+41
+00:01:51,480 --> 00:01:53,030
+where they're
+stored. Controllers
+
+42
+00:01:53,030 --> 00:01:56,596
+with scroll, navigating tables,
+outlets, actions, buttons,
+
+43
+00:01:56,596 --> 00:01:57,095
+and labels.
+
+44
+00:01:57,095 --> 00:02:00,760
+To code a phone is a learned
+gift with the App Evolution
+
+45
+00:02:00,760 --> 00:02:01,260
+with Swift.
+
+46
+00:02:07,340 --> 00:02:08,940
+Before we start
+making an app, there's
+
+47
+00:02:08,940 --> 00:02:11,260
+a very important
+prerequisite that we need: 
+
+48
+00:02:11,260 --> 00:02:13,790
+to understand how
+to make a sandwich.
+
+49
+00:02:13,790 --> 00:02:16,160
+No, really, stay with me.
+
+50
+00:02:16,160 --> 00:02:19,830
+Making iOS apps is actually
+a lot like making a sandwich.
+
+51
+00:02:19,830 --> 00:02:23,670
+You need a pile of ingredients,
+like bread, onions, and cheese,
+
+52
+00:02:23,670 --> 00:02:25,750
+maybe even some meat.
+
+53
+00:02:25,750 --> 00:02:28,660
+You also need a place to
+prepare those ingredients,
+
+54
+00:02:28,660 --> 00:02:31,370
+different utensils like
+a cutting board, knives,
+
+55
+00:02:31,370 --> 00:02:33,730
+and forks, maybe
+even a plastic bag
+
+56
+00:02:33,730 --> 00:02:36,210
+to carry it with
+you after it's made.
+
+57
+00:02:36,210 --> 00:02:38,230
+And not every
+sandwich is the same.
+
+58
+00:02:38,230 --> 00:02:40,650
+But unless you can tell the
+chef how to make it different,
+
+59
+00:02:40,650 --> 00:02:44,210
+you won't get the
+sandwich you want.
+
+60
+00:02:44,210 --> 00:02:48,190
+In this analogy, UIKit is like
+the parts of the sandwich.
+
+61
+00:02:48,190 --> 00:02:51,190
+It's a framework that contains
+templates for standardized ways
+
+62
+00:02:51,190 --> 00:02:55,895
+to display data in your app,
+like text, images, and buttons.
+
+63
+00:02:58,920 --> 00:03:01,660
+Xcode is like the
+kitchen and utensils.
+
+64
+00:03:01,660 --> 00:03:03,980
+It contains all of the
+tools you need to assemble
+
+65
+00:03:03,980 --> 00:03:05,811
+the parts of the sandwich.
+
+66
+00:03:05,811 --> 00:03:08,060
+It's a free program that's
+provided by Apple that they
+
+67
+00:03:08,060 --> 00:03:11,440
+update a few times each year.
+
+68
+00:03:11,440 --> 00:03:14,490
+And Swift is the instructions
+for making the sandwich.
+
+69
+00:03:14,490 --> 00:03:18,900
+You'll write Swift code in
+Xcode that tells parts of UIKit
+
+70
+00:03:18,900 --> 00:03:21,170
+how to display your data.
+
+71
+00:03:21,170 --> 00:03:22,130
+And the chef?
+
+72
+00:03:22,130 --> 00:03:23,566
+Well, that's you.
+
+73
+00:03:23,566 --> 00:03:25,440
+So let's get started
+by seeing how we
+
+74
+00:03:25,440 --> 00:03:29,230
+can create a project in Xcode.
+
+75
+00:03:29,230 --> 00:03:30,730
+After you've
+downloaded Xcode, you
+
+76
+00:03:30,730 --> 00:03:33,800
+can open it by double-clicking
+on the Xcode app, Alias,
+
+77
+00:03:33,800 --> 00:03:36,490
+or by finding it in your
+applications folder.
+
+78
+00:03:36,490 --> 00:03:38,130
+In the splash
+screen that pops up,
+
+79
+00:03:38,130 --> 00:03:41,667
+there's an option for
+creating a new Xcode project.
+
+80
+00:03:41,667 --> 00:03:44,000
+The first thing you're asked
+is to choose a new template
+
+81
+00:03:44,000 --> 00:03:45,400
+for your project.
+
+82
+00:03:45,400 --> 00:03:47,830
+Templates contain some common
+starting configurations
+
+83
+00:03:47,830 --> 00:03:49,419
+for different kinds of apps.
+
+84
+00:03:49,419 --> 00:03:50,960
+For the app we're
+making today, we're
+
+85
+00:03:50,960 --> 00:03:53,780
+going to choose Single View
+Application because that's
+
+86
+00:03:53,780 --> 00:03:56,520
+the closest one to a bare
+bones, default template,
+
+87
+00:03:56,520 --> 00:03:59,220
+and it will be a good
+place for us to start.
+
+88
+00:03:59,220 --> 00:04:01,260
+Once we click Next,
+we're shown a screen
+
+89
+00:04:01,260 --> 00:04:03,381
+where we can set some
+options for our project.
+
+90
+00:04:03,381 --> 00:04:05,380
+This is where we want to
+set the name of our app
+
+91
+00:04:05,380 --> 00:04:06,687
+for the product name.
+
+92
+00:04:06,687 --> 00:04:08,020
+Here we'll type GoodAsOldPhones.
+
+93
+00:04:11,010 --> 00:04:13,430
+You want to set the organization
+name, which is usually
+
+94
+00:04:13,430 --> 00:04:16,140
+just your company name,
+and then the organization
+
+95
+00:04:16,140 --> 00:04:20,480
+identifier, which is usually
+in the form of com.companyname.
+
+96
+00:04:20,480 --> 00:04:22,940
+That automatically generates
+a bundle identifier,
+
+97
+00:04:22,940 --> 00:04:26,987
+which is what identifies your
+app as unique in the store.
+
+98
+00:04:26,987 --> 00:04:29,320
+We'll make sure we've got
+Swift selected in the language
+
+99
+00:04:29,320 --> 00:04:31,510
+dropdown.
+
+100
+00:04:31,510 --> 00:04:33,602
+And for the device,
+we'll choose iPhone.
+
+101
+00:04:33,602 --> 00:04:35,310
+That's because the
+app we're making today
+
+102
+00:04:35,310 --> 00:04:36,840
+is only going to
+be built to be run
+
+103
+00:04:36,840 --> 00:04:39,900
+on the iPhone, not a universal
+app that runs on iPhone
+
+104
+00:04:39,900 --> 00:04:42,710
+or iPad.
+
+105
+00:04:42,710 --> 00:04:44,690
+We'll also leave these
+three boxes unchecked
+
+106
+00:04:44,690 --> 00:04:47,840
+because we won't need any of
+these features in our app.
+
+107
+00:04:47,840 --> 00:04:49,770
+Once we click Next,
+we're asked where we
+
+108
+00:04:49,770 --> 00:04:51,264
+want to save this new project.
+
+109
+00:04:51,264 --> 00:04:52,680
+Here we'll save
+it on the desktop.
+
+110
+00:04:55,350 --> 00:04:59,320
+After hitting Create, we can see
+that Xcode opens up like this.
+
+111
+00:04:59,320 --> 00:05:00,930
+It might look kind
+of intimidating.
+
+112
+00:05:00,930 --> 00:05:02,480
+But the screen we
+see here is just
+
+113
+00:05:02,480 --> 00:05:04,987
+showing some general
+options for our application.
+
+114
+00:05:04,987 --> 00:05:07,070
+We don't even need to
+change any of these settings
+
+115
+00:05:07,070 --> 00:05:08,840
+to get started.
+
+116
+00:05:08,840 --> 00:05:11,760
+On the left, you'll see a panel
+with eight icons on the top.
+
+117
+00:05:11,760 --> 00:05:14,844
+And that first icon contains
+the project navigator.
+
+118
+00:05:14,844 --> 00:05:16,760
+This is where all of the
+files in your project
+
+119
+00:05:16,760 --> 00:05:17,780
+will be displayed.
+
+120
+00:05:17,780 --> 00:05:19,700
+And you can open up
+any one of those files
+
+121
+00:05:19,700 --> 00:05:22,880
+by single-clicking
+on the filename.
+
+122
+00:05:22,880 --> 00:05:26,320
+Right now we'll open
+up Main.storyboard.
+
+123
+00:05:26,320 --> 00:05:27,820
+And let's jump back
+into some slides
+
+124
+00:05:27,820 --> 00:05:31,850
+real quick to talk about
+what a storyboard is.
+
+125
+00:05:31,850 --> 00:05:33,830
+A storyboard is a way
+to visually lay out
+
+126
+00:05:33,830 --> 00:05:36,400
+the screens in your
+application as scenes
+
+127
+00:05:36,400 --> 00:05:38,890
+and create templates for
+different UI elements
+
+128
+00:05:38,890 --> 00:05:42,110
+that can later be filled
+in with real data.
+
+129
+00:05:42,110 --> 00:05:44,230
+You can also connect
+different scenes together
+
+130
+00:05:44,230 --> 00:05:46,930
+and model how the user will
+flow between them as they
+
+131
+00:05:46,930 --> 00:05:48,080
+interact with your app.
+
+132
+00:05:51,050 --> 00:05:54,110
+Each scene contains something
+called a view controller that
+
+133
+00:05:54,110 --> 00:05:56,390
+manages one main view.
+
+134
+00:05:56,390 --> 00:05:58,920
+And everything else that
+you see on the screen
+
+135
+00:05:58,920 --> 00:06:01,660
+goes inside of that main view.
+
+136
+00:06:01,660 --> 00:06:04,460
+Let's jump back into Xcode to
+play around with the main view
+
+137
+00:06:04,460 --> 00:06:07,490
+and see if we can change
+some of its properties.
+
+138
+00:06:07,490 --> 00:06:09,620
+To access the main view
+for this storyboard,
+
+139
+00:06:09,620 --> 00:06:12,580
+we need to look in the
+Storyboard Scene Editor panel.
+
+140
+00:06:12,580 --> 00:06:14,622
+If this panel isn't
+showing up for you,
+
+141
+00:06:14,622 --> 00:06:17,080
+you can click on this icon at
+the bottom left of the Editor
+
+142
+00:06:17,080 --> 00:06:21,302
+panel to expand and collapse it.
+
+143
+00:06:21,302 --> 00:06:22,760
+Then we can just
+click on the arrow
+
+144
+00:06:22,760 --> 00:06:24,779
+to expand the View
+Controller scene
+
+145
+00:06:24,779 --> 00:06:26,320
+and then click on
+the View Controller
+
+146
+00:06:26,320 --> 00:06:29,050
+to expand the View and
+Layout Guides inside of it.
+
+147
+00:06:33,080 --> 00:06:35,800
+The panel on the right is
+called the Inspector panel.
+
+148
+00:06:35,800 --> 00:06:37,930
+If you don't see it
+in your copy of Xcode,
+
+149
+00:06:37,930 --> 00:06:40,470
+you can click on this far
+right icon in the toolbar
+
+150
+00:06:40,470 --> 00:06:42,870
+to make it appear and disappear.
+
+151
+00:06:42,870 --> 00:06:45,060
+The Inspector panel
+contains six different ways
+
+152
+00:06:45,060 --> 00:06:47,440
+you can inspect the
+parts of your storyboard.
+
+153
+00:06:47,440 --> 00:06:49,650
+Right now we'll click on
+the fourth inspector, which
+
+154
+00:06:49,650 --> 00:06:51,740
+is the Attributes
+Inspector, and there's
+
+155
+00:06:51,740 --> 00:06:53,720
+an attribute for this
+view called Background.
+
+156
+00:06:56,520 --> 00:06:59,010
+If we click on the color
+here and pick a new color
+
+157
+00:06:59,010 --> 00:07:00,940
+from the color
+picker that comes up,
+
+158
+00:07:00,940 --> 00:07:05,321
+we can see that our view
+changes color in the storyboard.
+
+159
+00:07:05,321 --> 00:07:06,820
+We can run this app
+right now to see
+
+160
+00:07:06,820 --> 00:07:09,100
+what it looks like on this
+computer using an iPhone
+
+161
+00:07:09,100 --> 00:07:10,852
+simulator.
+
+162
+00:07:10,852 --> 00:07:12,310
+You can choose what
+device you want
+
+163
+00:07:12,310 --> 00:07:15,790
+to simulate from this
+dropdown in the toolbar.
+
+164
+00:07:15,790 --> 00:07:19,360
+Here you can see we have
+devices ranging from the iPad 2
+
+165
+00:07:19,360 --> 00:07:23,030
+all the way up to
+the iPhone 6s Plus.
+
+166
+00:07:23,030 --> 00:07:25,040
+We'll choose iPhone
+6s because that's
+
+167
+00:07:25,040 --> 00:07:28,520
+the size we'll be designing for.
+
+168
+00:07:28,520 --> 00:07:30,800
+Then you can just hit the
+Play button in the toolbar,
+
+169
+00:07:30,800 --> 00:07:32,520
+and it will build and
+run the application
+
+170
+00:07:32,520 --> 00:07:33,645
+and show you the simulator.
+
+171
+00:07:36,836 --> 00:07:39,210
+And here you can see the result
+of setting the main views
+
+172
+00:07:39,210 --> 00:07:41,360
+background color to
+red in the storyboard.
+
+173
+00:07:44,120 --> 00:07:45,970
+If you haven't been
+following along already,
+
+174
+00:07:45,970 --> 00:07:47,970
+now's a great time
+to jump into Xcode
+
+175
+00:07:47,970 --> 00:07:49,840
+and create your first project.
+
+176
+00:07:49,840 --> 00:07:51,850
+We've also created
+some challenges for you
+
+177
+00:07:51,850 --> 00:07:54,740
+that help solidify some of the
+most important concepts of iOS
+
+178
+00:07:54,740 --> 00:07:58,174
+development that you'll need
+to know to build any iOS app.
+
+179
+00:07:58,174 --> 00:07:59,590
+So after you
+complete those, we'll
+
+180
+00:07:59,590 --> 00:08:01,800
+see you in the next section.
+

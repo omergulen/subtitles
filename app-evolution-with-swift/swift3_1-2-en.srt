@@ -1,0 +1,839 @@
+﻿1
+00:00:02,164 --> 00:00:03,580
+Now that we've got
+a handle on how
+
+2
+00:00:03,580 --> 00:00:05,220
+to start working
+with storyboards,
+
+3
+00:00:05,220 --> 00:00:07,870
+let's build the first screen
+in our application: the product
+
+4
+00:00:07,870 --> 00:00:08,370
+screen.
+
+5
+00:00:11,020 --> 00:00:13,541
+This screen is going
+to display an image.
+
+6
+00:00:13,541 --> 00:00:16,040
+It's going to have a label with
+the name of the phone on top
+
+7
+00:00:16,040 --> 00:00:16,930
+of that.
+
+8
+00:00:16,930 --> 00:00:19,570
+And there's going to be
+an Add to Cart button.
+
+9
+00:00:19,570 --> 00:00:23,410
+Let's jump back into
+Xcode to set this up.
+
+10
+00:00:23,410 --> 00:00:26,110
+Before we try to connect up a
+swift file to the storyboard,
+
+11
+00:00:26,110 --> 00:00:28,820
+let's delete this default
+scene that the project gave us
+
+12
+00:00:28,820 --> 00:00:32,700
+when we selected Single
+View Application Template.
+
+13
+00:00:32,700 --> 00:00:34,420
+We can delete this
+view in the storyboard
+
+14
+00:00:34,420 --> 00:00:39,370
+by clicking the View controller
+scene and then hitting Delete.
+
+15
+00:00:39,370 --> 00:00:41,400
+And we can also delete
+the auto generated
+
+16
+00:00:41,400 --> 00:00:44,377
+view controller dot swift
+file by right-clicking on it
+
+17
+00:00:44,377 --> 00:00:45,210
+and choosing Delete.
+
+18
+00:00:49,100 --> 00:00:50,828
+And then selecting
+Move to Trash.
+
+19
+00:00:53,700 --> 00:00:55,990
+We can add a new view
+controller to our storyboard
+
+20
+00:00:55,990 --> 00:01:00,830
+by dragging from the Object
+panel to the Storyboard Editor.
+
+21
+00:01:00,830 --> 00:01:02,630
+The Object panel is
+at the bottom right
+
+22
+00:01:02,630 --> 00:01:04,470
+corner of the
+screen and contains
+
+23
+00:01:04,470 --> 00:01:06,492
+a list of all the objects
+and views that you
+
+24
+00:01:06,492 --> 00:01:07,575
+can place in a storyboard.
+
+25
+00:01:11,450 --> 00:01:14,180
+View Controller is the
+very first one in the list.
+
+26
+00:01:14,180 --> 00:01:16,390
+So we'll click and drag
+that View Controller object
+
+27
+00:01:16,390 --> 00:01:18,410
+onto the Storyboard Editor.
+
+28
+00:01:18,410 --> 00:01:20,680
+And we can see that it
+creates a new scene for us
+
+29
+00:01:20,680 --> 00:01:22,092
+complete with a view.
+
+30
+00:01:22,092 --> 00:01:23,550
+There's another
+option that we have
+
+31
+00:01:23,550 --> 00:01:26,040
+to check because we
+created this from scratch.
+
+32
+00:01:26,040 --> 00:01:28,560
+And that's Is Initial
+View Controller,
+
+33
+00:01:28,560 --> 00:01:30,060
+which you can find
+in the Attributes
+
+34
+00:01:30,060 --> 00:01:31,690
+panel of the Inspector.
+
+35
+00:01:31,690 --> 00:01:33,580
+Checking this makes
+this view the one
+
+36
+00:01:33,580 --> 00:01:35,375
+that opens up whenever
+this app runs.
+
+37
+00:01:38,871 --> 00:01:40,870
+Since the app we're going
+to make in this course
+
+38
+00:01:40,870 --> 00:01:43,280
+will be built for
+the iPhone 6s, we'll
+
+39
+00:01:43,280 --> 00:01:46,280
+also want to make sure
+we're viewing as iPhone 6s
+
+40
+00:01:46,280 --> 00:01:50,060
+in this Trait Selection bar at
+the bottom of the Scene Editor.
+
+41
+00:01:50,060 --> 00:01:52,810
+Ours is already set
+to iPhone 6s here,
+
+42
+00:01:52,810 --> 00:01:54,610
+but you can see the
+view change size
+
+43
+00:01:54,610 --> 00:01:57,990
+based on the device selected.
+
+44
+00:01:57,990 --> 00:01:59,490
+Now let's jump back
+into some slides
+
+45
+00:01:59,490 --> 00:02:03,210
+to see what we need to do next.
+
+46
+00:02:03,210 --> 00:02:05,330
+Now that our Product View
+Controller is set up,
+
+47
+00:02:05,330 --> 00:02:10,410
+we need to add a label, image,
+and button to the Main view.
+
+48
+00:02:10,410 --> 00:02:12,880
+Whenever we put views
+inside of the Main view,
+
+49
+00:02:12,880 --> 00:02:14,230
+we refer to them as subviews.
+
+50
+00:02:17,050 --> 00:02:19,180
+So let's jump back
+into Xcode now
+
+51
+00:02:19,180 --> 00:02:22,530
+and add some of those subviews.
+
+52
+00:02:22,530 --> 00:02:24,220
+Let's start building
+out this Main view
+
+53
+00:02:24,220 --> 00:02:26,960
+by dragging a label
+from the Object panel.
+
+54
+00:02:26,960 --> 00:02:28,530
+We can either
+search by scrolling
+
+55
+00:02:28,530 --> 00:02:30,700
+or just type in the
+Search bar at the bottom,
+
+56
+00:02:30,700 --> 00:02:33,160
+and it will update the list
+to show us only the views that
+
+57
+00:02:33,160 --> 00:02:34,290
+match our search term.
+
+58
+00:02:37,870 --> 00:02:40,790
+As we click and drag the
+label onto the Main view,
+
+59
+00:02:40,790 --> 00:02:44,760
+you'll notice some
+dotted blue lines appear.
+
+60
+00:02:44,760 --> 00:02:49,054
+They appear on the very left and
+very right edges of the view.
+
+61
+00:02:49,054 --> 00:02:50,470
+And they also
+appear in the center
+
+62
+00:02:50,470 --> 00:02:53,090
+to help you try to
+center objects.
+
+63
+00:02:53,090 --> 00:02:58,080
+We'll drop this label right
+in the middle of the screen.
+
+64
+00:02:58,080 --> 00:03:00,290
+We can set the text for
+this label in the Attributes
+
+65
+00:03:00,290 --> 00:03:01,020
+Inspector.
+
+66
+00:03:01,020 --> 00:03:04,572
+And here we'll type "1937
+desk phone" and hit Return.
+
+67
+00:03:07,530 --> 00:03:09,880
+When we do that, you can
+see that our label text got
+
+68
+00:03:09,880 --> 00:03:12,314
+truncated down with three dots.
+
+69
+00:03:12,314 --> 00:03:14,230
+The reason this is
+happening is that the width
+
+70
+00:03:14,230 --> 00:03:16,620
+of the label in the
+storyboard is not big enough
+
+71
+00:03:16,620 --> 00:03:18,490
+to hold all of the text.
+
+72
+00:03:18,490 --> 00:03:20,790
+So since we know we want
+this button to be centered,
+
+73
+00:03:20,790 --> 00:03:23,720
+we can just grab these anchors
+on the sides of the label
+
+74
+00:03:23,720 --> 00:03:26,540
+and drag them all the way out
+to the left and right edges.
+
+75
+00:03:30,800 --> 00:03:32,860
+Then back in the
+Attributes Inspector,
+
+76
+00:03:32,860 --> 00:03:35,190
+we can center the label text.
+
+77
+00:03:35,190 --> 00:03:37,460
+That font doesn't look
+too exciting either.
+
+78
+00:03:37,460 --> 00:03:39,020
+So we can change
+the font properties
+
+79
+00:03:39,020 --> 00:03:42,710
+by clicking on the small T
+icon next to the font name.
+
+80
+00:03:42,710 --> 00:03:44,440
+And instead of
+using a system font,
+
+81
+00:03:44,440 --> 00:03:45,870
+we can choose a custom font.
+
+82
+00:03:52,800 --> 00:03:55,620
+Here, we'll use Damascus.
+
+83
+00:03:55,620 --> 00:03:58,260
+Set the style to bold.
+
+84
+00:03:58,260 --> 00:04:00,245
+And up the size to 24 points.
+
+85
+00:04:04,200 --> 00:04:05,920
+And then hit Done.
+
+86
+00:04:05,920 --> 00:04:09,504
+As you can see, the very top
+line of the text looks cut off.
+
+87
+00:04:09,504 --> 00:04:11,170
+So we can drag the
+labels height to make
+
+88
+00:04:11,170 --> 00:04:13,544
+it a little bigger so everything
+is able to be displayed.
+
+89
+00:04:17,149 --> 00:04:19,709
+Now let's add an image
+to our Main view.
+
+90
+00:04:19,709 --> 00:04:24,450
+The object that displays an
+image is called an image view.
+
+91
+00:04:24,450 --> 00:04:29,030
+We can search for image
+view in the Object panel.
+
+92
+00:04:29,030 --> 00:04:31,394
+Then we'll click and drag
+it onto our Main view.
+
+93
+00:04:35,270 --> 00:04:38,350
+Notice that I'm not specifically
+placing it anywhere yet.
+
+94
+00:04:38,350 --> 00:04:40,370
+The reason for that is
+we need to actually add
+
+95
+00:04:40,370 --> 00:04:42,200
+the image file to
+our Xcode project
+
+96
+00:04:42,200 --> 00:04:45,020
+before we can put it
+inside of an image view.
+
+97
+00:04:45,020 --> 00:04:47,410
+Images in Xcode projects
+are stored in something
+
+98
+00:04:47,410 --> 00:04:49,260
+called Asset Catalog.
+
+99
+00:04:49,260 --> 00:04:51,190
+And every project
+by default gets
+
+100
+00:04:51,190 --> 00:04:54,920
+an assets dot xc assets file.
+
+101
+00:04:54,920 --> 00:04:57,120
+If we click on that asset
+catalog in the Project
+
+102
+00:04:57,120 --> 00:05:00,121
+Navigator, you can see there's
+not much in here right now.
+
+103
+00:05:02,770 --> 00:05:04,510
+You can add assets
+to the catalog
+
+104
+00:05:04,510 --> 00:05:07,370
+by clicking the plus button that
+appears in the second column
+
+105
+00:05:07,370 --> 00:05:09,780
+and choosing Import from
+the menu that pops up.
+
+106
+00:05:12,880 --> 00:05:15,850
+We've created a folder called
+Image files on our desktop that
+
+107
+00:05:15,850 --> 00:05:19,600
+will contain some of the images
+we'll be using in this course.
+
+108
+00:05:19,600 --> 00:05:22,280
+You can see there's two
+images currently in here.
+
+109
+00:05:22,280 --> 00:05:24,610
+So you can drag and
+select both to import them
+
+110
+00:05:24,610 --> 00:05:27,810
+both at the same time.
+
+111
+00:05:27,810 --> 00:05:32,430
+Then hit Open, and they'll
+be added to the project.
+
+112
+00:05:32,430 --> 00:05:36,020
+The first is called
+button dash add to cart.
+
+113
+00:05:36,020 --> 00:05:39,650
+And the second is called
+phone dash full screen 3.
+
+114
+00:05:39,650 --> 00:05:41,740
+And that's the image
+we'll use right now.
+
+115
+00:05:41,740 --> 00:05:44,390
+Now, back in the
+main.storyboard file,
+
+116
+00:05:44,390 --> 00:05:45,980
+make sure we've
+selected the Image
+
+117
+00:05:45,980 --> 00:05:48,820
+View from the storyboard
+Scene Navigator.
+
+118
+00:05:48,820 --> 00:05:50,932
+And then in the
+Attributes panel,
+
+119
+00:05:50,932 --> 00:05:52,640
+we can see the first
+option for the image
+
+120
+00:05:52,640 --> 00:05:55,620
+view is a field called Image.
+
+121
+00:05:55,620 --> 00:05:57,070
+If we click on the
+dropdown, we'll
+
+122
+00:05:57,070 --> 00:06:00,760
+get a list of any images that
+are in our asset catalog.
+
+123
+00:06:00,760 --> 00:06:04,730
+So we'll pick a
+phone full screen 3.
+
+124
+00:06:04,730 --> 00:06:07,334
+When we do that it
+doesn't quite look right.
+
+125
+00:06:07,334 --> 00:06:09,500
+The reason for this is that
+the image view container
+
+126
+00:06:09,500 --> 00:06:13,510
+is one size, but the image we're
+trying to display is another.
+
+127
+00:06:13,510 --> 00:06:16,722
+We can fix this by clicking on
+the image in the Image view.
+
+128
+00:06:16,722 --> 00:06:19,180
+You'll know that it's selected
+because everything around it
+
+129
+00:06:19,180 --> 00:06:22,200
+gets grayed out.
+
+130
+00:06:22,200 --> 00:06:23,810
+And then going to
+the Editor menu
+
+131
+00:06:23,810 --> 00:06:27,860
+and choosing Size
+to Fit Content.
+
+132
+00:06:27,860 --> 00:06:29,300
+This updates the
+image view to be
+
+133
+00:06:29,300 --> 00:06:32,884
+the exact size of the image
+displayed inside of it.
+
+134
+00:06:32,884 --> 00:06:34,550
+We can click on the
+image view object
+
+135
+00:06:34,550 --> 00:06:36,180
+again so it's selected.
+
+136
+00:06:36,180 --> 00:06:38,070
+And then we can click
+and drag the Image view
+
+137
+00:06:38,070 --> 00:06:42,750
+so that it fits perfectly
+inside of our Main view.
+
+138
+00:06:42,750 --> 00:06:44,770
+There's one other
+little problem though.
+
+139
+00:06:44,770 --> 00:06:46,700
+Our label just disappeared.
+
+140
+00:06:46,700 --> 00:06:49,230
+This is because we put the
+image of you on top of the label
+
+141
+00:06:49,230 --> 00:06:51,560
+so it's completely obscuring it.
+
+142
+00:06:51,560 --> 00:06:53,560
+To fix this, just
+rearrange the position
+
+143
+00:06:53,560 --> 00:06:58,636
+of the label and image view in
+the Storyboard Scene Navigator.
+
+144
+00:06:58,636 --> 00:07:00,510
+Click and hold the image
+view, and move it up
+
+145
+00:07:00,510 --> 00:07:03,760
+one spot so that the label
+object is below the image view
+
+146
+00:07:03,760 --> 00:07:06,740
+object.
+
+147
+00:07:06,740 --> 00:07:08,777
+And now the label
+appears on top.
+
+148
+00:07:11,980 --> 00:07:14,740
+Finally, let's add a
+button to this interface.
+
+149
+00:07:14,740 --> 00:07:16,590
+Since we already have
+the storyboard open,
+
+150
+00:07:16,590 --> 00:07:20,830
+we can just search for
+button in the Object panel.
+
+151
+00:07:20,830 --> 00:07:23,680
+We want the first button
+that comes up in the list.
+
+152
+00:07:23,680 --> 00:07:28,510
+And we'll click and drag it to
+the center of the Main view.
+
+153
+00:07:28,510 --> 00:07:30,600
+We could just put some
+text for this button.
+
+154
+00:07:30,600 --> 00:07:33,200
+But our designers have created
+a custom button image that
+
+155
+00:07:33,200 --> 00:07:35,480
+fits the theme really well.
+
+156
+00:07:35,480 --> 00:07:37,470
+Over in the
+Attributes Inspector,
+
+157
+00:07:37,470 --> 00:07:41,060
+we can choose the default
+image for the button
+
+158
+00:07:41,060 --> 00:07:44,800
+and pick button-addtocart
+from the list.
+
+159
+00:07:44,800 --> 00:07:47,170
+When we do this, you can see
+that the original default
+
+160
+00:07:47,170 --> 00:07:49,520
+text for the button is
+sitting on the right.
+
+161
+00:07:49,520 --> 00:07:51,530
+So again, in the
+Attribute panel,
+
+162
+00:07:51,530 --> 00:07:53,800
+we can highlight
+that default text,
+
+163
+00:07:53,800 --> 00:07:57,460
+hit Delete, and hit Enter.
+
+164
+00:07:57,460 --> 00:07:59,710
+Now we've got a
+sharp looking button.
+
+165
+00:07:59,710 --> 00:08:02,290
+Let's build and run our app
+to see what this looks like.
+
+166
+00:08:09,980 --> 00:08:12,750
+And there you have it our very
+first product screen laid out
+
+167
+00:08:12,750 --> 00:08:14,220
+in a storyboard
+that's displaying
+
+168
+00:08:14,220 --> 00:08:17,730
+great in the simulator.
+
+169
+00:08:17,730 --> 00:08:19,610
+Now it's your turn to
+create some subviews
+
+170
+00:08:19,610 --> 00:08:21,102
+and take some challenges.
+
+171
+00:08:21,102 --> 00:08:22,560
+Remember, if you're
+following along
+
+172
+00:08:22,560 --> 00:08:24,470
+in your own copy
+of Xcode, you can
+
+173
+00:08:24,470 --> 00:08:26,630
+download all of the image
+assets that we showed you
+
+174
+00:08:26,630 --> 00:08:27,730
+in this level.
+
+175
+00:08:27,730 --> 00:08:29,440
+Have fun.
+

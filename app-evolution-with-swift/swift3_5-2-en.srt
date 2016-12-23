@@ -1,0 +1,507 @@
+﻿1
+00:00:02,290 --> 00:00:03,036
+Welcome back.
+
+2
+00:00:03,036 --> 00:00:04,410
+In this section,
+we'll be looking
+
+3
+00:00:04,410 --> 00:00:06,930
+at how we can display
+dynamic table cell data.
+
+4
+00:00:09,980 --> 00:00:11,740
+So our table view is
+working really well.
+
+5
+00:00:11,740 --> 00:00:14,400
+But it's always showing the
+same label for each line,
+
+6
+00:00:14,400 --> 00:00:17,262
+because we're hard
+coding the labels text.
+
+7
+00:00:17,262 --> 00:00:18,720
+Let's update our
+table view to show
+
+8
+00:00:18,720 --> 00:00:21,700
+different data in each cell.
+
+9
+00:00:21,700 --> 00:00:24,175
+There's a few steps to
+setting up dynamic data.
+
+10
+00:00:24,175 --> 00:00:26,050
+First, we need to create
+a variable that will
+
+11
+00:00:26,050 --> 00:00:27,980
+store multiple product names.
+
+12
+00:00:27,980 --> 00:00:30,410
+And we'll use an array for this.
+
+13
+00:00:30,410 --> 00:00:32,870
+Next, we need to update all
+of our table view controller
+
+14
+00:00:32,870 --> 00:00:36,100
+functions to use the data
+from that array instead
+
+15
+00:00:36,100 --> 00:00:39,950
+of the hard coded data
+that's in there right now.
+
+16
+00:00:39,950 --> 00:00:42,160
+Let's start by
+creating an array.
+
+17
+00:00:42,160 --> 00:00:46,030
+Arrays can store multiple
+values of a single type of data.
+
+18
+00:00:46,030 --> 00:00:48,510
+In this case, we'll
+store strings.
+
+19
+00:00:48,510 --> 00:00:51,940
+We'll also need to make
+this array optional.
+
+20
+00:00:51,940 --> 00:00:54,730
+We can set the product
+names in viewDidLoad.
+
+21
+00:00:54,730 --> 00:00:57,185
+And we'll just make four
+values for each one of our four
+
+22
+00:00:57,185 --> 00:00:57,685
+phones.
+
+23
+00:01:00,979 --> 00:01:02,520
+Now that we've got
+some data, we need
+
+24
+00:01:02,520 --> 00:01:06,040
+to update the table view number
+of rows in section function
+
+25
+00:01:06,040 --> 00:01:08,560
+to return the number of
+items in the array instead
+
+26
+00:01:08,560 --> 00:01:10,790
+of a hard coded number.
+
+27
+00:01:10,790 --> 00:01:13,480
+Then, we'll need to update
+the table view cell for row
+
+28
+00:01:13,480 --> 00:01:15,730
+at index path version
+of the function
+
+29
+00:01:15,730 --> 00:01:19,010
+to display one of the names in
+the array for each cell instead
+
+30
+00:01:19,010 --> 00:01:22,030
+of the hard coded text
+that's in there now.
+
+31
+00:01:22,030 --> 00:01:25,440
+First, in the table view number
+of rows in section function,
+
+32
+00:01:25,440 --> 00:01:28,210
+instead of just returning
+a hardcoded number five,
+
+33
+00:01:28,210 --> 00:01:30,280
+we can instead return
+the count property
+
+34
+00:01:30,280 --> 00:01:32,340
+of the product names' array.
+
+35
+00:01:32,340 --> 00:01:34,455
+Remember the product
+names is an optional,
+
+36
+00:01:34,455 --> 00:01:36,580
+so we've got to put the
+question mark after it when
+
+37
+00:01:36,580 --> 00:01:38,040
+we're writing it.
+
+38
+00:01:38,040 --> 00:01:40,930
+The count property returns the
+number of items in the array.
+
+39
+00:01:40,930 --> 00:01:44,880
+So since we've got four array
+items, we'll get four rows.
+
+40
+00:01:44,880 --> 00:01:46,560
+If we try to write
+it just like this,
+
+41
+00:01:46,560 --> 00:01:49,430
+though, we're going
+to run into an error.
+
+42
+00:01:49,430 --> 00:01:53,000
+The problem is that if
+product names doesn't exist,
+
+43
+00:01:53,000 --> 00:01:55,590
+then the count property
+won't exist either.
+
+44
+00:01:55,590 --> 00:01:59,050
+And therefore, this function
+is returning an optional int,
+
+45
+00:01:59,050 --> 00:02:03,220
+instead of a regular int.
+
+46
+00:02:03,220 --> 00:02:06,290
+To fix this, we can write
+if let pNames equals
+
+47
+00:02:06,290 --> 00:02:09,419
+product names, and inside
+of that conditional return,
+
+48
+00:02:09,419 --> 00:02:11,700
+pNames dot count.
+
+49
+00:02:11,700 --> 00:02:14,060
+If let is a special way
+of working with optionals
+
+50
+00:02:14,060 --> 00:02:15,810
+called optional binding.
+
+51
+00:02:15,810 --> 00:02:18,690
+And it combines checking
+if the value exists
+
+52
+00:02:18,690 --> 00:02:22,710
+and assigning it to a new
+variable all in one line.
+
+53
+00:02:22,710 --> 00:02:26,580
+Here, the if part is checking
+if product names exists.
+
+54
+00:02:26,580 --> 00:02:28,570
+And if it does, it
+copies everything
+
+55
+00:02:28,570 --> 00:02:30,990
+that's in product names
+into a new variable called
+
+56
+00:02:30,990 --> 00:02:35,280
+pNames that's only accessible
+inside of the if statement.
+
+57
+00:02:35,280 --> 00:02:38,440
+Since we know anything inside
+of the if statement exists,
+
+58
+00:02:38,440 --> 00:02:41,110
+we can just return pNames.count.
+
+59
+00:02:41,110 --> 00:02:44,670
+And we can be sure that
+we're returning a real int.
+
+60
+00:02:44,670 --> 00:02:48,370
+After this optional binding,
+we also need to return zero.
+
+61
+00:02:48,370 --> 00:02:51,080
+That's because if the product
+names' array doesn't exist,
+
+62
+00:02:51,080 --> 00:02:55,010
+we still need to return an int.
+
+63
+00:02:55,010 --> 00:02:57,090
+Next, we need to map
+each item in the array
+
+64
+00:02:57,090 --> 00:03:00,010
+to a corresponding
+cell in the table.
+
+65
+00:03:00,010 --> 00:03:02,380
+We've got an array
+with four strings.
+
+66
+00:03:02,380 --> 00:03:04,030
+And we've got four cells.
+
+67
+00:03:04,030 --> 00:03:06,240
+So if each cell were
+displaying the text of one
+
+68
+00:03:06,240 --> 00:03:08,510
+of those product names,
+that would work out great.
+
+69
+00:03:11,110 --> 00:03:14,220
+So in the table view cell
+for row index path function,
+
+70
+00:03:14,220 --> 00:03:16,680
+we first need to get a copy
+the name from the array
+
+71
+00:03:16,680 --> 00:03:19,700
+and store it in a variable
+called productName.
+
+72
+00:03:19,700 --> 00:03:22,680
+Just pretend for a minute
+that we've got that already.
+
+73
+00:03:22,680 --> 00:03:25,740
+Then, since that productName
+variable will be optional,
+
+74
+00:03:25,740 --> 00:03:28,210
+we can unwrap it with if let.
+
+75
+00:03:28,210 --> 00:03:31,100
+And if it does exist, we
+set the cell's text label
+
+76
+00:03:31,100 --> 00:03:33,740
+dot text property to the
+productName variable.
+
+77
+00:03:36,670 --> 00:03:38,960
+So as you may know,
+each value in an array
+
+78
+00:03:38,960 --> 00:03:40,740
+can be accessed by
+putting a number
+
+79
+00:03:40,740 --> 00:03:44,670
+inside of square brackets after
+the array of variable name.
+
+80
+00:03:44,670 --> 00:03:48,140
+So here, the first value can
+be accessed with the number zero,
+
+81
+00:03:48,140 --> 00:03:49,880
+like this.
+
+82
+00:03:49,880 --> 00:03:52,750
+And the last value can be
+accessed with the number three,
+
+83
+00:03:52,750 --> 00:03:53,470
+like this.
+
+84
+00:03:56,630 --> 00:03:59,480
+Here we've set the productName
+equal to the productNames
+
+85
+00:03:59,480 --> 00:04:01,690
+array at position zero.
+
+86
+00:04:01,690 --> 00:04:05,350
+Remember that this function runs
+once for each row in the table.
+
+87
+00:04:05,350 --> 00:04:07,340
+So doing this will
+actually set the name
+
+88
+00:04:07,340 --> 00:04:10,130
+to be the same
+for all four rows.
+
+89
+00:04:10,130 --> 00:04:12,260
+We need that number
+to be dynamic
+
+90
+00:04:12,260 --> 00:04:17,380
+based on the current cell
+and not just always zero.
+
+91
+00:04:17,380 --> 00:04:19,870
+The answer lies in index paths.
+
+92
+00:04:19,870 --> 00:04:23,880
+Every cell in the table view
+has an index path property.
+
+93
+00:04:23,880 --> 00:04:27,710
+And every index path
+property has a row property.
+
+94
+00:04:27,710 --> 00:04:30,090
+And that row property
+is just a number,
+
+95
+00:04:30,090 --> 00:04:32,410
+starting with zero
+for the first cell,
+
+96
+00:04:32,410 --> 00:04:34,900
+ending at three for the last cell.
+
+97
+00:04:34,900 --> 00:04:36,720
+This is really convenient
+because our array
+
+98
+00:04:36,720 --> 00:04:41,310
+also starts at zero and ends in three.
+
+99
+00:04:41,310 --> 00:04:43,030
+So instead of hard
+coding a number,
+
+100
+00:04:43,030 --> 00:04:46,868
+we can use index paths dot row
+for the index of the array.
+
+101
+00:04:46,868 --> 00:04:48,242
+And then we should
+be good to go.
+
+102
+00:04:52,940 --> 00:04:55,430
+As you can see, each cell
+now displays the name
+
+103
+00:04:55,430 --> 00:04:57,570
+from one item in the array.
+
+104
+00:04:57,570 --> 00:05:00,790
+It's now time for you to add
+some dynamic data to your cells
+
+105
+00:05:00,790 --> 00:05:02,000
+and take some challenges.
+
+106
+00:05:02,000 --> 00:05:04,340
+And I'll see you in
+the next section.
+
