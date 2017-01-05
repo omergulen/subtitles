@@ -1,0 +1,433 @@
+﻿1
+00:00:02,080 --> 00:00:03,260
+Welcome back.
+
+2
+00:00:03,260 --> 00:00:08,310
+In this section, we're going
+to dig deeper into arrays.
+
+3
+00:00:08,310 --> 00:00:10,620
+Let's walk through a
+simple data problem.
+
+4
+00:00:10,620 --> 00:00:13,515
+Here, we're creating an array
+with five different games.
+
+5
+00:00:17,670 --> 00:00:22,700
+How could we better organize
+these games into groups?
+
+6
+00:00:22,700 --> 00:00:25,610
+One way is to sort
+this into two groups.
+
+7
+00:00:25,610 --> 00:00:29,005
+One group for tabletop games
+and one group for card games.
+
+8
+00:00:31,620 --> 00:00:34,110
+To do this, we're
+going to need to use
+
+9
+00:00:34,110 --> 00:00:38,580
+an array within an array--
+or a multi-dimensional array.
+
+10
+00:00:38,580 --> 00:00:41,880
+Here we have a
+simple associative array
+
+11
+00:00:41,880 --> 00:00:46,800
+with the key of tabletop and
+then a single value of sorry.
+
+12
+00:00:46,800 --> 00:00:49,530
+This is not really going to help
+us very much, because it only
+
+13
+00:00:49,530 --> 00:00:51,660
+contains one game.
+
+14
+00:00:51,660 --> 00:00:56,460
+But, arrays can use any
+data type as their value.
+
+15
+00:00:56,460 --> 00:01:00,360
+So we can also use an
+array as the value.
+
+16
+00:01:00,360 --> 00:01:03,990
+So now instead of the
+string value of sorry,
+
+17
+00:01:03,990 --> 00:01:06,180
+we'll use the array function.
+
+18
+00:01:06,180 --> 00:01:08,910
+Then after opening up
+a little bit of space,
+
+19
+00:01:08,910 --> 00:01:11,550
+we can now add all of
+our games that fall
+
+20
+00:01:11,550 --> 00:01:15,930
+under tabletop comma separated,
+just like in a normal array.
+
+21
+00:01:15,930 --> 00:01:21,640
+Now we have a simple,
+multi-dimensional array.
+
+22
+00:01:21,640 --> 00:01:26,850
+Next we can add another key
+of card with a value of array
+
+23
+00:01:26,850 --> 00:01:29,330
+with our other two
+games as its values.
+
+24
+00:01:32,270 --> 00:01:35,510
+If we do a print r on
+our games array variable,
+
+25
+00:01:35,510 --> 00:01:37,730
+here's what our
+output will look like.
+
+26
+00:01:37,730 --> 00:01:40,670
+We now have an associative
+array with two items.
+
+27
+00:01:40,670 --> 00:01:45,990
+Those two items are indexed
+arrays as their values.
+
+28
+00:01:45,990 --> 00:01:48,580
+How can we access this data?
+
+29
+00:01:48,580 --> 00:01:50,580
+We can access the data
+by calling our games
+
+30
+00:01:50,580 --> 00:01:54,000
+array using the key for
+the type of games we want.
+
+31
+00:01:54,000 --> 00:01:57,210
+Here, you can see we're
+calling the key of tabletop.
+
+32
+00:01:57,210 --> 00:02:01,080
+So our output is going to
+have an array of the three
+
+33
+00:02:01,080 --> 00:02:02,690
+values of tabletop games.
+
+34
+00:02:05,470 --> 00:02:08,405
+We can do the same thing to get
+the values of all of our card
+
+35
+00:02:08,405 --> 00:02:08,905
+games.
+
+36
+00:02:11,520 --> 00:02:13,260
+If we want a single
+item in our group,
+
+37
+00:02:13,260 --> 00:02:15,030
+we simply open the
+square brackets
+
+38
+00:02:15,030 --> 00:02:18,240
+with our first key, then
+another set of square brackets
+
+39
+00:02:18,240 --> 00:02:19,630
+with our second key.
+
+40
+00:02:19,630 --> 00:02:24,000
+Here, the first item in our
+tabletop group, or a key of 0
+
+41
+00:02:24,000 --> 00:02:25,550
+is the game, sorry.
+
+42
+00:02:25,550 --> 00:02:29,490
+Notice, if we wanted to output
+an array we use print r.
+
+43
+00:02:29,490 --> 00:02:32,935
+If we wanted to output a
+single value, we use echo.
+
+44
+00:02:36,030 --> 00:02:39,390
+Maybe we don't want to have
+poker as an option any longer,
+
+45
+00:02:39,390 --> 00:02:41,910
+but we want to
+replace it with rummy.
+
+46
+00:02:41,910 --> 00:02:44,670
+All that you need to do is
+to use the same addressing
+
+47
+00:02:44,670 --> 00:02:47,460
+that we use to echo
+a single value,
+
+48
+00:02:47,460 --> 00:02:51,060
+but add a new value on the
+right side of an equal sign,
+
+49
+00:02:51,060 --> 00:02:53,340
+or our assignment operator.
+
+50
+00:02:53,340 --> 00:02:55,770
+Here you can see the
+replacement inside
+
+51
+00:02:55,770 --> 00:02:59,420
+of our array when
+we run a print r.
+
+52
+00:02:59,420 --> 00:03:04,620
+Single access and modification
+of our array items is fine,
+
+53
+00:03:04,620 --> 00:03:08,510
+but if we need to do more, we
+can use some built-in array
+
+54
+00:03:08,510 --> 00:03:11,360
+functions that PHP
+provides to us.
+
+55
+00:03:11,360 --> 00:03:14,130
+I want to go through
+a few of those now.
+
+56
+00:03:14,130 --> 00:03:17,840
+The first one I want to review
+is the array function count.
+
+57
+00:03:17,840 --> 00:03:22,200
+At first, you can see we have a
+new array-- an array of names.
+
+58
+00:03:22,200 --> 00:03:25,170
+If we want to know how many
+items we have in the array,
+
+59
+00:03:25,170 --> 00:03:26,720
+we can use the count function.
+
+60
+00:03:26,720 --> 00:03:32,290
+In this case, the count will
+result in the output of 4.
+
+61
+00:03:32,290 --> 00:03:34,180
+We can combine
+all of these items
+
+62
+00:03:34,180 --> 00:03:37,120
+by using a function
+called implode.
+
+63
+00:03:37,120 --> 00:03:41,590
+It joins all the elements in
+the array into a single stream.
+
+64
+00:03:41,590 --> 00:03:44,320
+The first argument of
+the implode function
+
+65
+00:03:44,320 --> 00:03:46,960
+is the joining
+character for the array.
+
+66
+00:03:46,960 --> 00:03:50,530
+And the second argument is
+the array variable itself.
+
+67
+00:03:50,530 --> 00:03:54,770
+Here you can see the result.
+
+68
+00:03:54,770 --> 00:03:57,090
+What if we want to
+randomize the array?
+
+69
+00:03:57,090 --> 00:03:59,360
+Well, we can use the
+shuffle function.
+
+70
+00:03:59,360 --> 00:04:01,820
+If we do shuffle and
+then the array itself,
+
+71
+00:04:01,820 --> 00:04:04,160
+it modifies it in place.
+
+72
+00:04:04,160 --> 00:04:07,010
+To output this, we'll just
+use the previous function
+
+73
+00:04:07,010 --> 00:04:10,310
+we learned, implode, and
+that way we could combine
+
+74
+00:04:10,310 --> 00:04:12,740
+an output or randomized string.
+
+75
+00:04:16,000 --> 00:04:19,390
+PHP also provides us
+a way to sort arrays.
+
+76
+00:04:19,390 --> 00:04:23,680
+In this case, we can sort it
+alphabetically by using asort.
+
+77
+00:04:23,680 --> 00:04:26,800
+Again, we'll follow this up
+with another echo and implode
+
+78
+00:04:26,800 --> 00:04:30,980
+of the array to see the result.
+
+79
+00:04:30,980 --> 00:04:32,620
+Let's have a quick
+review of what we've
+
+80
+00:04:32,620 --> 00:04:34,780
+learned so far in this section.
+
+81
+00:04:34,780 --> 00:04:38,020
+We've gone over in detail
+multi-dimensional arrays
+
+82
+00:04:38,020 --> 00:04:40,720
+and gone through a few
+simple array functions
+
+83
+00:04:40,720 --> 00:04:42,630
+that PHP provides for us.
+
+84
+00:04:45,950 --> 00:04:47,860
+Now it's time for
+you to jump in and do
+
+85
+00:04:47,860 --> 00:04:50,470
+some challenges concerning
+multi-dimensional arrays
+
+86
+00:04:50,470 --> 00:04:52,286
+and array functions.
+
+87
+00:04:52,286 --> 00:04:55,610
+Now finally, here you
+can see at the end of all
+
+88
+00:04:55,610 --> 00:04:57,790
+of this-- What have we learned?
+
+89
+00:04:57,790 --> 00:04:58,360
+Nothing.
+
+90
+00:04:58,360 --> 00:04:59,210
+When do we want it?
+
+91
+00:04:59,210 --> 00:05:00,800
+Never.

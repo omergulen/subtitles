@@ -1,0 +1,762 @@
+﻿1
+00:00:00,000 --> 00:00:03,580
+[SINGING] What's that
+shooting across the sky?
+
+2
+00:00:03,580 --> 00:00:08,125
+A rocket, a meteor, or a data type?
+
+3
+00:00:08,125 --> 00:00:13,740
+With PHP, we'll make it
+through with variables, arrays,
+
+4
+00:00:13,740 --> 00:00:14,550
+and loops.
+
+5
+00:00:14,550 --> 00:00:17,552
+As you track meteors
+around the world,
+
+6
+00:00:17,552 --> 00:00:20,700
+your coding
+knowledge will unfurl.
+
+7
+00:00:20,700 --> 00:00:23,200
+Shall we play again?
+
+8
+00:00:23,200 --> 00:00:25,700
+Yes, indeed.
+
+9
+00:00:25,700 --> 00:00:29,460
+Let's join forces and Try PHP.
+
+10
+00:00:32,490 --> 00:00:34,800
+Welcome back to Try PHP.
+
+11
+00:00:34,800 --> 00:00:39,640
+In this final level, we're
+going to focus on loops.
+
+12
+00:00:39,640 --> 00:00:43,420
+Let's say we want to perform
+an action that repeats itself
+
+13
+00:00:43,420 --> 00:00:47,650
+over and over again, but yet
+changes a little bit each time.
+
+14
+00:00:47,650 --> 00:00:51,850
+For instance, we might want to
+list out the multiples of 12 up
+
+15
+00:00:51,850 --> 00:00:53,860
+to 12 times 12.
+
+16
+00:00:53,860 --> 00:00:56,950
+We could do this long form,
+but yet, eventually, you're
+
+17
+00:00:56,950 --> 00:00:58,930
+going to notice some code bloat.
+
+18
+00:00:58,930 --> 00:01:00,700
+This is where we're
+going to use something
+
+19
+00:01:00,700 --> 00:01:03,730
+called the D R Y
+method of programming
+
+20
+00:01:03,730 --> 00:01:05,920
+or don't repeat yourself.
+
+21
+00:01:05,920 --> 00:01:10,750
+We could solve this particular
+problem by using a loop.
+
+22
+00:01:10,750 --> 00:01:14,120
+The first loop we're going to
+look at is called a while loop.
+
+23
+00:01:14,120 --> 00:01:17,590
+And a while loop
+works like this.
+
+24
+00:01:17,590 --> 00:01:22,760
+We set an integer, i,
+to the start value of 1.
+
+25
+00:01:22,760 --> 00:01:26,980
+Then we use the while function
+to run a test, of sorts.
+
+26
+00:01:26,980 --> 00:01:30,280
+We're going to check each time
+at the beginning of the loop
+
+27
+00:01:30,280 --> 00:01:33,520
+that our condition
+evaluates to true.
+
+28
+00:01:33,520 --> 00:01:36,940
+If it does, we're going
+to run the code within.
+
+29
+00:01:36,940 --> 00:01:41,440
+In this case, we're going to
+multiply the i variable by 12
+
+30
+00:01:41,440 --> 00:01:45,340
+and then echo the result.
+Once this result is echoed,
+
+31
+00:01:45,340 --> 00:01:48,550
+we're going to need to
+increment our variable by 1.
+
+32
+00:01:48,550 --> 00:01:52,720
+Here we're using
+a shorthand $i++.
+
+33
+00:01:52,720 --> 00:01:59,810
+This is the same as saying
+$i is equal to $i plus 1.
+
+34
+00:01:59,810 --> 00:02:02,660
+Here you can see
+our result-- 1 times
+
+35
+00:02:02,660 --> 00:02:07,520
+12 is 12, 2 times 12 is 24,
+and so on all the way up
+
+36
+00:02:07,520 --> 00:02:12,890
+to 12 times 12,
+which equals 144.
+
+37
+00:02:12,890 --> 00:02:15,260
+Another way to cycle
+through integers
+
+38
+00:02:15,260 --> 00:02:19,820
+would be using a for loop, and
+a for loop works like this.
+
+39
+00:02:19,820 --> 00:02:22,040
+We'll start by
+using the key word
+
+40
+00:02:22,040 --> 00:02:26,420
+for followed by the familiar
+syntax of a set of parentheses
+
+41
+00:02:26,420 --> 00:02:28,580
+and a pair of curly braces.
+
+42
+00:02:28,580 --> 00:02:30,410
+Inside of our
+parentheses, we will
+
+43
+00:02:30,410 --> 00:02:32,870
+have three separate
+statements where
+
+44
+00:02:32,870 --> 00:02:35,570
+the first two are
+terminated by a semi-colon
+
+45
+00:02:35,570 --> 00:02:37,532
+to provide separation.
+
+46
+00:02:37,532 --> 00:02:38,990
+In the first
+statement, we're going
+
+47
+00:02:38,990 --> 00:02:42,590
+to define our counting
+variable and set it equal to 1.
+
+48
+00:02:42,590 --> 00:02:47,000
+This will always run once
+when you first enter the loop.
+
+49
+00:02:47,000 --> 00:02:50,480
+Our next statement is our
+evaluation, or a test,
+
+50
+00:02:50,480 --> 00:02:53,930
+that determines whether
+our integer, x, is
+
+51
+00:02:53,930 --> 00:02:56,860
+less than or equal to 12.
+
+52
+00:02:56,860 --> 00:03:00,260
+And as long as the variable i
+is less than or equal to 12,
+
+53
+00:03:00,260 --> 00:03:02,330
+then our loop will continue.
+
+54
+00:03:02,330 --> 00:03:05,450
+The final statement will
+be evaluated or executed
+
+55
+00:03:05,450 --> 00:03:09,260
+at the end of each successful
+pass through the loop,
+
+56
+00:03:09,260 --> 00:03:10,450
+not before.
+
+57
+00:03:10,450 --> 00:03:14,900
+Again, we're going to use the
+built-in PHP operator ++ which
+
+58
+00:03:14,900 --> 00:03:18,030
+will increment our integer by 1.
+
+59
+00:03:18,030 --> 00:03:20,700
+Now that we have the
+constraints of our loop set up,
+
+60
+00:03:20,700 --> 00:03:24,115
+now it's time to do something
+inside of the curly braces.
+
+61
+00:03:24,115 --> 00:03:25,490
+The first thing
+we're going to do
+
+62
+00:03:25,490 --> 00:03:29,900
+is create a value by multiplying
+our counting integer, i,
+
+63
+00:03:29,900 --> 00:03:31,430
+times 12.
+
+64
+00:03:31,430 --> 00:03:33,620
+The next line, we're going
+to do the same thing we
+
+65
+00:03:33,620 --> 00:03:38,810
+did in the while loop which is
+to echo the string, i times 12
+
+66
+00:03:38,810 --> 00:03:41,125
+is equal to our value
+that we created.
+
+67
+00:03:43,830 --> 00:03:45,780
+And as you can see,
+here is our result
+
+68
+00:03:45,780 --> 00:03:48,540
+which looks exactly the
+same as our while loop,
+
+69
+00:03:48,540 --> 00:03:51,140
+except now, we've done
+it with a for loop.
+
+70
+00:03:53,810 --> 00:03:57,890
+Let's take a look at the data
+inside of our first array
+
+71
+00:03:57,890 --> 00:03:59,330
+example.
+
+72
+00:03:59,330 --> 00:04:02,810
+Other than direct access
+and array functions,
+
+73
+00:04:02,810 --> 00:04:05,725
+how else can we extract
+data from the array?
+
+74
+00:04:08,450 --> 00:04:11,750
+We could just use a
+while or a for loop
+
+75
+00:04:11,750 --> 00:04:15,170
+to cycle through each
+index of our array,
+
+76
+00:04:15,170 --> 00:04:17,180
+but when we're looping
+through an array,
+
+77
+00:04:17,180 --> 00:04:22,640
+there's a special way to do it
+in PHP using a foreach loop.
+
+78
+00:04:22,640 --> 00:04:27,050
+A foreach loop allows us to go
+through each item in the array
+
+79
+00:04:27,050 --> 00:04:30,050
+and assign it to
+a local variable.
+
+80
+00:04:30,050 --> 00:04:34,280
+Now we just replace our
+for key word with foreach.
+
+81
+00:04:34,280 --> 00:04:35,990
+Keeping the same
+outer structure,
+
+82
+00:04:35,990 --> 00:04:38,780
+we can now look at
+each item in the array
+
+83
+00:04:38,780 --> 00:04:41,090
+by using the as keyword.
+
+84
+00:04:41,090 --> 00:04:45,500
+Here we're saying for each
+meteors, which is our array,
+
+85
+00:04:45,500 --> 00:04:48,320
+we're going to create a
+temporary local variable that
+
+86
+00:04:48,320 --> 00:04:51,470
+represents each
+item in our array.
+
+87
+00:04:51,470 --> 00:04:54,140
+Now this loop will
+run as many times
+
+88
+00:04:54,140 --> 00:04:57,110
+as there are items
+in our meteor array,
+
+89
+00:04:57,110 --> 00:05:01,100
+changing the value of
+meteor each pass through.
+
+90
+00:05:01,100 --> 00:05:04,010
+Next, we're just going to
+add an echo statement to echo
+
+91
+00:05:04,010 --> 00:05:06,770
+our new local variable meteor.
+
+92
+00:05:06,770 --> 00:05:09,920
+In this case, it's the
+name of our meteorite.
+
+93
+00:05:09,920 --> 00:05:11,990
+If we take a look at
+our output, now you
+
+94
+00:05:11,990 --> 00:05:14,900
+can see that it cycles
+through each one of the items
+
+95
+00:05:14,900 --> 00:05:16,100
+and echos the name.
+
+96
+00:05:18,820 --> 00:05:21,520
+What if we swapped
+our existing array
+
+97
+00:05:21,520 --> 00:05:23,650
+with an associative
+array, the one that
+
+98
+00:05:23,650 --> 00:05:26,680
+uses the meteorite
+name as our key
+
+99
+00:05:26,680 --> 00:05:30,620
+and the weight as our value?
+
+100
+00:05:30,620 --> 00:05:33,260
+When we run this code,
+it works the same.
+
+101
+00:05:33,260 --> 00:05:35,840
+We still get the value,
+but now our value
+
+102
+00:05:35,840 --> 00:05:37,475
+is the weight, not the name.
+
+103
+00:05:39,980 --> 00:05:42,380
+Where before, we
+use the as keyword
+
+104
+00:05:42,380 --> 00:05:45,650
+followed by a local variable
+meteor, which just gave us
+
+105
+00:05:45,650 --> 00:05:46,760
+our value.
+
+106
+00:05:46,760 --> 00:05:49,160
+We can use the object
+operator, which
+
+107
+00:05:49,160 --> 00:05:52,100
+we've seen before as
+the equal sign followed
+
+108
+00:05:52,100 --> 00:05:53,930
+by the greater than symbol.
+
+109
+00:05:53,930 --> 00:05:55,520
+Looks like a little arrow.
+
+110
+00:05:55,520 --> 00:05:59,870
+We can now have a key and
+value local variable to cycle
+
+111
+00:05:59,870 --> 00:06:04,850
+through each time we loop
+through the foreach loop.
+
+112
+00:06:04,850 --> 00:06:09,170
+Using string evaluation, we'll
+concatenate both the name
+
+113
+00:06:09,170 --> 00:06:11,900
+and weight value
+into a nice sentence
+
+114
+00:06:11,900 --> 00:06:13,640
+that makes sense when printed.
+
+115
+00:06:13,640 --> 00:06:15,620
+This will now
+output the following
+
+116
+00:06:15,620 --> 00:06:18,650
+which is a much more
+complete picture of the items
+
+117
+00:06:18,650 --> 00:06:19,825
+inside of our array.
+
+118
+00:06:22,610 --> 00:06:25,870
+Let's take everything we've
+learned over the last four
+
+119
+00:06:25,870 --> 00:06:29,890
+levels and combine them together
+to get a more complete picture
+
+120
+00:06:29,890 --> 00:06:31,960
+of some PHP code.
+
+121
+00:06:31,960 --> 00:06:35,930
+To start with, we're going to
+look at a couple of variables.
+
+122
+00:06:35,930 --> 00:06:38,050
+The first one, we're
+going to call epic.
+
+123
+00:06:38,050 --> 00:06:41,530
+We're going to set it equal
+to an integer of 600 million
+
+124
+00:06:41,530 --> 00:06:43,660
+or 600 million grams.
+
+125
+00:06:43,660 --> 00:06:46,210
+Then another variable
+called huge which
+
+126
+00:06:46,210 --> 00:06:48,670
+is set to 50 million grams.
+
+127
+00:06:48,670 --> 00:06:50,710
+We'll do a foreach
+loop where we're
+
+128
+00:06:50,710 --> 00:06:53,830
+going to loop through our
+existing meteors array,
+
+129
+00:06:53,830 --> 00:06:56,650
+giving ourselves
+a key value pair
+
+130
+00:06:56,650 --> 00:06:59,400
+for the name and the weight.
+
+131
+00:06:59,400 --> 00:07:01,410
+Inside of our
+foreach loop, we'll
+
+132
+00:07:01,410 --> 00:07:03,060
+use a conditional statement.
+
+133
+00:07:03,060 --> 00:07:05,220
+In this case, we'll
+start with an if.
+
+134
+00:07:05,220 --> 00:07:07,920
+We're going to check
+to see if the weight is
+
+135
+00:07:07,920 --> 00:07:12,830
+greater than and equal to the
+value of our variable epic.
+
+136
+00:07:12,830 --> 00:07:15,960
+If it is, we'll print
+the following strings.
+
+137
+00:07:15,960 --> 00:07:18,870
+If our previous
+statement does not pass,
+
+138
+00:07:18,870 --> 00:07:22,030
+we'll want to follow it up
+with an elseif statement.
+
+139
+00:07:22,030 --> 00:07:24,030
+Here we're going to test
+to see if the weight is
+
+140
+00:07:24,030 --> 00:07:26,820
+greater than or equal to huge.
+
+141
+00:07:26,820 --> 00:07:28,440
+If that happens
+to be true, we'll
+
+142
+00:07:28,440 --> 00:07:30,450
+print the following information.
+
+143
+00:07:30,450 --> 00:07:32,880
+If neither one of these
+conditionals pass,
+
+144
+00:07:32,880 --> 00:07:36,480
+we want to follow it up with
+a default condition, that
+
+145
+00:07:36,480 --> 00:07:38,190
+would be our else statement.
+
+146
+00:07:38,190 --> 00:07:41,250
+And here, we simply echo,
+you found a meteorite.
+
+147
+00:07:41,250 --> 00:07:44,490
+That's awesome.
+
+148
+00:07:44,490 --> 00:07:47,070
+Before we jump into
+our final challenges,
+
+149
+00:07:47,070 --> 00:07:50,590
+let's look back at level four
+and see what we've learned.
+
+150
+00:07:50,590 --> 00:07:55,670
+We've gone over while loops,
+for loops, foreach loops,
+
+151
+00:07:55,670 --> 00:07:59,310
+foreach loops with a
+key and value pair,
+
+152
+00:07:59,310 --> 00:08:05,800
+as well as combining foreach
+loops with conditionals.
+
+153
+00:08:05,800 --> 00:08:08,470
+Now it's time to take the
+last set of challenges
+
+154
+00:08:08,470 --> 00:08:12,460
+and I'll see you in
+the wrap-up video.
+
+155
+00:08:12,460 --> 00:08:14,400
+Welcome back to Try--
+
+156
+00:08:14,400 --> 00:08:14,900
+[BEEP]
+
+157
+00:08:14,900 --> 00:08:17,680
+This lesson alone-- low--
+
+158
+00:08:17,680 --> 00:08:18,180
+[BEEP]
+
+159
+00:08:18,180 --> 00:08:22,520
+For we've experienced issues
+relating to Massaman curry
+
+160
+00:08:22,520 --> 00:08:26,300
+combined with extra hot sauce.
+
+161
+00:08:26,300 --> 00:08:27,850
+[BEEP]

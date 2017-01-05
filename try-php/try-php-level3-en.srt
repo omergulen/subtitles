@@ -1,0 +1,551 @@
+﻿1
+00:00:00,000 --> 00:00:03,642
+[SINGING] What's the
+shooting across the sky?
+
+2
+00:00:03,642 --> 00:00:08,250
+A rocket, a meteor,
+or a data type?
+
+3
+00:00:08,250 --> 00:00:14,500
+With PHP, we'll make it through
+with variables, arrays, and loops.
+
+4
+00:00:14,500 --> 00:00:17,592
+As you track meteors
+around the world,
+
+5
+00:00:17,592 --> 00:00:20,720
+your coding knowledge
+will unfurl.
+
+6
+00:00:20,720 --> 00:00:23,980
+Shall we play a game?
+
+7
+00:00:23,980 --> 00:00:25,435
+Yes, indeed.
+
+8
+00:00:25,435 --> 00:00:28,160
+Let's join forces and Try PHP.
+
+9
+00:00:32,026 --> 00:00:35,690
+Welcome back to Try PHP level 3.
+
+10
+00:00:35,690 --> 00:00:38,840
+Sometimes we need to be more
+selective with our data.
+
+11
+00:00:38,840 --> 00:00:42,350
+We'll do this using two
+new concepts-- conditionals
+
+12
+00:00:42,350 --> 00:00:43,580
+and operators.
+
+13
+00:00:48,950 --> 00:00:52,240
+There are many different
+types of operators in PHP.
+
+14
+00:00:52,240 --> 00:00:54,800
+Thus far, we have
+seen one operator,
+
+15
+00:00:54,800 --> 00:00:58,250
+which is the concatenation
+operator or the dot.
+
+16
+00:00:58,250 --> 00:01:00,920
+These operators you see
+here are very common.
+
+17
+00:01:00,920 --> 00:01:03,080
+They're considered
+arithmetic operators.
+
+18
+00:01:03,080 --> 00:01:04,849
+Some of these
+arithmetic operators
+
+19
+00:01:04,849 --> 00:01:10,130
+are addition, multiplication,
+subtraction, division,
+
+20
+00:01:10,130 --> 00:01:13,540
+and exponents.
+
+21
+00:01:13,540 --> 00:01:17,140
+Some operators in PHP are
+used for direct comparison
+
+22
+00:01:17,140 --> 00:01:18,530
+of two items.
+
+23
+00:01:18,530 --> 00:01:21,220
+These are considered
+comparison operators.
+
+24
+00:01:21,220 --> 00:01:24,940
+We can also compare array
+values, array keys, even
+
+25
+00:01:24,940 --> 00:01:26,950
+entire arrays as a whole.
+
+26
+00:01:26,950 --> 00:01:29,614
+Some of these operators
+you've seen before.
+
+27
+00:01:29,614 --> 00:01:31,030
+Most commonly,
+they're in the form
+
+28
+00:01:31,030 --> 00:01:33,850
+of equals, greater
+than or equal to,
+
+29
+00:01:33,850 --> 00:01:38,490
+not equal to, greater than,
+less than, and than identical.
+
+30
+00:01:43,710 --> 00:01:46,140
+The identical operator
+is a bit unique
+
+31
+00:01:46,140 --> 00:01:50,100
+in that it allows us to compare
+both the value of the object,
+
+32
+00:01:50,100 --> 00:01:52,260
+as well as the type.
+
+33
+00:01:52,260 --> 00:01:54,900
+In this case, our
+values are equal.
+
+34
+00:01:54,900 --> 00:01:58,520
+The string 5 and the
+integer 5 are both 5.
+
+35
+00:01:58,520 --> 00:02:03,040
+However, a string and an integer
+are not of the same data type.
+
+36
+00:02:03,040 --> 00:02:07,290
+So this identical
+test would fail.
+
+37
+00:02:07,290 --> 00:02:09,630
+The most common use
+of our operators
+
+38
+00:02:09,630 --> 00:02:11,760
+are in comparison statements.
+
+39
+00:02:11,760 --> 00:02:13,830
+We use comparison
+statements when
+
+40
+00:02:13,830 --> 00:02:17,130
+we want to ask questions
+about our variables
+
+41
+00:02:17,130 --> 00:02:20,590
+and then do something
+based off of that result.
+
+42
+00:02:20,590 --> 00:02:23,100
+The most common of these
+comparison statements
+
+43
+00:02:23,100 --> 00:02:24,690
+is the if statement.
+
+44
+00:02:24,690 --> 00:02:28,140
+For this example, we want to
+check a variable-- a year--
+
+45
+00:02:28,140 --> 00:02:32,370
+to see if it's greater
+than or equal to 2001.
+
+46
+00:02:32,370 --> 00:02:35,190
+If it is greater
+than 2001, we will
+
+47
+00:02:35,190 --> 00:02:38,220
+want to echo some
+information to the screen.
+
+48
+00:02:38,220 --> 00:02:39,870
+To start with,
+you're going to type
+
+49
+00:02:39,870 --> 00:02:44,040
+that if keyword followed
+by a space and a pair
+
+50
+00:02:44,040 --> 00:02:48,060
+of open and closed
+parentheses, then an open curly
+
+51
+00:02:48,060 --> 00:02:53,070
+brace, a new line, and
+finally a closed curly brace.
+
+52
+00:02:53,070 --> 00:02:56,400
+Since the year variable
+is set to 2016,
+
+53
+00:02:56,400 --> 00:02:59,580
+then this statement
+will evaluate to true.
+
+54
+00:02:59,580 --> 00:03:01,470
+Inside the curly
+braces is where we
+
+55
+00:03:01,470 --> 00:03:03,120
+want to define the
+action that will
+
+56
+00:03:03,120 --> 00:03:06,330
+happen if this statement
+evaluated to true.
+
+57
+00:03:06,330 --> 00:03:09,360
+What happens if our
+conditional evaluated to false?
+
+58
+00:03:09,360 --> 00:03:11,460
+Well, nothing at this point.
+
+59
+00:03:11,460 --> 00:03:14,220
+Our process would just
+enter our if statement,
+
+60
+00:03:14,220 --> 00:03:16,620
+evaluate to false,
+and then just move
+
+61
+00:03:16,620 --> 00:03:18,810
+onto the next block
+of code to evaluate.
+
+62
+00:03:21,610 --> 00:03:25,510
+What if we want to have an action
+happen if our first conditional
+
+63
+00:03:25,510 --> 00:03:27,250
+evaluates to false?
+
+64
+00:03:27,250 --> 00:03:29,890
+For that, we're going to use
+another common conditional
+
+65
+00:03:29,890 --> 00:03:31,480
+called else.
+
+66
+00:03:31,480 --> 00:03:34,690
+To use an else statement,
+we'll add the else keyword
+
+67
+00:03:34,690 --> 00:03:36,580
+just after the
+closing curly brace
+
+68
+00:03:36,580 --> 00:03:40,900
+from our if statement, followed
+by another set of curly braces.
+
+69
+00:03:40,900 --> 00:03:46,240
+This way, if we have another
+year that is less than 2001,
+
+70
+00:03:46,240 --> 00:03:48,940
+we can do another action,
+simply by placing it
+
+71
+00:03:48,940 --> 00:03:54,810
+inside of our curly braces
+within the else statement.
+
+72
+00:03:54,810 --> 00:03:57,330
+We may want to compare
+two different statements
+
+73
+00:03:57,330 --> 00:04:01,440
+to see if they evaluate to
+true or false independently
+
+74
+00:04:01,440 --> 00:04:03,060
+or combined.
+
+75
+00:04:03,060 --> 00:04:06,390
+For this, we're going to
+use a logical operator.
+
+76
+00:04:06,390 --> 00:04:09,210
+Here are a few examples
+of logical operators.
+
+77
+00:04:09,210 --> 00:04:12,390
+Here we have two variables--
+a, which is set to true,
+
+78
+00:04:12,390 --> 00:04:14,640
+and b, which is set to false.
+
+79
+00:04:14,640 --> 00:04:18,690
+Using our logical operators,
+let's compare these two values.
+
+80
+00:04:18,690 --> 00:04:21,269
+For the first example,
+we're testing to see if
+
+81
+00:04:21,269 --> 00:04:24,000
+a and b are both true.
+
+82
+00:04:24,000 --> 00:04:27,540
+In this case they're not,
+so that evaluates to false.
+
+83
+00:04:27,540 --> 00:04:31,560
+In the or statement, we're
+testing to see whether a or b
+
+84
+00:04:31,560 --> 00:04:32,560
+are true.
+
+85
+00:04:32,560 --> 00:04:35,760
+And since a is true, then
+this evaluates to true.
+
+86
+00:04:35,760 --> 00:04:38,520
+And in the not example,
+we're checking to make sure
+
+87
+00:04:38,520 --> 00:04:41,050
+that b is not equal to true.
+
+88
+00:04:41,050 --> 00:04:43,370
+And since it's false,
+this equates to true.
+
+89
+00:04:45,890 --> 00:04:48,320
+Using our new
+logical operator and,
+
+90
+00:04:48,320 --> 00:04:55,740
+we can test to see if a date
+is between 1994 and 2000.
+
+91
+00:04:55,740 --> 00:04:57,800
+Now let's look at
+another conditional
+
+92
+00:04:57,800 --> 00:05:01,350
+to round out our if
+and else statements.
+
+93
+00:05:01,350 --> 00:05:03,390
+If we want to add
+a middle condition
+
+94
+00:05:03,390 --> 00:05:05,790
+to check after the
+first condition did not
+
+95
+00:05:05,790 --> 00:05:09,330
+evaluate to true, we can
+use an else if statement.
+
+96
+00:05:09,330 --> 00:05:12,420
+The else if statement
+is identical to the if
+
+97
+00:05:12,420 --> 00:05:15,990
+statement in function, except
+we're using the keyword else
+
+98
+00:05:15,990 --> 00:05:18,570
+if, instead of our if keyword.
+
+99
+00:05:18,570 --> 00:05:21,540
+In this case, we want
+to test if a year is
+
+100
+00:05:21,540 --> 00:05:24,270
+greater than or equal to 2001.
+
+101
+00:05:24,270 --> 00:05:26,460
+If that evaluates
+to false, then we
+
+102
+00:05:26,460 --> 00:05:31,080
+want to check if the year is
+greater than or equal to 1984.
+
+103
+00:05:31,080 --> 00:05:33,870
+If that doesn't pass,
+then we'll move down
+
+104
+00:05:33,870 --> 00:05:37,370
+to our else statement.
+
+105
+00:05:37,370 --> 00:05:39,380
+Let's take a quick
+look back at what
+
+106
+00:05:39,380 --> 00:05:41,870
+we've learned in this level.
+
+107
+00:05:41,870 --> 00:05:45,350
+We've taken a look at
+comparison operators, arithmetic
+
+108
+00:05:45,350 --> 00:05:52,010
+operators, if, else if, and else
+statements, logical operators,
+
+109
+00:05:52,010 --> 00:05:54,230
+and comparing ranges.
+
+110
+00:05:54,230 --> 00:05:57,770
+Let's jump in and do some
+challenges regarding operators
+
+111
+00:05:57,770 --> 00:06:00,830
+and conditional statements.
+
+112
+00:06:00,830 --> 00:06:02,930
+Just using our-- did
+that I mumble that?
+
+113
+00:06:02,930 --> 00:06:04,090
+I think I did it.
+
+114
+00:06:04,090 --> 00:06:08,054
+And if-- ooh.
+
+115
+00:06:08,054 --> 00:06:09,270
+Sorry.
+
+116
+00:06:09,270 --> 00:06:13,280
+[LAUGHING] Terrible,
+I get that on screen.

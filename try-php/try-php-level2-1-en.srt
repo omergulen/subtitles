@@ -1,0 +1,618 @@
+1
+00:00:00,000 --> 00:00:03,290
+[SINGING] What's that
+shooting across the sky?
+
+2
+00:00:03,290 --> 00:00:07,350
+A rocket, a meteor,
+or a data type?
+
+3
+00:00:07,350 --> 00:00:14,500
+With PHP, we'll make it through
+with variables, arrays, and loops.
+
+4
+00:00:14,500 --> 00:00:17,500
+As you track meteors
+around the world,
+
+5
+00:00:17,500 --> 00:00:20,710
+your coding knowledge
+will unfurl.
+
+6
+00:00:20,710 --> 00:00:23,994
+Shall we play a game?
+
+7
+00:00:23,994 --> 00:00:24,972
+Yes, indeed.
+
+8
+00:00:24,972 --> 00:00:27,910
+Let's join forces and Try PHP.
+
+9
+00:00:32,299 --> 00:00:34,510
+Welcome back to Try PHP.
+
+10
+00:00:34,510 --> 00:00:36,670
+In this level, we're going
+to talk about arrays.
+
+11
+00:00:39,430 --> 00:00:41,530
+What happens if
+we have more data
+
+12
+00:00:41,530 --> 00:00:45,370
+to work with than just
+one variable can hold?
+
+13
+00:00:45,370 --> 00:00:49,150
+We could keep going with
+variables, like meteor 1, 2, 3,
+
+14
+00:00:49,150 --> 00:00:53,300
+so on, and so forth, but
+clearly, this will not scale.
+
+15
+00:00:53,300 --> 00:00:57,470
+So what we need is
+called an array.
+
+16
+00:00:57,470 --> 00:00:59,830
+An array in PHP is a map.
+
+17
+00:00:59,830 --> 00:01:05,050
+A map is a language type that
+associates keys to values.
+
+18
+00:01:05,050 --> 00:01:07,120
+Inside of each
+array, you'll have
+
+19
+00:01:07,120 --> 00:01:10,810
+a value with its associated
+key for addressing.
+
+20
+00:01:10,810 --> 00:01:13,990
+It will start with 0 and
+then ascend from there.
+
+21
+00:01:13,990 --> 00:01:18,520
+As you can see, each key has its
+own separate and unique value
+
+22
+00:01:18,520 --> 00:01:21,790
+associated to it.
+
+23
+00:01:21,790 --> 00:01:25,190
+To create an array, you
+have a couple of choices.
+
+24
+00:01:25,190 --> 00:01:27,250
+We can either use a
+built in function, called
+
+25
+00:01:27,250 --> 00:01:31,210
+array, or two square
+brackets, which is a shorthand
+
+26
+00:01:31,210 --> 00:01:33,670
+version of the same function.
+
+27
+00:01:33,670 --> 00:01:35,430
+You can use either
+of these examples,
+
+28
+00:01:35,430 --> 00:01:38,830
+but our first choice will
+always be the array function
+
+29
+00:01:38,830 --> 00:01:40,600
+just for the readability.
+
+30
+00:01:40,600 --> 00:01:42,430
+The two examples
+above will create
+
+31
+00:01:42,430 --> 00:01:47,130
+the exact same empty array.
+
+32
+00:01:47,130 --> 00:01:50,420
+We can also create an array
+with one or more values
+
+33
+00:01:50,420 --> 00:01:54,020
+by adding them inside of
+the parentheses of our array
+
+34
+00:01:54,020 --> 00:01:55,100
+function.
+
+35
+00:01:55,100 --> 00:01:57,230
+If we want to add
+more than one value,
+
+36
+00:01:57,230 --> 00:02:00,470
+we just separate each of
+the values with a comma.
+
+37
+00:02:00,470 --> 00:02:02,390
+If we try to echo
+an array, we're
+
+38
+00:02:02,390 --> 00:02:04,770
+not going to get the
+results we desire.
+
+39
+00:02:04,770 --> 00:02:07,280
+Now we're going to need to
+use another built-in function
+
+40
+00:02:07,280 --> 00:02:10,699
+inside of PHP, called print r.
+
+41
+00:02:10,699 --> 00:02:14,420
+Print r will echo human
+readable output of a variable,
+
+42
+00:02:14,420 --> 00:02:16,740
+in this case, our
+array variable.
+
+43
+00:02:16,740 --> 00:02:18,650
+Let's take a look at the output.
+
+44
+00:02:18,650 --> 00:02:22,400
+Here you can see it defines
+array and then the key, which
+
+45
+00:02:22,400 --> 00:02:26,120
+is 0, and then the associated
+value, which is hoba.
+
+46
+00:02:26,120 --> 00:02:28,550
+And for key 1, you'll
+see it shows Cape
+
+47
+00:02:28,550 --> 00:02:30,600
+York as its associated value.
+
+48
+00:02:33,390 --> 00:02:37,350
+What if we want to add two more
+values to our already existing
+
+49
+00:02:37,350 --> 00:02:38,940
+array called meteors?
+
+50
+00:02:38,940 --> 00:02:41,460
+We're going to
+append our new values
+
+51
+00:02:41,460 --> 00:02:45,750
+by placing the square brackets
+just after the array variable,
+
+52
+00:02:45,750 --> 00:02:48,990
+then use our assignment
+operator or the equal sign,
+
+53
+00:02:48,990 --> 00:02:54,000
+followed by the new value that
+we want to assign to our array.
+
+54
+00:02:54,000 --> 00:02:57,210
+If we now call print r
+on our meteor's variable,
+
+55
+00:02:57,210 --> 00:02:59,610
+you'll see our output has
+been updated to include
+
+56
+00:02:59,610 --> 00:03:02,990
+two new keys.
+
+57
+00:03:02,990 --> 00:03:06,140
+How do we access the
+data inside of our array?
+
+58
+00:03:06,140 --> 00:03:08,530
+Let's say we want to take
+a look at the first key,
+
+59
+00:03:08,530 --> 00:03:10,960
+or the first item, in our array.
+
+60
+00:03:10,960 --> 00:03:13,150
+We're going to access
+this by using its key,
+
+61
+00:03:13,150 --> 00:03:15,640
+or in this case,
+its numeric index.
+
+62
+00:03:15,640 --> 00:03:18,940
+The indices of an
+array are 0 based.
+
+63
+00:03:18,940 --> 00:03:23,630
+This means that our first item
+as it positions 0 in our array.
+
+64
+00:03:23,630 --> 00:03:26,920
+We can grab that data by
+using the array variable,
+
+65
+00:03:26,920 --> 00:03:29,740
+followed by the square
+brackets, and then our index
+
+66
+00:03:29,740 --> 00:03:31,570
+contained inside.
+
+67
+00:03:31,570 --> 00:03:34,210
+If we echo meteor's
+with the key of 0,
+
+68
+00:03:34,210 --> 00:03:37,270
+we'll notice that our
+output is the string hoba.
+
+69
+00:03:40,150 --> 00:03:42,280
+Continuing on what
+we just did, we
+
+70
+00:03:42,280 --> 00:03:45,310
+can also grab the other
+items-- in this case,
+
+71
+00:03:45,310 --> 00:03:47,480
+what's at key 1 and at key 3.
+
+72
+00:03:50,480 --> 00:03:53,390
+What if we want to
+modify an existing value?
+
+73
+00:03:53,390 --> 00:03:54,680
+How do we do that?
+
+74
+00:03:54,680 --> 00:03:57,140
+We can do that by
+assigning it a value that
+
+75
+00:03:57,140 --> 00:04:00,740
+overrides the previous, just
+like we would a variable.
+
+76
+00:04:00,740 --> 00:04:04,310
+The only difference is that we
+use the same address that we
+
+77
+00:04:04,310 --> 00:04:06,990
+used for recalling that value.
+
+78
+00:04:06,990 --> 00:04:10,430
+In this case, we're taking
+meteors, the key of 0,
+
+79
+00:04:10,430 --> 00:04:13,100
+and then setting it equal
+to Los Angeles, which
+
+80
+00:04:13,100 --> 00:04:15,140
+used to be set to hoba.
+
+81
+00:04:15,140 --> 00:04:17,750
+If we do a print r on
+our array variable,
+
+82
+00:04:17,750 --> 00:04:21,320
+you'll now see that hoba
+has been replaced at key 0
+
+83
+00:04:21,320 --> 00:04:22,565
+with Los Angeles.
+
+84
+00:04:25,090 --> 00:04:26,755
+Arrays can be very powerful.
+
+85
+00:04:26,755 --> 00:04:30,390
+A meteorite is clearly
+more than just a name.
+
+86
+00:04:30,390 --> 00:04:32,620
+There's information
+like weight, year
+
+87
+00:04:32,620 --> 00:04:35,680
+discovered or
+found, its location.
+
+88
+00:04:35,680 --> 00:04:38,800
+Let's store more information
+about the meteorite
+
+89
+00:04:38,800 --> 00:04:42,490
+using the name as our
+key, instead of a number.
+
+90
+00:04:42,490 --> 00:04:44,440
+To do this, we're
+going to use something
+
+91
+00:04:44,440 --> 00:04:48,280
+called an associative array.
+
+92
+00:04:48,280 --> 00:04:51,290
+An associative array is a little
+different from the simple array
+
+93
+00:04:51,290 --> 00:04:53,300
+that we've learned so far.
+
+94
+00:04:53,300 --> 00:04:56,330
+Indexed arrays use
+integers as their keys,
+
+95
+00:04:56,330 --> 00:05:00,140
+where associative arrays can
+use strings-- strings that
+
+96
+00:05:00,140 --> 00:05:02,495
+will help us find the data
+that we're looking for.
+
+97
+00:05:02,495 --> 00:05:05,570
+To define an associative
+array, instead of just writing
+
+98
+00:05:05,570 --> 00:05:07,820
+values inside the
+array function,
+
+99
+00:05:07,820 --> 00:05:10,520
+we have to create
+key value pairs.
+
+100
+00:05:10,520 --> 00:05:14,780
+We do that by first defining the
+key, which is a string of hoba,
+
+101
+00:05:14,780 --> 00:05:17,750
+followed by an equal sign, and
+then a greater than symbol.
+
+102
+00:05:17,750 --> 00:05:21,380
+This is also known as
+the association operator.
+
+103
+00:05:21,380 --> 00:05:24,500
+After this, we'll create a
+value that is paired with hoba.
+
+104
+00:05:24,500 --> 00:05:27,860
+In this case, it's the
+integer value of 600 million,
+
+105
+00:05:27,860 --> 00:05:31,580
+which is the weight of
+grams in the meteorite hoba.
+
+106
+00:05:31,580 --> 00:05:35,480
+Now if we do a print r of
+our array variable meteors,
+
+107
+00:05:35,480 --> 00:05:38,510
+you'll see a key value
+pair association,
+
+108
+00:05:38,510 --> 00:05:41,060
+where the key is hoba
+and then our value
+
+109
+00:05:41,060 --> 00:05:42,118
+is our weight in grams.
+
+110
+00:05:44,630 --> 00:05:47,840
+Now if we want to access an
+item in our associative array,
+
+111
+00:05:47,840 --> 00:05:50,330
+we no longer use
+the numeric index,
+
+112
+00:05:50,330 --> 00:05:53,450
+we'll use our string
+index, or our string key.
+
+113
+00:05:53,450 --> 00:05:56,630
+Here when we are echoing
+our meteor's array
+
+114
+00:05:56,630 --> 00:06:00,230
+with the key of hoba, we now
+get it's contained value,
+
+115
+00:06:00,230 --> 00:06:01,960
+which is 600 million grams.
+
+116
+00:06:04,750 --> 00:06:07,370
+If you want to append
+a new key value
+
+117
+00:06:07,370 --> 00:06:10,670
+pair to our already
+existing associative array,
+
+118
+00:06:10,670 --> 00:06:13,430
+we would do the same as we've
+done before, but instead
+
+119
+00:06:13,430 --> 00:06:18,200
+of a numerical index, we'll
+add a new key, a string value,
+
+120
+00:06:18,200 --> 00:06:20,210
+and its associated value.
+
+121
+00:06:20,210 --> 00:06:22,820
+Now if we print r
+our array, you'll
+
+122
+00:06:22,820 --> 00:06:26,030
+see we get the new value,
+as well as our old values.
+
+123
+00:06:28,920 --> 00:06:31,290
+Before we jump right into
+the challenges, let's
+
+124
+00:06:31,290 --> 00:06:34,180
+review what we've
+learned in this section.
+
+125
+00:06:34,180 --> 00:06:37,170
+We've talked about
+numerically indexed arrays,
+
+126
+00:06:37,170 --> 00:06:41,040
+associative arrays, creation
+of arrays with values,
+
+127
+00:06:41,040 --> 00:06:43,440
+and modification
+of values inside
+
+128
+00:06:43,440 --> 00:06:47,300
+of already existing arrays.
+
+129
+00:06:47,300 --> 00:06:51,520
+Now it's time for you to have
+some fun in the challenges.
+
+130
+00:06:51,520 --> 00:06:52,176

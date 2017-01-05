@@ -1,0 +1,355 @@
+﻿1
+00:00:02,080 --> 00:00:02,861
+Welcome back.
+
+2
+00:00:02,861 --> 00:00:04,360
+In this section,
+we're going to talk
+
+3
+00:00:04,360 --> 00:00:07,750
+about combining strings,
+or string concatenations,
+
+4
+00:00:07,750 --> 00:00:11,880
+and different PHP data types.
+
+5
+00:00:11,880 --> 00:00:15,360
+So far, our name variable
+only has a small amount
+
+6
+00:00:15,360 --> 00:00:18,720
+of data, which is the
+name of our meteorite.
+
+7
+00:00:18,720 --> 00:00:20,970
+What if we want to
+add more information
+
+8
+00:00:20,970 --> 00:00:23,910
+to our echo statement
+of that variable,
+
+9
+00:00:23,910 --> 00:00:26,460
+but not into the
+variable itself?
+
+10
+00:00:26,460 --> 00:00:28,200
+For that, we're going
+to use something
+
+11
+00:00:28,200 --> 00:00:32,490
+called string concatenation,
+or combining strings.
+
+12
+00:00:32,490 --> 00:00:35,290
+To join or
+concatenate, a string,
+
+13
+00:00:35,290 --> 00:00:39,660
+we're going to need to use a
+PHP operator, the dot or period
+
+14
+00:00:39,660 --> 00:00:40,740
+character.
+
+15
+00:00:40,740 --> 00:00:43,900
+We're going to get more into
+operators later in the lesson,
+
+16
+00:00:43,900 --> 00:00:46,980
+but for now we're just
+going to work with this one.
+
+17
+00:00:46,980 --> 00:00:50,340
+Continuing to use single
+quotes with the echo statement,
+
+18
+00:00:50,340 --> 00:00:52,440
+placing them in front
+of our variable,
+
+19
+00:00:52,440 --> 00:00:55,020
+we can add some new string data.
+
+20
+00:00:55,020 --> 00:00:57,480
+Then, to join the new
+string with our variable,
+
+21
+00:00:57,480 --> 00:00:59,790
+we're going to add
+our dot operator.
+
+22
+00:00:59,790 --> 00:01:02,670
+Make sure to notice the
+space between the colon
+
+23
+00:01:02,670 --> 00:01:04,440
+and the single quote character.
+
+24
+00:01:04,440 --> 00:01:06,960
+If we don't use this
+space, our string
+
+25
+00:01:06,960 --> 00:01:10,470
+will just bump right up against
+the value of our variable.
+
+26
+00:01:10,470 --> 00:01:13,740
+Now you can see in our output
+we have meteor name, colon,
+
+27
+00:01:13,740 --> 00:01:15,420
+and then the value
+of our variable,
+
+28
+00:01:15,420 --> 00:01:16,755
+or the meteorite name itself.
+
+29
+00:01:20,120 --> 00:01:23,020
+Another way to concatenate
+a variable into a string
+
+30
+00:01:23,020 --> 00:01:25,630
+is to use string evaluation.
+
+31
+00:01:25,630 --> 00:01:28,840
+Instead of using single quotes,
+we can use double quotes.
+
+32
+00:01:28,840 --> 00:01:32,020
+When the interpreter sees double
+quotes, and a variable within,
+
+33
+00:01:32,020 --> 00:01:35,200
+it will evaluate the
+content of that variable,
+
+34
+00:01:35,200 --> 00:01:37,690
+in this case, the string "Hoba".
+
+35
+00:01:37,690 --> 00:01:40,310
+We will no longer need
+the dot character.
+
+36
+00:01:43,220 --> 00:01:47,450
+So far, we've looked at strings
+as our only data type in PHP.
+
+37
+00:01:47,450 --> 00:01:49,160
+But there are many
+more data types
+
+38
+00:01:49,160 --> 00:01:52,640
+in which we can use to help
+create great programs.
+
+39
+00:01:52,640 --> 00:01:56,210
+A string, simply put, is
+a series of characters.
+
+40
+00:01:56,210 --> 00:01:59,120
+To define a string, we'll want
+to surround our information
+
+41
+00:01:59,120 --> 00:02:03,340
+in single quotes
+during the assignment.
+
+42
+00:02:03,340 --> 00:02:05,980
+An integer is basically
+just a number.
+
+43
+00:02:05,980 --> 00:02:08,419
+It can be negative or
+it can be positive,
+
+44
+00:02:08,419 --> 00:02:09,789
+but it has to be a whole number.
+
+45
+00:02:09,789 --> 00:02:11,500
+It can also be zero.
+
+46
+00:02:11,500 --> 00:02:15,430
+Integers can be represented
+as base 10, octal, binary,
+
+47
+00:02:15,430 --> 00:02:16,900
+or hexadecimal.
+
+48
+00:02:16,900 --> 00:02:21,070
+Mostly, we're going to
+be sticking with base 10.
+
+49
+00:02:21,070 --> 00:02:22,810
+Floating point
+numbers, also known
+
+50
+00:02:22,810 --> 00:02:25,450
+as "floats", "doubles",
+or "real numbers",
+
+51
+00:02:25,450 --> 00:02:28,360
+will be any number that a
+decimal point can float.
+
+52
+00:02:28,360 --> 00:02:30,430
+That is, placed
+anywhere relative
+
+53
+00:02:30,430 --> 00:02:32,770
+to the significant
+digits of the number.
+
+54
+00:02:32,770 --> 00:02:35,110
+An example of a float
+would be like width,
+
+55
+00:02:35,110 --> 00:02:38,840
+which is set equal to 8.9.
+
+56
+00:02:38,840 --> 00:02:42,830
+Booleans are a data type that
+can contain one of two values,
+
+57
+00:02:42,830 --> 00:02:44,760
+either true or false.
+
+58
+00:02:44,760 --> 00:02:51,260
+It can also be looked at as
+one or zero, or on or off.
+
+59
+00:02:51,260 --> 00:02:54,170
+If we echo our strings,
+integers, and floats,
+
+60
+00:02:54,170 --> 00:02:56,780
+everything looks as
+we would expect it to.
+
+61
+00:02:56,780 --> 00:02:58,850
+But if we echo our
+Booleans, you'll
+
+62
+00:02:58,850 --> 00:03:02,780
+see that the trues equate
+to a 1, but if it's a false,
+
+63
+00:03:02,780 --> 00:03:04,700
+nothing shows up.
+
+64
+00:03:04,700 --> 00:03:07,280
+We don't normally echo
+Booleans, but mostly
+
+65
+00:03:07,280 --> 00:03:10,480
+use them for conditionals.
+
+66
+00:03:10,480 --> 00:03:13,600
+Let's review what we've
+gone over in this section.
+
+67
+00:03:13,600 --> 00:03:15,760
+We've done string
+concatenation, and we've
+
+68
+00:03:15,760 --> 00:03:19,240
+looked over the data types
+of strings, integers,
+
+69
+00:03:19,240 --> 00:03:21,085
+floating points, and Booleans.
+
+70
+00:03:23,790 --> 00:03:25,680
+Now it's time for you
+to play with these data
+
+71
+00:03:25,680 --> 00:03:28,510
+types in our challenges.
+
+72
+00:03:28,510 --> 00:03:33,870
+Of good-- [LAUGHTER] Here's
+some examples of good and bad.
+
+73
+00:03:33,870 --> 00:03:35,876
+I wrote this, too.
+
+74
+00:03:35,876 --> 00:03:38,250
+Now if we do-- [LAUGHTER] I
+wasn't looking at the camera.
+
+75
+00:03:38,250 --> 00:03:39,980
+Like "nerr".
