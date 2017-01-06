@@ -1,0 +1,489 @@
+﻿1
+00:00:01,720 --> 00:00:03,240
+A continuación tenemos las Cadenas.
+
+2
+00:00:03,240 --> 00:00:06,820
+Las cadenas son la forma en que JavaScript
+maneja y guarda y
+
+3
+00:00:06,820 --> 00:00:09,270
+procesa el texto plano.
+
+4
+00:00:09,270 --> 00:00:11,670
+Para señalar a JavaScript
+que queremos
+
+5
+00:00:11,670 --> 00:00:14,990
+procesar algún texto plano, nosotros
+necesitamos usar un par de
+
+6
+00:00:14,990 --> 00:00:18,220
+comillas rodeando
+algún texto mientras introducimos la
+
+7
+00:00:18,220 --> 00:00:20,680
+cadena en la consola.
+
+8
+00:00:20,680 --> 00:00:24,560
+Aquí puedes ver dos diferentes
+cadenas, "Raindrops On Roses"
+
+9
+00:00:24,560 --> 00:00:26,120
+y "Whiskers On Kittens".
+
+10
+00:00:26,120 --> 00:00:29,740
+Cuando le ponemos al texto
+las comillas, JavaScript
+
+11
+00:00:29,740 --> 00:00:32,840
+lo reconoce como una cadena y
+luego nos devuelve la cadena
+
+12
+00:00:32,840 --> 00:00:34,320
+directamente.
+
+13
+00:00:34,320 --> 00:00:38,550
+También podemos usar el
+operador "plus" (+) únicamente con cadenas
+
+14
+00:00:38,550 --> 00:00:40,780
+en un proceso llamado
+Concatenación.
+
+15
+00:00:40,780 --> 00:00:44,610
+La concatenación coloca las cadenas
+juntas dentro de una cadena
+
+16
+00:00:44,610 --> 00:00:47,560
+y nos retorna una cadena maestra
+al final.
+
+17
+00:00:47,560 --> 00:00:51,440
+Aquí puedes ver "Raindrops On
+Roses" concatenada con
+
+18
+00:00:51,440 --> 00:00:56,290
+otra cadena que dice "space
+And space", concatenada con
+
+19
+00:00:56,290 --> 00:00:59,530
+otra cadena que dice
+"Whiskers On Kittens".
+
+20
+00:00:59,530 --> 00:01:01,750
+Como resultado, tenemos
+"Raindrops On Roses
+
+21
+00:01:01,750 --> 00:01:03,000
+And Whiskers On Kittens".
+
+22
+00:01:07,050 --> 00:01:10,530
+Ahora, es tiempo de algunas
+de mis cadenas favoritas.
+
+23
+00:01:10,530 --> 00:01:13,570
+La concatenación también funcionará
+con números y sus
+
+24
+00:01:13,570 --> 00:01:15,530
+expresiones.
+
+25
+00:01:15,530 --> 00:01:17,770
+En este primer ejemplo, podemos
+ver que cuando tratamos de
+
+26
+00:01:17,770 --> 00:01:21,740
+concatenar "The meaning of life is"
+con el valor "42", nosotros
+
+27
+00:01:21,740 --> 00:01:24,410
+obtenemos una cadena perfectamente válida
+al final, pero no esta
+
+28
+00:01:24,410 --> 00:01:27,300
+formateada exactamete como
+lo queremos.
+
+29
+00:01:27,300 --> 00:01:30,880
+Al parecer nos
+nos falta un espacio.
+
+30
+00:01:30,880 --> 00:01:34,400
+Como la concatenación no te
+provee de un espacio, todo
+
+31
+00:01:34,400 --> 00:01:37,200
+lo que necesitamos hacer para arreglar esto es
+poner un espacio dentro de la
+
+32
+00:01:37,200 --> 00:01:38,450
+primera cadena.
+
+33
+00:01:41,620 --> 00:01:45,190
+También podemos concatenar
+expresiones dentro de cadenas.
+
+34
+00:01:45,190 --> 00:01:49,100
+Sin embargo, las expresiones serán
+evaluadas por la consola.
+
+35
+00:01:49,100 --> 00:01:53,830
+Como ves aquí con 0.75,
+3/4 fué evaluado.
+
+36
+00:01:53,830 --> 00:01:56,320
+Para poder arreglar eso, nosotros
+en realidad necesitamos colocar la
+
+37
+00:01:56,320 --> 00:02:00,030
+expresión dentro de la cadena
+para que obtengamos el texto plano
+
+38
+00:02:00,030 --> 00:02:05,580
+de "3/4" en vez de 0.75.
+
+39
+00:02:05,580 --> 00:02:08,160
+Cuando se trabaja con cadenas,
+necesitarás algunos
+
+40
+00:02:08,160 --> 00:02:11,370
+caracteres especiales para lograr algún
+formateado específico.
+
+41
+00:02:11,370 --> 00:02:14,220
+Aquí en este ejemplo, puedes
+ver un \t, que
+
+42
+00:02:14,220 --> 00:02:18,010
+representa un adelanto
+a la siguiente tabulación.
+
+43
+00:02:18,010 --> 00:02:20,520
+Aquí, en el final, ¿puedes
+ver que los \t
+
+44
+00:02:20,520 --> 00:02:23,810
+han desaparecido, y en sus lugares
+hay un adelanto a la
+
+45
+00:02:23,810 --> 00:02:27,750
+siguiente tabulación
+dentro de la cadena?
+
+46
+00:02:27,750 --> 00:02:29,670
+Qué pasaría si necesitamos doble
+comillas
+
+47
+00:02:29,670 --> 00:02:30,980
+dentro de nuestra cadena.
+
+48
+00:02:30,980 --> 00:02:33,250
+Bueno, la consola mira a las
+dobles comillas como
+
+49
+00:02:33,250 --> 00:02:34,910
+el principio o la finalización de una cadena.
+
+50
+00:02:34,910 --> 00:02:38,740
+Así que necesitamos una forma especial de
+escapar de esa doble comilla,
+
+51
+00:02:38,740 --> 00:02:41,190
+entonces usamos una barra invertida
+antes de la comilla
+
+52
+00:02:41,190 --> 00:02:43,320
+en ese caso también.
+
+53
+00:02:43,320 --> 00:02:46,370
+En nuestro resultado final, podemos
+ver que tenemos un par de
+
+54
+00:02:46,370 --> 00:02:49,380
+comillas
+dentro de las cadenas.
+
+55
+00:02:52,560 --> 00:02:54,660
+Qué pasa si queremos una barra invertida (\)
+dentro de una cadena?
+
+56
+00:02:54,660 --> 00:02:57,280
+Bueno, como es un caracter
+especial, necesitamos usar
+
+57
+00:02:57,280 --> 00:03:01,450
+doble barra invertida para producir solo
+una barra invertida dentro de
+
+58
+00:03:01,450 --> 00:03:02,770
+la cadena.
+
+59
+00:03:02,770 --> 00:03:05,550
+Siguiendo eso, tenemos
+un \ n que
+
+60
+00:03:05,550 --> 00:03:07,670
+representa una nueva línea.
+
+61
+00:03:07,670 --> 00:03:10,940
+Puedes ver en la salida aquí,
+que la cadena está separada
+
+62
+00:03:10,940 --> 00:03:13,820
+a lo largo de múltiples líneas a causa
+del \ n
+
+63
+00:03:17,090 --> 00:03:19,470
+Esto no es por ningún motivo una
+exhaustiva compilación de
+
+64
+00:03:19,470 --> 00:03:22,350
+caracteres especiales para uso en
+formateado de cadenas, y puedes
+
+65
+00:03:22,350 --> 00:03:24,770
+investigar el resto
+en internet.
+
+66
+00:03:24,770 --> 00:03:27,560
+A veces queremos comparar
+cadenas por orden
+
+67
+00:03:27,560 --> 00:03:29,820
+alfabético o para combinar
+cadenas.
+
+68
+00:03:29,820 --> 00:03:33,060
+JavaScript nos permite comparar
+cadenas con específicos
+
+69
+00:03:33,060 --> 00:03:34,640
+comparadores.
+
+70
+00:03:34,640 --> 00:03:38,160
+Podemos usar el doble signo de igualdad
+para comparar "The Wright
+
+71
+00:03:38,160 --> 00:03:41,200
+Brothers" con "The Wright
+Brothers", que nos devuelve un
+
+72
+00:03:41,200 --> 00:03:46,210
+valor Verdadero porque esas
+cadenas son exactamente iguales.
+
+73
+00:03:46,210 --> 00:03:48,250
+Podemos ver que si usamos "doble
+igualdad" en "The Wright
+
+74
+00:03:48,250 --> 00:03:50,760
+Brothers" y "Super Mario
+Brothers", obtendríamos un
+
+75
+00:03:50,760 --> 00:03:52,530
+valor Falso, porque
+esas cadenas no
+
+76
+00:03:52,530 --> 00:03:54,320
+son para nada iguales.
+
+77
+00:03:54,320 --> 00:03:55,760
+Ahora, aquí hay uno complicado.
+
+78
+00:03:55,760 --> 00:03:59,520
+Si vemos "The Wright Brothers"
+comparado con "the wright
+
+79
+00:03:59,520 --> 00:04:03,670
+brothers" en una situación de
+No Igualdad, Esto nos devolverá un
+
+80
+00:04:03,670 --> 00:04:05,530
+valor Verdadrero.
+
+81
+00:04:05,530 --> 00:04:08,470
+La razón por la que lo es, es porque
+esas cadenas no son exactamente
+
+82
+00:04:08,470 --> 00:04:11,350
+las mismas porque JavaScript
+es sensible a mayúsculas y minúculas
+
+83
+00:04:11,350 --> 00:04:12,810
+con relación a las cadenas.
+
+84
+00:04:12,810 --> 00:04:14,060
+Así que, ellos no son iguales.
+
+85
+00:04:17,740 --> 00:04:21,120
+También podemos acceder a la longitud
+de las cadenas usando la propiedad
+
+86
+00:04:21,120 --> 00:04:22,540
+.length
+
+87
+00:04:22,540 --> 00:04:25,570
+Puedes ver aquí que si
+tenemos una palabra super larga
+
+88
+00:04:25,570 --> 00:04:28,450
+en inglés,
+"antidisestablishmentarianism",
+
+89
+00:04:28,450 --> 00:04:31,030
+y usamos la propiedad
+.length, la consola de JavaScript
+
+90
+00:04:31,030 --> 00:04:36,540
+nos devolverá un
+lindo valor de 28.
+
+91
+00:04:36,540 --> 00:04:39,460
+Y de nuevo, cuando usemos "One
+Fish, Two Fish, Red Fish, Blue
+
+92
+00:04:39,460 --> 00:04:42,130
+Fish", si usamos la propiedad
+de .length en eso,
+
+93
+00:04:42,130 --> 00:04:44,690
+JavaScript nos devolverá un 39.
+
+94
+00:04:44,690 --> 00:04:47,830
+Ahora, lo que es realmente importante
+aquí es que la propiedad
+
+95
+00:04:47,830 --> 00:04:51,130
+.length va a calcular todos
+los espacios y toda la
+
+96
+00:04:51,130 --> 00:04:55,340
+puntuación para determinar
+tu longitud.
+
+97
+00:04:55,340 --> 00:04:57,820
+Ahora, es tiempo para que uses
+tus nuevas habilidades
+
+98
+00:04:57,820 --> 00:04:59,730
+en JavaScript en la sección de
+desafíos.
+
+99
+00:04:59,730 --> 00:05:01,000
+Te veremos en la próxima.
+
+100
+00:05:07,550 --> 00:05:08,320
+Barra invertida.
+
+101
+00:05:08,320 --> 00:05:11,220
+Múltiples, múltiples caracteres
+especiales para el uso para empezar a
+
+102
+00:05:11,220 --> 00:05:11,550
+formatear.
+
+103
+00:05:11,550 --> 00:05:12,990
+No sé por qué estás diciendo esa palabra dos veces
+[Risas en el fondo]

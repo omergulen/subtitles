@@ -1,0 +1,462 @@
+﻿1
+00:00:02,240 --> 00:00:05,170
+Podemos guardar cualquier cosa dentro
+de las variables JavaScript
+
+2
+00:00:05,170 --> 00:00:08,260
+Hasta ahora hemos usado
+números, pero también podemos guardar
+
+3
+00:00:08,260 --> 00:00:10,530
+cadenas dentro de variables.
+
+4
+00:00:10,530 --> 00:00:13,070
+Aquí tenemos una variable "welcome"
+así como una variable
+
+5
+00:00:13,070 --> 00:00:14,250
+"safetyTip".
+
+6
+00:00:14,250 --> 00:00:17,490
+Podemos usar ambas
+variables que contienen cadenas
+
+7
+00:00:17,490 --> 00:00:21,080
+en concatenación con una nueva línea
+de caracter para producir una
+
+8
+00:00:21,080 --> 00:00:24,525
+cadena específicamente formateada en
+la salida de la consola.
+
+9
+00:00:29,440 --> 00:00:32,150
+Si nuestra variable contiene una
+cadena, podemos usar la
+
+10
+00:00:32,150 --> 00:00:35,900
+propiedad .length para acceder a la
+longitud de esa cadena en vez de
+
+11
+00:00:35,900 --> 00:00:38,380
+tipear la cadena
+entera.
+
+12
+00:00:38,380 --> 00:00:41,840
+Aquí puedes ver nuestra variable
+longString, con una cadena que
+
+13
+00:00:41,840 --> 00:00:43,940
+yo no quisiera tipear de nuevo
+todo el tiempo.
+
+14
+00:00:43,940 --> 00:00:47,090
+Y si usamos la propiedad
+.length en longString, podemos
+
+15
+00:00:47,090 --> 00:00:50,130
+ver que retorna el valor
+49 como la longitud.
+
+16
+00:00:53,620 --> 00:00:56,190
+También podemos comparar la longitud
+de las cadenas usando la propiedad
+
+17
+00:00:56,190 --> 00:00:58,010
+de longitud y un comparador.
+
+18
+00:00:58,010 --> 00:01:00,720
+Así que si hacimos dos variables
+aquí, longWordOne y
+
+19
+00:01:00,720 --> 00:01:03,540
+longWordTwo, y ambos son
+grandes y no queremos
+
+20
+00:01:03,540 --> 00:01:06,400
+contar cada una o comparar cuál
+es más larga, podemos
+
+21
+00:01:06,400 --> 00:01:10,420
+usar el operador "mayor que"
+para preguntar si la longitud de
+
+22
+00:01:10,420 --> 00:01:12,900
+la primera cadena es mayor
+que la longitud
+
+23
+00:01:12,900 --> 00:01:14,180
+de la segunda cadena.
+
+24
+00:01:14,180 --> 00:01:16,810
+Cuando usamos la propiedad
+.length en dos variables,
+
+25
+00:01:16,810 --> 00:01:18,570
+estamos comparando dos números.
+
+26
+00:01:18,570 --> 00:01:22,160
+Y aquí tenemos un resultado de
+Falso, porque longWordOne no es
+
+27
+00:01:22,160 --> 00:01:23,460
+más larga que longWordTwo.
+
+28
+00:01:27,400 --> 00:01:30,570
+Ahora, las cadenas de JavaScript tienen
+una forma de encontrar específicos
+
+29
+00:01:30,570 --> 00:01:33,100
+caracteres dentro de esa cadena.
+
+30
+00:01:33,100 --> 00:01:36,230
+Cada posición dentro de una cadena
+tiene un índice numerado que
+
+31
+00:01:36,230 --> 00:01:38,460
+empieza desde cero.
+
+32
+00:01:38,460 --> 00:01:40,440
+Aquí tenemos una variable
+llamada "sentence".
+
+33
+00:01:40,440 --> 00:01:43,920
+Y adentro hay una frase,
+una cadena muy larga.
+
+34
+00:01:43,920 --> 00:01:47,300
+Puedes ver que el índice
+cero, tenemos la letra mayúscula
+
+35
+00:01:47,300 --> 00:01:50,330
+A. Te convendría pensar en que
+los números de los índices están
+
+36
+00:01:50,330 --> 00:01:53,190
+a cierta distancia del
+carácter inicial.
+
+37
+00:01:53,190 --> 00:01:55,460
+Y por eso, el primer carácter en
+una cadena está
+
+38
+00:01:55,460 --> 00:01:58,200
+a cero de distancia de sí mismo.
+
+39
+00:01:58,200 --> 00:02:00,150
+Luego puedes ver que en el índice
+ocho
+
+40
+00:02:00,150 --> 00:02:01,840
+tenemos una 's' minúscula.
+
+41
+00:02:01,840 --> 00:02:05,010
+En el índice 28, tenemos
+un caracter de espacio.
+
+42
+00:02:05,010 --> 00:02:08,320
+Eso es correcto, los espacios
+son caracteres también.
+
+43
+00:02:08,320 --> 00:02:11,910
+Y luego en el índice final,
+índice 42, tenemos un
+
+44
+00:02:11,910 --> 00:02:13,590
+signo de exclamación.
+
+45
+00:02:13,590 --> 00:02:16,650
+Ahora, si tomamos la longitud de
+la variable de la frase usando
+
+46
+00:02:16,650 --> 00:02:20,530
+la propiedad .length,
+JavaScript retornará un 43
+
+47
+00:02:20,530 --> 00:02:21,020
+Qué?
+
+48
+00:02:21,020 --> 00:02:21,840
+Por qué?
+
+49
+00:02:21,840 --> 00:02:25,530
+Acabamos de decir que el último
+carácter era índice 42.
+
+50
+00:02:25,530 --> 00:02:28,430
+Eso es porque las posiciones de las cadenas
+son basadas en cero.
+
+51
+00:02:28,430 --> 00:02:32,900
+Y así ahí siempre habrá un
+índice menos que la longitud
+
+52
+00:02:32,900 --> 00:02:34,300
+total de la cadena.
+
+53
+00:02:40,170 --> 00:02:44,360
+Otro genial método de ayuda para
+cadenas es el método charAt.
+
+54
+00:02:44,360 --> 00:02:48,490
+Si colocas el índice dentro del
+paréntesis del método charAt
+
+55
+00:02:48,490 --> 00:02:52,580
+JavaScript te retornará
+el carácter que está exactamente
+
+56
+00:02:52,580 --> 00:02:54,670
+en ese índice.
+
+57
+00:02:54,670 --> 00:02:56,730
+Así que puedes ver que el
+undécimo (11.º) índice va a
+
+58
+00:02:56,730 --> 00:02:59,720
+contener la letra b.
+
+59
+00:02:59,720 --> 00:03:03,590
+El trigésmo primer (31.º) índice va a contener
+un carácter de espacio.
+
+60
+00:03:03,590 --> 00:03:07,470
+Y JavaScript te retornará un
+espacio, rodeado por
+
+61
+00:03:07,470 --> 00:03:09,600
+dos comillas.
+
+62
+00:03:09,600 --> 00:03:12,260
+Y en el 42° índice, podemos
+ver que tendremos el
+
+63
+00:03:12,260 --> 00:03:13,510
+signo de exclamación.
+
+64
+00:03:16,430 --> 00:03:19,200
+Las variables son esencialmente el
+fundamento de la programación.
+
+65
+00:03:19,200 --> 00:03:20,910
+Ellos nos ayudan a organizar
+nuestros datos.
+
+66
+00:03:20,910 --> 00:03:24,280
+Y somos capaces de crear
+poderosos y complejos
+
+67
+00:03:24,280 --> 00:03:26,980
+y flexibles mensajes
+usando variables,
+
+68
+00:03:26,980 --> 00:03:28,910
+las cuales pueden ser modificadas.
+
+69
+00:03:28,910 --> 00:03:31,900
+Digamos que estábamos diseñando
+un sistema de tren, y
+
+70
+00:03:31,900 --> 00:03:35,200
+tenemos una cierta cantidad de
+trenes operacionales de
+
+71
+00:03:35,200 --> 00:03:37,120
+cierta cantidad
+total de trenes.
+
+72
+00:03:37,120 --> 00:03:40,470
+Veamos como podemos hacer un
+mensaje para imprimir al usuario
+
+73
+00:03:40,470 --> 00:03:43,270
+en la consola acerca
+de cuántos trenes
+
+74
+00:03:43,270 --> 00:03:45,570
+funcionales hay hoy.
+
+75
+00:03:45,570 --> 00:03:48,460
+Si quisiéramos hacer nuestro mensaje
+usando estas variables
+
+76
+00:03:48,460 --> 00:03:51,820
+en particular, podríamos hacer
+trainsOperational concatenada
+
+77
+00:03:51,820 --> 00:03:56,170
+con out of, luego la variable
+totalTrains, y luego el
+
+78
+00:03:56,170 --> 00:03:57,790
+estado de mensaje operacional.
+
+79
+00:03:57,790 --> 00:04:02,160
+Juntos, esos hubieran producido
+8 de 12 trenes
+
+80
+00:04:02,160 --> 00:04:03,340
+son funcionales hoy.
+
+81
+00:04:03,340 --> 00:04:06,270
+Ahora, digamos que teníamos que hacer funcionar
+el mensaje del sistema de tren al
+
+82
+00:04:06,270 --> 00:04:09,070
+siguiente día, pero había
+una cantidad diferente de trenes
+
+83
+00:04:09,070 --> 00:04:10,480
+que eran operacionales.
+
+84
+00:04:10,480 --> 00:04:11,380
+Muy fácil -
+
+85
+00:04:11,380 --> 00:04:14,160
+podemos cambiar la
+variable trainsOperational
+
+86
+00:04:14,160 --> 00:04:15,790
+al valor de 10.
+
+87
+00:04:15,790 --> 00:04:18,950
+Y ahora, cuando el mensaje sea
+impreso al usuario, nosotros
+
+88
+00:04:18,950 --> 00:04:22,340
+obtenemos que 10 de 12 trenes
+son operacionales hoy.
+
+89
+00:04:28,150 --> 00:04:29,840
+Eso es todo para la sección de
+variables.
+
+90
+00:04:29,840 --> 00:04:31,360
+Te lanzaremos
+a los sabuesos en
+
+91
+00:04:31,360 --> 00:04:32,520
+la sección de desafíos.
+
+92
+00:04:32,520 --> 00:04:35,600
+Buena suerte, y te veremos
+en la próxima sección
+
+93
+00:04:35,600 --> 00:04:38,915
+Podríamos incluso usar puntos en dólar -
+puntos en dólar.
+
+94
+00:04:38,915 --> 00:04:40,165
+Eso son muchos silbatos... [pfft!]
+
+95
+00:04:41,083 --> 00:04:43,830
+... si sabes a lo que me refiero.
+
+96
+00:04:43,830 --> 00:04:45,610
+Larga madera dos -
+
+97
+00:04:45,610 --> 00:04:46,860
+madera larga.
+
+98
+00:04:49,490 --> 00:04:51,450
+Puede que haya tomado tres cervezas.
+
+99
+00:04:51,450 --> 00:04:52,820
+Es un viaje después de todo. [Risas]

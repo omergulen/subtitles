@@ -1,0 +1,536 @@
+1
+00:00:00,560 --> 00:00:01,025
+[CANTANDO]
+
+2
+00:00:01,025 --> 00:00:04,220
+Desde los laberintos del loop a
+los valles de la variable, veremos
+
+3
+00:00:04,220 --> 00:00:05,895
+los acantilados de los valores primero.
+Javascript esta justo
+
+4
+00:00:05,895 --> 00:00:07,170
+junto a tu calle.
+
+5
+00:00:07,170 --> 00:00:10,490
+Acantilados hechos, cascada de archivos,
+arrays archipiélagos.
+
+6
+00:00:10,490 --> 00:00:12,680
+declaraciones en un desierto,
+donde descubrirás
+
+7
+00:00:12,680 --> 00:00:13,670
+cuan lejos irás.
+
+8
+00:00:13,670 --> 00:00:14,500
+Aprende el programa.
+
+9
+00:00:14,500 --> 00:00:15,320
+Da un paseo.
+
+10
+00:00:15,320 --> 00:00:15,990
+Compra un boleto
+
+11
+00:00:15,990 --> 00:00:16,340
+Entra.
+
+12
+00:00:16,340 --> 00:00:18,084
+Todos a bordo -
+
+13
+00:00:18,084 --> 00:00:20,070
+estás en la estación para
+incrementar tu educación.
+
+14
+00:00:20,070 --> 00:00:21,240
+Buen Viaje y nada desnudo -
+
+15
+00:00:21,240 --> 00:00:23,820
+Siempre y cuando
+no escatimes funciones en este
+
+16
+00:00:23,820 --> 00:00:27,700
+JavaScript Road Trip.
+
+17
+00:00:32,450 --> 00:00:33,630
+Así que las variables son
+geniales, verdad?
+
+18
+00:00:33,630 --> 00:00:35,390
+Espero que hayas disfrutado el nivel dos.
+
+19
+00:00:35,390 --> 00:00:37,780
+Pero quién quiere codificar en la
+consola todo el día?
+
+20
+00:00:37,780 --> 00:00:38,320
+Yo no.
+
+21
+00:00:38,320 --> 00:00:38,860
+Tú no.
+
+22
+00:00:38,860 --> 00:00:41,830
+Necesitamos una forma de construir alguna
+fuente de archivos de JavaScript y
+
+23
+00:00:41,830 --> 00:00:43,810
+hacerlas funcionar dentro de nuestro código HTML.
+
+24
+00:00:43,810 --> 00:00:47,140
+Así que, aquí viene el nivel Tres:
+Cascada de Archivos.
+
+25
+00:00:47,140 --> 00:00:48,390
+No saltes.
+
+26
+00:00:50,800 --> 00:00:53,060
+Al final del último nivel,
+empezamos a hablar acerca del
+
+27
+00:00:53,060 --> 00:00:56,410
+sistema de trenes, en los cuales algunos
+estaban funcionando y otros
+
+28
+00:00:56,410 --> 00:00:57,520
+no lo estaban.
+
+29
+00:00:57,520 --> 00:01:01,440
+Nuestro objetivo en este nivel es
+imprimir una lista de trenes
+
+30
+00:01:01,440 --> 00:01:03,280
+que están funcionando.
+
+31
+00:01:03,280 --> 00:01:06,420
+Entonces, digamos por el bien de la
+consistencia que nuestros trenes
+
+32
+00:01:06,420 --> 00:01:10,670
+están numerados acorde a
+cuál va a funcionar primero.
+
+33
+00:01:10,670 --> 00:01:13,720
+y luego después de eso, los trenes
+que no están funcionando
+
+34
+00:01:13,720 --> 00:01:15,320
+son numerados más tarde.
+
+35
+00:01:15,320 --> 00:01:18,010
+Entonces aquí en nuestras imágenes, vemos
+que tenemos los trenes 1
+
+36
+00:01:18,010 --> 00:01:21,400
+al 8 que están funcionando
+y los trenes 9 al 12,
+
+37
+00:01:21,400 --> 00:01:22,900
+que no están funcionando hoy.
+
+38
+00:01:27,070 --> 00:01:30,410
+Tenemos una forma relativamente fácil de
+imprimir estos mensajes en
+
+39
+00:01:30,410 --> 00:01:31,340
+nuestra consola.
+
+40
+00:01:31,340 --> 00:01:33,220
+Podemos concatenar solo
+algunas cadenas
+
+41
+00:01:33,220 --> 00:01:34,830
+juntas con ciertos valores.
+
+42
+00:01:34,830 --> 00:01:37,850
+Y podemos tener estados como
+"Tren #1 está funcionando,"
+
+43
+00:01:37,850 --> 00:01:41,450
+"Tren #2 está funcionando,"
+"Tren #3 está funcionando."
+
+44
+00:01:41,450 --> 00:01:44,070
+Y luego haremos un montón
+de eso y nos daremos cuenta que
+
+45
+00:01:44,070 --> 00:01:46,940
+ninguno de ellos se imprime
+en el navegador de nuestro usuario.
+
+46
+00:01:46,940 --> 00:01:50,000
+Necesitamos una forma de ser capaces de
+transmitir los mensajes que
+
+47
+00:01:50,000 --> 00:01:53,330
+queremos mostrar a nuestros clientes
+en sus navegadores.
+
+48
+00:01:53,330 --> 00:01:55,470
+Y por eso es que necesitamos
+un archivo JavaScript.
+
+49
+00:01:58,060 --> 00:02:02,270
+Un archivo JavaScript es para correr
+nuestro código JavaScript
+
+50
+00:02:02,270 --> 00:02:05,360
+escrito en el navegador
+de otra persona.
+
+51
+00:02:05,360 --> 00:02:08,350
+Aquí tenemos un archivo
+index.html.
+
+52
+00:02:08,350 --> 00:02:12,105
+Adentro, verás unos códigos
+HTML comunes con algunos
+
+53
+00:02:12,105 --> 00:02:13,910
+elementos comunes de HTML.
+
+54
+00:02:13,910 --> 00:02:19,000
+Una vez que el navegador del usuario carga
+este código HTML, queremos
+
+55
+00:02:19,000 --> 00:02:21,990
+que ejecute algunos códigos JavaScript.
+
+56
+00:02:21,990 --> 00:02:26,070
+Para hacer esto, usaremos una etiqueta
+script dentro del código HTML.
+
+57
+00:02:26,070 --> 00:02:31,060
+Y esa etiqueta script le dirá
+al archivo HTML que archivo
+
+58
+00:02:31,060 --> 00:02:34,680
+JavaScript contiene el código
+que queremos hacer funcionar.
+
+59
+00:02:34,680 --> 00:02:37,400
+Notarás dentro de la etiqueta script
+que tenemos una clave
+
+60
+00:02:37,400 --> 00:02:41,980
+SRC que está siendo asignada
+al archivo trains.js.
+
+61
+00:02:41,980 --> 00:02:46,880
+Ese es nuestro archivo JavaScript para
+este sistema en particular.
+
+62
+00:02:46,880 --> 00:02:50,180
+Nótese que también necesitas
+cerrar la etiqueta script dentro
+
+63
+00:02:50,180 --> 00:02:53,410
+de tu HTML para que
+el archivo HTML sepa cuándo
+
+64
+00:02:53,410 --> 00:02:54,760
+termina tu etiqueta script.
+
+65
+00:02:59,270 --> 00:03:03,370
+Ahora, qué está dentro
+de ese archivo trains.js?
+
+66
+00:03:03,370 --> 00:03:05,190
+Bueno, es nuestro código
+JavaScript, por supuesto.
+
+67
+00:03:05,190 --> 00:03:08,340
+Queremos construir un archivo de
+código JavaScript que pueda
+
+68
+00:03:08,340 --> 00:03:11,480
+ser usado cada vez que un usuario
+abra nuestro sitio web.
+
+69
+00:03:11,480 --> 00:03:14,210
+Para crear este archivo, puedes
+usar cualquier editor basado en texto,
+
+70
+00:03:14,210 --> 00:03:16,840
+como TextEdit o Notepad.
+
+71
+00:03:16,840 --> 00:03:19,870
+Dentro de ese archivo, vamos a
+producir todo el código
+
+72
+00:03:19,870 --> 00:03:22,990
+JavaScript que queremos que el
+navegador del usuario ejecute cuando
+
+73
+00:03:22,990 --> 00:03:25,830
+llegue a la etiqueta de script
+dentro del código HTML.
+
+74
+00:03:29,100 --> 00:03:31,160
+Así que, ahora tenemos un archivo
+index.html, y tenemos
+
+75
+00:03:31,160 --> 00:03:33,150
+un archivo trains.js.
+
+76
+00:03:33,150 --> 00:03:35,240
+Y queremos darte un poquito
+de estructura de archivo
+
+77
+00:03:35,240 --> 00:03:39,090
+aquí, para que puedas mantener
+tu sitio web organizado.
+
+78
+00:03:39,090 --> 00:03:40,830
+Veamos en donde podemos
+agregar nuestros archivos
+
+79
+00:03:40,830 --> 00:03:43,230
+en una locación apropiada.
+
+80
+00:03:43,230 --> 00:03:46,920
+Aquí tenemos una carpeta raíz
+para nuestro sitio web entero.
+
+81
+00:03:46,920 --> 00:03:48,650
+Todo acerca de nuestro sitio web
+está contenido
+
+82
+00:03:48,650 --> 00:03:50,480
+dentro de nuestra carpeta raíz.
+
+83
+00:03:50,480 --> 00:03:53,860
+Y dentro de esa carpeta raíz,
+que significa en el mismo directorio,
+
+84
+00:03:53,860 --> 00:03:58,230
+tenemos un archivo index.html
+y nuestro archivo trains.js.
+
+85
+00:03:58,230 --> 00:04:02,770
+Como nuestra etiqueta script tiene una
+fuente que lee trains.js,
+
+86
+00:04:02,770 --> 00:04:06,710
+nuestro archivo trains.js necesita estar
+exactamente en el mismo directorio que
+
+87
+00:04:06,710 --> 00:04:08,510
+nuestro archivo index.html.
+
+88
+00:04:12,550 --> 00:04:15,180
+Varios sitios web, sin embargo, mantendrán
+todos sus archivos JavaScript
+
+89
+00:04:15,180 --> 00:04:17,450
+en una locación
+conveniente.
+
+90
+00:04:17,450 --> 00:04:20,310
+Queremos ser capaces de estar
+organizados mientras se codifica.
+
+91
+00:04:20,310 --> 00:04:23,580
+Aquí puedes ver una carpeta raíz
+que contiene el
+
+92
+00:04:23,580 --> 00:04:27,370
+archivo index.html, pero también
+carpetas de scripts.
+
+93
+00:04:27,370 --> 00:04:30,830
+Y dentro de la carpeta de scripts
+está nuestro trains.js.
+
+94
+00:04:30,830 --> 00:04:33,830
+Ahora, Cómo mostraremos eso
+en nuestra fuente de enlace dentro
+
+95
+00:04:33,830 --> 00:04:35,850
+del archivo index.html?
+
+96
+00:04:35,850 --> 00:04:39,720
+Puedes ver aquí que tenemos
+los archivos de scripts enlistados primero,
+
+97
+00:04:39,720 --> 00:04:43,560
+seguidos por una barra invertida
+y luego trains.js.
+
+98
+00:04:43,560 --> 00:04:46,220
+Que dice eso al
+archivo index.html?
+
+99
+00:04:46,220 --> 00:04:49,600
+Dice: Ve primero a la
+carpeta de scripts, y ahí
+
+100
+00:04:49,600 --> 00:04:50,850
+encontrarás trains.js
+
+101
+00:04:55,610 --> 00:04:59,640
+Qué pasa si los archivos están
+muy apartados, alejados
+
+102
+00:04:59,640 --> 00:05:00,720
+unos de otros?
+
+103
+00:05:00,720 --> 00:05:04,230
+Bueno, todavía podemos encontrar una manera
+de estar organizados mientras codificamos,
+
+104
+00:05:04,230 --> 00:05:06,640
+pero tenemos que ser un poco más
+detallados dentro de nuestro
+
+105
+00:05:06,640 --> 00:05:10,250
+enlace de origen e incorporar
+una sintaxis un poco diferente.
+
+106
+00:05:10,250 --> 00:05:11,520
+Aquí tenemos una
+carpeta raíz.
+
+107
+00:05:11,520 --> 00:05:16,120
+Pero ahora, nuestro archivo index.html
+está dentro de su propia carpeta llamada
+
+108
+00:05:16,120 --> 00:05:18,710
+"pages", porque es una de
+las páginas de nuestro sitio web.
+
+109
+00:05:18,710 --> 00:05:22,630
+Y nuestros scripts contienen
+trains.js.
+
+110
+00:05:22,630 --> 00:05:25,570
+Y cómo mostramos esto
+en nuestro enlace de origen?
+
+111
+00:05:25,570 --> 00:05:28,500
+Bueno, necesitamos lo que es llamado
+una notación "doble punto".
+
+112
+00:05:28,500 --> 00:05:33,100
+Eso indica al navegador que
+vaya a una carpeta primero y luego
+
+113
+00:05:33,100 --> 00:05:35,930
+vaya a los archivos de scripts y
+luego encuentre el archivo
+
+114
+00:05:35,930 --> 00:05:37,550
+trains.js ahí.
