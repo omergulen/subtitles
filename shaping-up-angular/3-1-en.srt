@@ -39,7 +39,7 @@ when Shaping Up with Angular.JS
 9
 00:00:28,095 --> 00:00:29,720
 You're watching
-Shaping Up with Angular
+Shaping Up with AngularJS
 
 10
 00:00:29,720 --> 00:00:31,460
@@ -173,7 +173,7 @@ a form to post a new review?
 
 37
 00:01:46,870 --> 00:01:50,770
-Without any new Angular elements,
+Without any new AngularJS elements,
 here's the HTML for our form.
 
 38
@@ -258,7 +258,7 @@ stars value in our page.
 54
 00:02:47,770 --> 00:02:50,260
 Here we're going to see more
-of that Angular magic is
+of that AngularJS magic is
 
 55
 00:02:50,260 --> 00:02:52,470

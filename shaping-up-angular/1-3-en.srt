@@ -119,7 +119,7 @@ on our current gem?
 
 26
 00:01:26,780 --> 00:01:29,530
-Well, Angular is nice
+Well, AngularJS is nice
 enough to interpret
 
 27
@@ -294,7 +294,7 @@ the ng-repeat directive.
 63
 00:03:18,430 --> 00:03:23,270
 The ng-repeat directive takes
-a special angular expression.
+a special AngularJS expression.
 
 64
 00:03:23,270 --> 00:03:28,800
@@ -334,7 +334,7 @@ us all of the products.
 71
 00:03:51,500 --> 00:03:55,250
 In this level we learned about
-four core angular concepts.
+four core AngularJS concepts.
 
 72
 00:03:55,250 --> 00:03:56,770
