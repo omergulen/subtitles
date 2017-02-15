@@ -151,7 +151,7 @@ that was pretty cool
 
 33
 00:01:50,550 --> 00:01:51,800
-when I was learning Angular 2.
+when I was learning Angular.
 
 34
 00:01:54,760 --> 00:01:56,702
