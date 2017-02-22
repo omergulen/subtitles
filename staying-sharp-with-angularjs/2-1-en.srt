@@ -74,7 +74,7 @@ chunk over and over again.
 16
 00:00:50,440 --> 00:00:52,450
 Well, as you learned in
-the last Angular course,
+the last AngularJS course,
 
 17
 00:00:52,450 --> 00:00:55,300
@@ -203,7 +203,7 @@ this before in tutorials
 
 44
 00:02:09,060 --> 00:02:11,020
-or in other Angular
+or in other AngularJS
 applications.
 
 45
@@ -283,7 +283,7 @@ but either are fine.
 61
 00:03:02,050 --> 00:03:05,070
 $Scope is a large part of
-Angular as a language.
+AngularJS as a language.
 
 62
 00:03:05,070 --> 00:03:06,870

@@ -371,7 +371,7 @@ Why is this happening?
 80
 00:03:53,170 --> 00:03:55,830
 Well, it turns out you
-have to tell Angular
+have to tell AngularJS
 
 81
 00:03:55,830 --> 00:03:58,020
@@ -385,7 +385,7 @@ render it to the screen.
 83
 00:03:59,660 --> 00:04:02,140
 We need to tell
-Angular it's safe HTML.
+AngularJS it's safe HTML.
 
 84
 00:04:02,140 --> 00:04:04,450
@@ -399,7 +399,7 @@ One, ngBindHtml and two, $sce.
 86
 00:04:10,620 --> 00:04:14,190
 If you ever try to insert HTML
-with an Angular expression,
+with an AngularJS expression,
 
 87
 00:04:14,190 --> 00:04:17,230
@@ -419,7 +419,7 @@ element with ngBindHtml.
 90
 00:04:27,930 --> 00:04:30,250
 Now we need to tell
-Angular the HTML
+AngularJS the HTML
 
 91
 00:04:30,250 --> 00:04:35,620

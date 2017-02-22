@@ -15,7 +15,7 @@ libraries in our applications.
 
 4
 00:00:12,460 --> 00:00:16,309
-In an Angular app, it's best
+In an AngularJS app, it's best
 to wrap that external library
 
 5
@@ -201,7 +201,7 @@ function only runs one time.
 43
 00:02:14,070 --> 00:02:16,570
 And when our link
-function ran, Angular
+function ran, AngularJS
 
 44
 00:02:16,570 --> 00:02:19,280
@@ -224,7 +224,7 @@ is surrounding it by a timeout.
 
 48
 00:02:30,500 --> 00:02:33,140
-This will cause Angular to run
+This will cause AngularJS to run
 through an entire event loop
 
 49

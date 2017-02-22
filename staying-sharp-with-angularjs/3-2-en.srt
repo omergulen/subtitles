@@ -443,7 +443,7 @@ them as you're building out
 
 96
 00:04:52,330 --> 00:04:54,270
-Angular apps on your own.
+AngularJS apps on your own.
 
 97
 00:04:54,270 --> 00:04:57,250
