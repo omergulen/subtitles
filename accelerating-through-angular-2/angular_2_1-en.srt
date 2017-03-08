@@ -40,7 +40,7 @@ Through Angular 2.
 9
 00:00:30,490 --> 00:00:32,940
 You're watching Accelerating
-Through Angular 2.
+Through Angular.
 
 10
 00:00:32,940 --> 00:00:35,130
@@ -282,7 +282,7 @@ bunch of different ways.
 59
 00:02:46,720 --> 00:02:49,120
 Also, with Angular
-2, we use components,
+, we use components,
 
 60
 00:02:49,120 --> 00:02:52,200
@@ -291,7 +291,7 @@ than controllers and scope
 
 61
 00:02:52,200 --> 00:02:53,650
-from Angular 1.
+from AngularJS.
 
 62
 00:02:53,650 --> 00:02:55,440
