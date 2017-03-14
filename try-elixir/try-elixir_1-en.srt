@@ -1,0 +1,288 @@
+﻿1
+00:00:00,000 --> 00:00:25,000
+(Music)
+
+2
+00:00:25,000 --> 00:00:30,999
+Welcome to Try Elixir.  I'm Carlos Souza, and in this course we'll learn about this dynamic,
+
+3
+00:00:31,000 --> 00:00:36,999
+functional, and pretty awesome programming language.  In this first level, we'll start learning Elixir
+
+4
+00:00:37,000 --> 00:00:45,999
+through modules and functions.  But not only that, we'll also learn about the functional programming paradigm.
+
+5
+00:00:46,000 --> 00:00:54,999
+Let's start with the basics.  What is Elixir?  Elixir is a programming language created in 2012 and designed
+
+6
+00:00:55,000 --> 00:01:00,999
+for building scalable and maintainable applications.  Here are some of its main features.
+
+7
+00:01:01,000 --> 00:01:07,999
+First, it's a functional language.  We build our programs with operations insides functions and modules.
+
+8
+00:01:08,000 --> 00:01:15,999
+There are no such things as objects and classes.  It's also a dynamic language.
+
+9
+00:01:16,000 --> 00:01:22,999
+This means that when we are writing code we don't need to declare data types for values and operations.
+
+10
+00:01:23,000 --> 00:01:30,999
+These are checked at runtime when we run the program.  Before we can run our programs, we must compile the
+
+11
+00:01:31,000 --> 00:01:38,999
+source code into an intermediate form of code called bytecode.  This reduces runtime overhead and allows for
+
+12
+00:01:39,000 --> 00:01:45,999
+nifty optimizations by the Elixir compiler.  Without much effort, Elixir programs are able to run distributed
+
+13
+00:01:46,000 --> 00:01:52,999
+and concurrent meaning multiple tasks can run independently and fast.
+
+14
+00:01:53,000 --> 00:01:58,999
+Lastly, programs written in Elixir run on the Erlang virtual machine called BEAM.
+
+15
+00:01:59,000 --> 00:02:07,999
+This VM has been around for 30 years, and it's reached an incomparable level of stability and maturity.
+
+16
+00:02:08,000 --> 00:02:12,999
+Now that we know a little bit about the language, let's talk about what it's used for.
+
+17
+00:02:13,000 --> 00:02:18,999
+Elixir is a general-purpose programming language meaning it can be used for many different types of
+
+18
+00:02:19,000 --> 00:02:24,999
+applications, but it's especially suited for the following problem domains:
+
+19
+00:02:25,000 --> 00:02:33,999
+Data processing where lots of user data is consumed, computed, and transformed into useful information for users.
+
+20
+00:02:34,000 --> 00:02:39,999
+Networking applications, programs that communicate across the network, like web servers.
+
+21
+00:02:40,000 --> 00:02:47,999
+And generally speaking, Elixir is suited for high availability systems, which are those that must be always
+
+22
+00:02:48,000 --> 00:02:56,999
+available despite crashes.  Think telecommunications, flight reservations, banking, etc.
+
+23
+00:02:57,000 --> 00:03:02,999
+In this course, we'll look at three of the most widely used features of Elixir.
+
+24
+00:03:03,000 --> 00:03:10,999
+They are functions, the pipe operator, and pattern matching.  But before we dive into code, let's talk about
+
+25
+00:03:11,000 --> 00:03:15,999
+the functional programming paradigm.
+
+26
+00:03:16,000 --> 00:03:21,999
+Functional programming is all about functions that operate on and transform data.
+
+27
+00:03:22,000 --> 00:03:29,999
+Let's look at the following examples.  Here we have a function f that operates on data x given as argument.
+
+28
+00:03:30,000 --> 00:03:36,999
+In essence, this sums up every Elixir program in the world.  The more complex our programs become,
+
+29
+00:03:37,000 --> 00:03:42,999
+the more functions like this they'll need to perform.  In the second example, we use the return value of
+
+30
+00:03:43,000 --> 00:03:52,999
+function f on x as the first argument to the g function, which also takes data y as its second argument and
+
+31
+00:03:53,000 --> 00:03:57,999
+performs an operation with both these values.
+
+32
+00:03:58,000 --> 00:04:03,999
+Okay, now it's time to jump into some code and write our first function in Elixir.
+
+33
+00:04:04,000 --> 00:04:08,999
+All named functions in Elixir must be part of an enclosing module.
+
+34
+00:04:09,000 --> 00:04:18,999
+We use defmodule to define a new module called Account and a do end block to define the body of the module.
+
+35
+00:04:19,000 --> 00:04:27,999
+Then we use def to declare a new function called balance.  This function takes two arguments, initial and spending.
+
+36
+00:04:28,000 --> 00:04:35,999
+Remember, Elixir is a dynamic language, so there's no need to declare the data types for the arguments or for
+
+37
+00:04:36,000 --> 00:04:43,999
+the return value of the balance function.  Now, from the function body, we subtract spending from initial and
+
+38
+00:04:44,000 --> 00:04:49,999
+then return the result.  Notice there's no return statement in Elixir.
+
+39
+00:04:50,000 --> 00:04:55,999
+The last expression evaluated inside of a function becomes its return value.
+
+40
+00:04:56,000 --> 00:05:02,999
+And that's all there is for defining a function.  Now let's see how we can call it.
+
+41
+00:05:03,000 --> 00:05:08,999
+Named functions are invoked using the dot notation preceded by the module that they belong to.
+
+42
+00:05:09,000 --> 00:05:17,999
+Here on the first line we use the name of the module, Account, which acts as the namespace holding the function balance.
+
+43
+00:05:18,000 --> 00:05:26,999
+We invoke this function using parentheses and passing the values for the arguments separated by a comma, 1000 and 200.
+
+44
+00:05:27,000 --> 00:05:31,999
+The result of calling this function is stored in a variable called current_balance.
+
+45
+00:05:32,000 --> 00:05:39,999
+Again, because of the dynamic nature of Elixir, we don't have to declare the data type for the current_balance variable.
+
+46
+00:05:40,000 --> 00:05:46,999
+The language infers the data type during runtime.  We can use the puts function from the IO module to output
+
+47
+00:05:47,000 --> 00:05:54,999
+a string to the console.  Inside the string Current balance: US $, we use the current_balance variable
+
+48
+00:05:55,000 --> 00:06:03,999
+enclosed by the pound sign and curly braces.  This is how we do string interpolation in Elixir.
+
+49
+00:06:04,000 --> 00:06:09,999
+To run this program, we can use the Elixir command available on the console or command line when Elixir is
+
+50
+00:06:10,000 --> 00:06:16,999
+installed in our system.  Running this program prints the following:  Current balance: US $800.
+
+51
+00:06:17,000 --> 00:06:21,999
+There's no need to worry about the installation process for now, we'll provide you with all the tools you
+
+52
+00:06:22,000 --> 00:06:30,999
+need for this course, but you can check out more information about installing Elixir on this URL.
+
+53
+00:06:31,000 --> 00:06:37,999
+One very important detail about the type of functions that we write in Elixir is the fact that they are pure functions.
+
+54
+00:06:38,000 --> 00:06:43,999
+This is a key part in functional programming.  Now in order to determine whether a function is pure,
+
+55
+00:06:44,000 --> 00:06:51,999
+we'll look for these two things:  First, its return value must rely entirely on the arguments it receives.
+
+56
+00:06:52,000 --> 00:06:57,999
+It should not depend on any external factor and should always yield the same result when given the same
+
+57
+00:06:58,000 --> 00:07:03,999
+values as arguments.  Second, it must not cause any side effects.
+
+58
+00:07:04,000 --> 00:07:10,999
+The result of the computation performed on the function body must be represented by the return value from the
+
+59
+00:07:11,000 --> 00:07:15,999
+function, which can then be used to perform operations in other functions.
+
+60
+00:07:16,000 --> 00:07:22,999
+In this example, the balance function from the Account module meets both of these requirements and therefore
+
+61
+00:07:23,000 --> 00:07:27,999
+can be considered a pure function.
+
+62
+00:07:28,000 --> 00:07:33,999
+The use of pure functions in functional programming makes programs easier to reason about.
+
+63
+00:07:34,000 --> 00:07:42,999
+Let's use an analogy and compare object state commonly found in object-oriented programming versus logic with pure functions.
+
+64
+00:07:43,000 --> 00:07:47,999
+Suppose we're asked the following question:  What is my account balance?
+
+65
+00:07:48,000 --> 00:07:55,999
+Without knowing how much money they had initially and how much was spent, it's nearly impossible to tell how
+
+66
+00:07:56,000 --> 00:08:02,999
+much is left.  We must rely on previous state, which in OO is represented as an account object in order to
+
+67
+00:08:03,000 --> 00:08:08,999
+answer this question with the currentBalance method.  Now suppose we're asked this same question, but in a
+
+68
+00:08:09,000 --> 00:08:17,999
+different way with more information.  Starting the month with $1000, when I spend $200, what is my account balance?
+
+69
+00:08:18,000 --> 00:08:24,999
+With this information, we can run a balance function that performs the logic on the initial $1000 and on the
+
+70
+00:08:25,000 --> 00:08:33,999
+$200 of spending, and that's all the data this function needs to come up with the answer, $800.
+
+71
+00:08:34,000 --> 00:08:39,999
+This is an example of the types of functions that we should expect to work with when writing Elixir programs.
+
+72
+00:08:40,000 --> 01:00:00,000
+And that's it for this first level.  Now it's your turn to practice some Elixir in the challenges.
+
