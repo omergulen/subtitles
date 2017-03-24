@@ -1,868 +1,872 @@
 ﻿1
-00:00:00,196 --> 00:00:01,820
+00:00:00,000 --> 00:00:05,000
+[Initial 27 seconds not captioned.  An update is planned!]
+
+2
+00:00:27,390 --> 00:00:29,020
 [SINGING] The
 Flatlanders need to store
 
-2
-00:00:01,820 --> 00:00:04,790
+3
+00:00:29,020 --> 00:00:31,990
 to sell their gems and more -
 and they need it really quick.
 
-3
-00:00:04,790 --> 00:00:06,510
+4
+00:00:31,990 --> 00:00:33,710
 Angular will do the trick.
 
-4
-00:00:06,510 --> 00:00:09,460
+5
+00:00:33,710 --> 00:00:36,660
 Directives set the
 stage in your HTML page.
 
-5
-00:00:09,460 --> 00:00:12,310
+6
+00:00:36,660 --> 00:00:39,510
 Controllers give your wrap
 the behavior that it lacks.
 
-6
-00:00:12,310 --> 00:00:14,525
+7
+00:00:39,510 --> 00:00:41,720
 Write expressions so that
 you can add your data
 
-7
-00:00:14,525 --> 00:00:16,800
+8
+00:00:41,720 --> 00:00:44,000
 to the view. And modules
 make connections
 
-8
-00:00:16,800 --> 00:00:18,320
+9
+00:00:44,000 --> 00:00:45,520
 with dependency injections.
 
-9
-00:00:18,320 --> 00:00:19,780
+10
+00:00:45,520 --> 00:00:46,980
 You're a scripting
 connoisseur when
 
-10
-00:00:19,780 --> 00:00:22,870
+11
+00:00:46,980 --> 00:00:50,070
 shaping up with Angular JS.
 
-11
-00:00:28,290 --> 00:00:30,270
+12
+00:00:55,490 --> 00:00:57,470
 Welcome to Shaping
 Up With AngularJS.
 
-12
-00:00:30,270 --> 00:00:31,862
+13
+00:00:57,470 --> 00:00:59,060
 I'm Gregg Pollack,
 and in Level One
 
-13
-00:00:31,862 --> 00:00:33,320
+14
+00:00:59,060 --> 00:01:00,520
 we'll be giving
 you an introduction
 
-14
-00:00:33,320 --> 00:00:36,860
+15
+00:01:00,520 --> 00:01:04,060
 to what is AngularJS. We'll
 show you the application we'll
 
-15
-00:00:36,860 --> 00:00:38,620
+16
+00:01:04,060 --> 00:01:05,820
 be building together
 in this course,
 
-16
-00:00:38,620 --> 00:00:41,770
+17
+00:01:05,820 --> 00:01:08,970
 and then introducing you to the
 core elements of any AngularJS
 
-17
-00:00:41,770 --> 00:00:43,240
+18
+00:01:08,970 --> 00:01:10,440
 application.
 
-18
-00:00:43,240 --> 00:00:45,090
+19
+00:01:10,440 --> 00:01:12,290
 In order to learn
 AngularJS, it's important
 
-19
-00:00:45,090 --> 00:00:48,070
+20
+00:01:12,290 --> 00:01:15,270
 that you're very familiar
 with HTML and CSS,
 
-20
-00:00:48,070 --> 00:00:49,896
+21
+00:01:15,270 --> 00:01:17,090
 as well as JavaScript.
 
-21
-00:00:49,896 --> 00:00:51,520
+22
+00:01:17,090 --> 00:01:18,720
 If you're not familiar
 with JavaScript,
 
-22
-00:00:51,520 --> 00:00:54,200
+23
+00:01:18,720 --> 00:01:21,400
 Code School's got a great
 course JavaScript Road
 
-23
-00:00:54,200 --> 00:00:56,590
+24
+00:01:21,400 --> 00:01:23,790
 Trip, which you
 should go check out.
 
-24
-00:00:56,590 --> 00:00:59,510
+25
+00:01:23,790 --> 00:01:26,710
 It's also nice if you
 know some testing tools.
 
-25
-00:00:59,510 --> 00:01:02,500
+26
+00:01:26,710 --> 00:01:29,700
 Behavior Driven Development,
 Test-Driven Development,
 
-26
-00:01:02,500 --> 00:01:05,250
+27
+00:01:29,700 --> 00:01:32,450
 because AngularJS is
 really easy to test.
 
-27
-00:01:05,250 --> 00:01:08,770
+28
+00:01:32,450 --> 00:01:35,970
 And you should be doing that
 in a professional application.
 
-28
-00:01:08,770 --> 00:01:11,460
+29
+00:01:35,970 --> 00:01:38,660
 Not so important, you
 don't need to know jQuery,
 
-29
-00:01:11,460 --> 00:01:15,060
+30
+00:01:38,660 --> 00:01:42,260
 Ruby on Rails, Python, PHP,
 or any of those back end
 
-30
-00:01:15,060 --> 00:01:16,230
+31
+00:01:42,260 --> 00:01:43,430
 frameworks.
 
-31
-00:01:16,230 --> 00:01:18,040
+32
+00:01:43,430 --> 00:01:45,240
 AngularJS is just a
 front end framework,
 
-32
-00:01:18,040 --> 00:01:21,220
+33
+00:01:45,240 --> 00:01:48,420
 so all you need to
 know is JavaScript.
 
-33
-00:01:21,220 --> 00:01:23,570
+34
+00:01:48,420 --> 00:01:50,770
 You may want to use AngularJS
 when you're using JavaScript
 
-34
-00:01:23,570 --> 00:01:26,600
+35
+00:01:50,770 --> 00:01:53,800
 to build any sort
 of dynamic website.
 
-35
-00:01:26,600 --> 00:01:30,170
+36
+00:01:53,800 --> 00:01:57,370
 AngularJS is going to help you
 organize your JavaScript code.
 
-36
-00:01:30,170 --> 00:01:32,900
+37
+00:01:57,370 --> 00:02:00,100
 It's going to help you
 create responsive websites,
 
-37
-00:01:32,900 --> 00:01:36,450
+38
+00:02:00,100 --> 00:02:03,650
 meaning they're fast, they
 respond quickly to user input.
 
-38
-00:01:36,450 --> 00:01:39,000
+39
+00:02:03,650 --> 00:02:06,200
 Also, if you're
 familiar with jQuery,
 
-39
-00:01:39,000 --> 00:01:41,600
+40
+00:02:06,200 --> 00:02:08,800
 AngularJS plays really
 well with jQuery.
 
-40
-00:01:41,600 --> 00:01:43,590
+41
+00:02:08,800 --> 00:02:10,790
 And it's also, as
 I mentioned before,
 
-41
-00:01:43,590 --> 00:01:45,730
+42
+00:02:10,790 --> 00:02:12,930
 really easy to test,
 which means you
 
-42
-00:01:45,730 --> 00:01:49,220
+43
+00:02:12,930 --> 00:02:16,420
 can create
 maintainable software.
 
-43
-00:01:49,220 --> 00:01:51,110
+44
+00:02:16,420 --> 00:02:18,310
 Let's dive a little
 deeper into this word
 
-44
-00:01:51,110 --> 00:01:53,720
+45
+00:02:18,310 --> 00:02:20,920
 "responsive" and see what I mean.
 
-45
-00:01:53,720 --> 00:01:55,470
+46
+00:02:20,920 --> 00:02:22,670
 So here's the Code
 School website.
 
-46
-00:01:55,470 --> 00:01:59,720
+47
+00:02:22,670 --> 00:02:26,920
 And you'll see that when I click
 on a link like, screencasts,
 
-47
-00:01:59,720 --> 00:02:04,150
+48
+00:02:26,920 --> 00:02:31,350
 the page goes blank for second,
 and then reloads that page.
 
-48
-00:02:04,150 --> 00:02:05,740
+49
+00:02:31,350 --> 00:02:32,940
 And then I click
 on something else,
 
-49
-00:02:05,740 --> 00:02:08,280
+50
+00:02:32,940 --> 00:02:35,480
 and it goes, and it processes,
 and brings up something,
 
-50
-00:02:08,280 --> 00:02:10,009
+51
+00:02:35,480 --> 00:02:37,200
 and I get to see that page.
 
-51
-00:02:10,009 --> 00:02:14,600
+52
+00:02:37,200 --> 00:02:41,800
 This is a traditional page
 refresh response cycle,
 
-52
-00:02:14,600 --> 00:02:19,060
+53
+00:02:41,800 --> 00:02:46,260
 but what's going on
 behind the curtains?
 
-53
-00:02:19,060 --> 00:02:23,040
+54
+00:02:46,260 --> 00:02:50,240
 So here we have our
 browser and our web server.
 
-54
-00:02:23,040 --> 00:02:25,740
+55
+00:02:50,240 --> 00:02:52,940
 And our browser's going
 to initiate a request
 
-55
-00:02:25,740 --> 00:02:26,770
+56
+00:02:52,940 --> 00:02:53,970
 to our server.
 
-56
-00:02:26,770 --> 00:02:29,670
+57
+00:02:53,970 --> 00:02:56,870
 The server responds with the
 web pages and assets, the HTML
 
-57
-00:02:29,670 --> 00:02:33,310
+58
+00:02:56,870 --> 00:03:00,510
 and JavaScript, and our browser
 loads of the entire web page.
 
-58
-00:02:33,310 --> 00:02:35,070
+59
+00:03:00,510 --> 00:03:02,270
 But when the user
 clicks on a link,
 
-59
-00:02:35,070 --> 00:02:37,250
+60
+00:03:02,270 --> 00:03:04,450
 initiates a new
 request, and the server
 
-60
-00:02:37,250 --> 00:02:40,180
+61
+00:03:04,450 --> 00:03:07,380
 responds with a new
 web page and assets,
 
-61
-00:02:40,180 --> 00:02:43,960
+62
+00:03:07,380 --> 00:03:11,160
 the browser to load up
 the entire web page again.
 
-62
-00:02:43,960 --> 00:02:49,050
+63
+00:03:11,160 --> 00:03:16,250
 Obviously, laid out like this,
 it's not quite efficient.
 
-63
-00:02:49,050 --> 00:02:51,340
+64
+00:03:16,250 --> 00:03:18,540
 So now here's an
 example of a web page
 
-64
-00:02:51,340 --> 00:02:53,260
+65
+00:03:18,540 --> 00:03:20,460
 I would call responsive.
 
-65
-00:02:53,260 --> 00:02:56,210
+66
+00:03:20,460 --> 00:03:23,410
 This is our recent
 Discover Drive course.
 
-66
-00:02:56,210 --> 00:03:00,180
+67
+00:03:23,410 --> 00:03:27,380
 You'll see when I
 click around this page,
 
-67
-00:03:00,180 --> 00:03:05,580
+68
+00:03:27,380 --> 00:03:32,780
 the page refresh is
 almost unnoticeable.
 
-68
-00:03:05,580 --> 00:03:08,950
+69
+00:03:32,780 --> 00:03:36,150
 The pages so responsive
 and quick every time
 
-69
-00:03:08,950 --> 00:03:11,170
+70
+00:03:36,150 --> 00:03:38,370
 we click on a link.
 
-70
-00:03:11,170 --> 00:03:12,360
+71
+00:03:38,370 --> 00:03:39,560
 So what's going on here?
 
-71
-00:03:12,360 --> 00:03:16,510
+72
+00:03:39,560 --> 00:03:43,710
 Well, behind the curtains when
 a request is first fired off,
 
-72
-00:03:16,510 --> 00:03:19,300
+73
+00:03:43,710 --> 00:03:46,500
 the server responds back with
 all the web page and assets,
 
-73
-00:03:19,300 --> 00:03:20,800
+74
+00:03:46,500 --> 00:03:48,000
 as you might expect,
 and the browser
 
-74
-00:03:20,800 --> 00:03:23,350
+75
+00:03:48,000 --> 00:03:50,550
 loads up the entire webpage.
 
-75
-00:03:23,350 --> 00:03:25,200
+76
+00:03:50,550 --> 00:03:52,400
 This time, when a
 user clicks a link,
 
-76
-00:03:25,200 --> 00:03:27,450
+77
+00:03:52,400 --> 00:03:54,650
 something different
 is going to happen.
 
-77
-00:03:27,450 --> 00:03:29,370
+78
+00:03:54,650 --> 00:03:56,570
 It's only going to
 request the information
 
-78
-00:03:29,370 --> 00:03:32,210
+79
+00:03:56,570 --> 00:03:59,410
 it needs to update the page.
 
-79
-00:03:32,210 --> 00:03:35,300
+80
+00:03:59,410 --> 00:04:02,500
 In this case, just
 some JSON data.
 
-80
-00:03:35,300 --> 00:03:37,170
+81
+00:04:02,500 --> 00:04:04,370
 Once our browser
 has this data, it's
 
-81
-00:03:37,170 --> 00:03:39,500
+82
+00:04:04,370 --> 00:04:06,700
 going to load it into
 the existing page,
 
-82
-00:03:39,500 --> 00:03:43,180
+83
+00:04:06,700 --> 00:04:10,380
 and update what we
 see on our browser.
 
-83
-00:03:43,180 --> 00:03:44,840
+84
+00:04:10,380 --> 00:04:12,040
 An increasing number
 of applications
 
-84
-00:03:44,840 --> 00:03:47,730
+85
+00:04:12,040 --> 00:04:14,930
 these days are building
 their own APIs.
 
-85
-00:03:47,730 --> 00:03:50,480
+86
+00:04:14,930 --> 00:04:17,680
 They might do this to interface
 with a mobile application,
 
-86
-00:03:50,480 --> 00:03:52,270
+87
+00:04:17,680 --> 00:04:19,470
 say on iOS.
 
-87
-00:03:52,270 --> 00:03:55,300
+88
+00:04:19,470 --> 00:04:22,500
 They might also build an API so
 that other developers can build
 
-88
-00:03:55,300 --> 00:03:58,970
+89
+00:04:22,500 --> 00:04:26,170
 applications that communicate
 with their application.
 
-89
-00:03:58,970 --> 00:04:02,500
+90
+00:04:26,170 --> 00:04:29,700
 They might also built APIs
 to communicate with front-end
 
-90
-00:04:02,500 --> 00:04:05,920
+91
+00:04:29,700 --> 00:04:33,120
 applications, like
 the application we're
 
-91
-00:04:05,920 --> 00:04:08,760
+92
+00:04:33,120 --> 00:04:35,960
 building in this
 course using AngularJS.
 
-92
-00:04:08,760 --> 00:04:11,190
+93
+00:04:35,960 --> 00:04:38,390
 So in this course, we'll
 be building a front-end
 
-93
-00:04:11,190 --> 00:04:14,470
+94
+00:04:38,390 --> 00:04:41,670
 application using AngularJS,
 which will communicate
 
-94
-00:04:14,470 --> 00:04:16,279
+95
+00:04:41,670 --> 00:04:43,470
 with a back-end application.
 
-95
-00:04:16,279 --> 00:04:18,279
+96
+00:04:43,470 --> 00:04:45,470
 But we're not going to
 be building that back-end
 
-96
-00:04:18,279 --> 00:04:21,890
+97
+00:04:45,470 --> 00:04:49,090
 application, we're just going
 to focus on the front-end.
 
-97
-00:04:21,890 --> 00:04:25,310
+98
+00:04:49,090 --> 00:04:52,510
 A simple definition of AngularJS
 is a client-side JavaScript
 
-98
-00:04:25,310 --> 00:04:29,490
+99
+00:04:52,510 --> 00:04:56,690
 framework for adding
 interactivity to HTML.
 
-99
-00:04:29,490 --> 00:04:33,960
+100
+00:04:56,690 --> 00:05:01,160
 We need to figure out
 how to tell our HTML when
 
-100
-00:04:33,960 --> 00:04:35,870
+101
+00:05:01,160 --> 00:05:03,070
 to trigger our JavaScript.
 
-101
-00:04:35,870 --> 00:04:38,450
+102
+00:05:03,070 --> 00:05:05,650
 So here we have some
 HTML, how might we
 
-102
-00:04:38,450 --> 00:04:41,780
+103
+00:05:05,650 --> 00:05:08,980
 tell it to call this function,
 which triggers an alert?
 
-103
-00:04:41,780 --> 00:04:46,220
+104
+00:05:08,980 --> 00:05:13,420
 In AngularJS we add behavior to
 our HTML through directives.
 
-104
-00:04:46,220 --> 00:04:49,090
+105
+00:05:13,420 --> 00:05:16,290
 A directive as a marker
 on an HTML tag that tells
 
-105
-00:04:49,090 --> 00:04:53,010
+106
+00:05:16,290 --> 00:05:20,210
 AngularJS to run or reference
 some JavaScript code.
 
-106
-00:04:53,010 --> 00:04:56,860
+107
+00:05:20,210 --> 00:05:24,060
 So the answer here is to add
 the attribute ng-controller
 
-107
-00:04:56,860 --> 00:05:00,680
+108
+00:05:24,060 --> 00:05:27,880
 to our body tag, setting
 it equal to "StoreController"
 
-108
-00:05:00,680 --> 00:05:02,810
+109
+00:05:27,880 --> 00:05:30,010
 which is the name
 of our function.
 
-109
-00:05:02,810 --> 00:05:07,000
+110
+00:05:30,010 --> 00:05:34,200
 And if we loaded this up,
 we might get this alert.
 
-110
-00:05:07,000 --> 00:05:09,290
+111
+00:05:34,200 --> 00:05:36,490
 Obviously, this is a
 really contrived example,
 
-111
-00:05:09,290 --> 00:05:12,450
+112
+00:05:36,490 --> 00:05:39,650
 and you would never actually
 write this AngularJS code,
 
-112
-00:05:12,450 --> 00:05:13,990
+113
+00:05:39,650 --> 00:05:41,190
 but you get the gist of it.
 
-113
-00:05:13,990 --> 00:05:17,200
+114
+00:05:41,190 --> 00:05:44,400
 Directives, it's how
 we bind the behavior.
 
-114
-00:05:17,200 --> 00:05:18,870
+115
+00:05:44,400 --> 00:05:46,070
 The application
 we'll be building
 
-115
-00:05:18,870 --> 00:05:22,680
+116
+00:05:46,070 --> 00:05:49,880
 in the rest of this course
 is our Flatlander's store.
 
-116
-00:05:22,680 --> 00:05:24,590
+117
+00:05:49,880 --> 00:05:51,790
 In it you can see we
 have several thumbnails
 
-117
-00:05:24,590 --> 00:05:26,820
+118
+00:05:51,790 --> 00:05:54,020
 of different products.
 
-118
-00:05:26,820 --> 00:05:30,640
+119
+00:05:54,020 --> 00:05:57,840
 We can tab through different
 information about each of them
 
-119
-00:05:30,640 --> 00:05:33,490
+120
+00:05:57,840 --> 00:06:00,690
 and we have reviews.
 
-120
-00:05:33,490 --> 00:05:35,310
+121
+00:06:00,690 --> 00:06:02,510
 You'll see a list of
 reviews and we'll even
 
-121
-00:05:35,310 --> 00:05:39,754
+122
+00:06:02,510 --> 00:06:06,950
 be able to submit our own
 review using this form here.
 
-122
-00:05:39,754 --> 00:05:42,170
+123
+00:06:06,950 --> 00:06:09,370
 The first step, if you want
 to start playing with AngularJS,
 
-123
-00:05:42,170 --> 00:05:46,240
+124
+00:06:09,370 --> 00:06:13,440
 is to download the library
 from the official website.
 
-124
-00:05:46,240 --> 00:05:48,750
+125
+00:06:13,440 --> 00:06:15,950
 In the application we'll
 be building in this course,
 
-125
-00:05:48,750 --> 00:05:51,380
+126
+00:06:15,950 --> 00:06:18,580
 we're going to be using Twitter
 Bootstrap, which you also
 
-126
-00:05:51,380 --> 00:05:56,360
+127
+00:06:18,580 --> 00:06:23,560
 might want to download, and
 feel free to follow along.
 
-127
-00:05:56,360 --> 00:05:58,470
+128
+00:06:23,560 --> 00:06:25,670
 Let's start coding up our HTML.
 
-128
-00:05:58,470 --> 00:06:02,130
+129
+00:06:25,670 --> 00:06:29,330
 You can see here we've included
 the CSS for Twitter Bootstrap
 
-129
-00:06:02,130 --> 00:06:04,220
+130
+00:06:29,330 --> 00:06:31,420
 and we've included the
 AngularJS library, which
 
-130
-00:06:04,220 --> 00:06:07,300
+131
+00:06:31,420 --> 00:06:34,500
 we downloaded as well.
 
-131
-00:06:07,300 --> 00:06:09,340
+132
+00:06:34,500 --> 00:06:36,540
 The next component of
 our AngularJS application
 
-132
-00:06:09,340 --> 00:06:12,610
+133
+00:06:36,540 --> 00:06:39,810
 that we need to learn
 about is modules.
 
-133
-00:06:12,610 --> 00:06:14,810
+134
+00:06:39,810 --> 00:06:42,010
 Modules are where
 we write pieces
 
-134
-00:06:14,810 --> 00:06:16,710
+135
+00:06:42,010 --> 00:06:43,910
 of our AngularJS application.
 
-135
-00:06:16,710 --> 00:06:19,510
+136
+00:06:43,910 --> 00:06:46,710
 It's how we keep our
 code encapsulated.
 
-136
-00:06:19,510 --> 00:06:22,540
+137
+00:06:46,710 --> 00:06:49,740
 Because of this, it makes
 our code more maintainable,
 
-137
-00:06:22,540 --> 00:06:25,820
+138
+00:06:49,740 --> 00:06:53,020
 more readable,
 and more testable.
 
-138
-00:06:25,820 --> 00:06:28,860
+139
+00:06:53,020 --> 00:06:56,060
 Also, it's where we define
 all of the dependencies
 
-139
-00:06:28,860 --> 00:06:30,400
+140
+00:06:56,060 --> 00:06:57,600
 for our application.
 
-140
-00:06:30,400 --> 00:06:33,620
+141
+00:06:57,600 --> 00:07:00,820
 Because we might run one
 module and we can tell our code
 
-141
-00:06:33,620 --> 00:06:37,180
+142
+00:07:00,820 --> 00:07:04,380
 this module depends
 on these two modules.
 
-142
-00:06:37,180 --> 00:06:39,830
+143
+00:07:04,380 --> 00:07:07,030
 So it shouldn't surprise you
 that the very piece of code
 
-143
-00:06:39,830 --> 00:06:43,860
+144
+00:07:07,030 --> 00:07:11,060
 that you write in
 AngularJS is a module line.
 
-144
-00:06:43,860 --> 00:06:47,520
+145
+00:07:11,060 --> 00:07:14,720
 So we're going to right var
 app - that's our application -
 
-145
-00:06:47,520 --> 00:06:52,430
+146
+00:07:14,720 --> 00:07:19,630
 equals angular - that's the
 AngularJS library - dot module -
 
-146
-00:06:52,430 --> 00:06:54,260
+147
+00:07:19,630 --> 00:07:21,460
 because we're
 creating a new module.
 
-147
-00:06:54,260 --> 00:06:55,280
+148
+00:07:21,460 --> 00:07:22,480
 We give it a name -
 
-148
-00:06:55,280 --> 00:06:57,150
+149
+00:07:22,480 --> 00:07:24,350
 In this case, "store."
 
-149
-00:06:57,150 --> 00:07:02,360
+150
+00:07:24,350 --> 00:07:29,560
 And then, in that little arrays
 syntax, we define dependencies.
 
-150
-00:07:02,360 --> 00:07:04,410
+151
+00:07:29,560 --> 00:07:31,610
 We don't have any
 dependencies yet,
 
-151
-00:07:04,410 --> 00:07:07,930
+152
+00:07:31,610 --> 00:07:35,130
 but we still have to
 send in an empty array.
 
-152
-00:07:07,930 --> 00:07:11,530
+153
+00:07:35,130 --> 00:07:38,730
 Because that's how we roll.
 
-153
-00:07:11,530 --> 00:07:15,970
+154
+00:07:38,730 --> 00:07:43,170
 This piece of code is going
 to live inside an app.js file.
 
-154
-00:07:15,970 --> 00:07:19,340
+155
+00:07:43,170 --> 00:07:46,540
 So we're going to need to
 include that in our HTML,
 
-155
-00:07:19,340 --> 00:07:21,010
+156
+00:07:46,540 --> 00:07:48,210
 as you can see right here.
 
-156
-00:07:21,010 --> 00:07:24,802
+157
+00:07:48,210 --> 00:07:52,000
 Then we'll need to add an
 attribute to our HTML tag.
 
-157
-00:07:24,802 --> 00:07:26,010
+158
+00:07:52,000 --> 00:07:53,210
 In this case, ng-app equals "store."
 
-158
-00:07:28,700 --> 00:07:32,480
+159
+00:07:55,900 --> 00:07:59,680
 ng-app, remember, is
 another directive.
 
-159
-00:07:32,480 --> 00:07:35,410
+160
+00:07:59,680 --> 00:08:02,610
 This directive creates
 an AngularJS application
 
-160
-00:07:35,410 --> 00:07:39,450
+161
+00:08:02,610 --> 00:08:06,650
 by running this module
 when the document loads.
 
-161
-00:07:39,450 --> 00:07:43,570
+162
+00:08:06,650 --> 00:08:10,770
 The modules isn't doing anything
 yet, but just by including it,
 
-162
-00:07:43,570 --> 00:07:47,520
+163
+00:08:10,770 --> 00:08:14,720
 it's going to treat the
 HTML inside of this element
 
-163
-00:07:47,520 --> 00:07:49,520
+164
+00:08:14,720 --> 00:08:16,720
 as part of the AngularJS app.
 
-164
-00:07:49,520 --> 00:07:53,960
+165
+00:08:16,720 --> 00:08:21,160
 And this means we can
 start writing expressions.
 
-165
-00:07:53,960 --> 00:07:58,720
+166
+00:08:21,160 --> 00:08:25,920
 Expressions are how we insert
 dynamic values into our HTML.
 
-166
-00:07:58,720 --> 00:08:02,260
+167
+00:08:25,920 --> 00:08:29,460
 Here's some basic ones just
 using numerical operations.
 
-167
-00:08:02,260 --> 00:08:07,550
+168
+00:08:29,460 --> 00:08:34,750
 So if we say "I am 4 + 6," that's
 going to render out on the page
 
-168
-00:08:07,550 --> 00:08:09,390
+169
+00:08:34,750 --> 00:08:36,590
 as "I am 10."
 
-169
-00:08:09,390 --> 00:08:11,090
+170
+00:08:36,590 --> 00:08:38,290
 We can also do
 string operations.
 
-170
-00:08:11,090 --> 00:08:13,180
+171
+00:08:38,290 --> 00:08:40,380
 Saying "hello" +
 "you" and that's
 
-171
-00:08:13,180 --> 00:08:17,160
+172
+00:08:40,380 --> 00:08:44,360
 going to evaluate to "hello
 you," as you might expect.
 
-172
-00:08:17,160 --> 00:08:18,990
+173
+00:08:44,360 --> 00:08:46,190
 We'll be using lots
 of expressions inside
 
-173
-00:08:18,990 --> 00:08:21,600
+174
+00:08:46,190 --> 00:08:48,800
 of our AngularJS application,
 but for more examples
 
-174
-00:08:21,600 --> 00:08:22,580
+175
+00:08:48,800 --> 00:08:49,780
 check out this URL.
 
-175
-00:08:25,590 --> 00:08:30,550
+176
+00:08:52,790 --> 00:08:57,750
 So if I move "hello you" into
 our AngularJS application,
 
-176
-00:08:30,550 --> 00:08:33,620
+177
+00:08:57,750 --> 00:09:00,820
 and I load it up
 locally in my browser,
 
-177
-00:08:33,620 --> 00:08:37,820
+178
+00:09:00,820 --> 00:09:05,020
 I'm going to get "hello you,"
 just as you might expect.
 
-178
-00:08:37,820 --> 00:08:43,250
+179
+00:09:05,020 --> 00:09:10,450
 So we learned about directives,
 modules, and expressions.
 
-179
-00:08:43,250 --> 00:08:45,150
+180
+00:09:10,450 --> 00:09:12,350
 Why don't you try
 putting them all together
 
-180
-00:08:45,150 --> 00:08:48,670
+181
+00:09:12,350 --> 00:09:15,870
 in the challenges and I'll
 see you in the next section.
 
