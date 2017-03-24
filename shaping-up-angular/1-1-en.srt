@@ -48,7 +48,7 @@ shaping up with Angular JS.
 11
 00:00:28,290 --> 00:00:30,270
 Welcome to Shaping
-Up With Angular.
+Up With AngularJS.
 
 12
 00:00:30,270 --> 00:00:31,862
@@ -62,7 +62,7 @@ you an introduction
 
 14
 00:00:33,320 --> 00:00:36,860
-to what is Angular. We'll
+to what is AngularJS. We'll
 show you the application we'll
 
 15
@@ -73,7 +73,7 @@ in this course,
 16
 00:00:38,620 --> 00:00:41,770
 and then introducing you to the
-core elements of any Angular
+core elements of any AngularJS
 
 17
 00:00:41,770 --> 00:00:43,240
@@ -82,7 +82,7 @@ application.
 18
 00:00:43,240 --> 00:00:45,090
 In order to learn
-Angular, it's important
+AngularJS, it's important
 
 19
 00:00:45,090 --> 00:00:48,070
@@ -120,7 +120,7 @@ Test-Driven Development,
 
 26
 00:01:02,500 --> 00:01:05,250
-because Angular is
+because AngularJS is
 really easy to test.
 
 27
@@ -144,7 +144,7 @@ frameworks.
 
 31
 00:01:16,230 --> 00:01:18,040
-Angular is just a
+AngularJS is just a
 front end framework,
 
 32
@@ -154,7 +154,7 @@ know is JavaScript.
 
 33
 00:01:21,220 --> 00:01:23,570
-You may want to use Angular
+You may want to use AngularJS
 when you're using JavaScript
 
 34
@@ -164,7 +164,7 @@ of dynamic website.
 
 35
 00:01:26,600 --> 00:01:30,170
-Angular is going to help you
+AngularJS is going to help you
 organize your JavaScript code.
 
 36
@@ -184,7 +184,7 @@ familiar with jQuery,
 
 39
 00:01:39,000 --> 00:01:41,600
-Angular plays really
+AngularJS plays really
 well with jQuery.
 
 40
@@ -436,7 +436,7 @@ the application we're
 91
 00:04:05,920 --> 00:04:08,760
 building in this
-course using Angular.
+course using AngularJS.
 
 92
 00:04:08,760 --> 00:04:11,190
@@ -445,7 +445,7 @@ be building a front-end
 
 93
 00:04:11,190 --> 00:04:14,470
-application using Angular,
+application using AngularJS,
 which will communicate
 
 94
@@ -464,7 +464,7 @@ to focus on the front-end.
 
 97
 00:04:21,890 --> 00:04:25,310
-A simple definition of Angular
+A simple definition of AngularJS
 is a client-side JavaScript
 
 98
@@ -493,7 +493,7 @@ which triggers an alert?
 
 103
 00:04:41,780 --> 00:04:46,220
-In Angular we add behavior to
+In AngularJS we add behavior to
 our HTML through directives.
 
 104
@@ -503,7 +503,7 @@ on an HTML tag that tells
 
 105
 00:04:49,090 --> 00:04:53,010
-angular to run or reference
+AngularJS to run or reference
 some JavaScript code.
 
 106
@@ -534,7 +534,7 @@ really contrived example,
 111
 00:05:09,290 --> 00:05:12,450
 and you would never actually
-write this Angular code,
+write this AngularJS code,
 
 112
 00:05:12,450 --> 00:05:13,990
@@ -586,7 +586,7 @@ review using this form here.
 122
 00:05:39,754 --> 00:05:42,170
 The first step, if you want
-to start playing with Angular,
+to start playing with AngularJS,
 
 123
 00:05:42,170 --> 00:05:46,240
@@ -620,7 +620,7 @@ the CSS for Twitter Bootstrap
 129
 00:06:02,130 --> 00:06:04,220
 and we've included the
-angular library, which
+AngularJS library, which
 
 130
 00:06:04,220 --> 00:06:07,300
@@ -629,7 +629,7 @@ we downloaded as well.
 131
 00:06:07,300 --> 00:06:09,340
 The next component of
-our Angular application
+our AngularJS application
 
 132
 00:06:09,340 --> 00:06:12,610
@@ -643,7 +643,7 @@ we write pieces
 
 134
 00:06:14,810 --> 00:06:16,710
-of our Angular application.
+of our AngularJS application.
 
 135
 00:06:16,710 --> 00:06:19,510
@@ -687,7 +687,7 @@ that the very piece of code
 143
 00:06:39,830 --> 00:06:43,860
 that you write in
-Angular is a module line.
+AngularJS is a module line.
 
 144
 00:06:43,860 --> 00:06:47,520
@@ -762,7 +762,7 @@ another directive.
 159
 00:07:32,480 --> 00:07:35,410
 This directive creates
-an Angular application
+an AngularJS application
 
 160
 00:07:35,410 --> 00:07:39,450
@@ -781,7 +781,7 @@ HTML inside of this element
 
 163
 00:07:47,520 --> 00:07:49,520
-as part of the Angular app.
+as part of the AngularJS app.
 
 164
 00:07:49,520 --> 00:07:53,960
@@ -829,7 +829,7 @@ of expressions inside
 
 173
 00:08:18,990 --> 00:08:21,600
-of our Angular application,
+of our AngularJS application,
 but for more examples
 
 174
@@ -839,7 +839,7 @@ check out this URL.
 175
 00:08:25,590 --> 00:08:30,550
 So if I move "hello you" into
-our Angular application,
+our AngularJS application,
 
 176
 00:08:30,550 --> 00:08:33,620

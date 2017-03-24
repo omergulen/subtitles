@@ -169,7 +169,7 @@ of decimal points.
 
 36
 00:01:31,690 --> 00:01:35,000
-Luckily, Angular has a better
+Luckily, AngularJS has a better
 way to deal with currency.
 
 37
@@ -218,7 +218,7 @@ is properly formatted.
 
 46
 00:02:09,570 --> 00:02:14,010
-Angular has a bunch of filters
+AngularJS has a bunch of filters
 and they follow this format
 
 47

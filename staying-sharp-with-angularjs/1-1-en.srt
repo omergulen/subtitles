@@ -44,7 +44,7 @@ Staying Sharp with Angular.js.
 10
 00:00:30,360 --> 00:00:34,630
 In this course, we'll be
-furthering our Angular skills.
+furthering our AngularJS skills.
 
 11
 00:00:34,630 --> 00:00:37,140
@@ -53,7 +53,7 @@ is called Note Wrangler,
 
 12
 00:00:37,140 --> 00:00:39,821
-and it uses Angular to
+and it uses AngularJS to
 create and manage notes.
 
 13
@@ -87,7 +87,7 @@ our views.
 19
 00:00:55,000 --> 00:00:57,470
 We want to start this
-Angular app from ground zero
+AngularJS app from ground zero
 
 20
 00:00:57,470 --> 00:01:01,010
@@ -110,7 +110,7 @@ and build it into a living
 
 24
 00:01:09,660 --> 00:01:12,670
-and breathing Angular app.
+and breathing AngularJS app.
 
 25
 00:01:12,670 --> 00:01:15,130
@@ -390,7 +390,7 @@ template in this spot?
 83
 00:04:00,820 --> 00:04:03,930
 We can include that template
-by simply defining an Angular
+by simply defining an AngularJS
 
 84
 00:04:03,930 --> 00:04:04,890
@@ -398,7 +398,7 @@ route.
 
 85
 00:04:04,890 --> 00:04:08,710
-Angular is going to
+AngularJS is going to
 look at the /notes URL,
 
 86
@@ -418,7 +418,7 @@ the notes index.
 89
 00:04:19,750 --> 00:04:22,360
 There are four steps to
-using routing in any Angular
+using routing in any AngularJS
 
 90
 00:04:22,360 --> 00:04:23,380
@@ -464,7 +464,7 @@ You need to use the ngView attribute
 
 99
 00:04:48,280 --> 00:04:52,320
-where you want to tell Angular, "Load in the template here."
+where you want to tell AngularJS, "Load in the template here."
 
 100
 00:04:52,320 --> 00:04:55,780
@@ -486,7 +486,7 @@ used to not always be required.
 104
 00:05:09,200 --> 00:05:11,670
 The route library used to be
-a part of the Angular core.
+a part of the AngularJS core.
 
 105
 00:05:11,670 --> 00:05:15,150
@@ -569,7 +569,7 @@ why we're not
 121
 00:06:01,330 --> 00:06:05,710
 creating an app variable like we
-did in Shaping up with Angular.
+did in Shaping up with AngularJS.
 
 122
 00:06:05,710 --> 00:06:09,430
@@ -847,7 +847,7 @@ open an index file
 
 180
 00:09:02,370 --> 00:09:05,710
-for an Angular application and
+for an AngularJS application and
 expect it to work statically.
 
 181

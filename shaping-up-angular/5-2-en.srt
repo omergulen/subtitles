@@ -57,7 +57,7 @@ we need a service.
 
 13
 00:00:35,000 --> 00:00:36,940
-Angular comes with
+AngularJS comes with
 a bunch of services
 
 14
@@ -106,7 +106,7 @@ begin with a dollar sign.
 23
 00:00:58,660 --> 00:01:03,052
 That's because they're built-in
-services with Angular.
+services with AngularJS.
 
 24
 00:01:03,052 --> 00:01:05,150
@@ -204,7 +204,7 @@ Pretty nice.
 43
 00:01:53,480 --> 00:01:56,300
 We need our controllers
-to tell Angular
+to tell AngularJS
 
 44
 00:01:56,300 --> 00:01:58,570
@@ -271,7 +271,7 @@ explain what's going on here.
 
 57
 00:02:38,380 --> 00:02:42,060
-When Angular loads it creates
+When AngularJS loads it creates
 something called an injector.
 
 58

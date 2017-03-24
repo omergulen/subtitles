@@ -40,7 +40,7 @@ Through Angular 2.
 9
 00:00:30,490 --> 00:00:32,940
 You're watching Accelerating
-Through Angular 2.
+Through Angular.
 
 10
 00:00:32,940 --> 00:00:35,130
@@ -267,12 +267,12 @@ in this course with ES2015.
 56
 00:02:38,740 --> 00:02:41,400
 What is the difference between
-Angular 1 and Angular 2?
+AngularJS and Angular?
 
 57
 00:02:41,400 --> 00:02:43,830
 Well, first and
-foremost, Angular 2
+foremost, Angular
 
 58
 00:02:43,830 --> 00:02:46,720
@@ -282,7 +282,7 @@ bunch of different ways.
 59
 00:02:46,720 --> 00:02:49,120
 Also, with Angular
-2, we use components,
+, we use components,
 
 60
 00:02:49,120 --> 00:02:52,200
@@ -291,7 +291,7 @@ than controllers and scope
 
 61
 00:02:52,200 --> 00:02:53,650
-from Angular 1.
+from AngularJS.
 
 62
 00:02:53,650 --> 00:02:55,440
@@ -337,7 +337,7 @@ A lot of improvements.
 71
 00:03:15,330 --> 00:03:17,487
 I really want to show
-you some Angular 2 code,
+you some Angular code,
 
 72
 00:03:17,487 --> 00:03:20,070
@@ -453,7 +453,7 @@ object oriented features.
 95
 00:04:18,585 --> 00:04:21,160
 And in fact, the
-Angular 2 source code
+Angular source code
 
 96
 00:04:21,160 --> 00:04:24,140
@@ -572,7 +572,7 @@ header tag here is
 119
 00:05:34,510 --> 00:05:38,140
 where you're going to load all
-of your Angular 2 libraries,
+of your Angular libraries,
 
 120
 00:05:38,140 --> 00:05:41,000
@@ -597,7 +597,7 @@ follow the 5 minute quick start
 124
 00:05:47,420 --> 00:05:49,880
 guide on the official
-Angular 2 home page.
+Angular home page.
 
 125
 00:05:52,420 --> 00:05:55,580
@@ -641,7 +641,7 @@ If you followed that
 133
 00:06:20,720 --> 00:06:24,660
 you probably are using
-SystemJS to load Angular 2.
+SystemJS to load Angular.
 
 134
 00:06:24,660 --> 00:06:26,250
@@ -687,7 +687,7 @@ It's going to be main.ts.
 143
 00:06:47,120 --> 00:06:51,080
 Inside here, we're going to
-import an Angular 2 library.
+import an Angular library.
 
 144
 00:06:51,080 --> 00:06:54,290
@@ -712,7 +712,7 @@ allow us to create components,
 148
 00:07:05,520 --> 00:07:07,730
 which are the basic
-building blocks of Angular 2
+building blocks of Angular
 
 149
 00:07:07,730 --> 00:07:09,160
@@ -1078,7 +1078,7 @@ back in our index.html.
 226
 00:10:55,580 --> 00:10:58,040
 Components are the building
-blocks of our Angular 2
+blocks of our Angular
 
 227
 00:10:58,040 --> 00:11:02,270
@@ -1324,7 +1324,7 @@ Angular modules.
 278
 00:13:26,840 --> 00:13:30,430
 Now, it's time for you to
-start coding some Angular 2.
+start coding some Angular.
 
 279
 00:13:30,430 --> 00:13:33,560

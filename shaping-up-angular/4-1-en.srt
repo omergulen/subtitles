@@ -48,7 +48,7 @@ shaping up with Angular JS.
 11
 00:00:28,126 --> 00:00:29,750
 You're watching
-Shaping Up With Angular
+Shaping Up With AngularJS
 
 12
 00:00:29,750 --> 00:00:31,290
@@ -269,7 +269,7 @@ a directive instead?
 57
 00:02:37,120 --> 00:02:41,170
 Well, directives are part of
-the secret sauce of Angular
+the secret sauce of AngularJS
 
 58
 00:02:41,170 --> 00:02:43,690
@@ -294,7 +294,7 @@ your application does.
 62
 00:02:53,510 --> 00:02:56,280
 But if you look at a
-typical Angular application,
+typical AngularJS application,
 
 63
 00:02:56,280 --> 00:02:58,920
@@ -503,7 +503,7 @@ and our HTML is more expressive.
 
 106
 00:05:04,740 --> 00:05:08,310
-Directives in Angular can either
+Directives in AngularJS can either
 be elements like you see here.
 
 107
@@ -619,7 +619,7 @@ Typically not.
 
 130
 00:06:22,510 --> 00:06:26,810
-This is why Angular
+This is why AngularJS
 is so awesome.
 
 131

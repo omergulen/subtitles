@@ -11,7 +11,7 @@ building out our app further.
 3
 00:00:07,690 --> 00:00:11,940
 Remember the $http service
-from the first Angular course?
+from the first AngularJS course?
 
 4
 00:00:11,940 --> 00:00:14,270
@@ -125,7 +125,7 @@ index controller
 27
 00:01:23,060 --> 00:01:26,270
 let's go ahead and re-declare
-our Angular module.
+our AngularJS module.
 
 28
 00:01:26,270 --> 00:01:28,735

@@ -14,7 +14,7 @@ needs good validations,
 
 4
 00:00:09,040 --> 00:00:12,030
-and Angular comes with some
+and AngularJS comes with some
 great built-in ones that you're
 
 5
@@ -84,7 +84,7 @@ which will be true or false.
 
 19
 00:00:51,730 --> 00:00:53,980
-There's some Angular
+There's some AngularJS
 magic going on here.
 
 20
@@ -109,7 +109,7 @@ we're referencing a property
 24
 00:01:10,640 --> 00:01:14,660
 on the form, and that's a
-built-in property from Angular.
+built-in property from AngularJS.
 
 25
 00:01:14,660 --> 00:01:17,340
@@ -313,7 +313,7 @@ turns into ng-valid.
 67
 00:03:18,460 --> 00:03:22,130
 All this is default magic
-that Angular adds for you.
+that AngularJS adds for you.
 
 68
 00:03:22,130 --> 00:03:25,880
@@ -393,7 +393,7 @@ It's kind of neat.
 
 84
 00:04:07,900 --> 00:04:12,610
-As you see, Angular has
+As you see, AngularJS has
 built-in email validation, a lot
 
 85

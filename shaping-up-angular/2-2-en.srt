@@ -53,7 +53,7 @@ displayed in the page?
 
 12
 00:00:33,650 --> 00:00:38,540
-One way to do this in Angular is
+One way to do this in AngularJS is
 by using the ng-click directive
 
 13
@@ -131,7 +131,7 @@ it changes the value.
 28
 00:01:16,900 --> 00:01:19,920
 We're starting to get
-into the magic of Angular.
+into the magic of AngularJS.
 
 29
 00:01:19,920 --> 00:01:22,410
@@ -594,7 +594,7 @@ It's challenge time.
 129
 00:06:42,240 --> 00:06:45,320
 So why don't you shape up
-with some Angular and I'll
+with some AngularJS and I'll
 
 130
 00:06:45,320 --> 00:06:47,820

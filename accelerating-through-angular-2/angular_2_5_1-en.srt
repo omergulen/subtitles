@@ -274,7 +274,7 @@ injection comes in.
 58
 00:02:50,980 --> 00:02:53,050
 When you run an
-Angular 2 application
+Angular application
 
 59
 00:02:53,050 --> 00:02:55,410
