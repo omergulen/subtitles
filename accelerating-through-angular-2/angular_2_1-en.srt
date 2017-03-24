@@ -1,1349 +1,1355 @@
 ﻿1
-00:00:00,499 --> 00:00:04,210
+00:00:00,000 --> 00:00:05,000
+[Captions not quite accurate for this video.
+Fixes are planned!]
+
+2
+00:00:30,170 --> 00:00:33,920
 [SINGING] Put your pedal to
 the metal and burn up the road.
 
-2
-00:00:04,210 --> 00:00:07,035
+3
+00:00:33,920 --> 00:00:36,720
 Start the race and
 load Angular 2 code.
 
-3
-00:00:07,035 --> 00:00:11,470
+4
+00:00:36,720 --> 00:00:41,170
 A class decorator can
 help you in this moment
 
-4
-00:00:11,470 --> 00:00:14,000
+5
+00:00:41,170 --> 00:00:43,670
 tune your engine with the
 template and component.
 
-5
-00:00:14,000 --> 00:00:17,437
+6
+00:00:43,670 --> 00:00:47,130
 Use data binding to
 drift through the turns.
 
-6
-00:00:17,437 --> 00:00:20,926
+7
+00:00:47,130 --> 00:00:50,630
 With import and export
 separate your concerns.
 
-7
-00:00:20,926 --> 00:00:25,410
+8
+00:00:50,630 --> 00:00:55,090
 Inject your service with your
 racing crew while Accelerating
 
-8
-00:00:25,410 --> 00:00:30,490
+9
+00:00:55,090 --> 00:01:00,170
 Through Angular 2.
 
-9
-00:00:30,490 --> 00:00:32,940
+10
+00:01:00,170 --> 00:01:02,630
 You're watching Accelerating
 Through Angular.
 
-10
-00:00:32,940 --> 00:00:35,130
+11
+00:01:02,630 --> 00:01:04,840
 I'm Greg Pollack, and
 in our first section,
 
-11
-00:00:35,130 --> 00:00:39,600
+12
+00:01:04,840 --> 00:01:09,300
 we're going to be creating
 our first component.
 
-12
-00:00:39,600 --> 00:00:41,140
+13
+00:01:09,300 --> 00:01:10,840
 In case you're not
 familiar, Angular
 
-13
-00:00:41,140 --> 00:00:43,870
+14
+00:01:10,840 --> 00:01:13,550
 is a framework for
 dynamic web applications.
 
-14
-00:00:43,870 --> 00:00:48,010
+15
+00:01:13,550 --> 00:01:17,720
 It's a way to organize your
 HTML, CSS, and JavaScript
 
-15
-00:00:48,010 --> 00:00:51,890
+16
+00:01:17,720 --> 00:01:21,590
 so you can ship it over
 into somebody's browser.
 
-16
-00:00:51,890 --> 00:00:54,510
+17
+00:01:21,590 --> 00:01:24,220
 So it's sent over
 from your server,
 
-17
-00:00:54,510 --> 00:00:56,870
+18
+00:01:24,220 --> 00:01:26,550
 but you're still going to
 need some sort of server
 
-18
-00:00:56,870 --> 00:00:57,800
+19
+00:01:26,550 --> 00:01:27,510
 application.
 
-19
-00:00:57,800 --> 00:01:01,820
+20
+00:01:27,510 --> 00:01:31,510
 That might be Rails
 or Django or PHP,
 
-20
-00:01:01,820 --> 00:01:03,470
+21
+00:01:31,510 --> 00:01:33,170
 which loads not
 just your Angular
 
-21
-00:01:03,470 --> 00:01:06,820
+22
+00:01:33,170 --> 00:01:36,510
 app, but any other data that
 you need to load into it later.
 
-22
-00:01:06,820 --> 00:01:09,510
+23
+00:01:36,510 --> 00:01:39,220
 Angular was released in
 2011, and it's mainly
 
-23
-00:01:09,510 --> 00:01:12,340
+24
+00:01:39,220 --> 00:01:42,050
 maintained by Google with
 the help of the open source
 
-24
-00:01:12,340 --> 00:01:14,694
+25
+00:01:42,050 --> 00:01:44,380
 community.
 
-25
-00:01:14,694 --> 00:01:16,860
+26
+00:01:44,380 --> 00:01:46,550
 By the end of the course,
 we'll be building together
 
-26
-00:01:16,860 --> 00:01:19,950
+27
+00:01:46,550 --> 00:01:49,630
 this Ultra Racing
 app that shows us
 
-27
-00:01:19,950 --> 00:01:21,990
+28
+00:01:49,630 --> 00:01:51,670
 all of the car parts
 we have in stock
 
-28
-00:01:21,990 --> 00:01:24,645
+29
+00:01:51,670 --> 00:01:54,340
 and allows us to select
 how many we want.
 
-29
-00:01:27,750 --> 00:01:30,700
+30
+00:01:57,420 --> 00:02:00,380
 In the challenges, you're going
 to be building the Ultra Racing
 
-30
-00:01:30,700 --> 00:01:34,740
+31
+00:02:00,380 --> 00:02:04,420
 Schedule, which allows you to
 enter races and cancel races
 
-31
-00:01:34,740 --> 00:01:37,922
+32
+00:02:04,420 --> 00:02:07,630
 based on how much
 money you have.
 
-32
-00:01:37,922 --> 00:01:39,880
+33
+00:02:07,630 --> 00:02:09,590
 Just to give you a quick
 overview of what we're
 
-33
-00:01:39,880 --> 00:01:41,897
+34
+00:02:09,590 --> 00:02:11,590
 covering in this
 course, in Level 1,
 
-34
-00:01:41,897 --> 00:01:43,480
+35
+00:02:11,590 --> 00:02:13,170
 we'll be creating
 our first component.
 
-35
-00:01:43,480 --> 00:01:46,510
+36
+00:02:13,170 --> 00:02:16,220
 Level 2, structural
 directives, pipes and methods.
 
-36
-00:01:46,510 --> 00:01:48,720
+37
+00:02:16,220 --> 00:02:18,420
 Level 3, we'll organize
 our code and create
 
-37
-00:01:48,720 --> 00:01:50,770
+38
+00:02:18,420 --> 00:02:20,470
 a model and mock our data.
 
-38
-00:01:50,770 --> 00:01:54,880
+39
+00:02:20,470 --> 00:02:24,590
 Level 4, we'll do some really
 fun data binding, and Level 5,
 
-39
-00:01:54,880 --> 00:01:56,890
+40
+00:02:24,590 --> 00:02:26,590
 we'll build our own
 service, figure out
 
-40
-00:01:56,890 --> 00:01:58,880
+41
+00:02:26,590 --> 00:02:28,590
 dependency injection,
 and then use
 
-41
-00:01:58,880 --> 00:02:03,100
+42
+00:02:28,590 --> 00:02:32,800
 HTTP to call over the internet
 to fetch some data from an API.
 
-42
-00:02:03,100 --> 00:02:04,940
+43
+00:02:32,800 --> 00:02:34,630
 And of course,
 between all of these,
 
-43
-00:02:04,940 --> 00:02:06,660
+44
+00:02:34,630 --> 00:02:36,340
 you'll be doing
 challenges and building
 
-44
-00:02:06,660 --> 00:02:09,600
+45
+00:02:36,340 --> 00:02:39,300
 that app I just showed you.
 
-45
-00:02:09,600 --> 00:02:11,920
+46
+00:02:39,300 --> 00:02:41,630
 You don't need any prior
 experience with Angular
 
-46
-00:02:11,920 --> 00:02:12,840
+47
+00:02:41,630 --> 00:02:42,550
 to take this course.
 
-47
-00:02:12,840 --> 00:02:16,230
+48
+00:02:42,550 --> 00:02:45,920
 However, you do need basic
 JavaScript experience,
 
-48
-00:02:16,230 --> 00:02:18,620
+49
+00:02:45,920 --> 00:02:48,300
 and if you don't, go check
 out our JavaScript road trip
 
-49
-00:02:18,620 --> 00:02:19,700
+50
+00:02:48,300 --> 00:02:49,380
 courses.
 
-50
-00:02:19,700 --> 00:02:23,090
+51
+00:02:49,380 --> 00:02:52,800
 You'll also need
 basic HTML and CSS.
 
-51
-00:02:23,090 --> 00:02:24,770
+52
+00:02:52,800 --> 00:02:54,470
 We have courses for that.
 
-52
-00:02:24,770 --> 00:02:29,170
+53
+00:02:54,470 --> 00:02:58,880
 And optionally, I recommend
 you take our ES2015 Shape
 
-53
-00:02:29,170 --> 00:02:31,230
+54
+00:02:58,880 --> 00:03:00,920
 of JavaScript to Come
 course, because we're
 
-54
-00:02:31,230 --> 00:02:33,770
+55
+00:03:00,920 --> 00:03:03,470
 going to be using some cutting
 edge features of JavaScript
 
-55
-00:02:33,770 --> 00:02:38,740
+56
+00:03:03,470 --> 00:03:08,420
 in this course with ES2015.
 
-56
-00:02:38,740 --> 00:02:41,400
+57
+00:03:08,420 --> 00:03:11,090
 What is the difference between
 AngularJS and Angular?
 
-57
-00:02:41,400 --> 00:02:43,830
+58
+00:03:11,090 --> 00:03:13,510
 Well, first and
 foremost, Angular
 
-58
-00:02:43,830 --> 00:02:46,720
+59
+00:03:13,510 --> 00:03:16,420
 is a lot speedier in a
 bunch of different ways.
 
-59
-00:02:46,720 --> 00:02:49,120
+60
+00:03:16,420 --> 00:03:18,800
 Also, with Angular
 , we use components,
 
-60
-00:02:49,120 --> 00:02:52,200
+61
+00:03:18,800 --> 00:03:21,880
 which are much simpler
 than controllers and scope
 
-61
-00:02:52,200 --> 00:02:53,650
+62
+00:03:21,880 --> 00:03:23,340
 from AngularJS.
 
-62
-00:02:53,650 --> 00:02:55,440
+63
+00:03:23,340 --> 00:03:25,130
 Also, directives are simpler.
 
-63
-00:02:55,440 --> 00:02:57,870
+64
+00:03:25,130 --> 00:03:27,550
 It's easier to create
 custom directives.
 
-64
-00:02:57,870 --> 00:03:00,230
+65
+00:03:27,550 --> 00:03:29,920
 There's also this great
 intuitive data binding,
 
-65
-00:03:00,230 --> 00:03:04,490
+66
+00:03:29,920 --> 00:03:34,170
 which we'll get into in Level 4,
 where we, you know, link data into our web
 
-66
-00:03:04,490 --> 00:03:06,420
+67
+00:03:34,170 --> 00:03:36,130
 page and vice versa.
 
-67
-00:03:06,420 --> 00:03:09,290
+68
+00:03:36,130 --> 00:03:38,970
 Also, services are
 now just a class,
 
-68
-00:03:09,290 --> 00:03:10,790
+69
+00:03:38,970 --> 00:03:40,470
 and there's a bunch
 of other things
 
-69
-00:03:10,790 --> 00:03:12,040
+70
+00:03:40,470 --> 00:03:41,720
 I'm not going to get into.
 
-70
-00:03:12,040 --> 00:03:15,330
+71
+00:03:41,720 --> 00:03:45,010
 A lot of improvements.
 
-71
-00:03:15,330 --> 00:03:17,487
+72
+00:03:45,010 --> 00:03:47,170
 I really want to show
 you some Angular code,
 
-72
-00:03:17,487 --> 00:03:20,070
+73
+00:03:47,170 --> 00:03:49,760
 but before we get there, we need
 to decide what language we're
 
-73
-00:03:20,070 --> 00:03:21,900
+74
+00:03:49,760 --> 00:03:51,590
 going to be coding in.
 
-74
-00:03:21,900 --> 00:03:24,100
+75
+00:03:51,590 --> 00:03:53,800
 We could use plain
 old JavaScript,
 
-75
-00:03:24,100 --> 00:03:28,447
+76
+00:03:53,800 --> 00:03:58,130
 but browsers aren't up to the
 latest version of JavaScript.
 
-76
-00:03:28,447 --> 00:03:30,030
+77
+00:03:58,130 --> 00:03:59,720
 And there's a couple
 of different ways
 
-77
-00:03:30,030 --> 00:03:32,440
+78
+00:03:59,720 --> 00:04:02,130
 we can get access to
 these newest features.
 
-78
-00:03:32,440 --> 00:03:35,210
+79
+00:04:02,130 --> 00:04:04,920
 One is by using
 Babel, which allows
 
-79
-00:03:35,210 --> 00:03:37,840
+80
+00:04:04,920 --> 00:04:07,550
 you to code in the newest
 versions of JavaScript,
 
-80
-00:03:37,840 --> 00:03:39,280
+81
+00:04:07,550 --> 00:04:08,970
 and then it does
 something called
 
-81
-00:03:39,280 --> 00:03:43,090
+82
+00:04:08,970 --> 00:04:12,800
 transpiling into JavaScript
 that is compatible with all
 
-82
-00:03:43,090 --> 00:03:45,270
+83
+00:04:12,800 --> 00:04:14,970
 of our browsers.
 
-83
-00:03:45,270 --> 00:03:48,090
+84
+00:04:14,970 --> 00:04:17,800
 However, we could
 also use TypeScript.
 
-84
-00:03:48,090 --> 00:03:50,990
+85
+00:04:17,800 --> 00:04:20,670
 TypeScript is a
 superset of JavaScript,
 
-85
-00:03:50,990 --> 00:03:53,810
+86
+00:04:20,670 --> 00:04:23,510
 which means it has all those
 new cutting edge features,
 
-86
-00:03:53,810 --> 00:03:56,910
+87
+00:04:23,510 --> 00:04:26,590
 plus a bunch of
 additional features.
 
-87
-00:03:56,910 --> 00:04:00,160
+88
+00:04:26,590 --> 00:04:29,840
 TypeScript also
 transpiles into JavaScript
 
-88
-00:04:00,160 --> 00:04:01,910
+89
+00:04:29,840 --> 00:04:31,590
 to be compatible with
 all of our browsers.
 
-89
-00:04:04,560 --> 00:04:07,114
+90
+00:04:34,260 --> 00:04:36,800
 In this course, we'll be
 programming TypeScript.
 
-90
-00:04:07,114 --> 00:04:07,780
+91
+00:04:36,800 --> 00:04:37,470
 Don't freak out.
 
-91
-00:04:07,780 --> 00:04:09,310
+92
+00:04:37,470 --> 00:04:39,010
 It's actually really cool.
 
-92
-00:04:09,310 --> 00:04:12,100
+93
+00:04:39,010 --> 00:04:41,800
 TypeScript is Microsoft's
 extension of JavaScript,
 
-93
-00:04:12,100 --> 00:04:15,190
+94
+00:04:41,800 --> 00:04:44,880
 which allows use of all
 ES2015 features and adds
 
-94
-00:04:15,190 --> 00:04:18,585
+95
+00:04:44,880 --> 00:04:48,260
 powerful type checking and
 object oriented features.
 
-95
-00:04:18,585 --> 00:04:21,160
+96
+00:04:48,260 --> 00:04:50,840
 And in fact, the
 Angular source code
 
-96
-00:04:21,160 --> 00:04:24,140
+97
+00:04:50,840 --> 00:04:53,840
 itself is programmed
 in TypeScript.
 
-97
-00:04:24,140 --> 00:04:27,540
+98
+00:04:53,840 --> 00:04:57,220
 So in this course, instead
 of seeing JavaScript files
 
-98
-00:04:27,540 --> 00:04:30,330
+99
+00:04:57,220 --> 00:05:00,010
 like main.js, you
 see here, we'll
 
-99
-00:04:30,330 --> 00:04:35,010
+100
+00:05:00,010 --> 00:05:04,720
 be using TypeScript files,
 which end in .ts.
 
-100
-00:04:35,010 --> 00:04:36,810
+101
+00:05:04,720 --> 00:05:06,510
 If you want to learn
 more about TypeScript,
 
-101
-00:04:36,810 --> 00:04:42,130
+102
+00:05:06,510 --> 00:05:11,840
 definitely check out
 TypeScriptLang.org.
 
-102
-00:04:42,130 --> 00:04:44,730
+103
+00:05:11,840 --> 00:05:14,420
 Since our browsers don't know
 how to read TypeScript out
 
-103
-00:04:44,730 --> 00:04:48,780
+104
+00:05:14,420 --> 00:05:18,470
 of the box, we need to
 translate it or transpile it
 
-104
-00:04:48,780 --> 00:04:52,430
+105
+00:05:18,470 --> 00:05:22,130
 into JavaScript, and there's
 two ways we can do this.
 
-105
-00:04:52,430 --> 00:04:56,080
+106
+00:05:22,130 --> 00:05:25,760
 The first way is we can send
 our TypeScript into the browser
 
-106
-00:04:56,080 --> 00:04:59,900
+107
+00:05:25,760 --> 00:05:29,590
 and leave it to the browser to
 transpile it into JavaScript.
 
-107
-00:04:59,900 --> 00:05:01,390
+108
+00:05:29,590 --> 00:05:31,090
 The second way is
 we can take care
 
-108
-00:05:01,390 --> 00:05:05,890
+109
+00:05:31,090 --> 00:05:35,590
 of transpiling to JavaScript
 before we ship to the browser.
 
-109
-00:05:05,890 --> 00:05:09,730
+110
+00:05:35,590 --> 00:05:39,420
 This usually happens when
 we build or deploy our code.
 
-110
-00:05:09,730 --> 00:05:12,730
+111
+00:05:39,420 --> 00:05:42,420
 So I just made a commit,
 I build the code,
 
-111
-00:05:12,730 --> 00:05:15,260
+112
+00:05:42,420 --> 00:05:44,970
 it transpiles my
 TypeScript into JavaScript,
 
-112
-00:05:15,260 --> 00:05:17,100
+113
+00:05:44,970 --> 00:05:46,800
 sends that up to the
 server, which then
 
-113
-00:05:17,100 --> 00:05:19,160
+114
+00:05:46,800 --> 00:05:48,840
 gets served into the browser.
 
-114
-00:05:19,160 --> 00:05:21,570
+115
+00:05:48,840 --> 00:05:51,260
 This method is going to
 load your website faster,
 
-115
-00:05:21,570 --> 00:05:25,079
+116
+00:05:51,260 --> 00:05:54,760
 so it will be what you
 want to do in production.
 
-116
-00:05:25,079 --> 00:05:26,620
+117
+00:05:54,760 --> 00:05:56,300
 Time to start coding,
 and we're going
 
-117
-00:05:26,620 --> 00:05:31,850
+118
+00:05:56,300 --> 00:06:01,550
 to start with our index.html
 with just some basic HTML code.
 
-118
-00:05:31,850 --> 00:05:34,510
+119
+00:06:01,550 --> 00:06:04,220
 Now, inside the
 header tag here is
 
-119
-00:05:34,510 --> 00:05:38,140
+120
+00:06:04,220 --> 00:06:07,840
 where you're going to load all
 of your Angular libraries,
 
-120
-00:05:38,140 --> 00:05:41,000
+121
+00:06:07,840 --> 00:06:10,670
 but, I'm not going to
 show you how to do it.
 
-121
-00:05:41,000 --> 00:05:42,887
+122
+00:06:10,670 --> 00:06:12,590
 There's actually a
 few ways to do it.
 
-122
-00:05:42,887 --> 00:05:44,470
+123
+00:06:12,590 --> 00:06:14,170
 When you're ready
 to start developing,
 
-123
-00:05:44,470 --> 00:05:47,420
+124
+00:06:14,170 --> 00:06:17,130
 we suggest you go over and
 follow the 5 minute quick start
 
-124
-00:05:47,420 --> 00:05:49,880
+125
+00:06:17,130 --> 00:06:19,590
 guide on the official
 Angular home page.
 
-125
-00:05:52,420 --> 00:05:55,580
+126
+00:06:22,130 --> 00:06:25,260
 Inside the body of our HTML,
 we're going to put a body tag
 
-126
-00:05:55,580 --> 00:05:59,320
+127
+00:06:25,260 --> 00:06:29,010
 and use our first custom
 element called my app.
 
-127
-00:05:59,320 --> 00:06:02,570
+128
+00:06:29,010 --> 00:06:32,260
 This is where our Angular
 2 application will load,
 
-128
-00:06:02,570 --> 00:06:06,190
+129
+00:06:32,260 --> 00:06:35,880
 and it's worth noting that
 this my app custom tag could
 
-129
-00:06:06,190 --> 00:06:09,570
+130
+00:06:35,880 --> 00:06:39,260
 be anything, even racing app.
 
-130
-00:06:09,570 --> 00:06:12,310
+131
+00:06:39,260 --> 00:06:42,010
 Until our app gets loaded in
 the browser, if we load this up,
 
-131
-00:06:12,310 --> 00:06:14,300
+132
+00:06:42,010 --> 00:06:44,010
 we're just going
 to see loading app.
 
-132
-00:06:18,750 --> 00:06:20,720
+133
+00:06:48,420 --> 00:06:50,420
 If you followed that
 5 minute tutorial,
 
-133
-00:06:20,720 --> 00:06:24,660
+134
+00:06:50,420 --> 00:06:54,340
 you probably are using
 SystemJS to load Angular.
 
-134
-00:06:24,660 --> 00:06:26,250
+135
+00:06:54,340 --> 00:06:55,920
 And inside this
 script tag, you have
 
-135
-00:06:26,250 --> 00:06:28,040
+136
+00:06:55,920 --> 00:06:57,720
 something that looks like this.
 
-136
-00:06:28,040 --> 00:06:29,960
+137
+00:06:57,720 --> 00:06:59,670
 This bit of code
 is going to look
 
-137
-00:06:29,960 --> 00:06:33,280
+138
+00:06:59,670 --> 00:07:02,970
 for a main.ts file, which
 is where we're going
 
-138
-00:06:33,280 --> 00:06:35,400
+139
+00:07:02,970 --> 00:07:05,090
 to put our applications code.
 
-139
-00:06:35,400 --> 00:06:38,390
+140
+00:07:05,090 --> 00:07:08,090
 This bit of code also makes sure
 that error messages are printed
 
-140
-00:06:38,390 --> 00:06:42,060
+141
+00:07:08,090 --> 00:07:11,760
 out to the browser console.
 
-141
-00:06:42,060 --> 00:06:44,620
+142
+00:07:11,760 --> 00:07:14,300
 Let's jump in and write
 our first TypeScript file.
 
-142
-00:06:44,620 --> 00:06:47,120
+143
+00:07:14,300 --> 00:07:16,800
 It's going to be main.ts.
 
-143
-00:06:47,120 --> 00:06:51,080
+144
+00:07:16,800 --> 00:07:20,760
 Inside here, we're going to
 import an Angular library.
 
-144
-00:06:51,080 --> 00:06:54,290
+145
+00:07:20,760 --> 00:07:23,970
 That import keyword
 is an ES2015 feature
 
-145
-00:06:54,290 --> 00:06:58,900
+146
+00:07:23,970 --> 00:07:28,590
 used to import functions,
 objects, or primitives.
 
-146
-00:06:58,900 --> 00:07:01,640
+147
+00:07:28,590 --> 00:07:31,340
 Here you can see we're
 importing component.
 
-147
-00:07:01,640 --> 00:07:05,520
+148
+00:07:31,340 --> 00:07:35,220
 It's a function that will
 allow us to create components,
 
-148
-00:07:05,520 --> 00:07:07,730
+149
+00:07:35,220 --> 00:07:37,420
 which are the basic
 building blocks of Angular
 
-149
-00:07:07,730 --> 00:07:09,160
+150
+00:07:37,420 --> 00:07:38,840
 applications.
 
-150
-00:07:09,160 --> 00:07:14,014
+151
+00:07:38,840 --> 00:07:43,720
 A component controls a portion
 of our screen or web page.
 
-151
-00:07:14,014 --> 00:07:15,430
+152
+00:07:43,720 --> 00:07:45,130
 So as you can
 imagine, we're going
 
-152
-00:07:15,430 --> 00:07:17,930
+153
+00:07:45,130 --> 00:07:47,630
 to be creating a bunch of these.
 
-153
-00:07:17,930 --> 00:07:20,170
+154
+00:07:47,630 --> 00:07:49,880
 This symbol you see
 here, whenever you
 
-154
-00:07:20,170 --> 00:07:22,730
+155
+00:07:49,880 --> 00:07:52,420
 see this symbol in this course.
 
-155
-00:07:22,730 --> 00:07:25,060
+156
+00:07:52,420 --> 00:07:54,760
 It means we're working
 with a component.
 
-156
-00:07:28,980 --> 00:07:31,280
+157
+00:07:58,670 --> 00:08:00,970
 I mentioned that
 component is a function.
 
-157
-00:07:31,280 --> 00:07:33,900
+158
+00:08:00,970 --> 00:08:03,590
 It's actually a
 decorator function.
 
-158
-00:07:33,900 --> 00:07:36,260
+159
+00:08:03,590 --> 00:08:05,970
 A decorator function
 adds additional behavior
 
-159
-00:07:36,260 --> 00:07:40,060
+160
+00:08:05,970 --> 00:08:09,760
 to our class from
 outside our class.
 
-160
-00:07:40,060 --> 00:07:44,780
+161
+00:08:09,760 --> 00:08:14,470
 It's a bit of code we declare
 immediately before the class.
 
-161
-00:07:44,780 --> 00:07:48,800
+162
+00:08:14,470 --> 00:08:18,510
 So here's our class
 app component,
 
-162
-00:07:48,800 --> 00:07:51,490
+163
+00:08:18,510 --> 00:08:21,170
 and right before that
 is where we're going
 
-163
-00:07:51,490 --> 00:07:54,140
+164
+00:08:21,170 --> 00:08:23,840
 to write our decorator code.
 
-164
-00:07:54,140 --> 00:07:57,150
+165
+00:08:23,840 --> 00:08:26,840
 And it's that decorator that
 turns our plain old JavaScript
 
-165
-00:07:57,150 --> 00:07:59,710
+166
+00:08:26,840 --> 00:08:29,420
 class into a component.
 
-166
-00:07:59,710 --> 00:08:01,930
+167
+00:08:29,420 --> 00:08:31,630
 You'll notice here, we're
 using our component symbol
 
-167
-00:08:01,930 --> 00:08:03,320
+168
+00:08:31,630 --> 00:08:33,010
 in two pieces.
 
-168
-00:08:03,320 --> 00:08:06,090
+169
+00:08:33,010 --> 00:08:35,800
 The bottom piece for our
 class, and the top piece
 
-169
-00:08:06,090 --> 00:08:08,550
+170
+00:08:35,800 --> 00:08:38,260
 for our decorator.
 
-170
-00:08:08,550 --> 00:08:10,120
+171
+00:08:38,260 --> 00:08:39,800
 Let's code out our component.
 
-171
-00:08:10,120 --> 00:08:11,770
+172
+00:08:39,800 --> 00:08:41,470
 It looks something like this.
 
-172
-00:08:11,770 --> 00:08:14,160
+173
+00:08:41,470 --> 00:08:43,840
 We write add component.
 
-173
-00:08:14,160 --> 00:08:18,410
+174
+00:08:43,840 --> 00:08:48,090
 Inside there, there's an
 object with selector, my app,
 
-174
-00:08:18,410 --> 00:08:21,140
+175
+00:08:48,090 --> 00:08:50,840
 template, and some HTML.
 
-175
-00:08:21,140 --> 00:08:24,010
+176
+00:08:50,840 --> 00:08:53,720
 The at component syntax is
 used to apply our component
 
-176
-00:08:24,010 --> 00:08:25,810
+177
+00:08:53,720 --> 00:08:55,510
 decorator to our class.
 
-177
-00:08:25,810 --> 00:08:27,810
+178
+00:08:55,510 --> 00:08:57,510
 You might not have seen
 this before because it's
 
-178
-00:08:27,810 --> 00:08:29,390
+179
+00:08:57,510 --> 00:08:59,090
 a TypeScript feature.
 
-179
-00:08:29,390 --> 00:08:31,200
+180
+00:08:59,090 --> 00:09:00,880
 Then, we specify the selector.
 
-180
-00:08:31,200 --> 00:08:33,830
+181
+00:09:00,880 --> 00:09:03,510
 This is the CSS selector
 for the HTML element
 
-181
-00:08:33,830 --> 00:08:35,740
+182
+00:09:03,510 --> 00:09:05,420
 where we want the
 component to load.
 
-182
-00:08:35,740 --> 00:08:37,929
+183
+00:09:05,420 --> 00:09:07,630
 And if we look back
 on our index HTML,
 
-183
-00:08:37,929 --> 00:08:41,000
+184
+00:09:07,630 --> 00:09:10,670
 we can see this corresponds
 to the custom tag we created.
 
-184
-00:08:41,000 --> 00:08:43,490
+185
+00:09:10,670 --> 00:09:13,170
 Then, the template
 is where we put
 
-185
-00:08:43,490 --> 00:08:47,520
+186
+00:09:13,170 --> 00:09:17,220
 the content we want to
 load inside our selector.
 
-186
-00:08:47,520 --> 00:08:49,640
+187
+00:09:17,220 --> 00:09:19,340
 The configuration lines
 inside the decorator
 
-187
-00:08:49,640 --> 00:08:51,860
+188
+00:09:19,340 --> 00:09:21,550
 are sometimes referred
 to as metadata.
 
-188
-00:08:55,560 --> 00:08:58,710
+189
+00:09:25,260 --> 00:09:28,420
 Next, we need to declare
 our root Angular module.
 
-189
-00:08:58,710 --> 00:09:02,310
+190
+00:09:28,420 --> 00:09:32,010
 Modules are how we organize
 our application in Angular.
 
-190
-00:09:02,310 --> 00:09:04,720
+191
+00:09:32,010 --> 00:09:34,420
 One app might have
 multiple modules,
 
-191
-00:09:04,720 --> 00:09:08,410
+192
+00:09:34,420 --> 00:09:38,090
 but we need to declare
 a root module, which
 
-192
-00:09:08,410 --> 00:09:11,080
+193
+00:09:38,090 --> 00:09:40,760
 we'll need to launch the app.
 
-193
-00:09:11,080 --> 00:09:12,895
+194
+00:09:40,760 --> 00:09:42,590
 So here you can
 see in our main.ts,
 
-194
-00:09:12,895 --> 00:09:17,880
+195
+00:09:42,590 --> 00:09:47,590
 the first thing we need to do
 is import the NgModule library.
 
-195
-00:09:17,880 --> 00:09:20,000
+196
+00:09:47,590 --> 00:09:49,670
 Then, we'll write @NgModule.
 
-196
-00:09:20,000 --> 00:09:22,800
+197
+00:09:49,670 --> 00:09:52,510
 This is a decorator
 function, and like before, it
 
-197
-00:09:22,800 --> 00:09:24,370
+198
+00:09:52,510 --> 00:09:54,050
 takes some metadata.
 
-198
-00:09:24,370 --> 00:09:27,000
+199
+00:09:54,050 --> 00:09:56,670
 Here, we're going to send in
 a list of all the components
 
-199
-00:09:27,000 --> 00:09:30,620
+200
+00:09:56,670 --> 00:10:00,300
 inside of this module,
 all of the declarations
 
-200
-00:09:30,620 --> 00:09:32,480
+201
+00:10:00,300 --> 00:10:02,170
 inside that array.
 
-201
-00:09:32,480 --> 00:09:34,600
+202
+00:10:02,170 --> 00:10:04,300
 Then, we need to
 declare a class,
 
-202
-00:09:34,600 --> 00:09:37,875
+203
+00:10:04,300 --> 00:10:07,550
 because every decorator
 function decorates a class.
 
-203
-00:09:42,092 --> 00:09:43,800
+204
+00:10:11,800 --> 00:10:13,510
 Now, we need to include
 some dependencies
 
-204
-00:09:43,800 --> 00:09:47,870
+205
+00:10:13,510 --> 00:10:17,550
 to render our application,
 specifically, browser module.
 
-205
-00:09:47,870 --> 00:09:51,130
+206
+00:10:17,550 --> 00:10:20,840
 That's the module we need
 to render Angular websites.
 
-206
-00:09:51,130 --> 00:09:54,040
+207
+00:10:20,840 --> 00:10:23,720
 And platform browser dynamic.
 
-207
-00:09:54,040 --> 00:09:57,400
+208
+00:10:23,720 --> 00:10:27,090
 This is an Angular library
 which will render the website.
 
-208
-00:09:57,400 --> 00:10:01,542
+209
+00:10:27,090 --> 00:10:31,220
 This will allow us to bootstrap,
 or launch the application.
 
-209
-00:10:04,320 --> 00:10:06,580
+210
+00:10:34,010 --> 00:10:36,260
 To use those dependencies,
 we'll put them
 
-210
-00:10:06,580 --> 00:10:08,790
+211
+00:10:36,260 --> 00:10:38,470
 into the NgModule metadata.
 
-211
-00:10:08,790 --> 00:10:12,810
+212
+00:10:38,470 --> 00:10:42,510
 First, in the imports, we'll
 load in browser module.
 
-212
-00:10:12,810 --> 00:10:14,284
+213
+00:10:42,510 --> 00:10:43,970
 This is the required
 dependencies
 
-213
-00:10:14,284 --> 00:10:15,700
+214
+00:10:43,970 --> 00:10:45,380
 to launch your app
 in the browser.
 
-214
-00:10:15,700 --> 00:10:19,360
+215
+00:10:45,380 --> 00:10:49,050
 Then we need to indicate the
 root component, the component
 
-215
-00:10:19,360 --> 00:10:22,470
+216
+00:10:49,050 --> 00:10:52,170
 that should get loaded
 first when the Angular
 
-216
-00:10:22,470 --> 00:10:25,250
+217
+00:10:52,170 --> 00:10:54,920
 application gets bootstrapped.
 
-217
-00:10:25,250 --> 00:10:27,970
+218
+00:10:54,920 --> 00:10:57,670
 Then, we need to use
 the platform browser
 
-218
-00:10:27,970 --> 00:10:31,085
+219
+00:10:57,670 --> 00:11:00,760
 dynamic function and
 bootstrap our app module.
 
-219
-00:10:35,320 --> 00:10:38,760
+220
+00:11:05,010 --> 00:11:08,470
 So now when our application gets
 loaded, it gets bootstrapped,
 
-220
-00:10:38,760 --> 00:10:40,070
+221
+00:11:08,470 --> 00:11:09,760
 calls app module.
 
-221
-00:10:40,070 --> 00:10:43,490
+222
+00:11:09,760 --> 00:11:13,170
 App module realizes, oh,
 it's that app component
 
-222
-00:10:43,490 --> 00:10:44,530
+223
+00:11:13,170 --> 00:11:14,220
 that should get loaded.
 
-223
-00:10:44,530 --> 00:10:47,040
+224
+00:11:14,220 --> 00:11:16,720
 It loads the app
 component, which
 
-224
-00:10:47,040 --> 00:10:50,350
+225
+00:11:16,720 --> 00:11:20,050
 then goes looking for
 the my app selector
 
-225
-00:10:50,350 --> 00:10:51,616
+226
+00:11:20,050 --> 00:11:21,300
 back in our index.html.
 
-226
-00:10:55,580 --> 00:10:58,040
+227
+00:11:25,260 --> 00:11:27,720
 Components are the building
 blocks of our Angular
 
-227
-00:10:58,040 --> 00:11:02,270
+228
+00:11:27,720 --> 00:11:31,970
 application, and they nest
 very well inside of each other.
 
-228
-00:11:02,270 --> 00:11:04,630
+229
+00:11:31,970 --> 00:11:34,340
 An app might look
 something like this,
 
-229
-00:11:04,630 --> 00:11:07,000
+230
+00:11:34,340 --> 00:11:36,670
 where you have one big
 component, and the header
 
-230
-00:11:07,000 --> 00:11:10,400
+231
+00:11:36,670 --> 00:11:40,090
 component, maybe a sidebar
 component, and little list
 
-231
-00:11:10,400 --> 00:11:13,910
+232
+00:11:40,090 --> 00:11:43,590
 components, and each component
 can have its own class file,
 
-232
-00:11:13,910 --> 00:11:18,220
+233
+00:11:43,590 --> 00:11:47,920
 HTML file, and CSS file.
 
-233
-00:11:18,220 --> 00:11:21,210
+234
+00:11:47,920 --> 00:11:50,920
 So we have our first component,
 but it's not dynamic at all.
 
-234
-00:11:21,210 --> 00:11:24,220
+235
+00:11:50,920 --> 00:11:53,920
 Let's start thinking about
 how to send data around.
 
-235
-00:11:24,220 --> 00:11:27,530
+236
+00:11:53,920 --> 00:11:57,220
 So if we have a property
 inside of our component,
 
-236
-00:11:27,530 --> 00:11:29,530
+237
+00:11:57,220 --> 00:11:59,220
 let's create a title
 property, which
 
-237
-00:11:29,530 --> 00:11:31,820
+238
+00:11:59,220 --> 00:12:01,510
 has the value Ultra Racing.
 
-238
-00:11:31,820 --> 00:11:35,610
+239
+00:12:01,510 --> 00:12:05,300
 Notice here, inside a TypeScript
 class, we don't use the var
 
-239
-00:11:35,610 --> 00:11:39,770
+240
+00:12:05,300 --> 00:12:09,470
 or let key words to
 declare class properties.
 
-240
-00:11:39,770 --> 00:11:43,280
+241
+00:12:09,470 --> 00:12:12,970
 Though, in TypeScript,
 you still use var or let,
 
-241
-00:11:43,280 --> 00:11:45,220
+242
+00:12:12,970 --> 00:12:14,920
 but, you know, in methods.
 
-242
-00:11:45,220 --> 00:11:46,770
+243
+00:12:14,920 --> 00:12:16,470
 So the question
 we're asking now is
 
-243
-00:11:46,770 --> 00:11:49,850
+244
+00:12:16,470 --> 00:12:19,550
 how do we put this
 class property
 
-244
-00:11:49,850 --> 00:11:50,835
+245
+00:12:19,550 --> 00:12:20,510
 inside of our template?
 
-245
-00:11:53,460 --> 00:11:56,720
+246
+00:12:23,170 --> 00:12:26,420
 To print properties, we use
 something called interpolation.
 
-246
-00:11:56,720 --> 00:11:58,000
+247
+00:12:26,420 --> 00:12:27,670
 See those curly braces?
 
-247
-00:11:58,000 --> 00:12:00,210
+248
+00:12:27,670 --> 00:12:29,920
 Inside there, we can
 specify a component property
 
-248
-00:12:00,210 --> 00:12:01,854
+249
+00:12:29,920 --> 00:12:31,550
 we want to print to the screen.
 
-249
-00:12:01,854 --> 00:12:03,270
+250
+00:12:31,550 --> 00:12:32,970
 So now, if we load
 up the browser,
 
-250
-00:12:03,270 --> 00:12:05,978
+251
+00:12:32,970 --> 00:12:35,670
 we can see that it
 prints out Ultra Racing.
 
-251
-00:12:08,730 --> 00:12:10,710
+252
+00:12:38,420 --> 00:12:40,420
 But what if we have
 an object that we
 
-252
-00:12:10,710 --> 00:12:11,905
+253
+00:12:40,420 --> 00:12:41,590
 want to print to the screen?
 
-253
-00:12:11,905 --> 00:12:14,450
+254
+00:12:41,590 --> 00:12:44,130
 Here, you can see
 our car part object
 
-254
-00:12:14,450 --> 00:12:18,660
+255
+00:12:44,130 --> 00:12:48,340
 with different keys and values.
 
-255
-00:12:18,660 --> 00:12:23,100
+256
+00:12:48,340 --> 00:12:52,800
 To do this, we simply use more
 interpolation and access car
 
-256
-00:12:23,100 --> 00:12:26,700
+257
+00:12:52,800 --> 00:12:56,380
 part.name, car part
 description, car part in stock,
 
-257
-00:12:26,700 --> 00:12:28,070
+258
+00:12:56,380 --> 00:12:57,760
 like you see here.
 
-258
-00:12:28,070 --> 00:12:30,440
+259
+00:12:57,760 --> 00:13:00,130
 Now, you'll notice, our
 single quotes disappear.
 
-259
-00:12:30,440 --> 00:12:35,320
+260
+00:13:00,130 --> 00:13:05,010
 This is because this time
 we need to use back ticks.
 
-260
-00:12:35,320 --> 00:12:38,960
+261
+00:13:05,010 --> 00:13:08,670
 Using back ticks allows us to
 have template strings, which
 
-261
-00:12:38,960 --> 00:12:40,890
+262
+00:13:08,670 --> 00:13:10,590
 allow us to be multi-line.
 
-262
-00:12:40,890 --> 00:12:45,380
+263
+00:13:10,590 --> 00:13:15,090
 This is another ES2015
 feature enabled by TypeScript.
 
-263
-00:12:45,380 --> 00:12:47,400
+264
+00:13:15,090 --> 00:13:17,090
 So now, if we load
 up our page, we
 
-264
-00:12:47,400 --> 00:12:51,611
+265
+00:13:17,090 --> 00:13:21,300
 can see it prints
 out our object.
 
-265
-00:12:51,611 --> 00:12:54,110
+266
+00:13:21,300 --> 00:13:23,800
 Almost time to create your first
 component, but first, let's
 
-266
-00:12:54,110 --> 00:12:55,680
+267
+00:13:23,800 --> 00:13:25,380
 review what we learned.
 
-267
-00:12:55,680 --> 00:12:59,090
+268
+00:13:25,380 --> 00:13:28,800
 Angular is a framework for
 dynamic web applications.
 
-268
-00:12:59,090 --> 00:13:02,040
+269
+00:13:28,800 --> 00:13:31,720
 We're coding Angular using
 TypeScript, a language that
 
-269
-00:13:02,040 --> 00:13:04,340
+270
+00:13:31,720 --> 00:13:34,050
 transpiles into JavaScript.
 
-270
-00:13:04,340 --> 00:13:08,174
+271
+00:13:34,050 --> 00:13:37,880
 NgModules group Angular code
 into blocks of functionality.
 
-271
-00:13:08,174 --> 00:13:09,840
+272
+00:13:37,880 --> 00:13:39,550
 Components are the
 basic building blocks
 
-272
-00:13:09,840 --> 00:13:11,950
+273
+00:13:39,550 --> 00:13:41,630
 of any Angular application.
 
-273
-00:13:11,950 --> 00:13:14,760
+274
+00:13:41,630 --> 00:13:44,470
 We use a custom
 HTML tag or selector
 
-274
-00:13:14,760 --> 00:13:16,320
+275
+00:13:44,470 --> 00:13:46,010
 to show where we
 want our component
 
-275
-00:13:16,320 --> 00:13:18,640
+276
+00:13:46,010 --> 00:13:48,340
 to load inside our HTML.
 
-276
-00:13:18,640 --> 00:13:21,360
+277
+00:13:48,340 --> 00:13:51,050
 Decorators are what turn
 our plain TypeScript classes
 
-277
-00:13:21,360 --> 00:13:23,497
+278
+00:13:51,050 --> 00:13:53,170
 into components or
 Angular modules.
 
-278
-00:13:26,840 --> 00:13:30,430
+279
+00:13:56,550 --> 00:14:00,130
 Now, it's time for you to
 start coding some Angular.
 
-279
-00:13:30,430 --> 00:13:33,560
+280
+00:14:00,130 --> 00:14:03,260
 And I'll see you
 in the next level.
 
-280
-00:13:33,560 --> 00:13:35,235
+281
+00:14:03,260 --> 00:14:04,920
 So what-- though so.
 
-281
-00:13:35,235 --> 00:13:37,631
+282
+00:14:04,920 --> 00:14:07,340
 It gets bigger every time.
 
-282
-00:13:37,631 --> 00:13:41,480
+283
+00:14:07,340 --> 00:14:11,170
 FYI, this has nothing
 to do-- FY-- FY?
 
-283
-00:13:41,480 --> 00:13:44,030
+284
+00:14:11,170 --> 00:14:13,720
 This is how it gets done.
+
