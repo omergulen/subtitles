@@ -1,3 +1,227 @@
 ﻿1
-00:00:00,000 --> 00:00:05,000
-(No captions yet)
+00:00:00,000 --> 00:00:08,999
+Gather all the elements to learn Elixir with our guidance.  Functional programs you will code,
+
+2
+00:00:09,000 --> 00:00:24,999
+turning the knowledge into gold.  Become a master mixer as you stir it all up with Elixir.
+
+3
+00:00:25,000 --> 00:00:29,999
+Welcome back.  In this level, we'll learn about the pipe operator.
+
+4
+00:00:30,000 --> 00:00:37,999
+To understand how and, most importantly, why they fit in, let's look at the following scenario.
+
+5
+00:00:38,000 --> 00:00:44,999
+When thinking purely in terms of functions, a common pitfall is to write too many nested function calls,
+
+6
+00:00:45,000 --> 00:00:50,999
+and this can lead to code that's hard to understand, the complete opposite of what functional programming
+
+7
+00:00:51,000 --> 00:00:57,999
+aims to do.  Let's look at the following example.  We have already seen these first two before.
+
+8
+00:00:58,000 --> 00:01:04,999
+In this first one, function f operating on data x is simple and shouldn't be hard to grasp.
+
+9
+00:01:05,000 --> 00:01:11,999
+In the second example, things start looking not so simple.  Function g is invoked receiving the return value
+
+10
+00:01:12,000 --> 00:01:19,999
+of function f operating on data x and data y.  It's getting a little hard to read, but not too bad yet.
+
+11
+00:01:20,000 --> 00:01:25,999
+However, on this third example, we can see how things might start to look confusing.
+
+12
+00:01:26,000 --> 00:01:33,999
+Function f returns, and then function g, I think, is called, and then function h is called with some
+
+13
+00:01:34,000 --> 00:01:41,999
+arguments over there to the right, then function i, and finally function j, which looks like it's receiving a single argument.
+
+14
+00:01:42,000 --> 00:01:45,999
+While this might be valid code, you might have noticed the struggle to read it.
+
+15
+00:01:46,000 --> 00:01:52,999
+It's hard to understand compared with the other two examples.  And should there be a bug on this line,
+
+16
+00:01:53,000 --> 00:01:57,999
+trust me, no developer would want to touch this with a 10-foot pole.
+
+17
+00:01:58,000 --> 00:02:06,999
+This is just silly.  Now, let's see how we might find this code smell in an Elixir codebase.
+
+18
+00:02:07,000 --> 00:02:12,999
+Back to our Account module and balance function.  This time, calculating the balance is a bit more complex,
+
+19
+00:02:13,000 --> 00:02:17,999
+and it involves calls to two other function, discount and interest.
+
+20
+00:02:18,000 --> 00:02:24,999
+Notice, because these two functions are part of the same module, Account, we don't need to repeat the module
+
+21
+00:02:25,000 --> 00:02:30,999
+name in order to invoke them from inside the balance function.  The issue with this code is that it must be
+
+22
+00:02:31,000 --> 00:02:37,999
+read starting from the inner function, discount, out.  So here's how we read this code.
+
+23
+00:02:38,000 --> 00:02:43,999
+It all starts on the discount function, which takes the initial variable and the number 10 as arguments.
+
+24
+00:02:44,000 --> 00:02:51,999
+Then the return value from discount is used as the first argument to the interest function, which also takes
+
+25
+00:02:52,000 --> 00:02:59,999
+0.1 as argument.  As you can see, this code is not super clear and requires some extra brainpower in order
+
+26
+00:03:00,000 --> 00:03:01,999
+to be understood.
+
+27
+00:03:02,000 --> 00:03:09,999
+Developers with experience in other languages might be tempted to rewrite this using temporary variables, like this.
+
+28
+00:03:10,000 --> 00:03:16,999
+First, we invoke the discount function and store the result into the discount_amount variable.
+
+29
+00:03:17,000 --> 00:03:24,999
+Then we use the variable as the argument to the interest function and store its return value into interest_amount.
+
+30
+00:03:25,000 --> 00:03:31,999
+Then lastly, we return interest_amount.  Now we have two versions, the original version and the new one
+
+31
+00:03:32,000 --> 00:03:36,999
+using temporary variables.  However, none of them are really satisfactory.
+
+32
+00:03:37,000 --> 00:03:44,999
+How can we solve this issue?  The answer is using Elixir's pipe operator.
+
+33
+00:03:45,000 --> 00:03:50,999
+The pipe operator takes the output of the expression on the left and passes it as the first argument to the
+
+34
+00:03:51,000 --> 00:03:56,999
+function call on the right.  So our previous balance function implementation, which looked like this here at
+
+35
+00:03:57,000 --> 00:04:04,999
+the top, can now read more fluent using the pipe operator.  Instead of reading from the inside out,
+
+36
+00:04:05,000 --> 00:04:10,999
+we can now read it from left to right.  We start with a call to the discount function passing it the value
+
+37
+00:04:11,000 --> 00:04:18,999
+from initial and the number 10.  Then we use the pipe operator to take the return value from the call to
+
+38
+00:04:19,000 --> 00:04:27,999
+discount and pass it as the first argument to the interest function, which takes 0.1 as its second argument.
+
+39
+00:04:28,000 --> 00:04:34,999
+Elixir's pipe operator works just like UNIX pipes, which might look familiar to developers with experience
+
+40
+00:04:35,000 --> 00:04:38,999
+working on the command line.
+
+41
+00:04:39,000 --> 00:04:44,999
+A lot of times when writing Elixir code we'll find ourselves piping data through a handful of functions,
+
+42
+00:04:45,000 --> 00:04:50,999
+like we see over here when calling the discount function, then piping to the interest function,
+
+43
+00:04:51,000 --> 00:04:57,999
+and then piping again to the format function.  Lines that are too long can become hard to read and hard to maintain.
+
+44
+00:04:58,000 --> 00:05:04,999
+A good practice when piping through multiple functions like this is to break each function call into a new line.
+
+45
+00:05:05,000 --> 00:05:11,999
+So after the call to our first function, discount, we break it into a new line, use the pipe operator,
+
+46
+00:05:12,000 --> 00:05:18,999
+and invoke the next function, interest.  Then we break into a new line again, use the pipe operator once
+
+47
+00:05:19,000 --> 00:05:27,999
+more, and invoke the format function.  Code like this is easier to read and easier to extend should we choose
+
+48
+00:05:28,000 --> 00:05:32,999
+to add another function call in the future.
+
+49
+00:05:33,000 --> 00:05:38,999
+Elixir ships with a solid set of modules and functions available on the standard library, and it's common to
+
+50
+00:05:39,000 --> 00:05:44,999
+use the pipe operator with these functions.  Here's an example.  Inside the new print_sum function from the
+
+51
+00:05:45,000 --> 00:05:49,999
+Account module we start by creating a range using these two dots.
+
+52
+00:05:50,000 --> 00:05:57,999
+A range is a sequence of numbers, which in this example starts with 1 and goes all the way up to 10.
+
+53
+00:05:58,000 --> 00:06:04,999
+Then we use the pipe operator to pass this range as the argument to the sum function from the Enum module
+
+54
+00:06:05,000 --> 00:06:09,999
+from the standard library.  This function will add all the numbers from the range.
+
+55
+00:06:10,000 --> 00:06:18,999
+Next, we take the return value from calling Enum.sum and pipe it to IO.puts, which prints it to the console.
+
+56
+00:06:19,000 --> 00:06:26,999
+When we run this code, we see the number 55, which is the sum of all numbers from 1 to 10.
+
+57
+00:06:27,000 --> 01:00:00,000
+That's it for this level.  Now it's time for you to practice the pipe operator in the challenges.

@@ -1,3 +1,235 @@
 ﻿1
-00:00:00,000 --> 00:00:05,000
-(No captions yet)
+00:00:00,000 --> 00:00:08,999
+Gather all the elements to learn Elixir with our guidance.  Functional programs you will code,
+
+2
+00:00:09,000 --> 00:00:24,999
+turning the knowledge into gold.  Become a master mixer as you stir it all up with Elixir.
+
+3
+00:00:25,000 --> 00:00:33,999
+In this level, we'll learn how pattern matching works and how we can use it to remove if statement from our programs.
+
+4
+00:00:34,000 --> 00:00:40,999
+The equal symbol in Elixir is called the match operator.  Although it might look like it behaves just like
+
+5
+00:00:41,000 --> 00:00:45,999
+the equal symbol in other languages, it actually works a little different.
+
+6
+00:00:46,000 --> 00:00:50,999
+Understanding the difference is key to understanding pattern matching.
+
+7
+00:00:51,000 --> 00:00:58,999
+In Elixir, the equal symbol matches values on one side against corresponding structures on the other side.
+
+8
+00:00:59,000 --> 00:01:04,999
+Code that might look like a simple assignment, like in this example where language = Elixir,
+
+9
+00:01:05,000 --> 00:01:12,999
+is actually asking Elixir to try and match these two.  What ends up happening is the string on the right,
+
+10
+00:01:13,000 --> 00:01:20,999
+Elixir, matches the empty variable, language, on the left, so the value is bound to the variable.
+
+11
+00:01:21,000 --> 00:01:27,999
+When we print the variable using IO.puts, we can see it prints Elixir.
+
+12
+00:01:28,000 --> 00:01:30,999
+Here's a more advanced example of pattern matching using strings.
+
+13
+00:01:31,000 --> 00:01:37,999
+In this example, we use pattern matching together with the operator for string concatenation to extract just
+
+14
+00:01:38,000 --> 00:01:46,999
+a portion of a string.  On the left of the equal symbol we start with a string, Jose, followed by a whitespace.
+
+15
+00:01:47,000 --> 00:01:51,999
+Then we use the string concatenation operator, which is this less than and greater than symbol,
+
+16
+00:01:52,000 --> 00:02:00,999
+followed by an empty variable, last_name.  On the right of the equal symbol, we have this string, Jose Valim,
+
+17
+00:02:01,000 --> 00:02:07,999
+with a whitespace in the middle.  What Elixir tries to do is match one side of the equal symbol with the other side.
+
+18
+00:02:08,000 --> 00:02:14,999
+The only thing Elixir needs to do to make the left side equal to the right side is to populate last_name with
+
+19
+00:02:15,000 --> 00:02:21,999
+a value, Valim, and that's exactly what it does.  When we run this code and print the last_name variable,
+
+20
+00:02:22,000 --> 00:02:26,999
+we can see it stores the string Valim.  Now, let's look at an unsuccessful match.
+
+21
+00:02:27,000 --> 00:02:34,999
+In this second code block, we have the same string, Jose, followed by whitespace on the left-hand side of the equal sign.
+
+22
+00:02:35,000 --> 00:02:42,999
+However, on the right-hand side, we have just the string Valim.  When we run this code, Elixir will not be
+
+23
+00:02:43,000 --> 00:02:49,999
+able to match the right side with the left side.  When that happens, a MatchError is raised,
+
+24
+00:02:50,000 --> 00:02:56,999
+which looks something like this.  The compiler provides a friendly error message saying what went wrong.
+
+25
+00:02:57,000 --> 00:03:04,999
+In this case, it's saying it wasn't able to find a match for the right-hand side value, Valim.
+
+26
+00:03:05,000 --> 00:03:11,999
+Pattern matching is also used when working with lists of values, and Elixir uses square brackets to specify a
+
+27
+00:03:12,000 --> 00:03:15,999
+list and allows us to use pattern matching to read elements from it.
+
+28
+00:03:16,000 --> 00:03:24,999
+In this example, we have a list with two strings, Elixir and Valim, and we store this list in the data variable.
+
+29
+00:03:25,000 --> 00:03:29,999
+If we print data, we can see ElixirValim printed to the console.
+
+30
+00:03:30,000 --> 00:03:34,999
+Now we use the data variable again, but this time on the right-hand side of the equal symbol.
+
+31
+00:03:35,000 --> 00:03:43,999
+On the left-hand side, we specify list with two elements, two empty variables, lang and author.
+
+32
+00:03:44,000 --> 00:03:50,999
+Again, Elixir will try to make the two sides match by assigning the first element of data to the lang
+
+33
+00:03:51,000 --> 00:03:54,999
+variable and the second element of data to the author variable.
+
+34
+00:03:55,000 --> 00:04:01,999
+Here the elements from the list on the right are a perfect match against the two empty variables from the
+
+35
+00:04:02,000 --> 00:04:07,999
+list on the left.  We can reference the variables on the next slide and print them to the console using
+
+36
+00:04:08,000 --> 00:04:18,999
+string interpolation, and the result is Elixir, Valim.  Now, let's look at a more practical use of pattern matching.
+
+37
+00:04:19,000 --> 00:04:24,999
+In functional languages like Elixir, the use of if statements is less common than in other languages.
+
+38
+00:04:25,000 --> 00:04:30,999
+In this example, we have the run_transaction function from the Account module.
+
+39
+00:04:31,000 --> 00:04:38,999
+This function takes three arguments, balance, amount, and type.  Here are two ways we can call this function,
+
+40
+00:04:39,000 --> 00:04:47,999
+with the values 1000, 50, and :deposit, or 1050, 30, and :withdrawal.
+
+41
+00:04:48,000 --> 00:04:56,999
+Notice :deposit and :withdrawal are atoms, which is a datatype similar to strings, but more memory efficient.
+
+42
+00:04:57,000 --> 00:05:01,999
+From now on, every time that we see a word that starts with a colon, remember it's an atom.
+
+43
+00:05:02,000 --> 00:05:08,999
+One way we could implement run_transaction is by creating a conditional using an if statement that checks
+
+44
+00:05:09,000 --> 00:05:14,999
+the type variable.  If it's equal to :deposit, then we add balance to amount.
+
+45
+00:05:15,000 --> 00:05:23,999
+Otherwise, we subtract amount from balance.  Notice that a function argument, type, is being used on the if statement.
+
+46
+00:05:24,000 --> 00:05:32,999
+Using a function argument like this on an if statement is a good opportunity for refactoring.
+
+47
+00:05:33,000 --> 00:05:39,999
+Elixir supports pattern matching in function arguments, and this allows us to replace our if statement with
+
+48
+00:05:40,000 --> 00:05:46,999
+two function clauses.  When defining a function with the same name, in this case run_transaction,
+
+49
+00:05:47,000 --> 00:05:53,999
+multiple times, each definition is called a clause.  The first clause of run_transaction will match calls
+
+50
+00:05:54,000 --> 00:06:01,999
+that use the :deposit atom as the last argument.  The second clause of run_transaction will match calls that
+
+51
+00:06:02,000 --> 00:06:09,999
+use the :withdrawal atom as the last argument.  From the caller's perspective, these two calls still produce
+
+52
+00:06:10,000 --> 00:06:13,999
+the same output.
+
+53
+00:06:14,000 --> 00:06:18,999
+Pattern matching, which we just learned, and the pipe operator, which you learned on the previous level,
+
+54
+00:06:19,000 --> 00:06:23,999
+are widely used in Elixir, and it's common to use them together, like this.
+
+55
+00:06:24,000 --> 00:06:32,999
+In this example, we start with the number 1000 and pipe it to the first call to run_transaction for a :deposit.
+
+56
+00:06:33,000 --> 00:06:39,999
+Then we use the result of that as the input for the second call to run_transaction for a :withdrawal.
+
+57
+00:06:40,000 --> 00:06:46,999
+The output is the same as before, but now using idiomatic Elixir.
+
+58
+00:06:47,000 --> 00:06:51,999
+And that's it for this level.  Now it's your turn to practice pattern matching in the challenges,
+
+59
+00:06:52,000 --> 01:00:00,000
+and I'll see you in the wrap-up video.
