@@ -1,0 +1,397 @@
+1
+00:00:00,000 --> 00:00:01,206
+[MUSIC PLAYING]
+
+2
+00:00:01,206 --> 00:00:03,590
+[SINGING] Şimdi biraz,
+Python öğrenme vakti
+
+3
+00:00:03,590 --> 00:00:06,830
+string yazdırmaktan, günlük
+matematiğe, 
+4
+00:00:06,830 --> 00:00:09,340
+ufuktaki değişkenlere.
+
+5
+00:00:09,340 --> 00:00:12,570
+Try Ptyhon'un basit yöneticileri
+
+6
+00:00:12,570 --> 00:00:17,040
+True/False ve koşulları
+kullanmaya başlayın.
+
+7
+00:00:17,040 --> 00:00:18,860
+Try Python'a hoş geldiniz.
+
+8
+00:00:18,860 --> 00:00:22,550
+Ben Sarah Buchanan, bu kursta
+Python'un temellerini öğreneceğiz
+
+9
+00:00:22,550 --> 00:00:25,690
+Seviye 1 ile başlayalım:
+
+10
+00:00:25,690 --> 00:00:30,630
+Kuşlar ve Hindistan cevizleri,
+matematik ve değişkenleri temsilen.
+
+11
+00:00:30,630 --> 00:00:33,240
+Python yolculuğumuza
+başlamadan önce,
+
+12
+00:00:33,240 --> 00:00:36,540
+neden Pyhton bu kadar
+mükemmel bunların üzerinden geçelim.
+
+13
+00:00:36,540 --> 00:00:41,060
+Python kolay öğrenilmesi ve
+kolay okunmasıyla tanınır,
+
+14
+00:00:41,060 --> 00:00:43,480
+ama aslında pek
+güçlü bir dildir,
+
+15
+00:00:43,480 --> 00:00:47,420
+bu özelliğiyle yeni başlayanlar
+ve uzmanlar için çok güzeldir.
+
+16
+00:00:47,420 --> 00:00:50,440
+Ayrıca sürekli büyüyen
+bir kütüphane desteğine sahiptir,
+
+17
+00:00:50,440 --> 00:00:52,110
+yani resim işlerken,
+bir veri analizi yaparken,
+
+
+18
+00:00:52,110 --> 00:00:55,620
+bir oyun yaratırken ya da bunun
+gibi bir çok işlem için
+
+19
+00:00:55,620 --> 00:00:59,760
+internetten kütüphane indirebilirsiniz.
+
+20
+00:00:59,760 --> 00:01:02,480
+Python'u öğrenmek önemli olan
+tüm bu sebeplerle birlikte,
+
+21
+00:01:02,480 --> 00:01:05,170
+hadi başlayalım.
+
+22
+00:01:05,170 --> 00:01:07,620
+Python yorumlanabilir bir dildir,
+
+23
+00:01:07,620 --> 00:01:10,360
+ve yorumlayıcı kabuk(shell)
+burada gözükür,
+
+24
+00:01:10,360 --> 00:01:13,470
+tıpkı hesap makinesi gibi
+
+25
+00:01:13,470 --> 00:01:15,210
+içine sayılar veya
+komutlar yazabiliriz.
+
+26
+00:01:15,210 --> 00:01:19,240
+Örneğin, yorumlayıcıya
+35 yazarsak,
+
+27
+00:01:19,240 --> 00:01:21,990
+hemen bize geri döndürecektir.
+
+28
+00:01:21,990 --> 00:01:24,960
+>>> işaretini gördüğünüz
+her zaman anlayın ki
+
+29
+00:01:24,960 --> 00:01:27,970
+yorumlayıcıya kod giriyoruz,
+
+30
+00:01:27,970 --> 00:01:32,250
+ve yeşil ok yazdığımız kodun
+sonucunu döndürür.
+
+31
+00:01:32,250 --> 00:01:36,080
+Örneğin, 30.5 yazarsak,
+
+32
+00:01:36,080 --> 00:01:37,335
+aynısını geri alırız.
+
+33
+00:01:40,160 --> 00:01:43,480
+Yorumlayıcı girdiğimiz herhangi
+bir matematiksel ifadeyi
+
+34
+00:01:43,480 --> 00:01:48,540
+ekleme(+) gibi basit operatörler
+yardımıyla değerlendirebilir.
+
+35
+00:01:48,540 --> 00:01:52,570
+Örneğin, 3 + 5 yazarsak,
+
+36
+00:01:52,570 --> 00:01:55,300
+8 sonucunu alırız.
+
+37
+00:01:55,300 --> 00:02:00,820
+Ayrıca bazı diğer basit
+operatörleri de destekler; çıkarma,
+
+38
+00:02:00,820 --> 00:02:06,970
+çarpma,
+bölme, üs alma,
+
+39
+00:02:06,970 --> 00:02:11,100
+** ile yapılır,
+ve negatif sayılar,
+
+40
+00:02:11,100 --> 00:02:14,950
+sadece başına eksi (-) koymanız yeterlidir.
+
+41
+00:02:14,950 --> 00:02:18,410
+Python iki sayı türüne sahiptir;
+ilki "int" denilen tam sayılar,
+
+42
+00:02:18,410 --> 00:02:22,230
+diğeri ise "float" denilen
+ondalık sayılar.
+
+43
+00:02:22,230 --> 00:02:25,590
+Yanında ondalık işareti görmediğiniz
+tüm sayılar tamsayıdır (int),
+
+44
+00:02:25,590 --> 00:02:29,714
+int ve float gibi terimleri
+
+45
+00:02:29,714 --> 00:02:30,630
+kurs boyunca kullanacağız.
+
+46
+00:02:33,170 --> 00:02:36,530
+Diğer tüm programlama dilleri
+gibi Python'da da
+
+47
+00:02:36,530 --> 00:02:39,130
+operatörlerin sırası önemlidir.
+
+48
+00:02:39,130 --> 00:02:41,910
+İfadede (5 + 7) önce hesaplanır
+
+49
+00:02:41,910 --> 00:02:45,840
+çünkü parentez içindedir.
+
+50
+00:02:45,840 --> 00:02:49,200
+Sonrasında ise 12 * 3 işlemi yapılır
+
+51
+00:02:49,200 --> 00:02:52,270
+ve 36 sonucuna ulaşırız.
+
+52
+00:02:52,270 --> 00:02:55,420
+Bu simgeyi gördüğünüzde,
+
+53
+00:02:55,420 --> 00:02:57,580
+sahne arkası adımları
+gösteriyor olacağız.
+
+54
+00:02:57,580 --> 00:03:01,430
+Sağ tarafta, parantezlerin dışında,
+
+55
+00:03:01,430 --> 00:03:03,010
+önce 7 * 3 hesaplanır.
+
+56
+00:03:03,010 --> 00:03:09,380
+Sahne arkası adımları: 5 + 21'den
+sonuç 26.
+
+57
+00:03:09,380 --> 00:03:13,470
+Sıralamayı ezberlemek için
+PÜÇMEÇ'i kullanabiliriz,
+
+58
+00:03:13,470 --> 00:03:16,790
+Parantez, Üs, Çarpma,
+
+59
+00:03:16,790 --> 00:03:20,550
+Bölme, Ekleme(Toplama), Çıkarma.
+
+60
+00:03:20,550 --> 00:03:24,470
+Şimdi Python Matematiği bilgimizi
+günlük problemlere Monty Python
+
+61
+00:03:24,470 --> 00:03:28,400
+dünyasında uygulayalım:
+
+62
+00:03:28,400 --> 00:03:29,600
+Bir Kırlangıç Bir Hindistan Cevizini Taşıyabilir mi?
+
+63
+00:03:29,600 --> 00:03:34,170
+Bildiğimiz ilk şey,
+bir kırlangıç 60 gramdır.
+
+64
+00:03:34,170 --> 00:03:36,480
+Kırlangıcın rüzgar hızı ve diğer faktörlerle
+birlikte
+
+65
+00:03:36,480 --> 00:03:38,780
+ağırlığının 1/3'ünü
+
+66
+00:03:38,780 --> 00:03:42,730
+taşıyabildiğini varsayalım.
+
+67
+00:03:42,730 --> 00:03:47,470
+60'ı 3'e bölersek,
+
+68
+00:03:47,470 --> 00:03:50,320
+kırlangıcın 20 gram taşıyabildiğini
+görürüz,
+
+69
+00:03:50,320 --> 00:03:54,400
+ama hindistan cevizi
+1450 gramdır.
+
+70
+00:03:54,400 --> 00:03:58,620
+Görünen o ki, kırlangıç
+bir hindistan cevizini taşıyamaz.
+
+71
+00:03:58,620 --> 00:04:01,610
+O zaman, kaç kırlangıç
+taşıyabilir diye bakalım?
+
+72
+00:04:01,610 --> 00:04:05,750
+Hindistan cevizinin ağırlığını,
+1450 gram,
+
+73
+00:04:05,750 --> 00:04:10,040
+kırlangıcı taşıma ağırlığına bölelim,
+60 / 3.
+
+74
+00:04:10,040 --> 00:04:12,560
+Bu bize 
+kaç kırlangıç gerektiğini
+
+75
+00:04:12,560 --> 00:04:14,800
+söyleyecek.
+
+76
+00:04:14,800 --> 00:04:19,089
+Sonu olarak 8.06 aldık,
+bayağı düşük bir sayı.
+
+77
+00:04:19,089 --> 00:04:21,630
+Görünen o ki bir yerlerde,
+bir şeyleri batırdık.
+
+78
+00:04:21,630 --> 00:04:26,300
+Önce neyi hesapladığımıza
+bakacak olursak,
+
+79
+00:04:26,300 --> 00:04:28,520
+bir yanlışlık yapmış
+olabileceğimizi görürüz.
+
+80
+00:04:28,520 --> 00:04:33,250
+Öncelikle 60 / 3 işleminin
+yapılmasını istemiştik,
+
+81
+00:04:33,250 --> 00:04:35,770
+bunu hatayı düzeltmek için
+bir kaç parantez eklemek yeterli olacaktır.
+
+82
+00:04:38,730 --> 00:04:40,680
+Parantez eklediğimizde 
+hindistan cevizini taşımak için
+
+83
+00:04:40,680 --> 00:04:44,110
+gerekli olan 72.5 kırlangıcı
+bulacağız
+
+84
+00:04:44,110 --> 00:04:46,900
+,yani çok kırlangıç.
+
+85
+00:04:50,490 --> 00:04:52,510
+Şimdi sıra sizde;
+görevlerden
+
+86
+00:04:52,510 --> 00:04:55,540
+ilk Python programınızı yazın.
+
+87
+00:04:55,540 --> 00:04:57,360
+İyi eğlenceler.
