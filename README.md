@@ -14,6 +14,7 @@ Please name the subtitle files as follows:
 - `level1-en.srt` for English
 - `level1-fr.srt` for French
 - `level1-es.srt` for Spanish
+- `level1-tr.srt` for Turkish
 
 You can find a list of the [ISO 639-1 language codes on Wikipedia](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) if you're not sure
 which one to use.
