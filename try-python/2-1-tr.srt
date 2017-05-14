@@ -1,0 +1,580 @@
+1
+00:00:00,000 --> 00:00:01,206
+[HORN PLAYING]
+
+2
+00:00:01,206 --> 00:00:02,940
+[SINGING] Şimdi biraz,
+Python öğrenme vakti
+
+3
+00:00:02,940 --> 00:00:06,280
+string yazdırmaktan, günlük
+matematiğe, 
+
+4
+00:00:06,280 --> 00:00:09,340
+ufuktaki değişkenlere.
+
+5
+00:00:09,340 --> 00:00:12,570
+Try Ptyhon'un basit yöneticileri
+
+6
+00:00:12,570 --> 00:00:17,160
+True/False ve koşulları
+kullanmaya başlayın.
+
+7
+00:00:17,160 --> 00:00:19,150
+Try Python'a hoş geldiniz.
+
+8
+00:00:19,150 --> 00:00:22,400
+Ben Sarah Buchanan, artık
+seviye ikideyiz.
+
+9
+00:00:22,400 --> 00:00:24,000
+Bu seviyede "string"lerden bahsedeceğiz.
+
+10
+00:00:26,590 --> 00:00:28,530
+Daha önce Math ve
+değişkenlere bakmıştık.
+
+11
+00:00:28,530 --> 00:00:31,360
+Artık stringlere bakacağız,
+stringler aslında
+
+12
+00:00:31,360 --> 00:00:35,570
+ardışık karakter dizileridir,
+harfler, sayılar,
+
+13
+00:00:35,570 --> 00:00:38,300
+noktalama ya da kombinasyonlar olabilir.
+
+14
+00:00:38,300 --> 00:00:42,440
+Tırnak işareti ile ayrılan
+yazılar kod değil
+
+15
+00:00:42,440 --> 00:00:44,880
+stringdir.
+
+16
+00:00:44,880 --> 00:00:48,090
+Python'da tek tırnak ya da çift
+tırnak iş görür.
+
+17
+00:00:48,090 --> 00:00:49,570
+Ama tutarlı olmakta fayda var.
+
+18
+00:00:49,570 --> 00:00:51,860
+Biz tek tırnağı kullanacağız.
+
+19
+00:00:51,860 --> 00:00:56,040
+Burada ilk stringimizi oluşturuyoruz
+'Hello world'
+
+20
+00:00:56,040 --> 00:00:59,110
+Ayrıca bu plakayı kaydetmek
+için de bir string oluşturuyoruz
+
+21
+00:00:59,110 --> 00:01:03,190
+'SPAM83'.
+
+22
+00:01:03,190 --> 00:01:05,960
+Bu örneklerdeki,
+tırnaklar arasında kalan
+
+23
+00:01:05,960 --> 00:01:08,995
+karakterlere string denir.
+
+24
+00:01:11,780 --> 00:01:12,920
+Numaralarla olduğu gibi.
+
+25
+00:01:12,920 --> 00:01:15,640
+Stringleri değişkenlerle
+saklayabiliriz.
+
+26
+00:01:15,640 --> 00:01:19,230
+Burada 'Monty' adını tutan
+first_name stringine,
+
+27
+00:01:19,230 --> 00:01:22,010
+ve 'Python' stringini tutan
+last_name değişkenine
+
+28
+00:01:22,010 --> 00:01:24,180
+sahibiz.
+
+29
+00:01:24,180 --> 00:01:27,800
+Burada first_name ve last_name
+
+30
+00:01:27,800 --> 00:01:30,920
+değişkenlerini full_name değişkeninde
+birleştirdik.
+
+31
+00:01:30,920 --> 00:01:33,210
+full_name'in içeriğine bakarsak,
+
+32
+00:01:33,210 --> 00:01:35,140
+'MontyPython' olduğunu görürüz.
+
+33
+00:01:35,140 --> 00:01:37,480
+Aralarında boşluk yok.
+
+34
+00:01:37,480 --> 00:01:41,360
+Ayrı ayrı sıralamamız gerekirdi.
+
+35
+00:01:41,360 --> 00:01:45,270
+Bunu first_name'e boşluk ekleyerek
+
+36
+00:01:45,270 --> 00:01:49,770
+yapabiliriz. last_name'i de 
+eklediğimizde
+
+37
+00:01:49,770 --> 00:01:53,730
+'Monty Python' olacaktır.
+
+38
+00:01:53,730 --> 00:01:55,680
+Programımız uzadıkça, kod satırına
+
+
+39
+00:01:55,680 --> 00:01:57,640
+bireysel ifadeler yazmak 
+
+40
+00:01:57,640 --> 00:01:59,460
+istemeyeceğiz.
+
+41
+00:01:59,460 --> 00:02:04,300
+İsteyeceğimiz şey bir dosya ya
+da scrip'e kodlarımızı kaydetmek olacaktır.
+
+42
+00:02:04,300 --> 00:02:05,820
+Her şeyi bir scripte kaydedince
+
+43
+00:02:05,820 --> 00:02:07,420
+bunun gibi gözükecektir.
+
+44
+00:02:07,420 --> 00:02:10,320
+Kodumuzu içeren dosyanın üzerinde
+
+45
+00:02:10,320 --> 00:02:11,600
+scriptimizin adı bulunacaktır.
+
+46
+00:02:11,600 --> 00:02:16,000
+burada script.py diye adlandırılmış,
+uzantısı Python scripti.
+
+47
+00:02:16,000 --> 00:02:18,980
+script ile, değişkenin değerini değeri
+
+48
+00:02:18,980 --> 00:02:21,120
+ nasıl yazdıracağız?
+
+49
+00:02:21,120 --> 00:02:24,330
+Burada direkt kodu, kod satırına yazıp
+yazdırmasını bekleyemeyiz
+
+50
+00:02:24,330 --> 00:02:25,230
+daha önce yaptığımız gibi.
+
+51
+00:02:27,910 --> 00:02:30,060
+script dosyalarında output almak için 
+
+52
+00:02:30,060 --> 00:02:33,020
+print fonksiyonunu kullanırız.
+
+53
+00:02:33,020 --> 00:02:36,640
+<i>print</i> yazdıktan sonra parantezlerin
+arasına yazdırmak istediğin
+
+54
+00:02:36,640 --> 00:02:40,260
+değeri ya da değişkeni eklemelisin.
+
+55
+00:02:40,260 --> 00:02:42,240
+İstediğimiz kadar parametre
+
+56
+00:02:42,240 --> 00:02:43,830
+ekleyip yazdırabiliriz.
+
+57
+00:02:43,830 --> 00:02:47,100
+Virgül ile argümanları ayırdığımızda
+
+58
+00:02:47,100 --> 00:02:49,890
+otomatik olarak aralarına boşluk ekleyerek
+yazdıracaktır.
+
+59
+00:02:49,890 --> 00:02:53,670
+Burada sıralarken boşluk eklemeyi
+düşünmemize gerek yok.
+
+60
+00:02:53,670 --> 00:02:57,940
+Yüksek ihtimal Python 3 kullanıyorsunuzdur,
+ama Python 2 kullanıyorsanız,
+
+61
+00:02:57,940 --> 00:03:03,630
+kurs boyunca Py 2
+iconlarına dikkat edin.
+
+62
+00:03:03,630 --> 00:03:07,130
+Scriptimizi çalıştırmak için, Python'un
+kurulu olduğunu varsayıyoruz,
+
+63
+00:03:07,130 --> 00:03:10,560
+konsola gidip <i>python</i> yazıp
+sonrasında scriptin adını yazın
+
+64
+00:03:10,560 --> 00:03:14,340
+tüm çıktıyı konsola
+
+65
+00:03:14,340 --> 00:03:15,020
+yazdıracaktır.
+
+66
+00:03:18,040 --> 00:03:20,090
+Hadi scriptimizin çalışmasını
+test edelim.
+
+67
+00:03:20,090 --> 00:03:24,900
+Idle içerisinde oluşturulmuş,
+ve Python çalıştıran bir editör.
+
+68
+00:03:24,900 --> 00:03:26,740
+Scriptimizi çalıştırdığımızda, 
+
+69
+00:03:26,740 --> 00:03:29,490
+'Monty Python' çıktısını
+ekranda görebiliriz.
+
+70
+00:03:32,620 --> 00:03:35,880
+Monty Python'un ne olduğunu anlatan
+bir script yazalım şimdi.
+
+71
+00:03:35,880 --> 00:03:38,850
+Script yazmaya
+yorumla başlayacağız.
+
+72
+00:03:38,850 --> 00:03:41,470
+Diyez işareti (#) o satırın
+geri kalan kısmının yorum olduğunu belirtir
+
+73
+00:03:41,470 --> 00:03:43,370
+ve çalıştırılmaz.
+
+74
+00:03:43,370 --> 00:03:46,530
+Kendiniz ve diğer programcılar
+için orada ne yaptığınızı
+
+75
+00:03:46,530 --> 00:03:50,300
+anlatmanıza yarar,
+yapmazsanız temiz bir kod olmaz.
+
+76
+00:03:50,300 --> 00:03:52,580
+Ayrıca Monty Python: adlarını,
+açıklamalarını ve başladıkları
+
+77
+00:03:52,580 --> 00:03:56,060
+yılı belirtecek değişkenler
+
+78
+00:03:56,060 --> 00:03:58,810
+tanımlayacağız.
+
+79
+00:03:58,810 --> 00:04:01,970
+Sonra tüm bu açıklayıcı bilgileri
+
+80
+00:04:01,970 --> 00:04:03,910
+bir cümle içerisine toplayacağız.
+
+81
+00:04:03,910 --> 00:04:05,630
+Ama bunu çalıştırmaya
+çalıştığımızda,
+
+82
+00:04:05,630 --> 00:04:09,300
+hata alacağız:   "Can't convert
+'int' object to str implicitly."
+
+83
+00:04:09,300 --> 00:04:11,450
+Bu kısımda yorumlayıcı kod satırı
+yazdığımızı anlayamamıştır,
+
+84
+00:04:11,450 --> 00:04:15,330
+çünkü bir string'e sayı eklemeye çalışıyoruz.
+
+85
+00:04:15,330 --> 00:04:19,290
+Bu yüzden sayıyı eklemeli miyiz
+
+86
+00:04:19,290 --> 00:04:20,430
+sıralamalı mıyız, daha emin değiliz.
+
+87
+00:04:20,430 --> 00:04:25,550
+Öncelikle sayıyı string'e
+çevirmeliyiz.
+
+88
+00:04:25,550 --> 00:04:29,300
+Tırnak işaretleri koyarak
+yılı int(tam sayı) yerine string yapabiliriz,
+
+89
+00:04:29,300 --> 00:04:33,310
+ama biz sayıları, sayı olarak saklamak
+istiyoruz.
+
+90
+00:04:33,310 --> 00:04:37,200
+Yani burada farklı bir şey
+denemeliyiz.
+
+91
+00:04:37,200 --> 00:04:39,650
+Burada <i>str</i> fonksiyonunu
+
+92
+00:04:39,650 --> 00:04:44,440
+kullanarak sorunu çözeceğiz.
+
+93
+00:04:44,440 --> 00:04:46,720
+Bu fonksiyon parantezin içerisindekileri
+
+94
+00:04:46,720 --> 00:04:51,020
+stringe çevirecek ve
+
+95
+00:04:51,020 --> 00:04:54,400
+biz de istediğimiz cümlemizi
+ekrana yazdırabileceğiz.
+
+96
+00:04:54,400 --> 00:04:56,450
+Ayrıca değerlerimizi 
+virgül ile ayırarak
+
+97
+00:04:56,450 --> 00:04:59,950
+print fonksiyonu içine koyabilirdik,
+
+98
+00:04:59,950 --> 00:05:03,800
+ve print tüm parametreleri bizim
+için string'e çevirip
+
+99
+00:05:03,800 --> 00:05:07,870
+aralarına boşluk koyacaktır.
+
+100
+00:05:07,870 --> 00:05:11,700
+Buna ek olarak programımıza
+biraz Monty Python skeci ekleyelim.
+
+101
+00:05:11,700 --> 00:05:14,060
+Hell's Grannies iyilerden biridir.
+
+102
+00:05:14,060 --> 00:05:17,490
+Ama bunu çalıştırırsak,
+syntax error ( yazım hatası ) alacağız.
+
+103
+00:05:17,490 --> 00:05:19,630
+Problem yorumlayıcı apostrof gördüğünde,
+
+104
+00:05:19,630 --> 00:05:23,480
+alıntı bitti sanacak ve "s" harfinin
+
+105
+00:05:23,480 --> 00:05:25,700
+ne anlama geldiğini bilemeyip hata verecektir.
+
+106
+00:05:25,700 --> 00:05:29,190
+Bunun yerine alıntıya başlarken,
+
+107
+00:05:29,190 --> 00:05:31,750
+çift tırnak kullanırsak
+
+108
+00:05:31,750 --> 00:05:33,390
+Python alıntıyı bitirmek için
+çift tırnak arayacaktır.
+
+109
+00:05:33,390 --> 00:05:36,530
+Sonrasında Python tek tırnağın
+normal string'in içinde bir tek
+tırnak olduğunu bilecektir ve
+
+110
+00:05:36,530 --> 00:05:38,505
+alıntıyı bitirmediğini anlayıp
+devam edecektir.
+
+111
+00:05:41,270 --> 00:05:44,760
+Şimdi başka bir ünlü skeç ekleyelim, 
+the Dead Parrot.
+
+112
+00:05:44,760 --> 00:05:47,000
+Bu skeçleri aralarında
+
+113
+00:05:47,000 --> 00:05:48,780
+boşluk ile yazdırabiliriz.
+
+114
+00:05:48,780 --> 00:05:50,940
+Bu da iş görür, ama
+daha temiz bir görünüm için
+
+115
+00:05:50,940 --> 00:05:54,600
+iki farklı skeç olarak yazdırmalıyız.
+
+116
+00:05:57,960 --> 00:06:01,920
+Özel bir karakter ekleyebiliriz buraya,
+ters slash (\) ve ardından bir "n" harfi.
+
+117
+00:06:01,920 --> 00:06:03,550
+Yeni satır anlamına gelir.
+
+118
+00:06:03,550 --> 00:06:07,270
+Ters slash (\) bazı zor karakterleri
+
+119
+00:06:07,270 --> 00:06:08,550
+encode ederek string'e adapte eder.
+
+120
+00:06:08,550 --> 00:06:12,130
+Biz bu karakteri normal bir boşluk
+eklercesine koda ekledik,
+
+121
+00:06:12,130 --> 00:06:14,550
+yeni satır istediğimiz yerde kullandık.
+
+122
+00:06:14,550 --> 00:06:17,660
+Bir de başlık atalım 'Famous Work'
+
+123
+00:06:17,660 --> 00:06:20,020
+Skeçlerimiz daha iyi gözükmeye başladı,
+
+124
+00:06:20,020 --> 00:06:22,010
+bir de başlıkları içeri
+alalım.
+
+125
+00:06:25,190 --> 00:06:28,060
+Skeçleri "\t" ile bir
+
+
+126
+00:06:28,060 --> 00:06:30,950
+TAB kadar içeri alabiliriz.
+
+127
+00:06:30,950 --> 00:06:34,065
+Sonuç olarak başlıkların bir TAB
+kadar içeride olduğunu görebiliriz.
+
+128
+00:06:37,180 --> 00:06:38,720
+Burası bölüm birin sonu.
+
+129
+00:06:38,720 --> 00:06:41,910
+Şimdi Python alıştırmalarını
+yapma sırası sizde!
+
+130
+00:06:41,910 --> 00:06:43,758
+İyi eğlenceler.
