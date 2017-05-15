@@ -1,0 +1,485 @@
+1
+00:00:01,990 --> 00:00:03,200
+Tekrar hoş geldiniz.
+
+2
+00:00:03,200 --> 00:00:05,700
+Arka planda,
+stringler karakterlerin
+
+3
+00:00:05,700 --> 00:00:08,650
+bir listesi olduğunu ve 
+her karakterin bir index
+
+4
+00:00:08,650 --> 00:00:13,980
+değeri yani pozisyonu olduğunu 
+ve sıfırla başladığını bilelim.
+
+5
+00:00:13,980 --> 00:00:19,280
+'HELLO WORLD!' yazısını görüyoruz
+burada.
+
+6
+00:00:19,280 --> 00:00:22,620
+greeting[0] yazarak 
+
+7
+00:00:22,620 --> 00:00:26,410
+0. index'e sahip
+karakteri görüntüleyebiliriz,
+
+8
+00:00:26,410 --> 00:00:31,270
+H karakteri oluyor bu da.
+
+9
+00:00:31,270 --> 00:00:33,720
+Stringin 12 karakteri olduğu
+
+10
+00:00:33,720 --> 00:00:36,720
+bir durumda ilk karakter 0.,
+
+11
+00:00:36,720 --> 00:00:40,760
+son karakter ise 11. olur.
+
+12
+00:00:40,760 --> 00:00:45,790
+greeting[11] bize son
+
+13
+00:00:45,790 --> 00:00:47,790
+bitirme noktasındaki karakteri verir.
+
+14
+00:00:47,790 --> 00:00:50,050
+greeting[12] yazdığımızda
+
+15
+00:00:50,050 --> 00:00:53,930
+12. eleman olmadığı için 
+hata alacağız.
+
+16
+00:00:53,930 --> 00:00:58,282
+Sadece 0 ile 11 arasındaki
+karakterleri görüntüleyebiliriz.
+
+17
+00:01:00,940 --> 00:01:04,129
+Bazı hazır string fonksiyonları
+var ve bunları kullanacağız.
+
+18
+00:01:04,129 --> 00:01:07,560
+len, l-e-n, parantezlerin
+arasında kalan
+
+19
+00:01:07,560 --> 00:01:09,660
+string'in uzunluğunu verir.
+
+20
+00:01:09,660 --> 00:01:13,750
+greeting değişkeni
+'HELLO WORLD!' stringiyse,
+
+21
+00:01:13,750 --> 00:01:18,100
+len(greeting)
+12 değerini verecektir.
+
+22
+00:01:18,100 --> 00:01:19,580
+Sonucu yazdırabiliriz ayrıca.
+
+23
+00:01:19,580 --> 00:01:21,780
+Ekrana 12 yazdıracaktır.
+
+24
+00:01:24,600 --> 00:01:28,630
+Bu string bilgisini bir problemi
+çözmek için kullanalım.
+
+25
+00:01:28,630 --> 00:01:32,270
+Kelimelerin sadece sonlarını
+söyleyebilen bir adam düşünelim.
+
+26
+00:01:32,270 --> 00:01:36,870
+İyi akşamlar diyecekken,
+yi şamlar diyor mesela.
+
+27
+00:01:36,870 --> 00:01:39,900
+Biz de onun ne diyeceğini
+tahmin etmeye çalışacağız.
+
+28
+00:01:39,900 --> 00:01:42,360
+İlk kelimeye bakarsak
+Good,
+
+29
+00:01:42,360 --> 00:01:44,470
+end1 içerisinde saklanan
+
+30
+00:01:44,470 --> 00:01:49,070
+bu kelimenin ikinci yarısını,
+
+31
+00:01:49,070 --> 00:01:52,870
+2. ve 3. indexe bakarak alabiliriz.
+
+32
+00:01:52,870 --> 00:01:58,720
+İstediğimiz od sonucuna ulaştık.
+
+33
+00:01:58,720 --> 00:02:01,300
+Tek tek karakterlere bakıp
+birleştireceğimize
+
+34
+00:02:01,300 --> 00:02:03,970
+onları bu şekilde bölü
+
+35
+00:02:03,970 --> 00:02:06,390
+bir parçasını döndürebiliriz.
+
+36
+00:02:06,390 --> 00:02:09,440
+Örneğin, elimizde
+Python kelimesi var.
+
+37
+00:02:09,440 --> 00:02:13,090
+Diyelim ki sadece
+ortadaki t-h-o
+
+
+38
+00:02:13,090 --> 00:02:15,580
+harflerini döndürmek istiyoruz.
+
+39
+00:02:15,580 --> 00:02:18,040
+Bu bölme işleminin harfleri
+çevreleyen bir 
+
+40
+00:02:18,040 --> 00:02:20,180
+sınır olduğunu hayal edelim.
+
+41
+00:02:20,180 --> 00:02:23,940
+Dikkat edelim bu sınır 2. indexten
+
+42
+00:02:23,940 --> 00:02:26,750
+ve 5. indexten önce geliyor.
+
+43
+00:02:26,750 --> 00:02:29,390
+Yani bu bölme kodunda yazacağımız
+
+44
+00:02:29,390 --> 00:02:33,260
+değişken adı,
+kelime, köşeli parantez,
+
+45
+00:02:33,260 --> 00:02:36,780
+başlangıç sınırımız 2. index,
+iki nokta üst üste,
+
+46
+00:02:36,780 --> 00:02:39,800
+sınır sonu 5. index.
+
+47
+00:02:39,800 --> 00:02:43,550
+Sınırın indexlerin arasında
+olduğunu fark etmeliyiz burada.
+
+48
+00:02:43,550 --> 00:02:47,090
+İlk sınır 1. ve 2. index
+arasına gelir,
+
+49
+00:02:47,090 --> 00:02:50,630
+ve son sınır da
+4. ve 5. indexler arasına yerleştirilir.
+
+50
+00:02:50,630 --> 00:02:54,890
+Bu bölmeden çıkacak 
+indexler 2,3 ve 4 
+
+51
+00:02:54,890 --> 00:02:56,840
+olackatır.
+
+52
+00:02:56,840 --> 00:03:02,380
+Ve bize sonuç olarak t,h ve o 
+harflerini döndürecektir.
+
+53
+00:03:02,380 --> 00:03:05,940
+Başka örneklere de bakalım,
+Good kelimesi verilmiş,
+
+54
+00:03:05,940 --> 00:03:11,640
+0'dan 2'ye alarak böldüğümüzde
+G-o harfleri gelir.
+
+55
+00:03:11,640 --> 00:03:15,250
+0'dan önce bir işaretçi koyduğumuzu
+
+56
+00:03:15,250 --> 00:03:18,940
+ve 2. indexten önce bir işaretçi
+koyduğumuzu düşünebilirsiniz,
+
+57
+00:03:18,940 --> 00:03:22,450
+ve bu işaretçiler aralarındaki
+
+58
+00:03:22,450 --> 00:03:23,590
+harfler olan Go'yu verecektir bize.
+
+59
+00:03:23,590 --> 00:03:27,700
+Ayrıca 2. indexten 4. indexe
+kadar da bölebiliriz,
+
+60
+00:03:27,700 --> 00:03:31,410
+bu da "od" döndürecektir.
+
+61
+00:03:31,410 --> 00:03:34,000
+Burada kullanabileceğimiz
+bazı kısaltmalar vardır.
+
+62
+00:03:34,000 --> 00:03:37,750
+Başlangıcı boş bırakırsak,
+0 olarak algılar, 
+
+63
+00:03:37,750 --> 00:03:40,180
+ve baştan başla anlamına gelir.
+
+64
+00:03:40,180 --> 00:03:42,480
+Sonu boş bırakırsak,
+
+65
+00:03:42,480 --> 00:03:45,950
+sonuna kadar alır.
+
+66
+00:03:45,950 --> 00:03:48,560
+Hangi sayıyı koyacağımıza,
+karar vermek için
+
+67
+00:03:48,560 --> 00:03:51,610
+kullanabileceğimiz bir
+formül var.
+
+68
+00:03:51,610 --> 00:03:53,620
+İstediğiniz kısmın başlangıcı
+olan index
+
+69
+00:03:53,620 --> 00:03:59,130
+iki nokta ve bittiği kısım + 1.
+
+70
+00:03:59,130 --> 00:04:01,940
+Bu formülü kullanırsanız,
+her zaman mükkemmel bölmeler
+yapabilirsiniz.
+
+71
+00:04:04,980 --> 00:04:08,690
+Bölmeleri tek bir çözümde
+toplayalım.
+
+72
+00:04:08,690 --> 00:04:13,690
+2. ve 3. indexteki karakterleri
+birleştirmek yerine,
+
+73
+00:04:13,690 --> 00:04:18,399
+2'den 4'e kadar bölme kullanacağız.
+
+74
+00:04:18,399 --> 00:04:21,295
+Bu da Good kelimesinin ikinci
+yarısını verecek bize.
+
+75
+00:04:24,620 --> 00:04:26,470
+Bir de kısayolumuzu kullanalım.
+
+76
+00:04:26,470 --> 00:04:30,410
+İkinci index kımsını boş bırakalım,
+
+
+77
+00:04:30,410 --> 00:04:32,680
+ve bölmemiz sona kadar
+alacak mı bakalım.
+
+78
+00:04:32,680 --> 00:04:35,980
+Ve ek olarak Evening kelimesini
+ilave edelim.
+
+79
+00:04:35,980 --> 00:04:38,240
+İki sonucu da yazdırıp,
+
+80
+00:04:38,240 --> 00:04:42,260
+istediğimiz "od" ve "ning" 
+kelimelerini elde edebiliriz.
+
+81
+00:04:42,260 --> 00:04:44,050
+Stringlerin ortasının
+
+82
+00:04:44,050 --> 00:04:47,710
+2. ve 3. index olduğunu bilmeden de
+
+83
+00:04:47,710 --> 00:04:52,050
+bu işi yapabilsek güzel olmaz mıydı?
+
+84
+00:04:52,050 --> 00:04:55,250
+Programımızı tüm kelimeler
+için çalışabilecek şekilde,
+
+85
+00:04:55,250 --> 00:04:59,370
+yarısını kendi bulan bir
+hale getirerek geliştirelim.
+
+86
+00:04:59,370 --> 00:05:02,040
+len fonksiyonu ile stringin 
+uzunluğunu bulup
+
+87
+00:05:02,040 --> 00:05:05,870
+2'ye bölerek orta noktasını
+bulabiliriz.
+
+88
+00:05:05,870 --> 00:05:08,930
+Ama bölme işlemi 
+bize float döndürecek.
+
+89
+00:05:08,930 --> 00:05:15,660
+4 bölü 2 = 2.0,
+ve 7 bölü 2 = 3.5.
+
+90
+00:05:15,660 --> 00:05:17,670
+Bu bir problem,
+
+91
+00:05:17,670 --> 00:05:20,300
+çünkü sadece int alabiliriz
+indexleri belirtirken.
+
+92
+00:05:23,030 --> 00:05:25,880
+Bu problemi çözmek için int
+bölmesi yapmalıyız,
+
+93
+00:05:25,880 --> 00:05:28,030
+bunu da iki bölme işareti
+koyarak sağlayabiliriz.
+
+94
+00:05:28,030 --> 00:05:31,600
+Yaptığımız bu işlem ile float
+sayılar en yakın aşağıdaki tam
+sayıya yuvarlanacak.
+
+95
+00:05:31,600 --> 00:05:35,580
+int bölmesi ile,
+4 bölü 2 = 2
+
+96
+00:05:35,580 --> 00:05:38,610
+ve 7 bölü 2 = 3 olackatır.
+
+97
+00:05:38,610 --> 00:05:40,530
+Python 2'de ,
+
+98
+00:05:40,530 --> 00:05:44,235
+tek bölme işareti ve
+int bölmesi aynıdır.
+
+99
+00:05:47,660 --> 00:05:52,310
+end1 için yeni hesapladığımız
+orta noktayı değiştireceğiz
+
+100
+00:05:52,310 --> 00:05:55,860
+ve aynısını end2 için de yapacağız.
+
+101
+00:05:55,860 --> 00:05:56,490
+Mükemmel.
+
+102
+00:05:56,490 --> 00:05:59,530
+Hâlâ istediğimiz "od ning"
+kelimelerini alabiliyoruz.
+
+103
+00:05:59,530 --> 00:06:02,821
+Ayrıca programımız her uzunlukta
+string için düzgün çalışacaktır.
+
+104
+00:06:06,100 --> 00:06:08,610
+Şimdi string bölmeyi
+
+105
+00:06:08,610 --> 00:06:09,820
+çalışma sırası sizde.
+
+106
+00:06:09,820 --> 00:06:11,490
+İyi şanslar.
