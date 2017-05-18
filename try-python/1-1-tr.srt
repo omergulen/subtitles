@@ -1,10 +1,10 @@
 1
 00:00:00,000 --> 00:00:01,206
-[MUSIC PLAYING]
+Try Python 1 - 1
 
 2
 00:00:01,206 --> 00:00:03,590
-[SINGING] Şimdi biraz,
+Şimdi biraz,
 Python öğrenme vakti
 
 3
