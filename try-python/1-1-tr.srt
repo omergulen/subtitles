@@ -11,6 +11,7 @@ Python öğrenme vakti
 00:00:03,590 --> 00:00:06,830
 string yazdırmaktan, günlük
 matematiğe, 
+
 4
 00:00:06,830 --> 00:00:09,340
 ufuktaki değişkenlere.
@@ -377,11 +378,11 @@ hindistan cevizini taşımak için
 83
 00:04:40,680 --> 00:04:44,110
 gerekli olan 72.5 kırlangıcı
-bulacağız
+bulacağız,
 
 84
 00:04:44,110 --> 00:04:46,900
-,yani çok kırlangıç.
+yani çok kırlangıç.
 
 85
 00:04:50,490 --> 00:04:52,510
